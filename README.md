@@ -2,7 +2,6 @@
 Pengembangan Program Kalkulator Valuasi Teknologi
 
 Contributor
-- Deris Stiawan
 - M. Ridwan Zalbina
 - Miftakul Amin
 
