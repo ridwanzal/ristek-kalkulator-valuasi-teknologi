@@ -3572,7 +3572,7 @@ textarea.auto-size {
 .login-content, .error-page-area{
     min-height:100vh;
     text-align:center;
-    background-color:#00c292;
+    background-color:#ddd;
 }
 .login-content:before, .error-page-area:before{
     content:'';
@@ -3611,9 +3611,10 @@ textarea.auto-size {
     right:-25px;
 }
 .nk-form, .error-page-wrap{
-    background:#fff;
-    box-shadow:0 1px 1px rgba(0,0,0,.1);
-    border-radius:2px;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    border-radius: 5px;
+    border: 1px solid #bbb;
 }
 .nk-navigation{
     margin-top:15px;

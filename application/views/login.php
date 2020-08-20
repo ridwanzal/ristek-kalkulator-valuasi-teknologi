@@ -1,5 +1,8 @@
     <div class="login-content">
         <div class="nk-block toggled" id="l-login">
+            <center>
+                <img width="200px;" src="http://sinta.ristekbrin.go.id/assets/img/sinta_logo.png">
+            </center>
             <br/>
             <br/>
                 <form method="POST" action="<?php echo base_url('login/login'); ?>">
@@ -26,7 +29,8 @@
                     </div>
                 </form>
             <div style="margin-top:25px;">
-                <p style="color:#fff;">Belum punya akun terdaftar ? </p>&nbsp;&nbsp;<a href="<?php echo base_url()?>register">Register</a>
+                <!-- <p style="color:#fff;">Belum punya akun terdaftar ? </p>&nbsp;&nbsp;<a href="<?php echo base_url()?>register">Register</a> -->
+                <label class="">Bantuan</label>
             </div>
         </div>
     </div>
