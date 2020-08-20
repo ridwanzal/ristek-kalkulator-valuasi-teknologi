@@ -2771,7 +2771,9 @@ hr {
     vertical-align: top;
 }
 .nk-int-st:not([class*=has-]):after {
-    background: #00c292;
+    /* background: #00c292; */
+    /* #10586E */
+    background: #10586E;
 }
 .nk-int-st:not(.disabled):after, .nk-int-st:not(.readonly):after {
     position: absolute;
