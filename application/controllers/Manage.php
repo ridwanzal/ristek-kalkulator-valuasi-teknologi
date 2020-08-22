@@ -6,7 +6,7 @@ use Sunra\PhpSimple\HtmlDomParser; // lib html parser
 use stringEncode\Encode; // lib html parser
 use PHPHtmlParser\Dom; // lib html parser
 use FastSimpleHTMLDom\Document; // lib html parser
-class Admin extends CI_Controller {
+class Manage extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();		
@@ -14,10 +14,12 @@ class Admin extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
-    	      date_default_timezone_set('Asia/Jakarta'); // default time zone indonesia
+		date_default_timezone_set('Asia/Jakarta'); // default time zone indonesia
       }
       
       public function index(){
-            
+		$this->load->view('header');
+		$this->load->view('admin/dashboard/index');
+        $this->load->view('footer');
       }
 }

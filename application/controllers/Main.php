@@ -18,11 +18,17 @@ class Main extends CI_Controller {
 	}
 	
 	function index(){
-		$data['title_bar'] = "";
-        $data['header_page'] = "";
-        $this->load->view('header', $data);
-        $this->load->view('register', $data);
-        $this->load->view('footer', $data);
+		$cek = $this->session->userdata('token');
+		if($cek){
+			redirect(base_url('manage'));
+		}else{
+			$data['title_bar'] = "Kalkulator Valuasi Teknologi";
+			$data['header_page'] = "Kalkulator Valuasi Teknologi";
+			$this->load->view('header', $data);
+			$this->load->view('login', $data);
+			$this->load->view('footer', $data);
+
+		}
 	}
   
 }

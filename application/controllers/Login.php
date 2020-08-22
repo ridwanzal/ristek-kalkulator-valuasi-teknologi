@@ -26,41 +26,15 @@ class Login extends CI_Controller {
         $this->load->view('footer', $data);
   	}
 	
-	public function login(){
-		$username = $this->input->post('p_username', TRUE);
-        $password = $this->input->post('p_password', TRUE);
-		$encrypted_mypassword=md5($password);
-		
-		$query="SELECT 
-				a.id_user as id_user, 
-				a.level as level 
-				FROM 
-				user a , 
-				konsumen b 
-				where a.id_konsumen = b.id_konsumen 
-				AND a.username = '$username' AND a.password = '$encrypted_mypassword'";
-        $query_result = $this->db->query($query)->result_array();
-        if(count($query_result) > 0){
-          for($i=0; $i<count($query_result); $i++){
-            $data_session = array(
-			  'id_user' => $query_result[$i]['id_user'],
-			  'id_konsumen' => $query_result[$i]['id_konsumen'],
-			  'level' => $query_result[$i]['level'],
-              'status' => 'login'
-            );
-          }
-          $this->session->set_flashdata('key', 1);
-			$this->session->set_userdata($data_session);	
-          	redirect(base_url(''));
-        }else{
-          if($username == ''){
-            $this->session->set_flashdata('error', 'Maaf, Login Gagal');
-                    redirect(base_url("login"));
-          }
-          $this->session->set_flashdata('error', 'Maaf, Login Gagal');
-                redirect(base_url("login"));
-        }
-
+	public function process_login(){
+		$token = $this->input->post('token', TRUE);
+		$userdetails = $this->input->post('userdetails', TRUE);
+		$data_session = array(
+			'token' => $token,
+			'userdetails' => $userdetails
+		);
+		$this->session->set_userdata($data_session);
+		echo json_encode($data_session);
 	}
 
 	public function logout(){
