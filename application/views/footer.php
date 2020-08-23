@@ -25,7 +25,6 @@
     <script src="<?php echo base_url()?>assets/js/libs/todo/jquery.todo.js"></script>
     <script src="<?php echo base_url()?>assets/js/libs/login/login-action.js"></script>
     <script src="<?php echo base_url()?>assets/js/libs/plugins.js"></script>
-    <script src="<?php echo base_url()?>assets/js/libs/main.js"></script>
     <script src="<?php echo base_url()?>assets/js/services/login.js"></script>
 </body>
 

@@ -27,7 +27,6 @@ class Main extends CI_Controller {
 			$this->load->view('header', $data);
 			$this->load->view('login', $data);
 			$this->load->view('footer', $data);
-
 		}
 	}
   

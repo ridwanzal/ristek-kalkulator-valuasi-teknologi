@@ -184,7 +184,7 @@ body {}
 /*  2.  Header Top CSS
 /*----------------------------------------*/
 .header-top-area, .footer-copyright-area{
-	background:#00c292;
+	background:#10586E;
 }
 .logo-area{
 	padding:14px 0px;
@@ -203,7 +203,7 @@ body {}
 }
 .navbar-nav>li>a{
 	color:#fff;
-	padding: 20px 0px 20px 30px;
+	/* padding: 20px 0px 20px 30px; */
 }
 .rtl-layout .navbar-nav>li>a{
 	padding: 20px 30px 20px 0px;
@@ -2972,7 +2972,7 @@ textarea.auto-size {
     background-color: #FFF;
     background-position: right calc(100% - 7px);
     background-repeat: no-repeat;
-    background-image: url(images/select.png);
+    /* background-image: url(images/select.png); */
     pointer-events: none;
     z-index: 5;
 }
@@ -3171,7 +3171,7 @@ textarea.auto-size {
     background-color: #FFF;
     background-position: right calc(100% - 7px);
     background-repeat: no-repeat;
-    background-image: url(images/select.png);
+    /* background-image: url(images/select.png); */
     pointer-events: none;
     z-index: 5;
 }

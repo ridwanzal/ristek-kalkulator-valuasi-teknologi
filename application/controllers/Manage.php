@@ -15,11 +15,16 @@ class Manage extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		date_default_timezone_set('Asia/Jakarta'); // default time zone indonesia
+		$login_status = $this->session->userdata('token');
+        if($login_status == NULL || $login_status == ''){
+              redirect(base_url('login'));
+        }
       }
       
       public function index(){
-		$this->load->view('header');
+		$this->load->view('admin/header');
+		$this->load->view('admin/navbar');
 		$this->load->view('admin/dashboard/index');
-        $this->load->view('footer');
+        $this->load->view('admin/footer');
       }
 }

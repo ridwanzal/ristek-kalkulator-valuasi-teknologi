@@ -14,16 +14,21 @@ class Login extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
-    	date_default_timezone_set('Asia/Jakarta'); // default time zone indonesia
+		date_default_timezone_set('Asia/Jakarta'); // default time zone indonesia
 	}
 	
 	public function index()
 	{
-        $data['title_bar'] = "";
-        $data['header_page'] = "";
-        $this->load->view('header', $data);
-        $this->load->view('login', $data);
-        $this->load->view('footer', $data);
+		$cek = $this->session->userdata('token');
+		if($cek){
+			redirect(base_url('manage'));
+		}else{
+			$data['title_bar'] = "";
+			$data['header_page'] = "";
+			$this->load->view('header', $data);
+			$this->load->view('login', $data);
+			$this->load->view('footer', $data);
+		}
   	}
 	
 	public function process_login(){
