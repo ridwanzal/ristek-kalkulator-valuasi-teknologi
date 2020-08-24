@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="logo-area" style="cursor:pointer;">
-                        <a href="<?php echo base_url();?>"></a><img width="120px;" src="<?php echo base_url();?>assets/img/logo_kalsinnov_white.svg"></a>
+                        <a href="<?php echo base_url();?>"><img width="120px;" src="<?php echo base_url();?>assets/img/logo_kalsinnov_white.svg"></a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
