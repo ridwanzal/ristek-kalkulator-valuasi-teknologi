@@ -1,11 +1,7 @@
 <br/>
-<!-- <?php '<pre>' . var_dump($this->session->userdata('userdetails')) . '</pre>'; ?> -->
-
 <?php
     $userdetails = $this->session->userdata('userdetails');
-    // var_dump($userdetails);
 ?>
-
 <div class="form-element-area">
         <div class="container">
             <div class="row">
