@@ -61,7 +61,7 @@
      inkscape:document-rotation="0"
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="2304.2307"
+     inkscape:cy="1847.0879"
      inkscape:cx="6139.7341"
      inkscape:zoom="0.35"
      inkscape:pageshadow="2"
@@ -124,5 +124,10 @@
          style="fill:url(#linearGradient871);fill-opacity:1;stroke:none;stroke-width:0.197428px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          id="path18" />
     </g>
+    <use
+       id="use8442"
+       xlink:href="#g5841"
+       y="0"
+       x="0" />
   </g>
 </svg>
