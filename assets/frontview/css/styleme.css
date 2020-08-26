@@ -16,7 +16,12 @@
 
 body{
     overflow-x: hidden;
+    min-height: 600px;
     font-family: 'Montserrat', sans-serif !important;
+}
+
+p, label, li, li > a, h6, h5{
+    font-size: 14px;
 }
 
 .section_footer{
@@ -477,16 +482,28 @@ body{
 /*
 katsinov
 */
-
 .main_section{
-    height : 750px;
+    height : 700px;
+    min-height: 600px;
     background : url('../img/background.svg');
     background-size: cover;
     padding-top:200px;
     padding-bottom: 200px;   
 }
 
+
 .section_main_wrapper{
+    min-height: 600px;
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+.section_second_wrapper{
+    min-height: 600px;
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
+hr.dashed {
+    border-top: 2px dashed #999;
 }

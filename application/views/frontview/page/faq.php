@@ -36,7 +36,7 @@
                             <div class="card-header p-2" id="headingThree">
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Q. Metode apa saja yang dapat diterapkan ?
+                                    Q: Metode apa saja yang dapat diterapkan ?
                                     </button>
                                 </h5>
                             </div>
@@ -50,7 +50,7 @@
                             <div class="card-header p-2" id="headingThree">
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseF" aria-expanded="false" aria-controls="collapseF">
-                                    Q. Keuntungan dan Kerugian dari 3 Metode yang digunakan ?
+                                    Q: Keuntungan dan Kerugian dari 3 Metode yang digunakan ?
                                     </button>
                                 </h5>
                             </div>

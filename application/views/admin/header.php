@@ -8,7 +8,7 @@
     <meta name="author" content="M. Ridwan Zalbina">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kalkulator Inovasi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Css Styles -->
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/font-awesome.min.css" type="text/css">

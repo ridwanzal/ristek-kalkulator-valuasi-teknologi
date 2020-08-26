@@ -2,88 +2,103 @@
     <div class="form-element-area">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="cmp-tb-hd">
-                            <h2>Input Data</h2>
-                            <p>A. Identitas Penelitian dan Invensi</p>
-                        </div>
-                        <div class="form-element-list mg-t-10">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="nk-int-mk">
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                        <h6>Field Input Data</h6>
+                        <p>A. Identitas Penelitian dan Invensi</p>
+                        <br/>
+                        <form>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput"><span class="badge badge-pill  badge-warning">1</span>&nbsp;Nama Inventor : </label>
+                                <input type="text" class="form-control form-control-sm" id="formGroupExampleInput" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">2</span>&nbsp;Institusi Penghasil/ Pemilik Invensi : </label>
+                                <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">3</span>&nbsp;Unit Kerja Penghasil/ Pemilik Invensi : </label>
+                                <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">4</span>&nbsp;Judul Penelitian : </label>
+                                <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">5</span>&nbsp;Total Biaya Masukan/Realisasi Pagu Penelitian (R) :</label>
+                                <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">6</span>&nbsp;Asal Biaya Masukan Masukan/Realisasi Pagu Penelitian : </label>
+                                    <select class="custom-select custom-select-sm">
+                                        <option value="">-- Silahkan pilih</option>
+                                        <option value="1">Hibah Ristek</option>
+                                        <option value="2">Dikti Kemendikbud</option>
+                                        <option value="3">Lainnya</option>
+                                    </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2">Upload dokumen pendukung :</label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFile">
+                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                        <small id="emailHelp" class="form-text text-muted">Unggah file dlm format PDF, MS Word, PPT</small>
                                     </div>
-                                    <div class="form-group ic-cmp-int">
-                                        <div class="form-ic-cmp">
-                                            <i class="notika-icon notika-support"></i>
-                                        </div>
-                                        <div class="nk-int-st">
-                                            <input type="text" class="form-control" placeholder="Nama Inventor">
-                                        </div>
-                                    </div>
+                            </div>
+                            <!-- <hr class="dashed"> -->
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">7</span>&nbsp;Luaran Penelitian : </label>
+                            </div>
+                            <div class="form-row form-group">
+                                <div class="col">
+                                    <label>Publikasi pada jurnal internasional</label>
+                                    <input type="number" class="form-control" placeholder="" value="1">
                                 </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="nk-int-mk">
-                                    </div>
-                                    <div class="form-group ic-cmp-int">
-                                        <div class="form-ic-cmp">
-                                            <i class="notika-icon notika-support"></i>
-                                        </div>
-                                        <div class="nk-int-st">
-                                            <input type="text" class="form-control" placeholder="Institusi Penghasil/Pemilik Invensi">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="nk-int-mk">
-                                    </div>
-                                    <div class="form-group ic-cmp-int">
-                                        <div class="form-ic-cmp">
-                                            <i class="notika-icon notika-support"></i>
-                                        </div>
-                                        <div class="nk-int-st">
-                                            <input type="text" class="form-control" placeholder="Unit Kerja Penghasil/Pemilik Invensi">
-                                        </div>
-                                    </div>
-                                </div>
-                         
-                                <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
-                                    <div class="nk-int-mk">
-                                    </div>
-                                    <div class="form-group ic-cmp-int">
-                                        <div class="form-ic-cmp">
-                                            <i class="notika-icon notika-support"></i>
-                                        </div>
-                                        <div class="nk-int-st">
-                                            <input type="text" class="form-control" placeholder="Judul Penelitian">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
-                                    <div class="nk-int-mk">
-                                    </div>
-                                    <div class="form-group ic-cmp-int">
-                                        <div class="form-ic-cmp">
-                                            <i class="notika-icon notika-support"></i>
-                                        </div>
-                                        <div class="nk-int-st">
-                                            <input type="text" class="form-control" placeholder="Total Biaya Masukan/Realisasi Pagu Penelitian (R)">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="nk-int-mk">
-                                    </div>
-                                    <div class="form-group ic-cmp-int">
-                                        <div class="form-ic-cmp">
-                                            <i class="notika-icon notika-support"></i>
-                                        </div>
-                                        <div class="nk-int-st">
-                                            <input type="text" class="form-control" placeholder="Total Biaya Masukan/Realisasi Pagu Penelitian (R)">
-                                        </div>
-                                    </div>
+                                <div class="col-lg-6">
+                                    <label>Bobot</label>
+                                    <input disabled type="number" class="form-control" placeholder="0" value="40">
                                 </div>
                             </div>
-                        </div>
+                            <div class="form-row form-group">
+                                <div class="col">
+                                    <label>Publikasi pada jurnal nasional</label>
+                                    <input type="number" class="form-control" placeholder="" value="1">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Bobot</label>
+                                    <input disabled type="number" class="form-control" placeholder="0" value="25">
+                                </div>
+                            </div>
+                            <div class="form-row form-group">
+                                <div class="col">
+                                    <label>Buku Internasional</label>
+                                    <input type="number" class="form-control" placeholder="" value="1">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Bobot</label>
+                                    <input disabled type="number" class="form-control" placeholder="0" value="40">
+                                </div>
+                            </div>
+                            <div class="form-row form-group">
+                                <div class="col">
+                                    <label>Publikasi pada prosiding internasional</label>
+                                    <input type="number" class="form-control" placeholder="" value="1">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Bobot</label>
+                                    <input disabled type="number" class="form-control" placeholder="1" value="40">
+                                </div>
+                            </div>
+                            <div class="form-row form-group">
+                                <div class="col">
+                                    <label>Publikasi pada prosiding nasional</label>
+                                    <input type="number" class="form-control" placeholder="" value="1">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Bobot</label>
+                                    <input disabled type="number" class="form-control" placeholder="1" value="10">
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

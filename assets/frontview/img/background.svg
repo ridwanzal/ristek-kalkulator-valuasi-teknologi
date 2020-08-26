@@ -9,7 +9,7 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    sodipodi:docname="background.svg"
-   inkscape:version="1.0 (1.0+r73+1)"
+   inkscape:version="0.92.5 (0.92.5+69)"
    id="svg8"
    version="1.1"
    viewBox="0 0 1920 1080"
@@ -53,17 +53,17 @@
   </defs>
   <sodipodi:namedview
      inkscape:window-maximized="1"
-     inkscape:window-y="27"
-     inkscape:window-x="67"
-     inkscape:window-height="1025"
-     inkscape:window-width="1853"
+     inkscape:window-y="0"
+     inkscape:window-x="1366"
+     inkscape:window-height="1051"
+     inkscape:window-width="1920"
      showgrid="false"
      inkscape:document-rotation="0"
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="1847.0879"
-     inkscape:cx="6139.7341"
-     inkscape:zoom="0.35"
+     inkscape:cy="1655.0161"
+     inkscape:cx="6080.479"
+     inkscape:zoom="0.12374369"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -74,19 +74,23 @@
     <sodipodi:guide
        id="guide10"
        orientation="0,7256.6929"
-       position="0,1080" />
+       position="0,1080"
+       inkscape:locked="false" />
     <sodipodi:guide
        id="guide12"
        orientation="4081.8898,0"
-       position="1920,1080" />
+       position="1920,1080"
+       inkscape:locked="false" />
     <sodipodi:guide
        id="guide14"
        orientation="0,-7256.6929"
-       position="1920,0" />
+       position="1920,0"
+       inkscape:locked="false" />
     <sodipodi:guide
        id="guide16"
        orientation="-4081.8898,0"
-       position="0,0" />
+       position="0,0"
+       inkscape:locked="false" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -110,7 +114,7 @@
        height="1080"
        width="1920"
        id="rect20"
-       style="fill:#ffffff;stroke:#1a1a1a;stroke-width:2" />
+       style="fill:#ffffff;stroke:none;stroke-width:2" />
     <g
        id="g5841"
        transform="matrix(0.67644138,0,0,0.67644138,623.30602,5.9553919e-6)"

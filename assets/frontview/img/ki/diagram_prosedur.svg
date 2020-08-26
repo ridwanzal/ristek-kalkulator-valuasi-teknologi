@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1201.2435mm"
+   height="390.84412mm"
+   viewBox="0 0 1201.2435 390.84412"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.5 (0.92.5+69)"
+   sodipodi:docname="diagram_prosedur.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="363.5771"
+     inkscape:cy="616.14485"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     inkscape:window-x="1366"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showguides="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(1495.4092,215.41543)">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -1447.5317,-7.1527222 h 55.592"
+       id="path1217"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#e6e6e6;stroke-width:3.12695789;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect815"
+       width="216.83136"
+       height="74.712318"
+       x="-1375.658"
+       y="-180.61862"
+       rx="7.4866219"
+       ry="7.4866219" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-1361.3584"
+       y="-154.97971"
+       id="text819"><tspan
+         sodipodi:role="line"
+         x="-1361.3584"
+         y="-154.97971"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         id="tspan821">Inventarisasi riwayat biaya langsung</tspan><tspan
+         sodipodi:role="line"
+         x="-1361.3584"
+         y="-141.38724"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         id="tspan825">dan tak langsung hingga saat </tspan><tspan
+         sodipodi:role="line"
+         x="-1361.3584"
+         y="-127.79477"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         id="tspan827">dimulainya value</tspan></text>
+    <rect
+       ry="4.8139267"
+       rx="4.8139267"
+       y="-180.61862"
+       x="-1101.6022"
+       height="74.712318"
+       width="216.83136"
+       id="rect829"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#e6e6e6;stroke-width:3.12695789;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text837"
+       y="-147.18533"
+       x="-1073.6263"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan835"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         y="-147.18533"
+         x="-1073.6263"
+         sodipodi:role="line">Tentukan bobot keluaran jenis</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         y="-133.59286"
+         x="-1073.6263"
+         sodipodi:role="line"
+         id="tspan844">HKI yang divaluasi</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -1133.2441,-155.35771 10.3943,10.39434 -11.3392,11.33929"
+       id="path846"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path848"
+       d="m -1133.2441,-155.35771 10.3943,10.39434 -11.3392,11.33929"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -864.12506,-155.35771 10.39435,10.39434 -11.33928,11.33929"
+       id="path888"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#e6e6e6;stroke-width:3.12695789;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect890"
+       width="216.83136"
+       height="74.712318"
+       x="-840.04266"
+       y="-180.61862"
+       rx="4.8139267"
+       ry="4.8139267" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-812.06683"
+       y="-147.18533"
+       id="text896"><tspan
+         id="tspan894"
+         sodipodi:role="line"
+         x="-812.06683"
+         y="-147.18533"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px">Hitung seluruh biaya dan</tspan><tspan
+         sodipodi:role="line"
+         x="-812.06683"
+         y="-133.59286"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         id="tspan900">bobot</tspan></text>
+    <rect
+       ry="7.5421085"
+       rx="5.0326042"
+       y="-42.984409"
+       x="-1375.9348"
+       height="75.266045"
+       width="145.75685"
+       id="rect902"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#e6e6e6;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text910"
+       y="-9.2477884"
+       x="-1362.9623"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan908"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         y="-9.2477884"
+         x="-1362.9623"
+         sodipodi:role="line">Hitung Gross Revenue </tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         y="4.3446813"
+         x="-1362.9623"
+         sodipodi:role="line"
+         id="tspan939">(Sales - HPP)</tspan></text>
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#e6e6e6;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect912"
+       width="156.88741"
+       height="75.17128"
+       x="-1185.7544"
+       y="-42.937027"
+       rx="3.4830961"
+       ry="4.8434992" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-1171.8187"
+       y="-2.4780121"
+       id="text918"><tspan
+         id="tspan916"
+         sodipodi:role="line"
+         x="-1171.8187"
+         y="-2.4780121"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px">Hitung EBIT : GR - OPEX</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path920"
+       d="m -1212.8904,-17.446627 10.3943,10.3943401 -11.3392,11.33929"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -1212.8904,-17.446627 10.3943,10.3943401 -11.3392,11.33929"
+       id="path922"
+       inkscape:connector-curvature="0" />
+    <rect
+       ry="4.8434992"
+       rx="3.4830961"
+       y="-42.937027"
+       x="-984.76764"
+       height="75.17128"
+       width="156.88741"
+       id="rect943"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#e6e6e6;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text947"
+       y="-2.4780121"
+       x="-970.83197"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         y="-2.4780121"
+         x="-970.83197"
+         sodipodi:role="line"
+         id="tspan945">Hitung EAT : EBIT - Tax</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -1011.9037,-17.446627 10.3943,10.3943401 -11.3392,11.33929"
+       id="path949"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path951"
+       d="m -1011.9037,-17.446627 10.3943,10.3943401 -11.3392,11.33929"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#e6e6e6;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect963"
+       width="156.88741"
+       height="75.17128"
+       x="-783.2464"
+       y="-42.937027"
+       rx="3.4830961"
+       ry="4.8434992" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-777.74512"
+       y="-29.636494"
+       id="text967"><tspan
+         id="tspan965"
+         sodipodi:role="line"
+         x="-777.74512"
+         y="-29.636494"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px">Hitung Net Cash</tspan><tspan
+         sodipodi:role="line"
+         x="-777.74512"
+         y="-16.044024"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         id="tspan975">Flow/ Free Cash Flow :</tspan><tspan
+         sodipodi:role="line"
+         x="-777.74512"
+         y="-2.4515541"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         id="tspan979">EAT - CAPEX - </tspan><tspan
+         sodipodi:role="line"
+         x="-777.74512"
+         y="11.140916"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         id="tspan981">Contributory Asset Charges</tspan><tspan
+         sodipodi:role="line"
+         x="-777.74512"
+         y="24.733385"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         id="tspan985">(CAC)</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path969"
+       d="m -810.38251,-17.446627 10.39432,10.3943401 -11.33922,11.33929"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -810.38251,-17.446627 10.39432,10.3943401 -11.33922,11.33929"
+       id="path971"
+       inkscape:connector-curvature="0" />
+    <rect
+       ry="4.308959"
+       rx="4.308959"
+       y="-42.937027"
+       x="-581.19061"
+       height="75.17128"
+       width="156.88741"
+       id="rect989"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#e6e6e6;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text1001"
+       y="-16.017565"
+       x="-570.51587"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         y="-16.017565"
+         x="-570.51587"
+         sodipodi:role="line"
+         id="tspan1021">Tentukan discount  factor </tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         y="-2.4250951"
+         x="-570.51587"
+         sodipodi:role="line"
+         id="tspan1025">(Asumsi interstrate dan</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         y="11.167375"
+         x="-570.51587"
+         sodipodi:role="line"
+         id="tspan1027">cash flow period)</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -608.32675,-17.446627 10.39432,10.3943401 -11.33922,11.33929"
+       id="path1003"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1005"
+       d="m -608.32675,-17.446627 10.39432,10.3943401 -11.33922,11.33929"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#e6e6e6;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1029"
+       width="84.886513"
+       height="75.867699"
+       x="-380.55219"
+       y="-43.285236"
+       rx="3.2847533"
+       ry="3.2847533" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-370.46582"
+       y="-2.4780121"
+       id="text1037"><tspan
+         id="tspan1035"
+         sodipodi:role="line"
+         x="-370.46582"
+         y="-2.4780121"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px">Hitung NPV</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path1039"
+       d="m -407.34007,-17.446627 10.39432,10.3943401 -11.33922,11.33929"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -407.34007,-17.446627 10.39432,10.3943401 -11.33922,11.33929"
+       id="path1041"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#e6e6e6;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1059"
+       width="145.75685"
+       height="75.266045"
+       x="-1375.9348"
+       y="96.509148"
+       rx="5.0326042"
+       ry="7.5421085" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-1362.9623"
+       y="130.24577"
+       id="text1065"><tspan
+         id="tspan1063"
+         sodipodi:role="line"
+         x="-1362.9623"
+         y="130.24577"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px">Identifikasi jenis pasar</tspan><tspan
+         sodipodi:role="line"
+         x="-1362.9623"
+         y="143.83824"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         id="tspan1131">yang sesuai</tspan></text>
+    <rect
+       ry="3.7954466"
+       rx="3.7954466"
+       y="96.393364"
+       x="-1185.9176"
+       height="75.497627"
+       width="124.07233"
+       id="rect1067"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#e6e6e6;stroke-width:2.67365503;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text1071"
+       y="130.24577"
+       x="-1174.2783"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         y="130.24577"
+         x="-1174.2783"
+         sodipodi:role="line"
+         id="tspan1069">Identifikasi tingkat</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         y="143.83824"
+         x="-1174.2783"
+         sodipodi:role="line"
+         id="tspan1133">royalti</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -1212.8904,122.04694 10.3943,10.39434 -11.3392,11.33929"
+       id="path1073"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1075"
+       d="m -1212.8904,122.04694 10.3943,10.39434 -11.3392,11.33929"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#e6e6e6;stroke-width:2.67365503;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1135"
+       width="124.07233"
+       height="75.497627"
+       x="-1016.4954"
+       y="96.393364"
+       rx="3.7954466"
+       ry="3.7954466" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-1004.8562"
+       y="130.24577"
+       id="text1141"><tspan
+         id="tspan1139"
+         sodipodi:role="line"
+         x="-1004.8562"
+         y="130.24577"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px">Identifikasi data</tspan><tspan
+         sodipodi:role="line"
+         x="-1004.8562"
+         y="143.83824"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         id="tspan1149">transaksi pasar</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path1143"
+       d="m -1043.4682,122.04694 10.3943,10.39434 -11.3392,11.33929"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -1043.4682,122.04694 10.3943,10.39434 -11.3392,11.33929"
+       id="path1145"
+       inkscape:connector-curvature="0" />
+    <rect
+       ry="4.8645263"
+       rx="4.8645263"
+       y="96.393364"
+       x="-848.65027"
+       height="75.497627"
+       width="124.07233"
+       id="rect1151"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#e6e6e6;stroke-width:2.67365503;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text1157"
+       y="130.24577"
+       x="-837.01093"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan1155"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         y="130.24577"
+         x="-837.01093"
+         sodipodi:role="line">Identifikasi rentang</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         y="143.83824"
+         x="-837.01093"
+         sodipodi:role="line"
+         id="tspan1165">valuasi pasar</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -875.62309,122.04694 10.3943,10.39434 -11.3392,11.33929"
+       id="path1159"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1161"
+       d="m -875.62309,122.04694 10.3943,10.39434 -11.3392,11.33929"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#e6e6e6;stroke-width:2.67365503;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1175"
+       width="124.07233"
+       height="75.497627"
+       x="-680.07288"
+       y="96.393364"
+       rx="3.7954483"
+       ry="3.7954483" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-668.43353"
+       y="130.24577"
+       id="text1181"><tspan
+         sodipodi:role="line"
+         x="-668.43353"
+         y="130.24577"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         id="tspan1177">Identifikasi rentang</tspan><tspan
+         id="tspan1179"
+         sodipodi:role="line"
+         x="-668.43353"
+         y="143.83824"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px">valuasi pasar</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path1183"
+       d="m -707.04571,122.04694 10.3943,10.39434 -11.3392,11.33929"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -707.04571,122.04694 10.3943,10.39434 -11.3392,11.33929"
+       id="path1185"
+       inkscape:connector-curvature="0" />
+    <rect
+       ry="3.8023987"
+       rx="3.8023987"
+       y="96.324188"
+       x="-510.15863"
+       height="75.635986"
+       width="111.35949"
+       id="rect1187"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#e6e6e6;stroke-width:2.53529859;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text1193"
+       y="130.24577"
+       x="-498.4501"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         y="130.24577"
+         x="-498.4501"
+         sodipodi:role="line"
+         id="tspan1191">Tentukan valuasi</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.26458332px"
+         y="143.83824"
+         x="-498.4501"
+         sodipodi:role="line"
+         id="tspan1201">yang sepadan</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -537.06229,122.04694 10.3943,10.39434 -11.3392,11.33929"
+       id="path1195"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1197"
+       d="m -537.06229,122.04694 10.3943,10.39434 -11.3392,11.33929"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.87660408px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.44691509px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-1376.5188"
+       y="77.536118"
+       id="text1205"><tspan
+         sodipodi:role="line"
+         id="tspan1203"
+         x="-1376.5188"
+         y="77.536118"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:'Montserrat Semi-Bold';stroke-width:0.44691509px">Market-based</tspan></text>
+    <text
+       id="text1209"
+       y="-63.170837"
+       x="-1376.5188"
+       style="font-style:normal;font-weight:normal;font-size:17.87660408px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.44691509px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:'Montserrat Semi-Bold';stroke-width:0.44691509px"
+         y="-63.170837"
+         x="-1376.5188"
+         id="tspan1207"
+         sodipodi:role="line">Income-based</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.87660408px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.44691509px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-1376.5188"
+       y="-202.15099"
+       id="text1213"><tspan
+         sodipodi:role="line"
+         id="tspan1211"
+         x="-1376.5188"
+         y="-202.15099"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:'Montserrat Semi-Bold';stroke-width:0.44691509px">Cost-based</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -1388.7324,-146.66741 h -28.8652 v 287.582 h 26.727"
+       id="path1215"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#e6e6e6;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1219"
+       width="355.14471"
+       height="50.335381"
+       x="-180.71603"
+       y="1444.0739"
+       rx="6.5393915"
+       ry="6.5393915"
+       transform="rotate(90)" />
+    <text
+       id="text1231"
+       y="-1462.4037"
+       x="-52.761353"
+       style="font-style:normal;font-weight:normal;font-size:17.87660408px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.44691509px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       transform="rotate(-90)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:'Montserrat Semi-Bold';stroke-width:0.44691509px"
+         y="-1462.4037"
+         x="-52.761353"
+         id="tspan1229"
+         sodipodi:role="line">Nilai Valuasi</tspan></text>
+  </g>
+</svg>

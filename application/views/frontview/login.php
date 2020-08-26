@@ -1,4 +1,4 @@
-<section class="main_section">
+<section class="section_second_wrapper">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-xs-4"> 

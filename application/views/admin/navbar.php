@@ -9,25 +9,25 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto navmain">
                 <li class="nav-item active" style="margin-right:30px;">
-                  <a class="nav-link" href="<?php echo base_url();?>"><img height="24" src="<?php echo base_url();?>assets/frontview/img/logo.svg">&nbsp;&nbsp;KALSINOV </a>    
+                  <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>"><img height="24" src="<?php echo base_url();?>assets/frontview/img/logo.svg">&nbsp;&nbsp;KALSINOV </a>    
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="<?php echo base_url();?>" title="Home">Home <span class="sr-only">(current)</span></a>    
+                  <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>" title="Home">Home <span class="sr-only">(current)</span></a>    
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url();?>prosedur" title="Prosedur">Prosedur<span class="sr-only"></span></a>
+                  <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>prosedur" title="Prosedur">Prosedur<span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url();?>faq" title="FAQ">FAQ <span class="sr-only"></span></a>
+                  <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>faq" title="FAQ">FAQ <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url();?>kegiatan" title="Kegiatan">Kegiatan <span class="sr-only"></span></a>
+                  <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>kegiatan" title="Kegiatan">Kegiatan <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url();?>tentang" title="Kegiatan">Tentang<span class="sr-only"></span></a>
+                  <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>tentang" title="Kegiatan">Tentang<span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url();?>kontak" title="Kontak">Kontak <span class="sr-only"></span></a>
+                  <a class="nav-link" data-toggle="tooltip" data-placement="bottom"href="<?php echo base_url();?>kontak" title="Kontak">Kontak <span class="sr-only"></span></a>
                 </li>
                 </ul>
                 <form method="GET" action="<?php echo base_url(); ?>/blog/blog_content_list_search">
