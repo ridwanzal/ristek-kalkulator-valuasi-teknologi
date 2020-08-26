@@ -15,7 +15,7 @@
                     </label>
                 </div>
                 <button class="btn btn-xs btn-success btn-block" type="submit">Sign in</button>
-                <button class="btn btn-xs btn-outline-primary btn-block" type="submit"><img height="20" src="http://sinta.ristekbrin.go.id/assets/img/sinta_logo.png">&nbsp;&nbsp;&nbsp;Sign in dengan Sinta</button>
+                <a href="<?php base_url(); ?>manage" class="btn btn-xs btn-outline-primary btn-block" type="submit"><img height="20" src="http://sinta.ristekbrin.go.id/assets/img/sinta_logo.png">&nbsp;&nbsp;&nbsp;Sign in dengan Sinta</a>
             </div>
             <div class="col-lg-2 col-md-2 col-xs-2">
 
