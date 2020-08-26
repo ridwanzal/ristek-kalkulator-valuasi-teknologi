@@ -2,10 +2,6 @@
     font-family: 'Montserrat', sans-serif !important;
 }
 
-h1,h2,h3,h4,h5,h6{
-    font-family: 'Montserrat', sans-serif  !important;
-}   
-
 .main_font {
     font-family: 'Montserrat', sans-serif  !important;
     font-weight: bold;
@@ -20,6 +16,7 @@ h1,h2,h3,h4,h5,h6{
 
 body{
     overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 .section_footer{

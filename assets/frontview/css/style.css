@@ -80,7 +80,6 @@ h6 {
 p {
 	font-size: 16px;
 	color: #858585;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 	line-height: 28px;
 	margin: 0 0 15px 0;
@@ -168,7 +167,6 @@ ol {
 	padding-left: 34px;
 	padding-right: 64px;
 	color: #081624;
-	font-family: "Open Sans", sans-serif;
 	text-transform: uppercase;
 	border: 2px solid #AE954B;
 	position: relative;
@@ -318,7 +316,6 @@ ol {
 
 .header-section.other-page .inner-header .top-widget .top-info.phone-num span {
 	font-size: 14px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 	color: #ffffff;
 	letter-spacing: 0.5px;
@@ -411,7 +408,6 @@ ol {
 
 .inner-header .top-info span {
 	font-size: 14px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 	color: #ffffff;
 	line-height: 18px;
@@ -477,7 +473,6 @@ ol {
 .slider-nav .single-slider-nav .nav-text p {
 	color: #ffffff;
 	font-size: 16px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 700;
 	text-transform: uppercase;
 	margin-bottom: 0;
@@ -553,7 +548,6 @@ ol {
 	left: -40px;
 	bottom: 7px;
 	font-size: 14px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 300;
 	line-height: 14px;
 	color: #2d220f;
@@ -562,7 +556,6 @@ ol {
 .room-item .room-text .room-title .room-price h2 {
 	font-size: 36px;
 	color: #081624;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 }
 
@@ -589,7 +582,6 @@ ol {
 .room-item .room-text .room-features .room-info span {
 	display: block;
 	font-size: 14px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 	color: #2d220f;
 }
@@ -635,7 +627,6 @@ ol {
 	font-size: 14px;
 	font-weight: 600;
 	color: #242424;
-	font-family: "Open Sans", sans-serif;
 	text-transform: uppercase;
 	opacity: 0.5;
 	border: none;
@@ -695,7 +686,6 @@ ol {
 	border: none;
 	float: left;
 	text-align: center;
-	font-family: "Open Sans", sans-serif;
 	font-size: 14px;
 	font-weight: 400;
 	color: #081624;
@@ -731,7 +721,6 @@ ol {
 .check-form .room-selector .nice-select span {
 	color: #242424;
 	text-transform: uppercase;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 	opacity: 0.5;
 }
@@ -744,7 +733,6 @@ ol {
 	font-size: 18px;
 	color: #081624;
 	text-transform: uppercase;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 900;
 	background: transparent;
 	border: none;
@@ -896,7 +884,6 @@ ol {
 .testimonial-item .single-testimonial-item .test-date {
 	color: #242424;
 	font-size: 14px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 	letter-spacing: 1.2px;
 	opacity: 0.5;
@@ -996,7 +983,6 @@ ol {
 .testimonial-author-item ul li a .author-text h5 {
 	color: #ae9548;
 	font-size: 18px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 700;
 	text-transform: uppercase;
 	line-height: 24px;
@@ -1097,7 +1083,6 @@ ol {
 .footer-section .copyright-area .copyright-text {
 	float: left;
 	font-size: 13px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 	color: #ffffff;
 	line-height: 24px;
@@ -1326,7 +1311,6 @@ ol {
 
 .single-staff-item .staff-text h5 {
 	font-size: 18px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 700;
 	color: #ae9548;
 	text-transform: uppercase;
@@ -1337,7 +1321,6 @@ ol {
 	display: inline-block;
 	font-size: 14px;
 	font-weight: 400;
-	font-family: "Open Sans", sans-serif;
 	color: #242424;
 	opacity: 0.5;
 	letter-spacing: 1.2px;
@@ -1493,7 +1476,6 @@ ol {
 	left: -40px;
 	bottom: 7px;
 	font-size: 14px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 300;
 	line-height: 14px;
 	color: #2d220f;
@@ -1502,7 +1484,6 @@ ol {
 .rooms-page-item .room-text .room-title .room-price h2 {
 	font-size: 36px;
 	color: #081624;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 }
 
@@ -1511,7 +1492,6 @@ ol {
 	right: -37px;
 	bottom: 13px;
 	color: #2d220f;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 300;
 }
 
@@ -1550,7 +1530,6 @@ ol {
 .rooms-page-item .room-text .room-features .room-info span {
 	display: block;
 	font-size: 14px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 	color: #2d220f;
 }
@@ -1577,7 +1556,6 @@ ol {
 .side-bar .categories-item .categories-list ul li {
 	color: #242424;
 	font-size: 16px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 	letter-spacing: 0.2px;
 	list-style: none;
@@ -1603,7 +1581,6 @@ ol {
 	background: #ae9548;
 	font-size: 14px;
 	color: #ffffff;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 	border-radius: 50%;
 	text-align: center;
@@ -1654,7 +1631,6 @@ ol {
 .side-bar .recent-post .single-recent-post .recent-text .recent-time span {
 	color: #242424;
 	font-size: 12px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 	letter-spacing: 0.2px;
 	margin-left: 23px;
@@ -1670,7 +1646,6 @@ ol {
 .side-bar .tags-item .tag-links a {
 	color: #ae9548;
 	display: inline-block;
-	font-family: "Open Sans", sans-serif;
 	font-size: 14px;
 	font-weight: 400;
 	letter-spacing: 0.2px;
@@ -1728,7 +1703,6 @@ ol {
 	color: #242424;
 	display: inline-block;
 	font-size: 12px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 	margin-left: 26px;
 }
@@ -1737,7 +1711,6 @@ ol {
 	font-size: 14px;
 	color: #242424;
 	line-height: 26px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 300;
 }
 
@@ -1745,7 +1718,6 @@ ol {
 	display: inline-block;
 	color: #081624;
 	font-size: 14px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 700;
 	text-transform: uppercase;
 	position: relative;
@@ -1767,7 +1739,6 @@ ol {
 	line-height: 31px;
 	text-align: center;
 	font-size: 14px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 	color: #ae9548;
 	margin-right: 2px;
@@ -1817,7 +1788,6 @@ ol {
 	color: #0e0e0e;
 	display: inline-block;
 	font-size: 14px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 	line-height: 18px;
 	margin-left: 40px;
@@ -1870,7 +1840,6 @@ ol {
 .contact-form form input {
 	width: 100%;
 	font-size: 14px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 	color: #242424;
 	letter-spacing: 1.2px;
@@ -1903,7 +1872,6 @@ ol {
 .contact-form form textarea {
 	width: 100%;
 	font-size: 14px;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
 	color: #242424;
 	letter-spacing: 1.2px;
@@ -1938,7 +1906,6 @@ ol {
 	font-size: 18px;
 	color: #081624;
 	text-transform: uppercase;
-	font-family: "Open Sans", sans-serif;
 	font-weight: 700;
 	background: transparent;
 	border: none;

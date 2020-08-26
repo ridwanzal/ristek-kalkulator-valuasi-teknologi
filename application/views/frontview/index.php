@@ -8,9 +8,12 @@
                     Kalkulasikan valuasi teknologi dengan pendekatan & metode
                     Cost, Income dan Market based.
                 </p>
-                <button class="btn btn-success">
+                <a href="<?php echo base_url();?>login" class="btn btn-success">
                     Uji Coba kalkulasi
-                </button>
+                </a>
+                <a href="<?php echo base_url();?>prosedur" class="btn btn-primary">
+                    Pelajari lebih
+                </a>
             </div>
             <div class="col-lg-6 col-md-6 col-xs-6"> 
                 <img id="image_banners" height="500px" style="position:relative;top:-70px;" src="<?php echo base_url();?>/assets/frontview/img/research.svg">

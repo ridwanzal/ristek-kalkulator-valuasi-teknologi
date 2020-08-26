@@ -9,7 +9,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto navmain">
                 <li class="nav-item active" style="margin-right:30px;">
-                  <a class="nav-link" href="<?php echo base_url();?>"><img height="20" src="https://frp.comnets.id//images/ristek-brin.png">&nbsp;&nbsp;KATSINOV</a>    
+                  <a class="nav-link" href="<?php echo base_url();?>"><img height="24" src="<?php echo base_url();?>assets/frontview/img/logo.svg">&nbsp;&nbsp;KALSINOV</a>    
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link" href="<?php echo base_url();?>" title="Home">Home <span class="sr-only">(current)</span></a>    
@@ -32,7 +32,7 @@
                 </ul>
                 <form method="GET" action="<?php echo base_url(); ?>/blog/blog_content_list_search">
                   <div style:display:flex; class="searchings">
-                    <a class="nav-link btn-xs btn-success" style="border-radius:4 px;" href="<?php echo base_url();?>login" title="Kontak">Login <span class="sr-only"></span></a>
+                    <a class="nav-link btn-xs btn-success" style="border-radius:4px;" href="<?php echo base_url();?>login" title="Kontak">Login <span class="sr-only"></span></a>
                   </div>
               </form>
             </div>

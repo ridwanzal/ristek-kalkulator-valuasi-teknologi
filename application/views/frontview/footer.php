@@ -8,21 +8,19 @@
                     Republik Indonesia</h6>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                <h5>Layanan</h5>
+                <h5>Panduan</h5>
                 <ul class="list-unstyled text-small listfooters">
-                    <li><a class="text-muted" href="https://rsarrasyid.id/layanan/list/igd-instalasi-gawat-darurat">IGD</a></li>
-                    <li><a class="text-muted" href="https://rsarrasyid.id/layanan/list/medical-check-up">Medical Checkup</a></li>
-                    <li><a class="text-muted" href="https://rsarrasyid.id/layanan/list/rawat-jalan">Rawat Jalan</a></li>
+                    <li><a class="text-muted" href="https://rsarrasyid.id/layanan/list/igd-instalasi-gawat-darurat">Cost based</a></li>
+                    <li><a class="text-muted" href="https://rsarrasyid.id/layanan/list/medical-check-up">Income based</a></li>
+                    <li><a class="text-muted" href="https://rsarrasyid.id/layanan/list/rawat-jalan">Market based</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <h5>Informasi</h5>
                 <ul class="list-unstyled text-small listfooters">
-                    <li><a class="text-muted" href="https://rsarrasyid.id/jadwaldokter">Jadwal Dokter</a></li>
-                    <li><a class="text-muted" href="https://rsarrasyid.id/daftarpasien">Pendaftaran Pasien</a></li>
-                    <li><a class="text-muted" href="https://rsarrasyid.id/artikel">Galeri</a></li>
-                    <li><a class="text-muted" href="https://rsarrasyid.id/karir">Karir</a></li>
-                    <li><a class="text-muted" href="https://rsarrasyid.id/artikel">Artikel</a></li>
+                    <li><a class="text-muted" href="https://rsarrasyid.id/jadwaldokter">FAQ</a></li>
+                    <li><a class="text-muted" href="https://rsarrasyid.id/daftarpasien">Kegiatan</a></li>
+                    <li><a class="text-muted" href="https://rsarrasyid.id/artikel">Regulasi</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
@@ -35,15 +33,13 @@
         </div>
     </div>
 </section>
-<section class="footer_last">
+<section class="footer_last"  style="padding-bottom:26px;">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-6 col-xs-12">
-                <p class="text-muted">Copyright © 2020. All Right Reserved. Affiliation with <a style="" href='https://www.ristekbrin.go.id/'>Kementerian Ristek / BRIN</a>
-                <div class="">
-                </div>
+            <div class="col-lg-8 col-md-8 col-xs-12">
+                <span class="text-muted"> <img height="20" src="https://frp.comnets.id//images/ristek-brin.png">&nbsp;&nbsp;Copyright © 2020. All Right Reserved. Affiliation with <a style="" href='https://www.ristekbrin.go.id/'>Kementerian Ristek / BRIN</a>
             </div>
-            <div class="col-lg-6 col-md-6 col-xs-12">
+            <div class="col-lg-4 col-md-4 col-xs-12">
                 <div style="display:flex;float:right;" id="footer_rights">
                     <a href="<?php base_url();?>">Home</a>
                     <a href="<?php base_url();?>galeri">Galeri</a>

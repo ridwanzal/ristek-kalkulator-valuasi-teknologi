@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 col-xs-4"> 
                 <h1 class="h3 mb-3 font-weight-bold">Sign in</h1>
-                <label for="inputEmail" class="sr-only">Email address</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <label for="inputEmail" class="sr-only">Email address | NIDN</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address / Username / NIDN" required autofocus>
                 <br/>   
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
@@ -15,6 +15,7 @@
                     </label>
                 </div>
                 <button class="btn btn-xs btn-success btn-block" type="submit">Sign in</button>
+                <button class="btn btn-xs btn-outline-primary btn-block" type="submit"><img height="20" src="http://sinta.ristekbrin.go.id/assets/img/sinta_logo.png">&nbsp;&nbsp;&nbsp;Sign in dengan Sinta</button>
             </div>
             <div class="col-lg-2 col-md-2 col-xs-2">
 
