@@ -8,7 +8,8 @@ use PHPHtmlParser\Dom; // lib html parser
 use FastSimpleHTMLDom\Document; // lib html parser
 class Login extends CI_Controller {
 
-	function __construct(){
+	function __construct()
+	{
 		parent::__construct();		
 		$this->load->helper('url');
 		$this->load->library('form_validation');
@@ -25,13 +26,15 @@ class Login extends CI_Controller {
 		}else{
 			$data['title_bar'] = "";
 			$data['header_page'] = "";
-			$this->load->view('header', $data);
-			$this->load->view('login', $data);
-			$this->load->view('footer', $data);
+			$this->load->view('frontview/header', $data);
+			$this->load->view('frontview/navbar', $data);
+			$this->load->view('frontview/login', $data);
+			$this->load->view('frontview/footer', $data);
 		}
   	}
 	
-	public function process_login(){
+	public function process_login()
+	{
 		$token = $this->input->post('token', TRUE);
 		$userdetails = $this->input->post('userdetails', TRUE);
 		$data_session = array(

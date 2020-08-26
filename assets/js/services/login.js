@@ -1,4 +1,4 @@
-$(function(){
+    $(function(){
     const base_url_access = 'http://api.sinta.ristekdikti.go.id/fusio/public/consumer/login';
     const base_url_login = 'http://api.sinta.ristekdikti.go.id/v2/author/login';
     const web_url = 'http://localhost/ristek-kalkulator-valuasi-teknologi'
@@ -12,7 +12,7 @@ $(function(){
     $('#p_username').attr('required', true);
     $('#p_username').attr('required', true);
     
-    /**
+    /**         
      user test
      @username anism@unissula.ac.id
      @passowrd 123456
@@ -30,6 +30,8 @@ $(function(){
                 $.ajax({
                     url : base_url_access,
                     type : 'POST',
+                    crossDomain: true,
+                    dataType: "json",
                     data : access_api,
                     success : function(res){
                             access_token = res.token;   

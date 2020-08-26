@@ -24,9 +24,10 @@ class Main extends CI_Controller {
 		}else{
 			$data['title_bar'] = "Kalkulator Valuasi Teknologi";
 			$data['header_page'] = "Kalkulator Valuasi Teknologi";
-			$this->load->view('header', $data);
-			$this->load->view('login', $data);
-			$this->load->view('footer', $data);
+			$this->load->view('frontview/header', $data);
+			$this->load->view('frontview/navbar', $data);
+			$this->load->view('frontview/index', $data);
+			$this->load->view('frontview/footer', $data);
 		}
 	}
   

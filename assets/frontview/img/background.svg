@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1920mm"
+   height="1080mm"
+   viewBox="0 0 1920 1080"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0 (1.0+r73+1)"
+   sodipodi:docname="background.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient869">
+      <stop
+         style="stop-color:#164796;stop-opacity:1;"
+         offset="0"
+         id="stop865" />
+      <stop
+         style="stop-color:#168096;stop-opacity:1"
+         offset="1"
+         id="stop867" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="matrix(0.19742908,0,0,0.19742908,500.17255,5.2232308)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient869"
+       id="linearGradient871"
+       x1="7448.1157"
+       y1="-26.456144"
+       x2="1180.7644"
+       y2="4006.7312"
+       gradientUnits="userSpaceOnUse" />
+    <clipPath
+       id="clipPath5845"
+       clipPathUnits="userSpaceOnUse">
+      <rect
+         y="1.8405915e-05"
+         x="-119.27115"
+         height="1145.3657"
+         width="2036.2058"
+         id="rect5847"
+         style="fill:#ffffff;stroke:#1a1a1a;stroke-width:2.12105" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     showguides="false"
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.0875"
+     inkscape:cx="5396.2337"
+     inkscape:cy="3266.4492"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1853"
+     inkscape:window-height="1025"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1">
+    <sodipodi:guide
+       position="0,1080"
+       orientation="0,7256.6929"
+       id="guide10" />
+    <sodipodi:guide
+       position="1920,1080"
+       orientation="4081.8898,0"
+       id="guide12" />
+    <sodipodi:guide
+       position="1920,0"
+       orientation="0,-7256.6929"
+       id="guide14" />
+    <sodipodi:guide
+       position="0,0"
+       orientation="-4081.8898,0"
+       id="guide16" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ffffff;stroke:#1a1a1a;stroke-width:2"
+       id="rect20"
+       width="1920"
+       height="1080"
+       x="0"
+       y="1.8405915e-05" />
+    <g
+       clip-path="url(#clipPath5845)"
+       transform="matrix(0.94293021,0,0,0.94293021,112.46437,1.0504212e-6)"
+       id="g5841">
+      <path
+         d="M 1136.356,1.8405914e-5 C 1143.0133,22.541135 1150.1384,48.856423 1157.7146,79.597493 c 30.6765,124.469907 113.6679,205.508997 327.087,256.310667 112.4136,26.75856 83.6714,142.14435 100.1738,214.22922 25.3874,110.89571 271.7283,86.56934 271.7283,236.51829 0,66.05578 46.7601,110.60739 113.9435,140.69765 V 614.58104 c -1.2334,-2.52554 -1.2803,-4.32299 0,-5.3036 V 1.8405914e-5 Z"
+         style="fill:#164996;fill-opacity:1;stroke:none;stroke-width:0.228669px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         id="path5270" />
+      <path
+         id="path18"
+         style="fill:url(#linearGradient871);fill-opacity:1;stroke:none;stroke-width:0.197428px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 1212.5425,5.2232308 c 5.7479,19.4616012 11.8995,42.1817552 18.4407,68.7230562 26.4856,107.465113 98.1388,177.432833 282.4012,221.294103 97.0559,23.10287 72.2403,122.72492 86.4881,184.96172 21.9191,95.7454 234.6056,74.74243 234.6056,204.20567 0,57.03147 40.3717,95.4966 98.3767,121.47596 V 535.84162 c -1.0649,-2.18049 -1.1053,-3.73238 0,-4.57902 V 5.2232308 Z" />
+    </g>
+  </g>
+</svg>
