@@ -24,6 +24,10 @@ p, label, li, li > a, h6, h5{
     font-size: 14px;
 }
 
+td,th {
+    font-size: 14px;
+}
+
 .section_footer{
     padding-top:50px;
     padding-bottom:30px;

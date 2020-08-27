@@ -22,9 +22,45 @@ class Manage extends CI_Controller {
       }
       
       public function index(){
+		$data['title_bar'] = "Kalkulator Valuasi Teknologi";
+        $data['header_page'] = "Kalkulasi baru";
+        $data['breadcrumbs'] = 'Kalkulasi baru';
 		$this->load->view('admin/header');
 		$this->load->view('admin/navbar');
 		$this->load->view('admin/dashboard/index');
         $this->load->view('admin/footer');
-      }
+	  }
+	  
+	  public function add_costbased(){
+		$data['title_bar'] = "Kalkulator Valuasi Teknologi";
+        $data['header_page'] = "Tambah Kalkulasi baru - Cost Based";
+        $data['breadcrumbs'] = 'Tambah Kalkulasi baru - Cost Based';
+		$this->load->view('admin/header');
+		$this->load->view('admin/navbar');
+		$this->load->view('frontview/components/breadcrumbs_admin', $data);
+		$this->load->view('admin/dashboard/methodcost');
+        $this->load->view('admin/footer'); 
+	  }
+
+	  public function add_incomebased(){
+		$data['title_bar'] = "Kalkulator Valuasi Teknologi";
+        $data['header_page'] = "Tambah Kalkulasi baru - Income Based";
+        $data['breadcrumbs'] = 'Tambah Kalkulasi baru - Income Based';
+		$this->load->view('admin/header');
+		$this->load->view('admin/navbar');
+		$this->load->view('frontview/components/breadcrumbs_admin', $data);
+		$this->load->view('admin/dashboard/index');
+        $this->load->view('admin/footer'); 
+	  }
+	  
+	  public function add_marketbased(){
+		$data['title_bar'] = "Kalkulator Valuasi Teknologi";
+        $data['header_page'] = "Tambah Kalkulasi baru - Market Based";
+        $data['breadcrumbs'] = 'Tambah Kalkulasi baru - Market Based';
+		$this->load->view('admin/header');
+		$this->load->view('admin/navbar');
+		$this->load->view('frontview/components/breadcrumbs_admin', $data);
+		$this->load->view('admin/dashboard/index');
+        $this->load->view('admin/footer'); 
+	  }
 }

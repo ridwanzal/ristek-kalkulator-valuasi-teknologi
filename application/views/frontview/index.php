@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-xs-6"> 
-                <h2 class="main_font" style="margin-bottom:30px;">Kalkulator Inovasi</h2>
+                <h2 class="main_font" style="margin-bottom:30px;">Welcome to Kalsinov</h2>
                 <p style="line-height:30px;">
                     Valuasi Teknologi terkait Kekayaan Intelektual dan Aset tak berwujud. 
                     Kalkulasikan valuasi teknologi dengan pendekatan & metode
@@ -10,9 +10,6 @@
                 </p>
                 <a href="<?php echo base_url();?>login" class="btn btn-success">
                     Uji Coba kalkulasi
-                </a>
-                <a href="<?php echo base_url();?>prosedur" class="btn btn-primary">
-                    Pelajari lebih
                 </a>
             </div>
             <div class="col-lg-6 col-md-6 col-xs-6"> 
