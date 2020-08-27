@@ -507,3 +507,7 @@ katsinov
 hr.dashed {
     border-top: 2px dashed #999;
 }
+
+.captions{
+    color : #888 !important;
+}
