@@ -49,7 +49,7 @@ class Manage extends CI_Controller {
 		$this->load->view('admin/header');
 		$this->load->view('admin/navbar');
 		$this->load->view('frontview/components/breadcrumbs_admin', $data);
-		$this->load->view('admin/dashboard/index');
+		$this->load->view('admin/dashboard/methodincome');
         $this->load->view('admin/footer'); 
 	  }
 	  

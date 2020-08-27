@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'main';
 $route['manage'] = 'manage';
 $route['manage/add/costbased'] = 'manage/add_costbased';
+$route['manage/add/incomebased'] = 'manage/add_incomebased';
 $route['process_login'] = 'login/process_login';
 $route['logout'] = 'login/logout';
 $route['profile'] = 'profile';
