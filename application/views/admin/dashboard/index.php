@@ -5,8 +5,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <h5 class="card-title">Buat kalkulasi perhitungan paten : </h5>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Tambah Kalkulasi baru
