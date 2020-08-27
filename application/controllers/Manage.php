@@ -37,7 +37,7 @@ class Manage extends CI_Controller {
         $data['breadcrumbs'] = 'Tambah Kalkulasi baru - Cost Based';
 		$this->load->view('admin/header');
 		$this->load->view('admin/navbar');
-		$this->load->view('frontview/components/breadcrumbs_admin', $data);
+		$this->load->view('admin/components/breadcrumbs', $data);
 		$this->load->view('admin/dashboard/methodcost');
         $this->load->view('admin/footer'); 
 	  }
@@ -48,7 +48,7 @@ class Manage extends CI_Controller {
         $data['breadcrumbs'] = 'Tambah Kalkulasi baru - Income Based';
 		$this->load->view('admin/header');
 		$this->load->view('admin/navbar');
-		$this->load->view('frontview/components/breadcrumbs_admin', $data);
+		$this->load->view('admin/components/breadcrumbs', $data);
 		$this->load->view('admin/dashboard/methodincome');
         $this->load->view('admin/footer'); 
 	  }
@@ -59,7 +59,7 @@ class Manage extends CI_Controller {
         $data['breadcrumbs'] = 'Tambah Kalkulasi baru - Market Based';
 		$this->load->view('admin/header');
 		$this->load->view('admin/navbar');
-		$this->load->view('frontview/components/breadcrumbs_admin', $data);
+		$this->load->view('admin/components/breadcrumbs', $data);
 		$this->load->view('admin/dashboard/index');
         $this->load->view('admin/footer'); 
 	  }
