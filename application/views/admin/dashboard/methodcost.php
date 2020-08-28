@@ -8,32 +8,32 @@
                         <br/>
                         <form>
                             <div class="form-group">
-                                <label class="captions" for="formGroupExampleInput"><span class="badge badge-pill  badge-warning">1</span>&nbsp;Nama Inventor : </label>
+                                <label class="captions" for="formGroupExampleInput"><span class="badge badge-pill  badge-warning">1</span>&nbsp;Nama Inventor <i style="color: red">*</i> </label>
                                 <input type="text" class="form-control form-control-sm" id="formGroupExampleInput" placeholder="">
                             </div>
 
                             <div class="form-group">
-                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">2</span>&nbsp;Institusi Penghasil/ Pemilik Invensi : </label>
+                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">2</span>&nbsp;Institusi Penghasil/ Pemilik Invensi <i style="color: red">*</i> </label>
                                 <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
                             </div>
 
                             <div class="form-group">
-                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">3</span>&nbsp;Unit Kerja Penghasil/ Pemilik Invensi : </label>
+                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">3</span>&nbsp;Unit Kerja Penghasil/ Pemilik Invensi <i style="color: red">*</i> </label>
                                 <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
                             </div>
 
                             <div class="form-group">
-                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">4</span>&nbsp;Judul Penelitian : </label>
+                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">4</span>&nbsp;Judul Penelitian <i style="color: red">*</i> </label>
                                 <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
                             </div>
 
                             <div class="form-group">
-                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">5</span>&nbsp;Total Biaya Masukan/Realisasi Pagu Penelitian (R) :</label>
+                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">5</span>&nbsp;Total Biaya Masukan/Realisasi Pagu Penelitian (R) <i style="color: red">*</i></label>
                                 <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
                             </div>
                             
                             <div class="form-group">
-                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">6</span>&nbsp;Asal Biaya Masukan Masukan/Realisasi Pagu Penelitian : </label>
+                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">6</span>&nbsp;Asal Biaya Masukan Masukan/Realisasi Pagu Penelitian <i style="color: red">*</i> </label>
                                     <select class="custom-select custom-select-sm">
                                         <option value="">-- Silahkan pilih</option>
                                         <option value="1">Hibah Ristek</option>
@@ -43,7 +43,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="captions" for="formGroupExampleInput2">Upload dokumen pendukung :</label>
+                                <label class="captions" for="formGroupExampleInput2">Upload dokumen pendukung <i style="color: red">*</i></label>
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="customFile">
                                         <label class="custom-file-label" for="customFile">Choose file</label>
@@ -53,14 +53,14 @@
                             <!-- <hr class="dashed"> -->
                             <!-- separator =============================== -->
                             <div class="form-group">
-                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">7</span>&nbsp;Luaran Penelitian : </label>
+                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">7</span>&nbsp;Luaran Penelitian <i style="color: red">*</i>   </label>
                             </div>
                             <div class="alert alert-secondary" role="alert">
                                 Luaran penelitian non paten (diisi jumlah luaran yang dihasilkan dari penelitian)
                             </div>
                             <div class="form-row form-group">
                                 <div class="col">
-                                    <label class="captions">Publikasi pada jurnal internasional</label>
+                                    <label class="captions">Publikasi pada jurnal internasional <i style="color: red">*</i></label>
                                     <input type="number" class="form-control" placeholder="" value="1">
                                 </div>
                                 <div class="col-lg-6">
@@ -71,7 +71,7 @@
 
                             <div class="form-row form-group">
                                 <div class="col">
-                                    <label class="captions">Publikasi pada jurnal nasional</label>
+                                    <label class="captions">Publikasi pada jurnal nasional <i style="color: red">*</i></label>
                                     <input type="number" class="form-control" placeholder="" value="1">
                                 </div>
                                 <div class="col-lg-6">
@@ -82,7 +82,7 @@
 
                             <div class="form-row form-group">
                                 <div class="col">
-                                    <label class="captions">Buku Internasional</label>
+                                    <label class="captions">Buku Internasional <i style="color: red">*</i></label>
                                     <input type="number" class="form-control" placeholder="" value="1">
                                 </div>
                                 <div class="col-lg-6">
@@ -93,7 +93,7 @@
 
                             <div class="form-row form-group">
                                 <div class="col">
-                                    <label class="captions">Publikasi pada prosiding internasional</label>
+                                    <label class="captions">Publikasi pada prosiding internasional <i style="color: red">*</i></label>
                                     <input type="number" class="form-control" placeholder="" value="1">
                                 </div>
                                 <div class="col-lg-6">
@@ -104,7 +104,7 @@
 
                             <div class="form-row form-group">
                                 <div class="col">
-                                    <label class="captions">Publikasi pada prosiding nasional</label>
+                                    <label class="captions">Publikasi pada prosiding nasional <i style="color: red">*</i></label>
                                     <input type="number" class="form-control" placeholder="" value="1">
                                 </div>
                                 <div class="col-lg-6">
@@ -118,13 +118,13 @@
                                 Luaran penelitian berupa paten
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput2">Judul Invensi </label>
+                                <label for="formGroupExampleInput2">Judul Invensi <i style="color: red">*</i></label>
                                 <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
                             </div>
                             
                             
                             <div class="form-group">
-                                <label class="captions">Jenis Paten </label>
+                                <label class="captions">Jenis Paten <i style="color: red">*</i> </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="jpt" id="inlineRadio1" value="option1">
@@ -137,7 +137,7 @@
                             <br/>
                             <br/>
                             <div class="form-group">
-                                <label class="captions">Status Peromohonan</label>
+                                <label class="captions">Status Peromohonan <i style="color: red">*</i></label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="stp" id="inlineRadio1" value="option1">
@@ -150,21 +150,21 @@
                             <br/>
                             <br/>
                             <div class="form-group">
-                                <label class="captions">Nomor pendaftaran (Pemohon) :</label>
+                                <label class="captions">Nomor pendaftaran (Pemohon) <i style="color: red">*</i></label>
                                 <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
                             </div>
                             <div class="form-group">
-                                <label class="captions">Nomor Sertifikat Paten/Paten Sederhana (jika sudah granted) :</label>
+                                <label class="captions">Nomor Sertifikat Paten/Paten Sederhana (jika sudah granted) <i style="color: red">*</i></label>
                                 <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
                             </div>
                             <div class="form-group">
-                                <label class="captions">Asal Biaya Pendaftaran (Permohonan) Paten, misal Raih KI, Institusi Penghasil/Pemilik Invensi, dll :</label>
+                                <label class="captions">Asal Biaya Pendaftaran (Permohonan) Paten, misal Raih KI, Institusi Penghasil/Pemilik Invensi, dll <i style="color: red">*</i></label>
                                 <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
                             </div>
 
                             <div class="form-group">
                                 <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung berupa Formulir (Bukti) pendaftaran dan/atau
-Sertifikat Paten/Paten Sederhana :</label>
+Sertifikat Paten/Paten Sederhana <i style="color: red">*</i></label>
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="customFile">
                                         <label class="custom-file-label" for="customFile">Choose file</label>
