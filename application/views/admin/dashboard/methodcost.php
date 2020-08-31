@@ -179,7 +179,7 @@ Sertifikat Paten/Paten Sederhana <i style="color: red">*</i></label>
                 <!-- POIN B -->
                 <div class="row">
                     <div class="col-lg-9 col-md-9">
-                        <p>B. dentitas Penelitian dan Invensi</p>
+                        <p>B. Identitas Penelitian dan Invensi</p>
                         <table class="table table-sm table-bordered">
                             <thead>
                                 <tr>
@@ -256,7 +256,7 @@ Sertifikat Paten/Paten Sederhana <i style="color: red">*</i></label>
                 <!-- POIN C -->
                 <div class="row">
                     <div class="col-lg-9 col-md-9">
-                        <p>C. dentitas Penelitian dan Invensi</p>   
+                        <p>C. Identitas Penelitian dan Invensi</p>   
                         <table class="table table-sm table-bordered">
                             <thead>
                                 <tr>
