@@ -27,7 +27,7 @@
                   <a class="nav-link" href="<?php echo base_url();?>tentang" title="Kegiatan">Tentang<span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url();?>kontak" title="Kontak">Kontak <span class="sr-only"></span></a>
+                  <a class="nav-link" href="<?php echo base_url();?>kontak" title="Kontak">Hubungi Kami <span class="sr-only"></span></a>
                 </li>
                 </ul>
                 <form method="GET" action="<?php echo base_url(); ?>/blog/blog_content_list_search">

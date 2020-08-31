@@ -334,7 +334,8 @@ Sertifikat Paten/Paten Sederhana <i style="color: red">*</i></label>
 
                 <div class="row">
                     <div class="col-lg-9 col-md-9">
-                        <button class="btn btn-success btn-sm">Submit</button>
+                        <button class="btn btn-primary btn-sm">Hitung</button>
+                        <button class="btn btn-success btn-sm">Simpan</button>
                     </div>
                 </div>
 
