@@ -11,11 +11,11 @@
                                             Tambah Kalkulasi baru
                                         </button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="<?php base_url();?>manage/add/costbased">Cost Based</a>
+                                            <a class="dropdown-item" href="<?php echo base_url();?>manage/add/costbased">Cost Based</a>
                                             <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="<?php base_url();?>manage/add/incomebased">Income Based</a>
+                                            <a class="dropdown-item" href="<?php echo base_url();?>manage/add/incomebased">Income Based</a>
                                             <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="<?php base_url();?>manage/add/marketbased">Market Based</a>
+                                            <a class="dropdown-item" href="<?php echo base_url();?>manage/add/marketbased">Market Based</a>
                                         </div>
                                     </div>
                             </div>
