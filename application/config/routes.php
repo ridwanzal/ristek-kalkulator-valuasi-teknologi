@@ -62,3 +62,6 @@ $route['faq'] = 'frontview/faq';
 $route['kontak'] = 'frontview/kontak';
 $route['kegiatan'] = 'frontview/kegiatan';
 $route['tentang'] = 'frontview/tentang';
+
+// error / not found page
+$route['404_override'] = 'notfound';
