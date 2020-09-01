@@ -53,6 +53,7 @@ $route['default_controller'] = 'main';
 $route['manage'] = 'manage';
 $route['manage/add/costbased'] = 'manage/add_costbased';
 $route['manage/add/incomebased'] = 'manage/add_incomebased';
+$route['manage/add/incomebased_calculator'] = 'manage/add_incomebased_calculator';
 $route['process_login'] = 'login/process_login';
 $route['logout'] = 'login/logout';
 $route['profile'] = 'profile';
