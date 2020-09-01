@@ -179,7 +179,7 @@ Sertifikat Paten/Paten Sederhana <i style="color: red">*</i></label>
                 <!-- POIN B -->
                 <div class="row">
                     <div class="col-lg-9 col-md-9">
-                        <p>B. Identitas Penelitian dan Invensi</p>
+                        <p>B. Nilai Keluaran Penelitian Berupa Paten (Ki)</p>
                         <table class="table table-sm table-bordered">
                             <thead>
                                 <tr>
@@ -256,7 +256,7 @@ Sertifikat Paten/Paten Sederhana <i style="color: red">*</i></label>
                 <!-- POIN C -->
                 <div class="row">
                     <div class="col-lg-9 col-md-9">
-                        <p>C. Identitas Penelitian dan Invensi</p>   
+                        <p>C. Nilai Perolehan Paten (Pi)</p>   
                         <table class="table table-sm table-bordered">
                             <thead>
                                 <tr>
@@ -335,7 +335,7 @@ Sertifikat Paten/Paten Sederhana <i style="color: red">*</i></label>
                 <div class="row">
                     <div class="col-lg-9 col-md-9">
                         <button class="btn btn-primary btn-sm">Hitung</button>
-                        <button class="btn btn-success btn-sm">Simpan</button>
+                        <button class="btn btn-success btn-sm" disabled>Simpan</button>
                     </div>
                 </div>
 
