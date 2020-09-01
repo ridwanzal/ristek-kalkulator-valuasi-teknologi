@@ -24,8 +24,8 @@ class Login extends CI_Controller {
 		if($cek){
 			redirect(base_url('manage'));
 		}else{
-			$data['title_bar'] = "";
-			$data['header_page'] = "";
+			$data['title_bar'] = "Login";
+			$data['header_page'] = "Login";
 			$this->load->view('frontview/header', $data);
 			$this->load->view('frontview/navbar', $data);
 			$this->load->view('frontview/login', $data);

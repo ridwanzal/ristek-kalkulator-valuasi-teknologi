@@ -515,3 +515,7 @@ hr.dashed {
 .captions{
     color : #888 !important;
 }
+
+.bolds{
+    font-weight: bold !important;
+}

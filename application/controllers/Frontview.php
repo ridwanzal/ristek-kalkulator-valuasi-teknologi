@@ -18,7 +18,7 @@ class Frontview extends CI_Controller {
       }
 
     function prosedur(){
-        $data['title_bar'] = "Kalkulator Valuasi Teknologi";
+        $data['title_bar'] = "Prosedur";
         $data['header_page'] = "Prosedur";
         $data['breadcrumbs'] = 'Prosedur';
         $this->load->view('frontview/header', $data);
@@ -29,7 +29,7 @@ class Frontview extends CI_Controller {
     }
 
     function faq(){
-        $data['title_bar'] = "Kalkulator Valuasi Teknologi";
+        $data['title_bar'] = "FAQ";
         $data['header_page'] = "FAQ";
         $data['breadcrumbs'] = 'FAQ';
         $this->load->view('frontview/header', $data);
@@ -40,7 +40,7 @@ class Frontview extends CI_Controller {
     }
 
     function kegiatan(){
-        $data['title_bar'] = "Kalkulator Valuasi Teknologi";
+        $data['title_bar'] = "Kegiatan";
         $data['header_page'] = "Kegiatan";
         $data['breadcrumbs'] = 'Kegiatan';
         $this->load->view('frontview/header', $data);
@@ -51,7 +51,7 @@ class Frontview extends CI_Controller {
     }
 
     function panduan(){
-        $data['title_bar'] = "Kalkulator Valuasi Teknologi";
+        $data['title_bar'] = "Panduan";
         $data['header_page'] = "Kegiatan";
         $data['breadcrumbs'] = 'Kegiatan';
         $this->load->view('frontview/header', $data);
@@ -62,9 +62,9 @@ class Frontview extends CI_Controller {
     }
 
     function kontak(){
-        $data['title_bar'] = "Kalkulator Valuasi Teknologi";
-        $data['header_page'] = "Kontak";
-        $data['breadcrumbs'] = 'Kontak';
+        $data['title_bar'] = "Hubungi Kami";
+        $data['header_page'] = "Hubungi Kami";
+        $data['breadcrumbs'] = 'Hubungi Kami';
         $this->load->view('frontview/header', $data);
         $this->load->view('frontview/navbar', $data);
         $this->load->view('frontview/components/breadcrumbs', $data);
@@ -73,7 +73,7 @@ class Frontview extends CI_Controller {
     }
 
     function tentang(){
-        $data['title_bar'] = "Kalkulator Valuasi Teknologi";
+        $data['title_bar'] = "Tentang";
         $data['header_page'] = "Tentang";
         $data['breadcrumbs'] = 'Tentang';
         $this->load->view('frontview/header', $data);

@@ -9,13 +9,9 @@
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
                 <br/>
-                <div class="checkbox mb-3">
-                    <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                </div>
-                <button class="btn btn-xs btn-success btn-block" type="submit">Sign in</button>
                 <a href="<?php echo base_url(); ?>manage" class="btn btn-xs btn-outline-primary btn-block" type="submit"><img height="20" src="http://sinta.ristekbrin.go.id/assets/img/sinta_logo.png">&nbsp;&nbsp;&nbsp;Sign in dengan Sinta</a>
+                <br/>
+                <span>Belum punya akun ? <a href="">Daftar</a></span>
             </div>
             <div class="col-lg-2 col-md-2 col-xs-2">
 
