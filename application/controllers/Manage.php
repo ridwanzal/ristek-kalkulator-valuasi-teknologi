@@ -53,6 +53,17 @@ class Manage extends CI_Controller {
         $this->load->view('admin/footer'); 
 	  }
 	  
+	  public function add_incomebased_calculator(){
+		$data['title_bar'] = "Kalkulator Valuasi Teknologi";
+        $data['header_page'] = "Tambah Kalkulasi baru - Income Based";
+        $data['breadcrumbs'] = 'Tambah Kalkulasi baru - Income Based';
+		$this->load->view('admin/header');
+		$this->load->view('admin/navbar');
+		$this->load->view('frontview/components/breadcrumbs_admin', $data);
+		$this->load->view('admin/dashboard/methodincome_calculator');
+        $this->load->view('admin/footer'); 
+	  }
+	  
 	  public function add_marketbased(){
 		$data['title_bar'] = "Kalkulator Valuasi Teknologi";
         $data['header_page'] = "Tambah Kalkulasi baru - Market Based";
