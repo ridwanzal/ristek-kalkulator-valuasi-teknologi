@@ -71,6 +71,7 @@
                                                 type : 'POST',
                                                 data : session_data,
                                                 success : function(res){
+                                                    console.log('apa nih response');
                                                     console.log(res);
                                                     /**
                                                      * redirect to manage
