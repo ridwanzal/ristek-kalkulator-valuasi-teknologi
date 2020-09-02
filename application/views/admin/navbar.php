@@ -19,8 +19,23 @@
                     </li>
                 </ul>
                 <form method="GET" action="<?php echo base_url(); ?>/blog/blog_content_list_search">
-                  <div style:display:flex; class="searchings">
-                    <a class="nav-link btn-xs btn-success" style="border-radius:4px;" href="<?php echo base_url();?>login" title="Kontak"><span><img height="20" src="<?php echo base_url();?>assets/user.svg"></span>&nbsp;&nbsp;Johny Doe <span class="sr-only"></span></a>
+                  <div style="display:flex"; class="searchings">
+                    <?php
+                      $userdetails = $this->session->userdata('userdetails'); 
+                      // echo $userdetails[0]->name;                  
+                    ?>
+                    <div style="color : #fff;margin-right:1.1rem;position:relative;top:7px;font-size:14px;">Selamat Datang, </div>
+                    <!-- <a class="nav-link btn-xs btn-success" style="border-radius:4px;" href="<?php echo base_url();?>login" title="Kontak"><span><img height="20" src="<?php echo base_url();?>assets/user.svg"></span>&nbsp;&nbsp;<?php echo $userdetails['name']?><span class="sr-only"></span></a> -->
+                    <div class="btn-group">
+                        <button class="btn btn-success btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span><img height="20" src="<?php echo base_url();?>assets/user.svg"></span>&nbsp;&nbsp;<?php echo $userdetails['name']?>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="<?php echo base_url()?>logout">Logout</a>
+                        </div>
+                    </div>
                   </div>
               </form>
             </div>

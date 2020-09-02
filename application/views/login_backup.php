@@ -1,4 +1,4 @@
-    <!-- <div class="login-content">
+<div class="login-content">
         <div class="nk-block toggled" id="l-login">
                     <br/>
                     <center>
@@ -52,5 +52,5 @@
                 </div>
             </div>  
         </div>
-    </div> -->
+    </div>
     
