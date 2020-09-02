@@ -1,7 +1,7 @@
     $(function(){
     const base_url_access = 'http://api.sinta.ristekdikti.go.id/fusio/public/consumer/login';
     const base_url_login = 'http://api.sinta.ristekdikti.go.id/v2/author/login';
-    const web_url = 'https://kalsinov-ristekbrin.ridwanzal.com'
+    const web_url = 'http://kalsinov-ristekbrin.ridwanzal.com'
     const el_click_login = $('#submit_login');
     const access_api = {
         username : 'KALKULATORHKI',
