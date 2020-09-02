@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  -->
     <meta name="description" content="Kalsinov - Kementerian Riset dan Teknologi / Badan Riset dan Inovasi">
     <meta name="keywords" content="Kalsinov - Kementerian Riset dan Teknologi / Badan Riset dan Inovasis">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
