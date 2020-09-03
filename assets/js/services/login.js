@@ -74,7 +74,7 @@
                                                     window.location.replace(web_url + '/manage');
                                                 }
                                             });
-                                        }, 500);
+                                        }, 10);
                                     }else{
                                         loader.hide();
                                         alert('Login failed (Please provide valid email & password)');

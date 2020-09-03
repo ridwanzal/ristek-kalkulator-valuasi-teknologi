@@ -4,6 +4,8 @@ function logout(){
     if(check_userdetails != null || check_token != null){
         localStorage.removeItem('userdetails');
         sessionStorage.removeItem('token');
+        sessionStorage.removeItem('get_google');
+        sessionStorage.removeItem('get_scopus')
         window.location.replace(web_url + '/logout');
     }
 }
