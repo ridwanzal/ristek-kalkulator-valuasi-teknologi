@@ -15,31 +15,32 @@ class Manage extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		date_default_timezone_set('Asia/Jakarta'); // default time zone indonesia
-		// $login_status = $this->session->userdata('token');
-        // if($login_status == NULL || $login_status == ''){
-        //       redirect(base_url('login'));
-        // }
+		$login_status = $this->session->userdata('token');
+        if($login_status == NULL || $login_status == ''){
+              redirect(base_url('login'));
+        }
       }
       
       public function index(){
 		$data['title_bar'] = "Kalkulator Valuasi Teknologi";
-        $data['header_page'] = "Kalkulasi baru";
-        $data['breadcrumbs'] = 'Kalkulasi baru';
-		$this->load->view('admin/header');
-		$this->load->view('admin/navbar');
-		$this->load->view('admin/dashboard/index');
-        $this->load->view('admin/footer');
+		$data['header_page'] = "Kalkulasi baru";
+		$data['breadcrumbs'] = 'Kalkulasi baru';
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/navbar', $data);
+		$this->load->view('admin/components/breadcrumbs_parent', $data);
+		$this->load->view('admin/dashboard/index', $data);
+		$this->load->view('admin/footer', $data);
 	  }
 	  
 	  public function add_costbased(){
 		$data['title_bar'] = "Cost Based";
         $data['header_page'] = "Tambah Kalkulasi baru - Cost Based";
         $data['breadcrumbs'] = 'Tambah Kalkulasi baru - Cost Based';
-		$this->load->view('admin/header');
-		$this->load->view('admin/navbar');
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/navbar', $data);
 		$this->load->view('admin/components/breadcrumbs', $data);
-		$this->load->view('admin/dashboard/methodcost');
-        $this->load->view('admin/footer'); 
+		$this->load->view('admin/dashboard/methodcost', $data);
+        $this->load->view('admin/footer', $data); 
 	  }
 
 	  public function add_incomebased(){
@@ -49,8 +50,8 @@ class Manage extends CI_Controller {
 		$this->load->view('admin/header');
 		$this->load->view('admin/navbar');
 		$this->load->view('admin/components/breadcrumbs', $data);
-		$this->load->view('admin/dashboard/methodincome');
-        $this->load->view('admin/footer'); 
+		$this->load->view('admin/dashboard/methodincome', $data);
+        $this->load->view('admin/footer', $data); 
 	  }
 	  
 	  public function add_incomebased_calculator(){
@@ -60,8 +61,8 @@ class Manage extends CI_Controller {
 		$this->load->view('admin/header');
 		$this->load->view('admin/navbar');
 		$this->load->view('admin/components/breadcrumbs', $data);
-		$this->load->view('admin/dashboard/methodincome_calculator');
-        $this->load->view('admin/footer'); 
+		$this->load->view('admin/dashboard/methodincome_calculator', $data);
+        $this->load->view('admin/footer', $data); 
 	  }
 	  
 	  public function add_marketbased(){
@@ -71,18 +72,18 @@ class Manage extends CI_Controller {
 		$this->load->view('admin/header');
 		$this->load->view('admin/navbar');
 		$this->load->view('admin/components/breadcrumbs', $data);
-		$this->load->view('admin/dashboard/index');
-        $this->load->view('admin/footer'); 
+		$this->load->view('admin/dashboard/index', $data);
+        $this->load->view('admin/footer', $data); 
 	  }
 
 	  public function profile(){
 		$data['title_bar'] = "Kalkulator Valuasi Teknologi";
         $data['header_page'] = "Tambah Kalkulasi baru - Market Based";
-        $data['breadcrumbs'] = 'Tambah Kalkulasi baru - Market Based';
-		$this->load->view('admin/header');
-		$this->load->view('admin/navbar');
+        $data['breadcrumbs'] = 'Profile';
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/navbar', $data);
 		$this->load->view('admin/components/breadcrumbs', $data);
-		$this->load->view('admin/dashboard/index');
-        $this->load->view('admin/footer'); 
+		$this->load->view('admin/dashboard/profile', $data	);
+        $this->load->view('admin/footer', $data); 
 	  }
 }

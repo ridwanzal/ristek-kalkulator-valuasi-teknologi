@@ -12,9 +12,6 @@
                       <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>manage"><img height="24" src="<?php echo base_url();?>assets/frontview/img/logo.svg">&nbsp;&nbsp;KALSINOV </a>    
                     </li>
                     <li class="nav-item active">
-                      <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>" title="Settings">Settings<span class="sr-only">(current)</span></a>    
-                    </li>
-                    <li class="nav-item active">
                       <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>" title="How to">How to<span class="sr-only">(current)</span></a>    
                     </li>
                 </ul>
@@ -31,9 +28,9 @@
                         <span><img height="20" src="<?php echo base_url();?>assets/user.svg"></span>&nbsp;&nbsp;<?php echo $userdetails['name']?>
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="<?php echo base_url();?>profile">Profile</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="<?php echo base_url()?>logout">Logout</a>
+                            <a class="dropdown-item" style="cursor:pointer;" onclick="logout()">Logout</a>
                         </div>
                     </div>
                   </div>

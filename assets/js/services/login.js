@@ -1,12 +1,4 @@
     $(function(){
-    const base_url_access = 'http://api.sinta.ristekdikti.go.id/fusio/public/consumer/login';
-    const base_url_login = 'http://api.sinta.ristekdikti.go.id/v2/author/login';
-    const web_url = 'http://localhost/ristek-kalkulator-valuasi-teknologi'
-    const el_click_login = $('#submit_login');
-    const access_api = {
-        username : 'KALKULATORHKI',
-        password : 'f0rmyAcc3ss'
-    };
     let access_token = null
     
     $('#p_username').attr('required', true);
@@ -35,7 +27,8 @@
                     data : access_api,
                     success : function(res){
                             access_token = res.token;   
-                            sessionStorage.setItem('sinta_access_token', access_token);
+
+                            sessionStorage.setItem('token', access_token);
                             console.log(access_token);
 
                             /**
@@ -57,6 +50,7 @@
                                 success : function(res){
                                     console.log(res.message)
                                     if(res.message == 'success'){
+                                        localStorage.setItem('userdetails', JSON.stringify(res.author));
                                         let userdetails = res.author;
                                         let session_data = {
                                             'token' : access_token,
@@ -71,6 +65,7 @@
                                                 type : 'POST',
                                                 data : session_data,
                                                 success : function(res){
+                                                
                                                     console.log('apa nih response');
                                                     console.log(res);
                                                     /**
@@ -105,30 +100,4 @@
     })
 });
 
-function checkEmpty(el){
-    if(el.val() == '' || el.val() == null){
-        el.css({
-            'border-bottom' : '1px solid #fc3503'
-        });
-        return true;
-    }else{
-        el.css({
-            'border-bottom' : '1px solid #ccc'
-        })
-        return false;
-    }
-}
 
-
-const loader = {
-    show : function(){
-        $('.loader').css({
-            'visibility' : 'visible'
-        });
-    },
-    hide : function(){
-        $('.loader').css({
-            'visibility' : 'hidden'
-        });
-    }
-}
