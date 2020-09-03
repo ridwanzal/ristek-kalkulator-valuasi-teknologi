@@ -30,8 +30,8 @@ function get_google(){
                                     </li></li>
                                 </ul>`;
                 $('.container_gschoolar').append(adapter);
-
             }
+            loader.hide();
         }
     })
 }
@@ -57,8 +57,8 @@ function get_scopus(){
                                     </li></li>
                                 </ul>`;
                 $('.container_scopus').append(adapter);
-
             }
+            loader.hide();
        }
    })
 }

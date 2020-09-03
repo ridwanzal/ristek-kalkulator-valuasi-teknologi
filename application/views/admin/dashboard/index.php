@@ -79,8 +79,8 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-xs-12">
                         <h5 class="bolds">Google Scholar</h5>
+                        <div class="loader"></div>
                         <div class="container_gschoolar">
-                        
                         </div>
                     </div>
                 </div>
@@ -89,6 +89,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-xs-12">
                         <h5 class="bolds">Scopus</h5>
+                        <div class="loader"></div>
                         <div class="container_scopus">
                         
                         </div>
