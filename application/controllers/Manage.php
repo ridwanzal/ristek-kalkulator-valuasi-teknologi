@@ -23,8 +23,8 @@ class Manage extends CI_Controller {
       
       public function index(){
 		$data['title_bar'] = "Kalkulator Valuasi Teknologi";
-		$data['header_page'] = "Kalkulasi baru";
-		$data['breadcrumbs'] = 'Kalkulasi baru';
+		$data['header_page'] = "Manage";
+		$data['breadcrumbs'] = 'Manage';
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/navbar', $data);
 		$this->load->view('admin/components/breadcrumbs_parent', $data);
@@ -76,14 +76,4 @@ class Manage extends CI_Controller {
         $this->load->view('admin/footer', $data); 
 	  }
 
-	  public function profile(){
-		$data['title_bar'] = "Kalkulator Valuasi Teknologi";
-        $data['header_page'] = "Tambah Kalkulasi baru - Market Based";
-        $data['breadcrumbs'] = 'Profile';
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/navbar', $data);
-		$this->load->view('admin/components/breadcrumbs', $data);
-		$this->load->view('admin/dashboard/profile', $data	);
-        $this->load->view('admin/footer', $data); 
-	  }
 }

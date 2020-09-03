@@ -35,35 +35,35 @@
                                         </div>
                                     </div> -->
                                     <div class="row">
-                                        <div class="col-lg-2 col-md-2 col-xs-2">
+                                        <div class="col-lg-1 col-md-1 col-xs-1">
                                             <img id="img_user" src="<?php echo base_url();?>assets/frontview/img/no_photo.svg">
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-xs-10">
                                         <div class="form-row">
-                                                <div class="col-md-4 mb-3">
+                                                <div class="col-md-3 mb-3">
                                                     <label for="validationTooltip01">Sinta ID</label>
-                                                    <input disabled type="text" class="form-control" id="validationTooltip01" placeholder="First name" title="<?= $userdetails['sinta_id']; ?>"  value="<?= $userdetails['sinta_id']; ?>" required>
+                                                    <input  type="text" class="form-control form-control-sm" id="validationTooltip01" placeholder="First name" title="<?= $userdetails['sinta_id']; ?>"  value="<?= $userdetails['sinta_id']; ?>" required>
                                                     <div class="valid-tooltip">
                                                         <?= $userdetails['sinta_id']; ?>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4 mb-3">
+                                                <div class="col-md-3 mb-3">
                                                     <label for="validationTooltip02">Nama</label>
-                                                    <input disabled type="text" class="form-control" id="validationTooltip02" placeholder="Last name" title="<?= $userdetails['name']; ?>" value="<?= $userdetails['name']; ?>" required>
+                                                    <input  type="text" class="form-control form-control-sm" id="validationTooltip02" placeholder="Last name" title="<?= $userdetails['name']; ?>" value="<?= $userdetails['name']; ?>" required>
                                                     <div class="valid-tooltip">
                                                         <?= $userdetails['name']; ?>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4 mb-3">
+                                                <div class="col-md-3 mb-3">
                                                     <label for="validationTooltip02">Google Scholar ID</label>
-                                                    <input disabled type="text" class="form-control" id="validationTooltip02" placeholder="Last name" title="<?= $userdetails['google_id']; ?>" value="<?= $userdetails['google_id']; ?>" required>
+                                                    <input  type="text" class="form-control form-control-sm" id="validationTooltip02" placeholder="Last name" title="<?= $userdetails['google_id']; ?>" value="<?= $userdetails['google_id']; ?>" required>
                                                     <div class="valid-tooltip">
                                                         <?= $userdetails['google_id']; ?>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4 mb-3">
+                                                <div class="col-md-3 mb-3">
                                                     <label for="validationTooltip02">Afiliasi</label>
-                                                    <input disabled type="text" class="form-control" id="validationTooltip02" placeholder="Last name" tile="<?= $userdetails['afiliasi']['name']; ?>" value="<?= $userdetails['afiliasi']['name']; ?>" required>
+                                                    <input  type="text" class="form-control form-control-sm" id="validationTooltip02" placeholder="Last name" tile="<?= $userdetails['afiliasi']['name']; ?>" value="<?= $userdetails['afiliasi']['name']; ?>" required>
                                                     <div class="valid-tooltip">
                                                         <?= $userdetails['afiliasi']['name']; ?>
                                                     </div>
