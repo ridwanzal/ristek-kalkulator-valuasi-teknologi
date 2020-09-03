@@ -2,7 +2,7 @@
   <section class="nav_container" style="padding-left:10px; padding-right:10px;">
           <nav class="navbar navbar-expand-lg navbar-light bg-light navbar_custom">
             <a href="<?php echo base_url();?>"><span id="logo_mobile">KATSINOV</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler btn-sm" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
           

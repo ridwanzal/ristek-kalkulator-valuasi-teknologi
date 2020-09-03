@@ -529,7 +529,7 @@ loader
     border-radius: 50%;
     width: 25px;
     height: 25px;
-    animation: spin 0.45s linear infinite;
+    animation: spin 0.4s linear infinite;
   }
   
   @keyframes spin {
@@ -539,8 +539,8 @@ loader
 
   #img_user{
       border-radius: 50% !important;
-      height: 120px;
-      width: 120px;
+      height: 75px;
+      width: 75px;
       background-size: cover;
   }
 
@@ -554,4 +554,9 @@ loader
 
   .pub_item_journal{
       color : #888;
+  }
+
+  .pub_title{
+      font-weight: bold;
+      font-size:14px;
   }

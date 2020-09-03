@@ -25,8 +25,8 @@ function get_google(){
                 console.log(results);
                 let adapter = `<ul class="list-group list-group-flush">
                                     <li class="list-group-item pub_item">
-                                        <div>`+results[i].title+`</div>
-                                        <div class="pub_item_journal">`+results[i].jurnal_name+`</div>
+                                        <div class="pub_title">`+results[i].title+`</div>
+                                        <div class="pub_item_journal">`+results[i].jurnal_name+`&nbsp|&nbsp`+results[i].year+`</div>
                                     </li></li>
                                 </ul>`;
                 $('.container_gschoolar').append(adapter);
@@ -52,8 +52,8 @@ function get_scopus(){
                 console.log(results);
                 let adapter = `<ul class="list-group list-group-flush">
                                     <li class="list-group-item pub_item">
-                                        <div>`+results[i].title+`</div>
-                                        <div class="pub_item_journal">`+results[i].jurnal_name+`</div>
+                                        <div class="pub_title">`+results[i].title+`</div>
+                                        <div class="pub_item_journal">`+results[i].publicationName+`&nbsp;|&nbsp;vol.`+results[i].volume+`,&nbsp`+results[i].coverDisplayDate+`</div>
                                     </li></li>
                                 </ul>`;
                 $('.container_scopus').append(adapter);
