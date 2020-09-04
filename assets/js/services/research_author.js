@@ -97,11 +97,11 @@ function get_scopus(){
                                         <li class="list-group-item pub_item">
                                             <div class="pub_title">`+results[i].title+`</div>
                                             <div class="pub_item_journal">`+results[i].publicationName+`&nbsp;|&nbsp;vol.`+results[i].volume+`,&nbsp`+results[i].coverDisplayDate+`</div>
+                                            <div style="float:right;">
+                                                <a href="http://kalsinov-ristekbrin.ridwanzal.com/manage/add/costbased">Kalkulasi Cost based</a>&nbsp;&nbsp;
+                                                <a href="http://kalsinov-ristekbrin.ridwanzal.com/manage/add/incomebased">Kalkulasi Income based</a>
+                                            </div>
                                         </li></li>
-                                        <div style="float:right;">
-                                            <a href="http://kalsinov-ristekbrin.ridwanzal.com/manage/add/costbased">Kalkulasi Cost based</a>&nbsp;&nbsp;
-                                            <a href="http://kalsinov-ristekbrin.ridwanzal.com/manage/add/incomebased">Kalkulasi Income based</a>
-                                        </div>
                                     </ul>`;
                     $('.container_scopus').append(adapter);
                 }
