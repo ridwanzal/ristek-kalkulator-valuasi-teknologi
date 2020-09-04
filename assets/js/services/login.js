@@ -43,6 +43,7 @@
                             $.ajax({
                                 url : url_req,
                                 type : 'POST',
+                                cache : true,
                                 beforeSend: function(request) {
                                     request.setRequestHeader("Content-Type", 'application/x-www-form-urlencoded');
                                     request.setRequestHeader("Authorization", 'Bearer ' + access_token);
@@ -63,6 +64,7 @@
                                             $.ajax({
                                                 url : web_url + '/process_login',
                                                 type : 'POST',
+                                                cache : true,
                                                 data : session_data,
                                                 success : function(res){
                                                 

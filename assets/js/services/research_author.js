@@ -11,7 +11,6 @@ function get_googlescholar_image(){
 
 function get_google(){
     let check_sess_storage = sessionStorage.hasOwnProperty('get_google');
-    // cache the data to session storage
     if(check_sess_storage){   
         let get_google = JSON.parse(sessionStorage.getItem('get_google'));
         for(let j=0; j < get_google.length; j++){
@@ -36,6 +35,7 @@ function get_google(){
         $.ajax({
             url : api_endpoint,
             type : 'GET',
+            cache : true,
             success : function(res){
                 console.log(res);
                 let results = res.author.g_scholar.results;
@@ -87,6 +87,7 @@ function get_scopus(){
         $.ajax({
            url : api_endpoint,
            type : 'GET',
+           cache : true,
            success : function(res){
                 console.log(res);
                 let results = res.author.scopus.results;
