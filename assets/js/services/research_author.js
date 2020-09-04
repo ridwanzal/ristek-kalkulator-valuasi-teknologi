@@ -19,6 +19,10 @@ function get_google(){
                                 <li class="list-group-item pub_item">
                                     <div class="pub_title">`+get_google[j].title+`</div>
                                     <div class="pub_item_journal">`+get_google[j].jurnal_name+`&nbsp|&nbsp`+get_google[j].year+`</div>
+                                    <div style="float:right;">
+                                        <a href="http://kalsinov-ristekbrin.ridwanzal.com/manage/add/costbased">Kalkulasi Cost based</a>&nbsp;&nbsp;
+                                        <a href="http://kalsinov-ristekbrin.ridwanzal.com/manage/add/incomebased">Kalkulasi Income based</a>
+                                    </div>
                                 </li></li>
                             </ul>`;
             $('.container_gschoolar').append(adapter_gsc);
@@ -42,6 +46,10 @@ function get_google(){
                                         <li class="list-group-item pub_item">
                                             <div class="pub_title">`+results[i].title+`</div>
                                             <div class="pub_item_journal">`+results[i].jurnal_name+`&nbsp|&nbsp`+results[i].year+`</div>
+                                            <div style="float:right;">
+                                                <a href="http://kalsinov-ristekbrin.ridwanzal.com/manage/add/costbased">Kalkulasi Cost based</a>&nbsp;&nbsp;
+                                                <a href="http://kalsinov-ristekbrin.ridwanzal.com/manage/add/incomebased">Kalkulasi Income based</a>
+                                            </div>
                                         </li></li>
                                     </ul>`;
                     $('.container_gschoolar').append(adapter);
@@ -61,6 +69,10 @@ function get_scopus(){
                                 <li class="list-group-item pub_item">
                                     <div class="pub_title">`+get_scopus[j].title+`</div>
                                     <div class="pub_item_journal">`+get_scopus[j].publicationName+`&nbsp;|&nbsp;vol.`+get_scopus[j].volume+`,&nbsp`+get_scopus[j].coverDisplayDate+`</div>
+                                    <div style="float:right;">
+                                        <a href="http://kalsinov-ristekbrin.ridwanzal.com/manage/add/costbased">Kalkulasi Cost based</a>&nbsp;&nbsp;
+                                        <a href="http://kalsinov-ristekbrin.ridwanzal.com/manage/add/incomebased">Kalkulasi Income based</a>
+                                    </div>
                                 </li></li>
                             </ul>`;
             $('.container_scopus').append(adapter_scp);
@@ -86,6 +98,10 @@ function get_scopus(){
                                             <div class="pub_title">`+results[i].title+`</div>
                                             <div class="pub_item_journal">`+results[i].publicationName+`&nbsp;|&nbsp;vol.`+results[i].volume+`,&nbsp`+results[i].coverDisplayDate+`</div>
                                         </li></li>
+                                        <div style="float:right;">
+                                            <a href="http://kalsinov-ristekbrin.ridwanzal.com/manage/add/costbased">Kalkulasi Cost based</a>&nbsp;&nbsp;
+                                            <a href="http://kalsinov-ristekbrin.ridwanzal.com/manage/add/incomebased">Kalkulasi Income based</a>
+                                        </div>
                                     </ul>`;
                     $('.container_scopus').append(adapter);
                 }
