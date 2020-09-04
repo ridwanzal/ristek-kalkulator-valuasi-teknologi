@@ -546,8 +546,9 @@ loader
 
   .pub_item{
       cursor: pointer;
+      background : #fafafa;
   }
-
+  
   .pub_item:hover{
       background : #eee;
   }
