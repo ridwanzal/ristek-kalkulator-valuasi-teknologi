@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-xs-4"> 
-                <div class="loader"></div>
                 <img width="400" style="margin-bottom:40px;" src="<?php echo base_url();?>assets/frontview/img/logo2.svg">
+                <div class="loader"></div>
                 <h1 class="h3 mb-3 font-weight-bold">Sign in</h1>
                 <label for="inputEmail" class="sr-only">Email address</label>
                 <input type="email" id="p_username" class="form-control" placeholder="Email address" required value="anism@unissula.ac.id" autofocus>
