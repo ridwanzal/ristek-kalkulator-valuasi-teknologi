@@ -18,7 +18,7 @@
                         <button href="<?php echo base_url(); ?>manage" id="submit_login" class="btn btn-xs btn-success btn-block">Masuk</button>
                         <br/>
                         <div class="form-group">
-                            <p class="small text-center">Dengan menekan tombol Masuk, Anda setuju pada <br><a href="./term.php"  title="Buka Syarat & Ketentuan." class="view" data-toggle="modal" data-target="#modal-term" kode="term" data-refresh='true'>Syarat &amp; Ketentuan</a>, serta <a href="./policy.php"  title="Buka Kebijakan Pribadi." class="view" data-toggle="modal" data-target="#modal-policy" kode="policy" data-refresh='true'>Kebijakan Privasi</a> yang kami tentukan.</p>
+                            <p class="small text-center">Dengan menekan tombol Masuk, Anda setuju pada <br><a href="<?php echo base_url();?>syaratketentuan"  title="Buka Syarat & Ketentuan.">Syarat &amp; Ketentuan</a>, serta <a href="<?php echo base_url();?>privacypolicy" title="Buka Kebijakan Pribadi.">Kebijakan Privasi</a> yang kami tentukan.</p>
                         </div>
                         <br/>
                     </div>

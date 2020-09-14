@@ -50,10 +50,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'main';
+
+// admin section
 $route['manage'] = 'manage';
 $route['manage/add/costbased'] = 'manage/add_costbased';
 $route['manage/add/incomebased'] = 'manage/add_incomebased';
 $route['manage/add/incomebased_calculator'] = 'manage/add_incomebased_calculator';
+
+// front section
 $route['login'] = 'login';
 $route['register'] = 'register';
 $route['process_login'] = 'login/process_login';
@@ -64,6 +68,9 @@ $route['faq'] = 'frontview/faq';
 $route['kontak'] = 'frontview/kontak';
 $route['kegiatan'] = 'frontview/kegiatan';
 $route['tentang'] = 'frontview/tentang';
+$route['syaratketentuan'] = 'frontview/syaratketentuan';
+$route['privacypolicy'] = 'frontview/privacypolicy';
 
-// error / not found page
+
+// error or not found page
 $route['404_override'] = 'notfound';

@@ -82,6 +82,28 @@ class Frontview extends CI_Controller {
         $this->load->view('frontview/page/kontak', $data);
         $this->load->view('frontview/footer', $data);
     }
+
+    function syaratketentuan(){
+        $data['title_bar'] = "Syarat dan Ketentuan";
+        $data['header_page'] = "Syarat dan Ketentuan";
+        $data['breadcrumbs'] = 'Syarat dan Ketentuan';
+        $this->load->view('frontview/header', $data);
+        $this->load->view('frontview/navbar', $data);
+        $this->load->view('frontview/components/breadcrumbs', $data);
+        $this->load->view('frontview/page/syarat_ketentuan', $data);
+        $this->load->view('frontview/footer', $data);
+    }
+
+    function privacypolicy(){
+        $data['title_bar'] = "Privacy & Policy";
+        $data['header_page'] = "Privacy & Policy";
+        $data['breadcrumbs'] = 'Privacy & Policy';
+        $this->load->view('frontview/header', $data);
+        $this->load->view('frontview/navbar', $data);
+        $this->load->view('frontview/components/breadcrumbs', $data);
+        $this->load->view('frontview/page/privacy_policy', $data);
+        $this->load->view('frontview/footer', $data);
+    }
       
     
 }
