@@ -6,7 +6,16 @@
                     <br/>
                     <br/>
                     <br/>
-                    <p>Direktorat Jenderal Penguatan Inovasi mempunyai tugas menyelenggarakan perumusan, koordinasi, dan sinkronisasi pelaksanaan kebijakan di bidang penguatan inovasi.
+                    <p>Direktorat Jenderal Penguatan Inovasi dengan ini menyatakan tentang kebijakan privasi tentang penggunaan layanan di Direktorat Jenderal Penguatan Inovasi.
+                    </p>
+                    <p>
+                        Berikut ini adalah kebijakan privasi tersebut:
+                    </p>
+                    <p>
+                        Saat Anda menggunakan layanan kami, Anda mempercayai kami dengan informasi Anda. Kami memahami ini adalah tanggung jawab besar dan bekerja keras untuk melindungi informasi Anda dan mengendalikan Anda.
+                    </p>
+                    <p>
+                        Kebijakan Privasi ini dimaksudkan untuk membantu Anda memahami informasi apa yang kami kumpulkan, mengapa kami mengumpulkannya, dan bagaimana Anda dapat memperbarui, mengelola, mengekspor, dan menghapus informasi Anda.
                     </p>
                     <ul>
                         <li>Pelaksanaan evaluasi, dan pelaporan di bidang penguatan inovasi;</li>

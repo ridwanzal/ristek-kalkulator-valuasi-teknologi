@@ -6,33 +6,33 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Nama Lembaga</label>
+                            <label for="exampleInputEmail1">Nama Lembaga <i style="color: red">*</i> </label>
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lembaga">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Jenis Lembaga</label>
+                            <label for="exampleInputEmail1">Jenis Lembaga  <i style="color: red">*</i> </label>
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jenis Lembaga">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Nama Lengkap</label>
+                            <label for="exampleInputEmail1">Nama Lengkap  <i style="color: red">*</i> </label>
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Username</label>
+                            <label for="exampleInputEmail1">Username  <i style="color: red">*</i> </label>
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username (hanya boleh huruf atau angka)">
                             <small id="emailHelp" class="form-text text-muted">(hanya boleh huruf atau angka)</small>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Alamat Email</label>
+                            <label for="exampleInputEmail1">Alamat Email  <i style="color: red">*</i> </label>
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Alamat Email">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Password</label>
+                            <label for="exampleInputEmail1">Password  <i style="color: red">*</i> </label>
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Password">
                             <small id="emailHelp" class="form-text text-muted">min. 8 karakter</small>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Ulangi Password</label>
+                            <label for="exampleInputEmail1">Ulangi Password  <i style="color: red">*</i> </label>
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Password">
                             <small id="emailHelp" class="form-text text-muted">min. 8 karakter</small>
                         </div>
