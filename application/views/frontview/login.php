@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-xs-4"> 
-                <img width="300" style="margin-bottom:40px;" src="<?php echo base_url();?>assets/frontview/img/logo2.svg">
+                <center><img width="200" style="margin-bottom:40px;" src="<?php echo base_url();?>assets/frontview/img/logo2.svg"></center>
                 <div class="loader"></div>
                 <h1 class="h3 mb-3 font-weight-bold">Masuk</h1>
                 <label for="inputEmail" class="sr-only">Email address</label>
