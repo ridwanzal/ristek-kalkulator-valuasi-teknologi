@@ -75,6 +75,27 @@
                         </div>
                     </div>
                 </div>
+                <br/>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+                        <h5 class="bolds"><img width="16" style="border-radius:50%;" src="<?php echo base_url()?>assets/img/gscholar.png">&nbsp;&nbsp;
+                        Google Scholar</h5>
+                        <div class="loader"></div>
+                        <div class="container_gschoolar">
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+                        <h5 class="bolds"><img width="16" style="border-radius:50%;" src="<?php echo base_url()?>assets/img/scopus.png">&nbsp;&nbsp;
+                        Scopus</h5>
+                        <div class="loader"></div>
+                        <div class="container_scopus">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 </section>

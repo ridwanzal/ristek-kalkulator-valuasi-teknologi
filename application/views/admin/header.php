@@ -9,10 +9,8 @@
     <meta name="author" content="M. Ridwan Zalbina">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SIKAV - <?php echo $title_bar; ?> | Kalkulator Inovasi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Css Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/flaticon.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/linearicons.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/owl.carousel.min.css" type="text/css">
@@ -31,4 +29,5 @@
     <style>
         .floatwa{position:fixed;width:60px;height:60px;bottom:40px;right:40px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;z-index:100;}.my-floatwa{margin-top:16px;}
     </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
