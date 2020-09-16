@@ -55,6 +55,8 @@ $route['default_controller'] = 'main';
 $route['manage'] = 'manage';
 $route['manage/add/costbased'] = 'manage/add_costbased';
 $route['manage/add/incomebased'] = 'manage/add_incomebased';
+$route['manage/add/incomebased_invensi'] = 'manage/add_incomebased_invensi';
+$route['incomebased/add'] = 'incomebased/add';
 $route['manage/add/incomebased_calculator'] = 'manage/add_incomebased_calculator';
 
 // front section

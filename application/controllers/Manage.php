@@ -54,6 +54,17 @@ class Manage extends CI_Controller {
         $this->load->view('admin/footer', $data); 
 	  }
 	  
+	  public function add_incomebased_invensi(){
+		$data['title_bar'] = "Income Based";
+        $data['header_page'] = "Tambah Invensi - Income Based";
+        $data['breadcrumbs'] = 'Tambah Invensi - Income Based';
+		$this->load->view('admin/header');
+		$this->load->view('admin/navbar');
+		$this->load->view('admin/components/breadcrumbs', $data);
+		$this->load->view('admin/dashboard/methodincome_invensi', $data);
+        $this->load->view('admin/footer', $data); 
+	  }
+	   
 	  public function add_incomebased_calculator(){
 		$data['title_bar'] = "Income Based";
         $data['header_page'] = "Tambah Kalkulasi baru - Income Based";
