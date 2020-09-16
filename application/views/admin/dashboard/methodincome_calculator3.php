@@ -97,7 +97,7 @@ if($this->session->userdata('biaya_investasi')){
                         </div>
                     </div>
                     <div class="form-group row">                        
-                        <label for="biaya_depresiasi" class="col-sm-6 col-form-label text-right">Biaya Depresiasi</label>
+                        <label for="biaya_depresiasi" class="col-sm-6 col-form-label text-right">3.10 Biaya Depresiasi</label>
                         <div class="col-sm-6">
                             <input type="text" value="<?= $biaya_depresiasi; ?>" class="form-control  form-control-sm col-sm-6" id="biaya_depresiasi" name="biaya_depresiasi" aria-describedby="biaya_depresiasiDesc" required>
                             <small id="biaya_depresiasiDesc" class="form-text text-muted text-left">Biaya Depresiasi untuk setiap tahunnya</small>
