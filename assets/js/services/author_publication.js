@@ -18,10 +18,6 @@ function get_google(){
                                 <li class="list-group-item pub_item">
                                     <div class="pub_title">`+get_google[j].title+`</div>
                                     <div class="pub_item_journal">`+get_google[j].jurnal_name+`&nbsp|&nbsp`+get_google[j].year+`</div>
-                                    <div style="float:right;">
-                                        <a href="`+web_url+`/manage/add/costbased">Kalkulasi Cost based</a>&nbsp;&nbsp;
-                                        <a href="`+web_url+`/manage/add/incomebased">Kalkulasi Income based</a>
-                                    </div>
                                 </li></li>
                             </ul>`;
             $('.container_gschoolar').append(adapter_gsc);
@@ -46,10 +42,6 @@ function get_google(){
                                         <li class="list-group-item pub_item">
                                             <div class="pub_title">`+results[i].title+`</div>
                                             <div class="pub_item_journal">`+results[i].jurnal_name+`&nbsp|&nbsp`+results[i].year+`</div>
-                                            <div style="float:right;">
-                                                <a href="`+web_url+`/manage/add/costbased">Kalkulasi Cost based</a>&nbsp;&nbsp;
-                                                <a href="`+web_url+`/manage/add/incomebased">Kalkulasi Income based</a>
-                                            </div>
                                         </li></li>
                                     </ul>`;
                     $('.container_gschoolar').append(adapter);
