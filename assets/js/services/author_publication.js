@@ -69,10 +69,6 @@ function get_scopus(){
                                 <li class="list-group-item pub_item">
                                     <div class="pub_title">`+get_scopus[j].title+`</div>
                                     <div class="pub_item_journal">`+get_scopus[j].publicationName+`&nbsp;|&nbsp;vol.`+get_scopus[j].volume+`,&nbsp`+get_scopus[j].coverDisplayDate+`</div>
-                                    <div style="float:right;">
-                                        <a href="`+web_url+`/manage/add/costbased">Kalkulasi Cost based</a>&nbsp;&nbsp;
-                                        <a href="`+web_url+`/manage/add/incomebased">Kalkulasi Income based</a>
-                                    </div>
                                 </li></li>
                             </ul>`;
             $('.container_scopus').append(adapter_scp);
@@ -98,10 +94,6 @@ function get_scopus(){
                                         <li class="list-group-item pub_item">
                                             <div class="pub_title">`+results[i].title+`</div>
                                             <div class="pub_item_journal">`+results[i].publicationName+`&nbsp;|&nbsp;vol.`+results[i].volume+`,&nbsp`+results[i].coverDisplayDate+`</div>
-                                            <div style="float:right;">
-                                                <a href="`+web_url+`/manage/add/costbased">Kalkulasi Cost based</a>&nbsp;&nbsp;
-                                                <a href="`+web_url+`/manage/add/incomebased">Kalkulasi Income based</a>
-                                            </div>
                                         </li></li>
                                     </ul>`;
                     $('.container_scopus').append(adapter);
