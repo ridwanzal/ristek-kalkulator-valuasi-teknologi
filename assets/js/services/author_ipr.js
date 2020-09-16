@@ -40,7 +40,7 @@ function get_ipr(){
                         let adapter = `<ul class="list-group list-group-flush">
                                             <li class="list-group-item pub_item">
                                                 <div class="pub_title">`+results[i].title+`</div>
-                                                <div class="pub_item_journal">`+results[i].inventor+`&nbsp|&nbsp`+results[i].year+`</div>
+                                                <div class="pub_item_journal">`+results[i].inventor+`&nbsp|&nbsp`+results[i].tahun_permohonan+`</div>
                                                 <div style="float:right;">
                                                 </div>
                                             </li></li>
