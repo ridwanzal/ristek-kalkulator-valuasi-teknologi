@@ -75,6 +75,39 @@ class Manage extends CI_Controller {
 		$this->load->view('admin/dashboard/methodincome_calculator', $data);
         $this->load->view('admin/footer', $data); 
 	  }
+
+	  public function add_incomebased_calculator1(){
+		$data['title_bar'] = "Income Based";
+        $data['header_page'] = "Tambah Kalkulasi baru - Income Based";
+        $data['breadcrumbs'] = 'Tambah Kalkulasi baru - Income Based';
+		$this->load->view('admin/header');
+		$this->load->view('admin/navbar');
+		$this->load->view('admin/components/breadcrumbs', $data);
+		$this->load->view('admin/dashboard/methodincome_calculator1', $data);
+        $this->load->view('admin/footer', $data); 
+	  }
+
+	  public function add_incomebased_calculator2(){
+		$data['title_bar'] = "Income Based";
+        $data['header_page'] = "Tambah Kalkulasi baru - Income Based";
+        $data['breadcrumbs'] = 'Tambah Kalkulasi baru - Income Based';
+		$this->load->view('admin/header');
+		$this->load->view('admin/navbar');
+		$this->load->view('admin/components/breadcrumbs', $data);
+		$this->load->view('admin/dashboard/methodincome_calculator2', $data);
+        $this->load->view('admin/footer', $data); 
+	  }
+
+	  public function add_incomebased_calculator3(){
+		$data['title_bar'] = "Income Based";
+        $data['header_page'] = "Tambah Kalkulasi baru - Income Based";
+        $data['breadcrumbs'] = 'Tambah Kalkulasi baru - Income Based';
+		$this->load->view('admin/header');
+		$this->load->view('admin/navbar');
+		$this->load->view('admin/components/breadcrumbs', $data);
+		$this->load->view('admin/dashboard/methodincome_calculator3', $data);
+        $this->load->view('admin/footer', $data); 
+	  }
 	  
 	  public function add_marketbased(){
 		$data['title_bar'] = "Market Based";
