@@ -58,11 +58,11 @@ $userdetails = $this->session->userdata('userdetails');
                                         Action
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator">Hitung Valuasi</a>
+                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1">Hitung Valuasi</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator"">Edit</a>
+                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1"">Edit</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator"">Hapus</a>
+                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1"">Hapus</a>
                                     </div>
                                 </div>
                             </td>
@@ -77,11 +77,11 @@ $userdetails = $this->session->userdata('userdetails');
                                         Action
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator">Hitung Valuasi</a>
+                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1">Hitung Valuasi</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator"">Edit</a>
+                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1"">Edit</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator"">Hapus</a>
+                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1"">Hapus</a>
                                     </div>
                                 </div>
                             </td>
@@ -96,11 +96,11 @@ $userdetails = $this->session->userdata('userdetails');
                                         Action
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator">Hitung Valuasi</a>
+                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1">Hitung Valuasi</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator"">Edit</a>
+                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1"">Edit</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator"">Hapus</a>                                                                                
+                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1"">Hapus</a>                                                                                
                                     </div>
                                 </div>
                             </td>

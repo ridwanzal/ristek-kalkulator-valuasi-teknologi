@@ -57,7 +57,13 @@ $route['manage/add/costbased'] = 'manage/add_costbased';
 $route['manage/add/incomebased'] = 'manage/add_incomebased';
 $route['manage/add/incomebased_invensi'] = 'manage/add_incomebased_invensi';
 $route['incomebased/add'] = 'incomebased/add';
+$route['incomebased/data_halaman1'] = 'incomebased/data_halaman1';
+$route['incomebased/data_halaman2'] = 'incomebased/data_halaman2';
+$route['incomebased/data_halaman3'] = 'incomebased/data_halaman3';
 $route['manage/add/incomebased_calculator'] = 'manage/add_incomebased_calculator';
+$route['manage/add/incomebased_calculator1'] = 'manage/add_incomebased_calculator1';
+$route['manage/add/incomebased_calculator2'] = 'manage/add_incomebased_calculator2';
+$route['manage/add/incomebased_calculator3'] = 'manage/add_incomebased_calculator3';
 
 // front section
 $route['login'] = 'login';
