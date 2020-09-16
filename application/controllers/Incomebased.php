@@ -62,7 +62,72 @@ class Incomebased extends CI_Controller {
             $this->load->view('admin/footer', $data);
         }
     }
+    public function data_halaman1(){
+        $inventor = $this->input->post('inventor', TRUE);
+        $periode = $this->input->post('periode', TRUE);
+        $modal = $this->input->post('modal', TRUE);
+        $sukubunga = $this->input->post('sukubunga', TRUE);
+        $marketsize = $this->input->post('marketsize', TRUE);
+        $marketshare = $this->input->post('marketshare', TRUE);
+        $qty = $this->input->post('qty', TRUE);
+		$data_session = array(
+            'inventor' => $inventor,
+            'periode' => $periode,
+            'modal' => $modal,
+            'sukubunga' => $sukubunga,
+            'marketsize' => $marketsize,
+            'marketshare' => $marketshare,
+            'qty' => $qty
+		);
+		$this->session->set_userdata($data_session);
+		echo json_encode($data_session);
+    }
 
+    public function data_halaman2(){
+        $target = $this->input->post('target', TRUE);
+        $marketshare_persen = $this->input->post('marketshare_persen', TRUE);
+        $qty_tahun1 = $this->input->post('qty_tahun1', TRUE);
+        $marketshare_tahun2 = $this->input->post('marketshare_tahun2', TRUE);
+        $harga_tahun1 = $this->input->post('harga_tahun1', TRUE);
+        $harga_tahun2 = $this->input->post('harga_tahun2', TRUE);
+		$data_session = array(
+            'target' => $target,
+            'marketshare_persen' => $marketshare_persen,
+            'qty_tahun1' => $qty_tahun1,
+            'marketshare_tahun2' => $marketshare_tahun2,
+            'harga_tahun1' => $harga_tahun1,
+            'harga_tahun2' => $harga_tahun2
+		);
+		$this->session->set_userdata($data_session);
+		echo json_encode($data_session);
+    }
+
+    public function data_halaman3(){
+        $biaya_investasi = $this->input->post('biaya_investasi', TRUE);
+        $biaya_riset = $this->input->post('biaya_riset', TRUE);
+        $biaya_lisensi = $this->input->post('biaya_lisensi', TRUE);
+        $persen_lisensi = $this->input->post('persen_lisensi', TRUE);
+        $biaya_cogs = $this->input->post('biaya_cogs', TRUE);
+        $biaya_tetap = $this->input->post('biaya_tetap', TRUE);
+        $biaya_marketing = $this->input->post('biaya_marketing', TRUE);
+        $biaya_perawatan = $this->input->post('biaya_perawatan', TRUE);
+        $biaya_warehouse = $this->input->post('biaya_warehouse', TRUE);
+        $biaya_depresiasi = $this->input->post('biaya_depresiasi', TRUE);
+		$data_session = array(
+            'biaya_investasi' => $biaya_investasi,
+            'biaya_riset' => $biaya_riset,
+            'biaya_lisensi' => $biaya_lisensi,
+            'persen_lisensi' => $persen_lisensi,
+            'biaya_cogs' => $biaya_cogs,
+            'biaya_tetap' => $biaya_tetap,
+            'biaya_marketing' => $biaya_marketing,
+            'biaya_perawatan' => $biaya_perawatan,
+            'biaya_warehouse' => $biaya_warehouse,
+            'biaya_depresiasi' => $biaya_depresiasi
+		);
+		$this->session->set_userdata($data_session);
+		echo json_encode($data_session);
+    }
 }
 
 /* End of file Incomebased.php */
