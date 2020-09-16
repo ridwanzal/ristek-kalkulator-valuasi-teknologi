@@ -15,7 +15,7 @@ class Frontview extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		date_default_timezone_set('Asia/Jakarta'); // default time zone indonesia
-      }
+    }
 
     function prosedur(){
         $data['title_bar'] = "Prosedur";

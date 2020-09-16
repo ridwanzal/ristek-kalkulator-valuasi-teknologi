@@ -77,22 +77,27 @@
                 </div>
                 <br/>
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="col-lg-10 col-md-10 col-xs-10">
                         <h5 class="bolds"><img width="16" style="border-radius:50%;" src="<?php echo base_url()?>assets/img/gscholar.png">&nbsp;&nbsp;
-                        Google Scholar</h5>
-                        <div class="loader"></div>
-                        <div class="container_gschoolar">
+                        IPR (Intellectual Property Rights)</h5>
+                    </div>
+                    <div class="col-lg-2 col-md-2">
+                    <div class="btn-group">
+                        <button style="float:right;position:relative;right:-17px;" type="button" class="btn btn-danger btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Tambah Kalkulasi
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="<?php echo base_url();?>manage/add/costbased">Cost Based</a>
+                            <a class="dropdown-item" href="<?php echo base_url();?>manage/add/incomebased">Income Based</a>
+                            <a class="dropdown-item" href="#">Market Based</a>
+                        </div>
                         </div>
                     </div>
                 </div>
-                <br/>
-                <br/>
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 col-xs-12">
-                        <h5 class="bolds"><img width="16" style="border-radius:50%;" src="<?php echo base_url()?>assets/img/scopus.png">&nbsp;&nbsp;
-                        Scopus</h5>
+                    <div class="col-lg-12 col-md-12">
                         <div class="loader"></div>
-                        <div class="container_scopus">
+                        <div class="container_ipr">
                         </div>
                     </div>
                 </div>

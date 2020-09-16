@@ -545,6 +545,8 @@ loader
   }
 
   .pub_item{
+      padding-top: 20px;
+      padding-bottom: 20px;
       cursor: pointer;
       background : #fafafa;
   }
