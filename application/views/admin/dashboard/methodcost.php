@@ -1,3 +1,8 @@
+<?php 
+    // get session userdata
+    $userdetails = $this->session->userdata('userdetails'); 
+?>
+
 <section class="section_main_wrapper">
     <div class="form-element-area">
             <div class="container">
@@ -8,13 +13,20 @@
                         <br/>
                         <form>
                             <div class="form-group">
+                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">4</span>&nbsp;Judul Penelitian <i style="color: red">*</i> </label>
+                                <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
+                                <small>Autocomplete text</small>
+                            </div>
+                            <div class="form-group">
                                 <label class="captions" for="formGroupExampleInput"><span class="badge badge-pill  badge-warning">1</span>&nbsp;Nama Inventor <i style="color: red">*</i> </label>
-                                <input type="text" class="form-control form-control-sm" id="formGroupExampleInput" placeholder="">
+                                <input value="<?= $userdetails['name'];?>" type="text" class="form-control form-control-sm" id="formGroupExampleInput" placeholder="">
+                                <small>Jika Inventor yang terlibat lebih dari 1, pisahkan dengan koma</small>
                             </div>
 
                             <div class="form-group">
                                 <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">2</span>&nbsp;Institusi Penghasil/ Pemilik Invensi <i style="color: red">*</i> </label>
-                                <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
+                                <input value="<?= $userdetails['afiliasi']['name']; ?>" type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
+                                <small>Jika Institusi yang terlibat lebih dari 1, pisahkan dengan koma</small>
                             </div>
 
                             <div class="form-group">
@@ -22,10 +34,6 @@
                                 <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
                             </div>
 
-                            <div class="form-group">
-                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">4</span>&nbsp;Judul Penelitian <i style="color: red">*</i> </label>
-                                <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
-                            </div>
 
                             <div class="form-group">
                                 <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">5</span>&nbsp;Total Biaya Masukan/Realisasi Pagu Penelitian (R) <i style="color: red">*</i></label>
@@ -38,7 +46,8 @@
                                         <option value="">-- Silahkan pilih</option>
                                         <option value="1">Hibah Ristek</option>
                                         <option value="2">Dikti Kemendikbud</option>
-                                        <option value="3">Lainnya</option>
+                                        <option value="3">LPDP</option>
+                                        <option value="0">Lainnya</option>
                                     </select>
                             </div>
 

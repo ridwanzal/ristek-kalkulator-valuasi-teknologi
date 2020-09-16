@@ -563,3 +563,7 @@ loader
       font-weight: bold;
       font-size:14px;
   }
+
+  small{
+      color : #aaa !important;
+  }
