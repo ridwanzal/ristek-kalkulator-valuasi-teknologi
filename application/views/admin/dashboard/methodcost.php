@@ -37,7 +37,7 @@
 
                             <div class="form-group">
                                 <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">5</span>&nbsp;Total Biaya Masukan/Realisasi Pagu Penelitian (R) <i style="color: red">*</i></label>
-                                <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
+                                <input type="number" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
                             </div>
                             
                             <div class="form-group">
@@ -137,11 +137,11 @@
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="jpt" id="inlineRadio1" value="option1">
-                                <label class="form-check-label" for="inlineRadio1">Paten</label>
+                                <label class="form-check-label" for="inlineRadio1">Paten Granted <small>(Bobot 48)</small></label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="jpt" id="inlineRadio2" value="option2">
-                                <label class="form-check-label" for="inlineRadio2">Paten Sederhana</label>
+                                <label class="form-check-label" for="inlineRadio2">Paten Sederhana  <small>(Bobot 48)</small></label>
                             </div>
                             <br/>
                             <br/>

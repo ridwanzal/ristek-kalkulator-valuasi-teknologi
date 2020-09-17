@@ -1,5 +1,6 @@
 $(function () {
     $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="popover"]').popover()
     $(".toggle-password").click(function() {
         var input = $($(this).attr("toggle"));
         if (input.attr("type") == "password") {

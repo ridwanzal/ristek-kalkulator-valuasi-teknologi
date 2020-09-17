@@ -6,7 +6,7 @@ $(function () {
 
 
 function get_daftar_penelitian(){
-    let arr_temp_scopus = [];
+    let arr_temp_research = [];
     let get_scopus = JSON.parse(sessionStorage.getItem('get_scopus'));
     for(let i=0; i < get_scopus.length; i++){
         let obj_temp = {
@@ -14,7 +14,7 @@ function get_daftar_penelitian(){
             'value' : '' + get_scopus[i].title
         }
     
-        arr_temp_scopus.push(obj_temp);
+        arr_temp_research.push(obj_temp);
     }
 
     let get_google = JSON.parse(sessionStorage.getItem('get_google'));
@@ -24,11 +24,11 @@ function get_daftar_penelitian(){
             'value' : '' + get_google[i].title
         }
     
-        arr_temp_scopus.push(obj_temp);
+        arr_temp_research.push(obj_temp);
     }
 
-    console.log(arr_temp_scopus);
+    console.log(arr_temp_research);
     resarchlist.autocomplete({
-        source : arr_temp_scopus
+        source : arr_temp_research
     });
 }
