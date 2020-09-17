@@ -108,6 +108,17 @@ class Manage extends CI_Controller {
 		$this->load->view('admin/dashboard/methodincome_calculator3', $data);
         $this->load->view('admin/footer', $data); 
 	  }
+
+	  public function add_incomebased_output(){
+		$data['title_bar'] = "Income Based";
+        $data['header_page'] = "Output - Income Based";
+        $data['breadcrumbs'] = 'Output - Income Based';
+		$this->load->view('admin/header');
+		$this->load->view('admin/navbar');
+		$this->load->view('admin/components/breadcrumbs', $data);
+		$this->load->view('admin/dashboard/methodincome_output', $data);
+        $this->load->view('admin/footer', $data); 
+	  }
 	  
 	  public function add_marketbased(){
 		$data['title_bar'] = "Market Based";
