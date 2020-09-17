@@ -54,7 +54,7 @@
                                 <label class="captions" for="formGroupExampleInput2">Upload dokumen pendukung <i style="color: red">*</i></label>
                                     <div class="custom-file">
                                         <input id="par_cb_file1" type="file" class="form-control" multiple style="height:45px;">
-                                        <small id="emailHelp" class="form-text text-muted">Unggah file dlm format PDF, MS Word, PPT</small>
+                                        <small>Unggah file dlm format PDF, MS Word, PPT</small>
                                     </div>
                             </div>
                             <br/>
@@ -114,18 +114,18 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Publikasi pada prosiding internasional <i style="color: red">*</i></label>
-                                            <input type="number" class="form-control" placeholder="" value="0">
+                                            <input id="par_cb_pros_internasional" type="number" class="form-control" placeholder="" value="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
-                                            <input disabled type="number" class="form-control" placeholder="0" value="25">
+                                            <input  disabled type="number" class="form-control" placeholder="0" value="25">
                                         </div>
                                     </div>
 
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Publikasi pada prosiding nasional <i style="color: red">*</i></label>
-                                            <input type="number" class="form-control" placeholder="" value="0">
+                                            <input id="par_cb_pros_nasional"  type="number" class="form-control" placeholder="" value="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
@@ -143,79 +143,88 @@
                                 <div class="card-body">
                                     <div class="alert alert-secondary" role="alert">
                                         Luaran penelitian berupa paten
+                                        <div style="float:right;position:relative;top:-4px;right:-10px;">
+                                            <button class="btn btn-sm btn-primary" onclick="add_luaran_paten()"> Tambah Luaran Paten + </button>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="captions">Judul Invensi <i style="color: red">*</i></label>
-                                        <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
-                                    </div>
-                                    
-
-                                    <div class="form-row form-group">
-                                        <div class="col">
+                                    <div class="container_luaran_paten">
+                                        <div class="card">
+                                            <div class="card-body">
                                                 <div class="form-group">
-                                                    <label class="captions">Jenis Paten <i style="color: red">*</i> </label>
+                                                    <label class="captions">Judul Invensi <i style="color: red">*</i></label>
+                                                    <input type="text" class="form-control form-control-sm" id="par_cb_jd_invensi_1" placeholder="">
                                                 </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="jpt" id="" value="option1">
-                                                    <label class="form-check-label" for="inlineRadio1">Paten Granted </label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="jpt" id="" value="option2">
-                                                    <label class="form-check-label" for="inlineRadio2">Paten Sederhana </label>
-                                                </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label class="captions">Status Peromohonan <i style="color: red">*</i></label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="stp" id="" value="option1">
-                                                <label class="form-check-label" for="inlineRadio1">Terdaftar</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="stp" id="" value="option2">
-                                                <label class="form-check-label" for="inlineRadio2">Tersertifikasi</label>
-                                            </div>
-                                        </div>
-                                    </div>
+                                                
 
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <p>Keterangan</p>
-                                            <ul>
-                                                <li>Bobot Paten granted (tersertifikasi) = 48</li>
-                                                <li>Bobot Paten terdaftar = 14</li>
-                                                <li>Bobot Paten sederhana granted (tersertifikasi)= 33</li>
-                                                <li>Bobot Paten sederhana terdaftar = 9</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <br/>
-                                    <div class="form-group">
-                                        <label class="captions">Nomor pendaftaran (Pemohon) <i style="color: red">*</i></label>
-                                        <input type="text" class="form-control form-control-sm" id="" placeholder="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="captions">Nomor Sertifikat Paten/Paten Sederhana (jika sudah granted) <i style="color: red">*</i></label>
-                                        <input type="text" class="form-control form-control-sm" id="" placeholder="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="captions">Asal Biaya Pendaftaran (Permohonan) Paten<i style="color: red">*</i></label>
-                                        <select class="custom-select custom-select-sm"> 
-                                                <option value="">-- Silahkan pilih</option>
-                                                <option value="1">Raih KI</option>
-                                                <option value="2">Institusi Penghasil/Pemilik Invensi</option>
-                                                <option value="3">Lainnya</option>
-                                        </select>
-                                    </div>
+                                                <div class="form-row form-group">
+                                                    <div class="col">
+                                                            <div class="form-group">
+                                                                <label class="captions">Jenis Paten <i style="color: red">*</i> </label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio" name="jpt" id="par_cb_paten_granted_1" value="option1">
+                                                                <label class="form-check-label" for="inlineRadio1">Paten Granted </label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio" name="jpt" id="par_cb_paten_sd_1" value="option2">
+                                                                <label class="form-check-label" for="inlineRadio2">Paten Sederhana </label>
+                                                            </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label class="captions">Status Peromohonan <i style="color: red">*</i></label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="stp" id="par_cb_paten_terdaftar_1" value="option1">
+                                                            <label class="form-check-label" for="inlineRadio1">Terdaftar</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="stp" id="par_cb_paten_tersertifikasi_1" value="option2">
+                                                            <label class="form-check-label" for="inlineRadio2">Tersertifikasi</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                                    <div class="form-group">
-                                        <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung berupa Formulir (Bukti) pendaftaran dan/atau
-        Sertifikat Paten/Paten Sederhana <i style="color: red">*</i></label>
-                                            <div class="custom-file">
-                                                <input type="file" class="form-control" multiple style="height:45px;">
-                                                <small id="emailHelp" class="form-text text-muted">Unggah file dlm format PDF, MS Word, PPT</small>
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <p>Keterangan</p>
+                                                        <ul>
+                                                            <li>Bobot Paten granted (tersertifikasi) = 48</li>
+                                                            <li>Bobot Paten terdaftar = 14</li>
+                                                            <li>Bobot Paten sederhana granted (tersertifikasi)= 33</li>
+                                                            <li>Bobot Paten sederhana terdaftar = 9</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <br/>
+                                                <div class="form-group">
+                                                    <label class="captions">Nomor pendaftaran (Pemohon) <i style="color: red">*</i></label>
+                                                    <input type="text" class="form-control form-control-sm" id="par_cb_nodaftar_1" placeholder="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="captions">Nomor Sertifikat Paten/Paten Sederhana (jika sudah granted) <i style="color: red">*</i></label>
+                                                    <input type="text" class="form-control form-control-sm" id="par_cb_sertifikat_paten_1" placeholder="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="captions">Asal Biaya Pendaftaran (Permohonan) Paten<i style="color: red">*</i></label>
+                                                    <select class="custom-select custom-select-sm" id="par_cb_asalbiayadaftar_1"> 
+                                                            <option value="">-- Silahkan pilih</option>
+                                                            <option value="1">Raih KI</option>
+                                                            <option value="2">Institusi Penghasil/Pemilik Invensi</option>
+                                                            <option value="3">Lainnya</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung berupa Formulir (Bukti) pendaftaran dan/atau
+                                                        Sertifikat Paten/Paten Sederhana <i style="color: red">*</i></label>
+                                                        <div class="custom-file">
+                                                            <input type="file" class="form-control" multiple style="height:45px;" id="par_cb_asalbiayadaftar_1">
+                                                            <small>Unggah file dlm format PDF, MS Word, PPT</small>
+                                                        </div>
+                                                </div>
                                             </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -248,30 +257,30 @@
                                 <tr>
                                     <td>1.</td>
                                     <td>Publikasi pada jurnal internasional</td>
-                                    <td>0</td>
+                                    <td id="pub_np_int">0</td>
                                     <td>40</td>
-                                    <td>0</td>
+                                    <td id="pub_np_int_total">0</td>
                                 </tr>
                                 <tr>
                                     <td>2.</td>
                                     <td>Publikasi pada jurnal nasional</td>
-                                    <td>0</td>
+                                    <td id="pub_np_ns">0</td>
                                     <td>25</td>
-                                    <td>0</td>
+                                    <td id="pub_np_ns_total">0</td>
                                 </tr>
                                 <tr>
                                     <td>3.</td>
                                     <td>Buku Internasional</td>
-                                    <td>0</td>
+                                    <td id="buk_np_int">0</td>
                                     <td>40</td>
-                                    <td>0</td>
+                                    <td id="buk_np_int_total">0</td>
                                 </tr>
                                 <tr>
                                     <td>4.</td>
                                     <td>Buku Nasional</td>
-                                    <td>0</td>
+                                    <td id="buk_np_ns">0</td>
                                     <td>30</td>
-                                    <td>0</td>
+                                    <td id="buk_np_ns_total">0</td>
                                 </tr>
                                 <tr>
                                     <td>5.</td>

@@ -1,3 +1,13 @@
+window.onbeforeunload = function (e) {
+    e = e || window.event;
+    if (window.event.keyCode == 116) {
+        alert('you press f5')
+        sessionStorage.setItem('index_luaran_paten', 1);
+    }
+    else {
+    }  
+};
+
 $(function () {
     $('[data-toggle="tooltip"]').tooltip();
     $('[data-toggle="popover"]').popover()

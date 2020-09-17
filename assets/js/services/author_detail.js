@@ -4,6 +4,7 @@ $(function(){
     get_ipr();
     get_googlescholar_image();
     get_author_details();
+    get_books();
 });
 
 /**
@@ -137,44 +138,23 @@ function get_scopus(){
  */
 
 function get_books(){
+    console.log('get books');
     let check_sess_storage = sessionStorage.hasOwnProperty('get_books');
     if(check_sess_storage){   
-        let get_scopus = JSON.parse(sessionStorage.getItem('get_books'));
-        for(let j=0; j < get_scopus.length; j++){
-            let adapter_scp = `<ul class="list-group list-group-flush">
-                                <li class="list-group-item pub_item">
-                                    <div class="pub_title">`+get_scopus[j].title+`</div>
-                                    <div class="pub_item_journal">`+get_scopus[j].publicationName+`&nbsp;|&nbsp;vol.`+get_scopus[j].volume+`,&nbsp`+get_scopus[j].coverDisplayDate+`</div>
-                                </li></li>
-                            </ul>`;
-            $('.container_scopus').append(adapter_scp);
-        }
-        loader.hide();
+        // let get_books = JSON.parse(sessionStorage.getItem('get_books'));
     }else{
-        console.log('get scopus data')
          /**
-         * @param  userdetails.google_id //userdetails diambil dari localstorage
+         * @param  userdetails.sinta_id //userdetails diambil dari localstorage
         */
-        let api_endpoint = base_url_api + '/author/detail/books/' + userdetails.sinta_id;
+        let api_endpoint = base_url_api + '/author/detail/book/' + userdetails.sinta_id;
         $.ajax({
            url : api_endpoint,
            type : 'GET',
            cache : true,
            success : function(res){
                 console.log(res);
-                let results = res.author.scopus.results;
-                sessionStorage.setItem('get_scopus', JSON.stringify(results));
-                for(let i=0; i < results.length; i++){
-                    console.log(results);
-                    let adapter = `<ul class="list-group list-group-flush">
-                                        <li class="list-group-item pub_item">
-                                            <div class="pub_title">`+results[i].title+`</div>
-                                            <div class="pub_item_journal">`+results[i].publicationName+`&nbsp;|&nbsp;vol.`+results[i].volume+`,&nbsp`+results[i].coverDisplayDate+`</div>
-                                        </li></li>
-                                    </ul>`;
-                    $('.container_scopus').append(adapter);
-                }
-                loader.hide();
+                let results = res.author.books.total;
+                sessionStorage.setItem('get_books', results);
            }
        })
     }
