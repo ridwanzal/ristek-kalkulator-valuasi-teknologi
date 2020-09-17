@@ -6,11 +6,17 @@ $(function(){
     get_author_details();
 });
 
-
+/**
+ * get user image from google cloud
+ */
 function get_googlescholar_image(){
     const img_uri = 'https://scholar.googleusercontent.com/citations?view_op=view_photo&user='+userdetails.google_id+'&citpid=1';
     $('#img_user').attr('src', img_uri);
 }
+
+/**
+ * semua informasi terkait detail author 
+ */
 
 function get_author_details(){
     let check_sess_storage = sessionStorage.hasOwnProperty('get_author_overview');
@@ -30,6 +36,10 @@ function get_author_details(){
         })
     }
 }
+
+/**
+ * semua informasi terkait publikasi ilmiah terdaftar di google scholar /
+ */
 
 function get_google(){
     let check_sess_storage = sessionStorage.hasOwnProperty('get_google');
@@ -73,6 +83,10 @@ function get_google(){
         })
     }
 }
+
+/**
+ * semua informasi terkait publikasi ilmiah terdaftar di scopus /
+ */
 
 function get_scopus(){
     let check_sess_storage = sessionStorage.hasOwnProperty('get_scopus');
@@ -118,6 +132,10 @@ function get_scopus(){
     }
 }
 
+/**
+ * semua informasi terkait publikasi buku oleh author /
+ */
+
 function get_books(){
     let check_sess_storage = sessionStorage.hasOwnProperty('get_books');
     if(check_sess_storage){   
@@ -161,6 +179,11 @@ function get_books(){
        })
     }
 }
+
+
+/**
+ * semua informasi terkait HKI (Intellectual Property Rights) /
+ */
 
 function get_ipr(){
     let check_sess_storage = sessionStorage.hasOwnProperty('get_ipr');
