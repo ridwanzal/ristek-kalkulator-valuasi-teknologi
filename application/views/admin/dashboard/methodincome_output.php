@@ -313,83 +313,209 @@ function rupiah($angka){
         <!-- Tab Cashflow END-->
         <!-- Tab Profit Lost -->
         <div role="tabpanel" class="tab-pane fade" id="profitlost">
-            <div class="row mt-3 mb-3">
+        <div class="row mt-3 mb-3">
                 <div class="col-md-12 center">
                     <div class="card text-center">
-                        <div class="card-header bg-info text-white">
-                            Proyeksi Profit - Lost
+                        <div class="card-header bg-success text-white">
+                            PROYEKSI PROFIT - LOSS
                         </div>
                         <div class="card-body">
-                        <table class="table table-bordered table-responsive table-hover table-sm">
+                            <table class="table table-bordered table-responsive table-hover table-sm">
                             <thead>
-                                <tr>
-                                <th scope="col">Item</th>
-                                <th scope="col">Tahun 1</th>
-                                <th scope="col">Tahun 2</th>
-                                <th scope="col">Tahun 3</th>
-                                <th scope="col">Tahun 4</th>
-                                <th scope="col">Tahun 5</th>
-                                <th scope="col">Tahun 6</th>
-                                <th scope="col">Tahun 7</th>
-                                <th scope="col">Tahun 8</th>
+                                <tr class="bg-light">
+                                    <th>Tahun </th>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>Tahun $i</th>";
+                                    }
+                                    ?>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row" class="text-left">A. Sales</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                <tr class="bg-light">
+                                    <td>KOMPONEN</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";                                        
+                                    }
+                                    ?>
                                 </tr>
                                 <tr>
-                                    <th scope="row" class="text-left">B. HPP</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>   
+                                    <td class="text-left">Sales (Penjualan)</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr> 
                                 <tr>
-                                    <th scope="row" class="text-left">C. Gros Profit</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td class="text-left">COGs</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>   
+                                <tr class="bg-light">
+                                    <td class="text-left">Gross Profit</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>        
+                                <tr>
+                                    <td class="text-left">Fixed Cost</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
                                 </tr>  
                                 <tr>
-                                    <th scope="row" class="text-left">D. Operation Cost</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>         
+                                    <td class="text-left">Marketing</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>    
                                 <tr>
-                                    <th scope="row" class="text-left">Dst...</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>                  
+                                    <td class="text-left">Warehouse</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left bg-light">Operation Profit (EBITDA)</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Depresiasi</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left bg-light">EBIT</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Interest</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left bg-light">Penghasilan Kena Pajak</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Pajak Penjualan 2.5%</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">PPH Badan</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left bg-light">Eearning After Tax (EAT)</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Depresiasi</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Capital Expenditure</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left bg-light">Total Expenditure</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Net Cash Flow/FCF</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left">Net Cash Flow/FCF</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr class="bg-light">
+                                    <td class="text-left">Discount Factor at interest rate 10%</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr class="bg-light">
+                                    <td class="text-left">Discounted FCF</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr class="bg-success">
+                                    <td class="text-left">Net Present Value (NPV)</td>
+                                    <?php
+                                    for($i=1;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>                                
                             </tbody>
                             </table>
                         </div>
@@ -472,7 +598,9 @@ function rupiah($angka){
 <script type="text/javascript" src="<?php echo base_url('assets/frontview/js/jquery-3.3.1.min.js') ?>"></script>
 <script>
     $(document).ready(function(){
-        $('.nav-tabs a[href="#profitlost"]').tab('show');
-        $('.nav-tabs a[href="#cashflow"]').trigger('click');
+        //$('.nav-tabs a[href="#profitlost"]').tab('show');
+        //$('.nav-tabs a[href="#cashflow"]').trigger('click');
+        $('.nav-tabs a[href="#cashflow"]').tab('show');        
+        $('.nav-tabs a[href="#profitlost"]').trigger('click');
     });
 </script>
