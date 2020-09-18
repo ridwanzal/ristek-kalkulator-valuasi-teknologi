@@ -109,7 +109,7 @@ if($this->session->userdata('biaya_investasi')){
                         <a href="<?=base_url() ?>manage/add/incomebased_calculator2" id="tombol32" name="tombol32" class="btn btn-warning btn-sm">Kembali Halaman 2</a>
                         </div>
                         <div class="col-md-6 text-left">
-                        <a href="<?=base_url() ?>manage/add/incomebased_calculator3" id="tombol33" name="tombol33" class="btn btn-success btn-sm">Hitung Valuasi</a>
+                        <a href="<?=base_url() ?>manage/add/incomebased_output" id="tombol33" name="tombol33" class="btn btn-success btn-sm">Hitung Valuasi</a>
                         </div>
                     </div>
                 </form> <!-- Form Halaman 1 END -->
