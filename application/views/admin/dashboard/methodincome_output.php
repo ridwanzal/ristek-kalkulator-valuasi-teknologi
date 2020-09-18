@@ -572,9 +572,9 @@ function rupiah($angka){
 <script type="text/javascript" src="<?php echo base_url('assets/frontview/js/jquery-3.3.1.min.js') ?>"></script>
 <script>
     $(document).ready(function(){
-        //$('.nav-tabs a[href="#profitlost"]').tab('show');
-        //$('.nav-tabs a[href="#cashflow"]').trigger('click');
-        $('.nav-tabs a[href="#cashflow"]').tab('show');        
-        $('.nav-tabs a[href="#profitlost"]').trigger('click');
+        $('.nav-tabs a[href="#profitlost"]').tab('show');
+        $('.nav-tabs a[href="#cashflow"]').trigger('click');
+        //$('.nav-tabs a[href="#cashflow"]').tab('show');        
+        //$('.nav-tabs a[href="#profitlost"]').trigger('click');
     });
 </script>
