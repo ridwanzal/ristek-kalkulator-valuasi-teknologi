@@ -28,7 +28,7 @@ for($q=1;$q<=$indeks;$q++){
     if($q==1){
         $qty[$q] = $qty_tahun1;
     }else{
-        $qty[$indeks-($indeks-$q)] = $marketshare_tahun2 * $target;
+        $qty[$indeks-($indeks-$q)] = ($marketshare_tahun2/100) * $target;
     }
 }
 
@@ -44,8 +44,8 @@ for($h=1;$h<=$indeks;$h++){
 
 //variabel dummy cashflow.total cash received
 $total_cash_received = array();
-for($tcr=1;$tcr<=$indeks;$tcr++){
-    $total_cash_received[$indeks-($indeks-$tcr)] = $qty[$tcr] * $harga[$tcr];
+for($t=1;$t<=$indeks;$t++){
+    $total_cash_received[$indeks-($indeks-$t)] = $qty[$t] * $harga[$t];
 }
 
 //fungsi untuk menampilkan angka dalam rupiah
