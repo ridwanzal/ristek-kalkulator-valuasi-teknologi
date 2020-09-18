@@ -57,7 +57,7 @@ if($this->session->userdata('biaya_investasi')){
                     <div class="form-group row">                        
                         <label for="persen_lisensi" class="col-sm-6 col-form-label text-right">3.4 Biaya License + ISO9002 mulai tahun ke-2 (Prosentase)</label>
                         <div class="col-sm-6">
-                            <input type="text" value="<?= $persen_lisensi; ?>" class="form-control  form-control-sm col-sm-12" id="persen_lisensi" name="persen_lisensi" aria-describedby="persen_lisensiDesc" required>
+                            <input type="text" value="<?= $persen_lisensi; ?>" class="form-control  form-control-sm col-sm-3" id="persen_lisensi" name="persen_lisensi" aria-describedby="persen_lisensiDesc" required>
                             <small id="persen_lisensiDesc" class="form-text text-muted text-left">Prosentase biaya lisensi untuk tahun ke - 2 dan seterusnya</small>
                         </div>
                     </div>
@@ -71,28 +71,28 @@ if($this->session->userdata('biaya_investasi')){
                     <div class="form-group row">                        
                         <label for="biaya_tetap" class="col-sm-6 col-form-label text-right">3.6 Biaya Operasional Tetap (Fixed Cost)</label>
                         <div class="col-sm-6">
-                            <input type="text" value="<?= $biaya_tetap; ?>" class="form-control  form-control-sm col-sm-3" id="biaya_tetap" name="biaya_tetap" aria-describedby="biaya_tetapDesc">
+                            <input type="text" value="<?= $biaya_tetap; ?>" class="form-control  form-control-sm col-sm-6" id="biaya_tetap" name="biaya_tetap" aria-describedby="biaya_tetapDesc">
                             <small id="biaya_tetapDesc" class="form-text text-muted text-left">Biaya tetap</small>
                         </div>
                     </div>
                     <div class="form-group row">                        
-                        <label for="biaya_marketing" class="col-sm-6 col-form-label text-right">3.7 Biaya Marketing</label>
+                        <label for="biaya_marketing" class="col-sm-6 col-form-label text-right">3.7 Biaya Marketing (Prosentase)</label>
                         <div class="col-sm-6">
                             <input type="text" value="<?= $biaya_marketing; ?>" class="form-control  form-control-sm col-sm-3" id="biaya_marketing" name="biaya_marketing" aria-describedby="biaya_marketingDesc">
-                            <small id="biaya_marketingDesc" class="form-text text-muted text-left">Komponen Biaya Marketing</small>
+                            <small id="biaya_marketingDesc" class="form-text text-muted text-left">Prosentase Komponen Biaya Marketing</small>
                         </div>
                     </div>
                     <div class="form-group row">                        
                         <label for="biaya_perawatan" class="col-sm-6 col-form-label text-right">3.8 Biaya Maintenance (Perawatan)</label>
                         <div class="col-sm-6">
-                            <input type="text" value="<?= $biaya_perawatan; ?>" class="form-control  form-control-sm col-sm-3" id="biaya_perawatan" name="biaya_perawatan" aria-describedby="biaya_perawatanDesc">
+                            <input type="text" value="<?= $biaya_perawatan; ?>" class="form-control  form-control-sm col-sm-6" id="biaya_perawatan" name="biaya_perawatan" aria-describedby="biaya_perawatanDesc">
                             <small id="biaya_perawatanDesc" class="form-text text-muted text-left">Komponen Biaya Perawatan</small>
                         </div>
                     </div>
                     <div class="form-group row">                        
                         <label for="biaya_warehouse" class="col-sm-6 col-form-label text-right">3.9 Biaya Warehouse</label>
                         <div class="col-sm-6">
-                            <input type="text" value="<?= $biaya_warehouse; ?>" class="form-control  form-control-sm col-sm-3" id="biaya_warehouse" name="biaya_warehouse" aria-describedby="biaya_warehouseDesc">
+                            <input type="text" value="<?= $biaya_warehouse; ?>" class="form-control  form-control-sm col-sm-6" id="biaya_warehouse" name="biaya_warehouse" aria-describedby="biaya_warehouseDesc">
                             <small id="biaya_warehouseDesc" class="form-text text-muted text-left">Komponen Biaya Warehouse</small>
                         </div>
                     </div>

@@ -11,10 +11,18 @@
 ($this->session->userdata('marketshare_tahun2')!==null) ? $marketshare_tahun2 = $this->session->userdata('marketshare_tahun2'): $marketshare_tahun2=0.00;
 ($this->session->userdata('harga_tahun1')!==null) ? $harga_tahun1 = $this->session->userdata('harga_tahun1'): $harga_tahun1=0.00;
 ($this->session->userdata('harga_tahun2')!==null) ? $harga_tahun2 = $this->session->userdata('harga_tahun2'): $harga_tahun2=0.00;
+
 //variabel dari halaman 3
 ($this->session->userdata('biaya_investasi')!==null) ? $biaya_investasi = $this->session->userdata('biaya_investasi'): $biaya_investasi=0.00;
 ($this->session->userdata('biaya_riset')!==null) ? $biaya_riset = $this->session->userdata('biaya_riset'): $biaya_riset=0.00;
 ($this->session->userdata('biaya_lisensi')!==null) ? $biaya_lisensi = $this->session->userdata('biaya_lisensi'): $biaya_lisensi=0.00;
+($this->session->userdata('biaya_cogs')!==null) ? $biaya_cogs = $this->session->userdata('biaya_cogs'): $biaya_cogs=0.00;
+($this->session->userdata('biaya_tetap')!==null) ? $biaya_tetap = $this->session->userdata('biaya_tetap'): $biaya_tetap=0.00;
+($this->session->userdata('biaya_marketing')!==null) ? $biaya_marketing = $this->session->userdata('biaya_marketing'): $biaya_marketing=0.00;
+($this->session->userdata('biaya_perawatan')!==null) ? $biaya_perawatan = $this->session->userdata('biaya_perawatan'): $biaya_perawatan=0.00;
+($this->session->userdata('biaya_warehouse')!==null) ? $biaya_warehouse = $this->session->userdata('biaya_warehouse'): $biaya_warehouse=0.00;
+($this->session->userdata('biaya_depresiasi')!==null) ? $biaya_depresiasi = $this->session->userdata('biaya_depresiasi'): $biaya_depresiasi=0.00;
+
 //perhitungan variabel proyeksi
 $indeks = $periode;
 $arr_modal = array();
@@ -22,6 +30,12 @@ $arr_biaya_investasi = array();
 $arr_biaya_riset = array();
 $arr_qty_tahun1 = array();
 $arr_biaya_lisensi = array();
+$arr_biaya_cogs = array();
+$arr_biaya_tetap = array();
+$arr_biaya_marketing = array();
+$arr_biaya_perawatan = array();
+$arr_biaya_warehouse = array();
+$arr_biaya_depresiasi = array();
 
 //variabel dummy untuk cashflow.volume
 $qty = array();
@@ -62,6 +76,52 @@ for($l=1;$l<=$indeks;$l++){
 }
 //jumlahkan isi array lisensi
 $total_lisensi = array_sum($lisensi);
+
+//variabel dummy cashflow.biaya_cogs
+$cogs = array();
+for($c=1;$c<=$indeks;$c++){
+    if($c==1){
+        $cogs[$c] = $biaya_cogs*$qty[$c];
+    }elseif($c==2){
+        $cogs[$c] = $biaya_cogs*($harga_tahun2/100)*$qty[$c]; 
+    }else{
+        $cogs[$indeks-($indeks-$c)] = $cogs[$c-1]*($harga_tahun2/100);
+    }
+}
+
+//variabel dummy cashflow.biaya_tetap
+$tetap = array();
+for($t=1;$t<=$indeks;$t++){
+    if($t==1){
+        $tetap[$t] = $biaya_tetap*12;
+    }else{
+        $tetap[$t] = $tetap[$t-1]*($harga_tahun2/100); 
+    }
+}
+
+//variabel dummy cashflow.biaya_marketing
+$marketing = array();
+for($m=1;$m<=$indeks;$m++){
+    $marketing[$m] = $cogs[$m]*($biaya_marketing/100);
+}
+
+//variabel dummy cashflow.biaya_perawatan
+$perawatan = array();
+for($p=1;$p<=$indeks;$p++){
+    $perawatan[$p] = $biaya_perawatan;
+}
+
+//variabel dummy cashflow.biaya_warehouse
+$warehouse = array();
+for($w=1;$w<=$indeks;$w++){
+    $warehouse[$w] = $biaya_warehouse;
+}
+
+//variabel dummy cashflow.biaya_depresiasi
+$depresiasi = array();
+for($d=1;$d<=$indeks;$d++){
+    $depresiasi[$d] = $biaya_depresiasi;
+}
 
 //fungsi untuk menampilkan angka dalam rupiah
 function rupiah($angka){
@@ -269,7 +329,11 @@ function rupiah($angka){
                                     <td class="text-left" style="text-indent: 30px;">COGS</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<td class=\"text-right\">&nbsp;</td>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($cogs[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -277,7 +341,11 @@ function rupiah($angka){
                                     <td class="text-left" style="text-indent: 30px;">Fixed Cost</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<td class=\"text-right\">&nbsp;</td>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($tetap[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -285,7 +353,11 @@ function rupiah($angka){
                                     <td class="text-left" style="text-indent: 30px;">Marketing</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<td class=\"text-right\">&nbsp;</td>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($marketing[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -293,7 +365,11 @@ function rupiah($angka){
                                     <td class="text-left" style="text-indent: 30px;">Maintenance</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<td class=\"text-right\">&nbsp;</td>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($perawatan[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -301,7 +377,11 @@ function rupiah($angka){
                                     <td class="text-left" style="text-indent: 30px;">Warehouse</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<td class=\"text-right\">&nbsp;</td>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($warehouse[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -309,7 +389,11 @@ function rupiah($angka){
                                     <td class="text-left" style="text-indent: 30px;">Depreciation</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<td class=\"text-right\">&nbsp;</td>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($depresiasi[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
