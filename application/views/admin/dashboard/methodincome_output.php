@@ -533,9 +533,9 @@ function rupiah($angka){
                             Net Present Value (NPV)
                         </div>
                         <div class="card-body">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered table-hover">
                             <thead>
-                                <tr>
+                                <tr class="bg-warning">
                                 <th scope="col">Tahun</th>
                                 <th scope="col">FCF</th>
                                 <th scope="col">Disc Rate</th>
@@ -544,44 +544,18 @@ function rupiah($angka){
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row" class="text-left">Tahun 1</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="text-left">Tahun 2</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>   
-                                <tr>
-                                    <th scope="row" class="text-left">Tahun 3</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>  
-                                <tr>
-                                    <th scope="row" class="text-left">Tahun 4</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>         
-                                <tr>
-                                    <th scope="row" class="text-left">Tahun 5</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>              
+                                <?php for($i=1;$i<=$periode;$i++){ ?>
+                                    <tr>
+                                        <th scope="row" class="text-left">Tahun <?=$i ?></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr> 
+                                <?php } ?>           
                                 <tr>
                                     <th scope="row" class="text-right" colspan="4">i</th>
-                                    <td>Nilai NPV</td>
+                                    <td class="bg-primary text-white">Nilai NPV</td>
                                 </tr>    
                             </tbody>
                             </table>
