@@ -65,7 +65,7 @@ function rupiah($angka){
                             Proyeksi Cash Flow
                         </div>
                         <div class="card-body">
-                            <table class="table table-bordered table-responsive table-hover table-sm">
+                            <table class="table table-bordered <?php if($periode>5){ echo "table-responsive"; } ?> table-hover table-sm">
                             <thead>
                                 <tr class="bg-warning">
                                     <th>Tahun </th>
@@ -320,7 +320,7 @@ function rupiah($angka){
                             PROYEKSI PROFIT - LOSS
                         </div>
                         <div class="card-body">
-                            <table class="table table-bordered table-responsive table-hover table-sm">
+                            <table class="table table-bordered <?php if($periode>5){ echo "table-responsive"; } ?> table-hover table-sm">
                             <thead>
                                 <tr class="bg-light">
                                     <th>Tahun </th>
