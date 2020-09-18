@@ -1,23 +1,34 @@
+<?php
+//ambil beberap session yang telah didefinisikan sebelumnya pada input parameter halaman 1,2, dan 3
+//untuk dilakukan proses perhitungan
+($this->session->userdata('periode')!==null) ? $periode = $this->session->userdata('periode'): $periode=0.00;
+($this->session->userdata('modal')!==null) ? $modal = $this->session->userdata('modal'): $modal=0.00;
+($this->session->userdata('sukubunga')!==null) ? $sukubunga = $this->session->userdata('sukubunga'): $modal=0.00;
+function rupiah($angka){
+	$hasil_rupiah = number_format($angka,2,',','.');
+	return $hasil_rupiah;
+}
+?>
 <div class="container mt-3 mb-3">
     <div class="row mb-3">
         <div class="col-md-12 center">
             <div class="card text-center">
                 <div class="card-header bg-info text-white">
-                    Identitas Penelitian dan Invensi
+                    Identitas Penelitian dan Invensi 
                 </div>
                 <div class="card-body">
                     <div class="form-group row">                        
                         <label for="marketsize" class="col-sm-4 col-form-label text-right">Nama Inventor</label>
                         <div class="col-sm-8">
                             <input type="text" value="Air Media Persada" class="form-control  form-control-sm col-sm-12" id="marketsize" aria-describedby="marketsiezeDesc" readonly>
-                            <small id="marketsiezeDesc" class="form-text text-muted text-left">Nama Pemilik Invensi</small>
+                            <small id="marketsiezeDesc" class="form-text text-muted text-left">Nama Pemilik/Lembaga Invensi</small>
                         </div>
                     </div>                    
                     <div class="form-group row">                        
-                        <label for="marketsize" class="col-sm-4 col-form-label text-right">Judul Penelitian</label>
+                        <label for="marketsize" class="col-sm-4 col-form-label text-right">Judul Penelitian/Invensi</label>
                         <div class="col-sm-8">
                             <textarea  class="form-control  form-control-sm col-sm-12" id="marketsize" aria-describedby="marketsiezeDesc" readonly>Prototipe alat pendeteksi kebocoran gas beracun CO pada mobil menggunakan Array Sensor berbasis SMS Gateway</textarea>
-                            <small id="marketsiezeDesc" class="form-text text-muted text-left">Judul Penelitian</small>
+                            <small id="marketsiezeDesc" class="form-text text-muted text-left">Judul Penelitian/Invensi</small>
                         </div>
                     </div>
                     <!-- untuk tombol previous next -->
@@ -54,65 +65,244 @@
                             Proyeksi Cash Flow
                         </div>
                         <div class="card-body">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered table-responsive table-hover table-sm">
                             <thead>
-                                <tr>
-                                <th scope="col">Cashflow</th>
-                                <th scope="col">Tahun 1</th>
-                                <th scope="col">Tahun 2</th>
-                                <th scope="col">Tahun 3</th>
-                                <th scope="col">Tahun 4</th>
-                                <th scope="col">Tahun 5</th>
-                                <th scope="col">Tahun 6</th>
-                                <th scope="col">Tahun 7</th>
-                                <th scope="col">Tahun 8</th>
+                                <tr class="bg-warning">
+                                    <th>Tahun </th>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>Tahun $i</th>";
+                                    }
+                                    ?>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row" class="text-left">Volume</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                <tr class="bg-warning">
+                                    <td>IN FLOW</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        if($i==0){
+                                            echo "<td>".rupiah($modal)."</td>";
+                                        }
+                                    }
+                                    ?>
                                 </tr>
                                 <tr>
-                                    <th scope="row" class="text-left">Harga</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td class="text-left">Volume</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr> 
+                                <tr>
+                                    <td class="text-left">Harga</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
                                 </tr>   
+                                <tr class="bg-light">
+                                    <td class="text-left">TOTAL CASH RECEIVED</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>        
                                 <tr>
-                                    <th scope="row" class="text-left">TOTAL CASH RECEIVED</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>           
+                                    <td class="text-left">Modal Pinjaman</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>  
                                 <tr>
-                                    <th scope="row" class="text-left">Dst...</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>                  
+                                    <td class="text-left">Investment Capital</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>    
+                                <tr>
+                                    <td class="text-left">Working Capital</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left bg-light">OutFlow</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left" style="text-indent: 30px;">Machine+vehicle+equipment</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left" style="text-indent: 30px;">Riset</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left" style="text-indent: 30px;">License + ISO9001</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr class="bg-warning">
+                                    <td class="text-left">Operating Expense</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left" style="text-indent: 30px;">COGS</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left" style="text-indent: 30px;">Fixed Cost</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left" style="text-indent: 30px;">Marketing</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left" style="text-indent: 30px;">Maintenance</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left" style="text-indent: 30px;">Warehouse</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left" style="text-indent: 30px;">Depreciation</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr class="bg-warning">
+                                    <td class="text-left">TOTAL EXPENDITURE</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr class="bg-warning">
+                                    <td class="text-left">Surplus</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr class="bg-warning">
+                                    <td class="text-left">Cash Flow Finance</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left" style="text-indent: 30px;">Installment Invest. Cap. Credit</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left" style="text-indent: 30px;">Installment Working Cap. Credit</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left" style="text-indent: 30px;">Interest Investment Cap </td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left" style="text-indent: 30px;">Interest Working Cap </td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td class="text-left" style="text-indent: 30px;">Angsuran Modal </td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr class="bg-warning">
+                                    <td class="text-left">Beginning Balance</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr class="bg-warning">
+                                    <td class="text-left">Ending Balance</td>
+                                    <?php
+                                    for($i=0;$i<=$periode;$i++){
+                                        echo "<th>&nbsp;</th>";
+                                    }
+                                    ?>
+                                </tr>
                             </tbody>
                             </table>
                         </div>
