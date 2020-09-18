@@ -29,5 +29,4 @@
     <style>
         .floatwa{position:fixed;width:60px;height:60px;bottom:40px;right:40px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;z-index:100;}.my-floatwa{margin-top:16px;}
     </style>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>

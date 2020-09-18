@@ -862,10 +862,6 @@ ul.notika-menu-wrap li a{
 .checkbox-primary input[type="checkbox"]:checked + label::after {
     color: #ffffff;
 }
-.checkbox input[type="checkbox"]:checked + label::after {
-    content: "\f00c";
-    font-family: 'FontAwesome';
-}
 .checkbox label::after {
     color: #333333;
     display: inline-block;

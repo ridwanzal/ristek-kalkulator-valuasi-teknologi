@@ -10,60 +10,65 @@
                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                         <p class="font-weight-bold">Field Input Data</p>
                         <p>A. Identitas Penelitian dan Invensi</p>
-                        <br/>
-                            <div class="form-group">
-                                <label class="captions" for="formGroupExampleInput"><span class="badge badge-pill  badge-warning">1</span>&nbsp;Nama Inventor <i style="color: red">*</i> </label>
-                                <input value="<?= $userdetails['name'];?>" type="text" class="form-control form-control-sm" id="par_cb_nama_inventor" placeholder="">
-                                <small>Jika Inventor yang terlibat lebih dari 1, pisahkan dengan koma</small>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">2</span>&nbsp;Institusi Penghasil/ Pemilik Invensi <i style="color: red">*</i> </label>
-                                <input value="<?= $userdetails['afiliasi']['name']; ?>" type="text" class="form-control form-control-sm" id="par_cb_nama_institusi" placeholder="">
-                                <small>Jika Institusi yang terlibat lebih dari 1, pisahkan dengan koma</small>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">3</span>&nbsp;Unit Kerja Penghasil/ Pemilik Invensi <i style="color: red">*</i> </label>
-                                <input type="text" class="form-control form-control-sm" id="par_cb_unit_kerja" placeholder="">
-                            </div>
-
-                            <div class="form-group">
-                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">4</span>&nbsp;Judul Penelitian <i style="color: red">*</i> </label>
-                                <input type="text" class="form-control form-control-sm" id="par_cb_judul_riset" placeholder="">
-                                <small>Autocomplete text</small>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">5</span>&nbsp;Total Biaya Masukan/Realisasi Pagu Penelitian (R) <i style="color: red">*</i></label>
-                                <input type="number" class="form-control form-control-sm" id="par_pagu_riset" placeholder="">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">6</span>&nbsp;Asal Biaya Masukan Masukan/Realisasi Pagu Penelitian <i style="color: red">*</i> </label>
-                                    <select id="par_cb_asal_biaya" class="custom-select custom-select-sm">
-                                        <option value="">-- Silahkan pilih</option>
-                                        <option value="1">Hibah Ristek</option>
-                                        <option value="2">Dikti Kemendikbud</option>
-                                        <option value="3">LPDP</option>
-                                        <option value="0">Lainnya</option>
-                                    </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="captions" for="formGroupExampleInput2">Upload dokumen pendukung <i style="color: red">*</i></label>
-                                    <div class="custom-file">
-                                        <input id="par_cb_file1" type="file" class="form-control" multiple style="height:45px;">
-                                        <small>Unggah file dlm format PDF, MS Word, PPT</small>
+                        <div class="card">
+                                <div class="card-body">
+                                    <div class="form-row form-group">
+                                        <div class="col">
+                                            <label class="captions" for="formGroupExampleInput"><span class="badge badge-pill  badge-warning">1</span>&nbsp;Nama Inventor <i style="color: red">*</i> </label>
+                                            <input value="<?= $userdetails['name'];?>" type="text" class="form-control form-control-sm" id="par_cb_nama_inventor" placeholder="">
+                                            <small>Jika Inventor yang terlibat lebih dari 1, pisahkan dengan koma</small>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">2</span>&nbsp;Institusi Penghasil/ Pemilik Invensi <i style="color: red">*</i> </label>
+                                            <input value="<?= $userdetails['afiliasi']['name']; ?>" type="text" class="form-control form-control-sm" id="par_cb_nama_institusi" placeholder="">
+                                            <small>Jika Institusi yang terlibat lebih dari 1, pisahkan dengan koma</small>
+                                        </div>
                                     </div>
-                            </div>
+
+                                    <div class="form-row form-group">
+                                        <div class="col">
+                                            <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">3</span>&nbsp;Unit Kerja Penghasil/ Pemilik Invensi <i style="color: red">*</i> </label>
+                                            <input type="text" class="form-control form-control-sm" id="par_cb_unit_kerja" placeholder="">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">4</span>&nbsp;Judul Penelitian <i style="color: red">*</i> </label>
+                                            <input type="text" class="form-control form-control-sm" id="par_cb_judul_riset" placeholder="">
+                                            <small>Autocomplete text</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row form-group">
+                                        <div class="col">
+                                            <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">5</span>&nbsp;Total Biaya Masukan/Realisasi Pagu Penelitian (R) <i style="color: red">*</i></label>
+                                            <input type="number" class="form-control form-control-sm" id="par_pagu_riset" placeholder="">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">6</span>&nbsp;Asal Biaya Masukan Masukan/Realisasi Pagu Penelitian <i style="color: red">*</i> </label>
+                                            <select id="par_cb_asal_biaya" class="custom-select custom-select-sm">
+                                                <option value="">-- Silahkan pilih</option>
+                                                <option value="Hibah Ristek">Hibah Ristek</option>
+                                                <option value="Dikti Kemendikbud">Dikti Kemendikbud</option>
+                                                <option value="LPDP">LPDP</option>
+                                                <option value="Lainnya">Lainnya</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="captions" for="formGroupExampleInput2">Upload dokumen pendukung <i style="color: red">*</i></label>
+                                            <div class="custom-file">
+                                                <input id="par_cb_file1" type="file" class="form-control" multiple style="height:45px;">
+                                                <small>Unggah file dlm format PDF, MS Word, PPT</small>
+                                            </div>
+                                    </div>
+                                </div>
+                        </div>
                             <br/>
                             <!-- separator =============================== -->
-                            <div class="form-group">
-                                <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">7</span>&nbsp;Luaran Penelitian <i style="color: red">*</i>   </label>
-                            </div>
                             <div class="card">
                                 <div class="card-body">
+                                    <div class="form-group">
+                                        <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">7</span>&nbsp;Luaran Penelitian <i style="color: red">*</i>   </label>
+                                    </div>
                                     <div class="alert alert-secondary" role="alert">
                                         Luaran penelitian non paten (diisi jumlah luaran yang dihasilkan dari penelitian)
                                     </div>
@@ -132,6 +137,7 @@
                                             <input disabled type="number" class="form-control" placeholder="1" value="10">
                                         </div>
                                     </div>
+                                    <button class="btn btn-sm btn-secondary btn-block" id="proc_np_data">Proses data</button>
                                 </div>
                             </div>
 
@@ -148,7 +154,7 @@
                                         </div>
                                     </div>
                                     <div class="container_luaran_paten">
-                                        <div class="card">
+                                        <div class="card luaran_paten_wrapper">
                                             <div class="card-body">
                                                 <div class="form-group">
                                                     <label class="captions">Judul Invensi <i style="color: red">*</i></label>
@@ -186,8 +192,8 @@
                                                 </div>
 
                                                 <div class="card">
-                                                    <div class="card-body">
-                                                        <p>Keterangan</p>
+                                                    <div class="card-body" style="padding:10px;">
+                                                        <div style="margin-left:24px;">Keterangan</div>
                                                         <ul>
                                                             <li>Bobot Paten granted (tersertifikasi) = 48</li>
                                                             <li>Bobot Paten terdaftar = 14</li>
@@ -197,31 +203,35 @@
                                                     </div>
                                                 </div>
                                                 <br/>
-                                                <div class="form-group">
-                                                    <label class="captions">Nomor pendaftaran (Pemohon) <i style="color: red">*</i></label>
-                                                    <input type="text" class="form-control form-control-sm" id="par_cb_nodaftar_1" placeholder="">
+                                                <div class="form-row form-group">
+                                                    <div class="col">
+                                                        <label class="captions">Nomor pendaftaran (Pemohon) <i style="color: red">*</i></label>
+                                                        <input type="text" class="form-control form-control-sm" id="par_cb_nodaftar_1" placeholder="">
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label class="captions">Nomor Sertifikat Paten/Paten Sederhana <i style="color: red">*</i></label>
+                                                        <input type="text" class="form-control form-control-sm" id="par_cb_sertifikat_paten_1" placeholder="">
+                                                        <small> (jika sudah granted)</small>
+                                                    </div>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label class="captions">Nomor Sertifikat Paten/Paten Sederhana (jika sudah granted) <i style="color: red">*</i></label>
-                                                    <input type="text" class="form-control form-control-sm" id="par_cb_sertifikat_paten_1" placeholder="">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="captions">Asal Biaya Pendaftaran (Permohonan) Paten<i style="color: red">*</i></label>
-                                                    <select class="custom-select custom-select-sm" id="par_cb_asalbiayadaftar_1"> 
-                                                            <option value="">-- Silahkan pilih</option>
-                                                            <option value="1">Raih KI</option>
-                                                            <option value="2">Institusi Penghasil/Pemilik Invensi</option>
-                                                            <option value="3">Lainnya</option>
-                                                    </select>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung berupa Formulir (Bukti) pendaftaran dan/atau
-                                                        Sertifikat Paten/Paten Sederhana <i style="color: red">*</i></label>
+                                                <div class="form-row form-group">
+                                                    <div class="col">
+                                                        <label class="captions">Asal Biaya Pendaftaran (Permohonan) Paten<i style="color: red">*</i></label>
+                                                        <select class="custom-select custom-select-sm" id="par_cb_asalbiayadaftar_1"> 
+                                                                <option value="">-- Silahkan pilih</option>
+                                                                <option value="1">Raih KI</option>
+                                                                <option value="2">Institusi Penghasil/Pemilik Invensi</option>
+                                                                <option value="3">Lainnya</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung <i style="color: red">*</i></label>
                                                         <div class="custom-file">
                                                             <input type="file" class="form-control" multiple style="height:45px;" id="par_cb_asalbiayadaftar_1">
-                                                            <small>Unggah file dlm format PDF, MS Word, PPT</small>
+                                                            <small>berupa Formulir (Bukti) pendaftaran dan/atau
+                                                        Sertifikat Paten/Paten Sederhana (Unggah file dlm format PDF, MS Word, PPT)</small>
                                                         </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -285,23 +295,23 @@
                                 <tr>
                                     <td>5.</td>
                                     <td>Publikasi pada prosiding internasional</td>
-                                    <td>0</td>
+                                    <td id="pub_prod_np_int">0</td>
                                     <td>25</td>
-                                    <td>0</td>
+                                    <td id="pub_prod_np_int_total">0</td>
                                 </tr>
                                 <tr>
                                     <td>6.</td>
                                     <td>Publikasi pada prosiding nasional</td>
-                                    <td>0</td>
+                                    <td id="pub_prod_np_ns">0</td>
                                     <td>10</td>
-                                    <td>0</td>
+                                    <td id="pub_prod_np_ns_total">0</td>
                                 </tr>
-                                <tr>
+                                <tr style="background : #f1f1f1 !important;">
                                     <td></td>
                                     <td><b>Total bobot keluaran penelitian non paten (Qi)</b></td>
                                     <td></td>
                                     <td></td>
-                                    <td></td>
+                                    <td id="np_total_bobot">0</td>
                                 </tr>
                                 <tr>
                                     <td>B.</td>
@@ -310,7 +320,7 @@
                                     <td></td>
                                     <td></td>
                                 </tr>
-                                <tr>
+                                <!-- <tr>
                                     <td>1.</td>
                                     <td>Publikasi pada jurnal internasional</td>
                                     <td>1</td>
@@ -323,8 +333,8 @@
                                     <td>1</td>
                                     <td>40</td>
                                     <td>40</td>
-                                </tr>
-                                <tr>
+                                </tr> -->
+                                <tr style="background : #f1f1f1 !important;">
                                     <td></td>
                                     <td><b>Total bobot keluaran penelitian non paten (Ti)</b></td>
                                     <td></td>
@@ -395,31 +405,31 @@
                 </div>
 
                 <br/>
+                <div class="row">
+                    <div class="col-lg-9 col-md-9">
+                        <button class="btn btn-primary btn-sm">Hitung</button>
+                        <button class="btn btn-success btn-sm" disabled>Simpan</button>
+                    </div>
+                </div>
                 <br/>
-
                 <div class="row">
                     <div class="col-lg-9 col-md-9">
                         <p>D. Nilai Aset Tak Berwujud berupa Paten/ATB-P (Vi)</p>   
                         <p>1. Nilai ATB-P masing-masing paten:</p>   
-                        <div class="form-group">
-                            <label class="captions" for="formGroupExampleInput2">Paten Terdaftar : </label>
-                            <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label class="captions" for="formGroupExampleInput2">Paten Sederhana Terdaftar S : </label>
-                            <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <label class="captions" for="formGroupExampleInput2">Paten Terdaftar : </label>
+                                <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="captions" for="formGroupExampleInput2">Paten Sederhana Terdaftar S : </label>
+                                <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
+                            </div>
                         </div>
                         <p>2. Total Nilai ATB-P :</p>   
                         <div class="form-group">
                             <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
                         </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-9 col-md-9">
-                        <button class="btn btn-primary btn-sm">Hitung</button>
-                        <button class="btn btn-success btn-sm" disabled>Simpan</button>
                     </div>
                 </div>
 

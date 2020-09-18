@@ -2,10 +2,11 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-5 col-md-5 col-xs-5"> 
-            <center><img width="200" style="margin-bottom:40px;" src="<?php echo base_url();?>assets/frontview/img/logo2.svg"></center>
+            <center><img width="200" style="margin-bottom:20px;" src="<?php echo base_url();?>assets/frontview/img/logo2.svg"></center>
+            <div class="loader"></div>
+            <br/>
             <div class="card">
                     <div class="card-body">
-                        <div class="loader"></div>
                         <h1 class="h3 mb-3 font-weight-bold">Masuk</h1>
                         <label for="inputEmail" class="sr-only">Email address</label>
                         <input type="email" id="p_username" class="form-control" placeholder="Email address" required value="anism@unissula.ac.id" autofocus>

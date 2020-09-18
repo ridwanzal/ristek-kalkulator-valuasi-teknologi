@@ -15,10 +15,10 @@
     
     loader.hide();
     el_click_login.on('click', function(){
-        const el_uname = $('#p_username');
+        const _el_uname = $('#p_username');
         const el_pass = $('#p_password');
         
-        let check_username_empty = checkEmpty(el_uname);
+        let check_username_empty = checkEmpty(_el_uname);
         let check_pass_empty = checkEmpty(el_pass);
         if(!check_username_empty && !check_pass_empty){
                 loader.show();
@@ -41,7 +41,7 @@
                              * @result json of user information
                              */
 
-                            const url_req = base_url_login + '?' + 'u='+el_uname.val()+'&p='+el_pass.val()+' ';
+                            const url_req = base_url_login + '?' + 'u='+_el_uname.val()+'&p='+el_pass.val()+' ';
                             console.log(url_req)
                             $.ajax({
                                 url : url_req,
@@ -70,7 +70,7 @@
                                                 cache : true,
                                                 data : session_data,
                                                 success : function(res){
-                                                
+                                                    sessionStorage.setItem('index_luaran_paten', 1)
                                                     console.log('apa nih response');
                                                     console.log(res);
                                                     /**

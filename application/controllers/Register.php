@@ -31,7 +31,6 @@ class Register extends CI_Controller {
 			$this->load->view('frontview/footer', $data);
 		}
   	}
-    
       
     public function register(){
 		// $username = $this->input->post('p_username', TRUE);
