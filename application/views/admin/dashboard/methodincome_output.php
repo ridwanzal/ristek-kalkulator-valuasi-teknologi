@@ -317,10 +317,10 @@ function rupiah($angka){
                 <div class="col-md-12 center">
                     <div class="card text-center">
                         <div class="card-header bg-info text-white">
-                            Proyeksi Profit and Lost
+                            Proyeksi Profit - Lost
                         </div>
                         <div class="card-body">
-                            <table class="table table-bordered">
+                        <table class="table table-bordered table-responsive table-hover table-sm">
                             <thead>
                                 <tr>
                                 <th scope="col">Item</th>
