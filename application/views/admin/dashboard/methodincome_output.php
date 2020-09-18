@@ -7,6 +7,8 @@
 ($this->session->userdata('biaya_investasi')!==null) ? $biaya_investasi = $this->session->userdata('biaya_investasi'): $biaya_investasi=0.00;
 ($this->session->userdata('biaya_riset')!==null) ? $biaya_riset = $this->session->userdata('biaya_riset'): $biaya_riset=0.00;
 ($this->session->userdata('biaya_lisensi')!==null) ? $biaya_lisensi = $this->session->userdata('biaya_lisensi'): $biaya_lisensi=0.00;
+//variabel dari halaman 2
+($this->session->userdata('target')!==null) ? $target = $this->session->userdata('target'): $target=0.00;
 ($this->session->userdata('qty_tahun1')!==null) ? $qty_tahun1 = $this->session->userdata('qty_tahun1'): $qty_tahun1=0.00;
 ($this->session->userdata('marketshare_tahun2')!==null) ? $marketshare_tahun2 = $this->session->userdata('marketshare_tahun2'): $marketshare_tahun2=0.00;
 ($this->session->userdata('harga_tahun1')!==null) ? $harga_tahun1 = $this->session->userdata('harga_tahun1'): $harga_tahun1=0.00;
@@ -20,21 +22,30 @@ $arr_biaya_riset = array();
 $arr_qty_tahun1 = array();
 $arr_biaya_lisensi = array();
 
-//variabel dummy baru
+//variabel dummy untuk cashflow.volume
+$qty = array();
+for($q=1;$q<=$indeks;$q++){
+    if($q==1){
+        $qty[$q] = $qty_tahun1;
+    }else{
+        $qty[$indeks-($indeks-$q)] = $marketshare_tahun2 * $target;
+    }
+}
+
+//variabel dummy untuk cashflow.harga
 $harga = array();
 for($h=1;$h<=$indeks;$h++){
     if($h==1){
         $harga[$h] = $harga_tahun1;
     }else{
-        //$harga[$indeks-($indeks-$h)] = $harga_tahun1 * $harga_tahun2;
-        $harga[$indeks-($indeks-$h)] = $harga[$h-1] * $harga_tahun2;
+        $harga[$indeks-($indeks-$h)] = $harga[$h-1] * ($harga_tahun2/100);
     }
 }
 
-//variabel dummy baru
+//variabel dummy cashflow.total cash received
 $total_cash_received = array();
 for($tcr=1;$tcr<=$indeks;$tcr++){
-    $total_cash_received[$indeks-($indeks-$tcr)] = $qty_tahun1 * $harga_tahun1;
+    $total_cash_received[$indeks-($indeks-$tcr)] = $qty[$tcr] * $harga[$tcr];
 }
 
 //fungsi untuk menampilkan angka dalam rupiah
@@ -125,8 +136,8 @@ function rupiah($angka){
                                     <td class="text-left">Volume</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        if($i==1){
-                                            echo "<td>".rupiah($qty_tahun1)."</td>";
+                                        if($i>=1){
+                                            echo "<td>".rupiah($qty[$i])."</td>";
                                         }else{
                                             echo "<th>&nbsp;</th>";
                                         }
