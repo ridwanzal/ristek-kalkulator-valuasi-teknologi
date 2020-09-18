@@ -1,9 +1,43 @@
 <?php
-//ambil beberap session yang telah didefinisikan sebelumnya pada input parameter halaman 1,2, dan 3
-//untuk dilakukan proses perhitungan
+//ambil beberapa session yang telah didefinisikan sebelumnya pada input parameter halaman 1,2, dan 3
+//untuk dilakukan proses perhitungan menggunakan metode incomebased
 ($this->session->userdata('periode')!==null) ? $periode = $this->session->userdata('periode'): $periode=0.00;
 ($this->session->userdata('modal')!==null) ? $modal = $this->session->userdata('modal'): $modal=0.00;
-($this->session->userdata('sukubunga')!==null) ? $sukubunga = $this->session->userdata('sukubunga'): $modal=0.00;
+($this->session->userdata('sukubunga')!==null) ? $sukubunga = $this->session->userdata('sukubunga'): $sukubunga=0.00;
+($this->session->userdata('biaya_investasi')!==null) ? $biaya_investasi = $this->session->userdata('biaya_investasi'): $biaya_investasi=0.00;
+($this->session->userdata('biaya_riset')!==null) ? $biaya_riset = $this->session->userdata('biaya_riset'): $biaya_riset=0.00;
+($this->session->userdata('biaya_lisensi')!==null) ? $biaya_lisensi = $this->session->userdata('biaya_lisensi'): $biaya_lisensi=0.00;
+($this->session->userdata('qty_tahun1')!==null) ? $qty_tahun1 = $this->session->userdata('qty_tahun1'): $qty_tahun1=0.00;
+($this->session->userdata('marketshare_tahun2')!==null) ? $marketshare_tahun2 = $this->session->userdata('marketshare_tahun2'): $marketshare_tahun2=0.00;
+($this->session->userdata('harga_tahun1')!==null) ? $harga_tahun1 = $this->session->userdata('harga_tahun1'): $harga_tahun1=0.00;
+($this->session->userdata('harga_tahun2')!==null) ? $harga_tahun2 = $this->session->userdata('harga_tahun2'): $harga_tahun2=0.00;
+
+//perhitungan variabel proyeksi
+$indeks = $periode;
+$arr_modal = array();
+$arr_biaya_investasi = array();
+$arr_biaya_riset = array();
+$arr_qty_tahun1 = array();
+$arr_biaya_lisensi = array();
+
+//variabel dummy baru
+$harga = array();
+for($h=1;$h<=$indeks;$h++){
+    if($h==1){
+        $harga[$h] = $harga_tahun1;
+    }else{
+        //$harga[$indeks-($indeks-$h)] = $harga_tahun1 * $harga_tahun2;
+        $harga[$indeks-($indeks-$h)] = $harga[$h-1] * $harga_tahun2;
+    }
+}
+
+//variabel dummy baru
+$total_cash_received = array();
+for($tcr=1;$tcr<=$indeks;$tcr++){
+    $total_cash_received[$indeks-($indeks-$tcr)] = $qty_tahun1 * $harga_tahun1;
+}
+
+//fungsi untuk menampilkan angka dalam rupiah
 function rupiah($angka){
 	$hasil_rupiah = number_format($angka,2,',','.');
 	return $hasil_rupiah;
@@ -65,7 +99,7 @@ function rupiah($angka){
                             Proyeksi Cash Flow
                         </div>
                         <div class="card-body">
-                            <table class="table table-bordered <?php if($periode>5){ echo "table-responsive"; } ?> table-hover table-sm">
+                            <table class="table table-bordered table-responsive table-hover table-sm">
                             <thead>
                                 <tr class="bg-warning">
                                     <th>Tahun </th>
@@ -91,7 +125,11 @@ function rupiah($angka){
                                     <td class="text-left">Volume</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==1){
+                                            echo "<td>".rupiah($qty_tahun1)."</td>";
+                                        }else{
+                                            echo "<th>&nbsp;</th>";
+                                        }
                                     }
                                     ?>
                                 </tr> 
@@ -99,7 +137,11 @@ function rupiah($angka){
                                     <td class="text-left">Harga</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<th>&nbsp;</th>";
+                                        }else{
+                                            echo "<td>".rupiah($harga[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>   
@@ -107,7 +149,11 @@ function rupiah($angka){
                                     <td class="text-left">TOTAL CASH RECEIVED</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<th>&nbsp;</th>";
+                                        }else{
+                                            echo "<td>".rupiah($total_cash_received[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>        
@@ -115,7 +161,9 @@ function rupiah($angka){
                                     <td class="text-left">Modal Pinjaman</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<td>".rupiah($modal)."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>  
@@ -147,7 +195,9 @@ function rupiah($angka){
                                     <td class="text-left" style="text-indent: 30px;">Machine+vehicle+equipment</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<td>".rupiah($biaya_investasi)."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -155,7 +205,9 @@ function rupiah($angka){
                                     <td class="text-left" style="text-indent: 30px;">Riset</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<td>".rupiah($biaya_riset)."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -163,7 +215,11 @@ function rupiah($angka){
                                     <td class="text-left" style="text-indent: 30px;">License + ISO9001</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==1){
+                                            echo "<td>".rupiah($biaya_lisensi)."</td>";
+                                        }else{
+                                            echo "<th>&nbsp;</th>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -320,7 +376,7 @@ function rupiah($angka){
                             PROYEKSI PROFIT - LOSS
                         </div>
                         <div class="card-body">
-                            <table class="table table-bordered <?php if($periode>5){ echo "table-responsive"; } ?> table-hover table-sm">
+                            <table class="table table-bordered table-responsive table-hover table-sm">
                             <thead>
                                 <tr class="bg-light">
                                     <th>Tahun </th>
