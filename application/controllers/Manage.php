@@ -95,9 +95,11 @@ class Manage extends CI_Controller {
 	  }
 
 	  public function add_incomebased_calculator1(){
+		$hki_id = $this->uri->segment(4);
 		$data['title_bar'] = "Income Based";
         $data['header_page'] = "Tambah Kalkulasi baru - Income Based";
-        $data['breadcrumbs'] = 'Tambah Kalkulasi baru - Income Based';
+		$data['breadcrumbs'] = 'Tambah Kalkulasi baru - Income Based';
+		$data['sikav_hki'] = $this->incomebased_model->get_hki_id($hki_id);
 		$this->load->view('admin/header');
 		$this->load->view('admin/navbar');
 		$this->load->view('admin/components/breadcrumbs', $data);

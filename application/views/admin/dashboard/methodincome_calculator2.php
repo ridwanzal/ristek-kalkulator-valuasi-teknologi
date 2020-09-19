@@ -70,7 +70,7 @@ if($this->session->userdata('target')){
                     <!-- untuk tombol previous next -->
                     <div class="form-group row">                    
                         <div class="col-md-6 text-right">
-                        <a href="<?=base_url() ?>manage/add/incomebased_calculator1" id="tombol21" name="tombol21" class="btn btn-warning btn-sm">Kembali Ke Halaman 1</a>
+                        <a href="<?=base_url() ?>manage/add/incomebased_calculator1/<?php echo $this->session->userdata('sesi_hki'); ?>" id="tombol21" name="tombol21" class="btn btn-warning btn-sm">Kembali Ke Halaman 1</a>
                         </div>
                         <div class="col-md-6 text-left">
                         <a href="<?=base_url() ?>manage/add/incomebased_calculator3" id="tombol23" name="tombol23" class="btn btn-success btn-sm">Lanjut Ke Halaman 3</a>

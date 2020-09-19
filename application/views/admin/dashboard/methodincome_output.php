@@ -140,14 +140,14 @@ function rupiah($angka){
                     <div class="form-group row">                        
                         <label for="marketsize" class="col-sm-4 col-form-label text-right">Nama Inventor</label>
                         <div class="col-sm-8">
-                            <input type="text" value="Air Media Persada" class="form-control  form-control-sm col-sm-12" id="marketsize" aria-describedby="marketsiezeDesc" readonly>
+                            <input type="text" value="<?=$this->session->userdata('sesi_inventor'); ?>" class="form-control  form-control-sm col-sm-12" id="marketsize" aria-describedby="marketsiezeDesc" readonly>
                             <small id="marketsiezeDesc" class="form-text text-muted text-left">Nama Pemilik/Lembaga Invensi</small>
                         </div>
                     </div>                    
                     <div class="form-group row">                        
                         <label for="marketsize" class="col-sm-4 col-form-label text-right">Judul Penelitian/Invensi</label>
                         <div class="col-sm-8">
-                            <textarea  class="form-control  form-control-sm col-sm-12" id="marketsize" aria-describedby="marketsiezeDesc" readonly>Prototipe alat pendeteksi kebocoran gas beracun CO pada mobil menggunakan Array Sensor berbasis SMS Gateway</textarea>
+                            <textarea  class="form-control  form-control-sm col-sm-12" id="marketsize" aria-describedby="marketsiezeDesc" readonly><?=$this->session->userdata('sesi_judul'); ?></textarea>
                             <small id="marketsiezeDesc" class="form-text text-muted text-left">Judul Penelitian/Invensi</small>
                         </div>
                     </div>

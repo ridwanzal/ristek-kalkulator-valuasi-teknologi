@@ -72,7 +72,7 @@ $userdetails = $this->session->userdata('userdetails');
                                         Kalkulasi
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1">Hitung Valuasi</a>
+                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1/<?php echo $hki_id; ?>" >Hitung Valuasi</a>
                                         <!--
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1"">Edit</a>
