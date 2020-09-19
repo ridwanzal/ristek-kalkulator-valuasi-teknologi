@@ -71,9 +71,11 @@ class Manage extends CI_Controller {
 	  }
 
 	  public function edit_incomebased_invensi(){
+		$hki_id = $this->uri->segment(4);
 		$data['title_bar'] = "Income Based";
         $data['header_page'] = "Update Invensi - Income Based";
-        $data['breadcrumbs'] = 'Update Invensi - Income Based';
+		$data['breadcrumbs'] = "Update Invensi - Income Based";
+		$data["sikav_hki"] = $this->incomebased_model->get_hki_id($hki_id);
 		$this->load->view('admin/header');
 		$this->load->view('admin/navbar');
 		$this->load->view('admin/components/breadcrumbs', $data);

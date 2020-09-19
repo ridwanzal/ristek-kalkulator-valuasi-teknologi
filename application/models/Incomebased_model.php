@@ -14,10 +14,29 @@ class Incomebased_model extends CI_Model {
         return $this->db->get_where($this->table, ["sinta_id" => $sinta_id])->result();
     }
 
+    // tampilkan hanya data berdasarkan Sinta ID
+    public function get_hki_id($hki_id)
+    {
+        return $this->db->get_where($this->table, ["hki_id" => $hki_id])->result();
+    }
+
     // insert data
     function insert($data)
     {
         $this->db->insert($this->table, $data);
+    }
+
+    // update data
+    public function update($hki_id, $data)
+    {       
+        $this->db->where('hki_id', $hki_id);
+		$this->db->update($this->table, $data);
+    }
+
+    // delete data
+    public function delete($hki_id)
+    {
+        $this->db->delete($this->table, array("hki_id" => $hki_id));
     }
 
 }

@@ -62,6 +62,65 @@ class Incomebased extends CI_Controller {
             $this->load->view('admin/footer', $data);
         }
     }
+    public function edit($hki_id = null){
+        // Fungsi rules atau aturan untuk pengisian pada form (create/input dan update)
+        $this->form_validation->set_rules('inventor', 'Inventor', 'trim|required');
+        $this->form_validation->set_rules('judul', 'Judul', 'trim|required');
+        $this->form_validation->set_rules('jenis', 'Jenis HKI', 'trim|required');
+        $this->form_validation->set_rules('tahun', 'Tahun Pelaksanaan', 'trim|required'); 
+        $this->form_validation->set_rules('no_daftar', 'No. Pendaftaran', 'trim|required');
+        $this->form_validation->set_rules('status', 'Status', 'trim|required');
+        $this->form_validation->set_rules('no_hki', 'Nomor HKI', 'trim|required');
+        $this->form_validation->set_rules('url_hki', 'URL HKI', 'trim|required');
+        //$this->form_validation->set_rules('dokumen_hki', 'Upload Dokumen Pendukung', 'trim|required');
+        
+        //ambil sinta_id dari session user yang aktif
+		$userdetails = $this->session->userdata('userdetails');
+        $sinta_id = $userdetails['sinta_id'];
+        $hki_id = $this->input->post('hki_id', TRUE);
+        
+        if ($this->form_validation->run() == TRUE) {
+            $data= array(
+                'sinta_id' => $sinta_id,
+                'hki_id' => $this->input->post('hki_id', TRUE),
+                'inventor' => $this->input->post('inventor', TRUE),
+                'judul' => $this->input->post('judul', TRUE),
+                'jenis' => $this->input->post('jenis', TRUE),
+                'tahun' => $this->input->post('tahun', TRUE),
+                'no_daftar' => $this->input->post('no_daftar', TRUE),
+                'status' => $this->input->post('status', TRUE),
+                'no_hki' => $this->input->post('no_hki', TRUE),
+                'url_hki' => $this->input->post('url_hki', TRUE)
+                //'dokumen_hki' => $this->input->post('dokumen_hki', TRUE)
+            );
+            $this->incomebased_model->update($hki_id, $data);
+            $this->session->set_flashdata('pesan','Update Data Berhasil');
+            redirect('manage/add/incomebased');          
+        }else{
+            //supaya pesan errornya tampil
+            //kembalikan ke form input data
+            $data['title_bar'] = "Income Based";
+            $data['header_page'] = "Update Invensi - Income Based";
+            $data['breadcrumbs'] = 'Update Invensi - Income Based';
+            //$data["sikav_hki"] = $this->incomebased_model->get_hki_id($hki_id);
+            $this->load->view('admin/header');
+            $this->load->view('admin/navbar');
+            $this->load->view('admin/components/breadcrumbs', $data);
+            $this->load->view('admin/dashboard/methodincome_invensi_edit', $data);
+            $this->load->view('admin/footer', $data);
+        }
+    }
+
+    public function delete($hki_id){
+		$hapus = $this->incomebased_model->delete($hki_id);
+		if (!$hapus) {
+			$this->session->set_flashdata('pesan', 'Data Berhasil Dihapus.');
+		} else{
+			$this->session->set_flashdata('pesan', 'Data Gagal Dihapus');
+		}
+		redirect('manage/add/incomebased');
+    }
+
     public function data_halaman1(){
         $inventor = $this->input->post('inventor', TRUE);
         $periode = $this->input->post('periode', TRUE);

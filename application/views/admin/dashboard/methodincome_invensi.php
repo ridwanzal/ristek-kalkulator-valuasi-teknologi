@@ -88,18 +88,18 @@ $userdetails = $this->session->userdata('userdetails');
                                     <label>No. Pendaftaran <i style="color: red">*</i></label>
                                 </div>
                                 <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <input type="text" id="no_daftar" name="no_daftar" class="form-control form-control-sm" placeholder="Nomor Pendaftaran Paten" value="<?php echo $this->input->post('nodaftar'); ?>">
+                                    <input type="text" id="no_daftar" name="no_daftar" class="form-control form-control-sm" placeholder="Nomor Pendaftaran Paten" value="<?php echo $this->input->post('no_daftar'); ?>">
                                 </div>
                                 <div class="col-md-3 text-right">
                                     <label>Status <i style="color: red">*</i></label>
                                 </div>
                                 <div class="col-md-9" style="padding-bottom: 5px;">
                                     <div class="form-check-inline text-left">
-                                        <input type="radio" name="status" value="terdaftar" checked class="form-check-input form-control-sm" />
+                                        <input type="radio" name="status" value="terdaftar" <?php if($this->input->post('status')=="terdaftar"){ echo "checked";}?> class="form-check-input form-control-sm" />
                                         <label>Terdaftar</label>
                                     </div>
                                     <div class="form-check-inline text-left">
-                                        <input type="radio" name="status" value="granted" class="form-check-input form-control-sm" />
+                                        <input type="radio" name="status" value="granted" <?php if($this->input->post('status')=="granted"){ echo "checked";}?> class="form-check-input form-control-sm" />
                                         <label>Granted</label>
                                     </div>
                                 </div>
@@ -107,7 +107,7 @@ $userdetails = $this->session->userdata('userdetails');
                                     <label>Nomor HKI <i style="color: red">*</i></label>
                                 </div>
                                 <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <input type="text" id="no_hki" name="no_hki" class="form-control form-control-sm" placeholder="Nomor HKI" value="<?php echo $this->input->post('nohki'); ?>">
+                                    <input type="text" id="no_hki" name="no_hki" class="form-control form-control-sm" placeholder="Nomor HKI" value="<?php echo $this->input->post('no_hki'); ?>">
                                 </div>
                                 <div class="col-md-3 text-right">
                                     <label>URL HKI <i style="color: red">*</i></label>

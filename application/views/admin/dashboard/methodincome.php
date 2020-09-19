@@ -34,6 +34,13 @@ $userdetails = $this->session->userdata('userdetails');
                     <div class="card-title text-right">
                         <!-- <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#invensiModal">Tambah Invensi</button> -->
                         <a href="<?=base_url() ?>manage/add/incomebased_invensi" class="btn btn-success btn-sm">Tambah Invensi</a>
+                        <?php if ($this->session->flashdata('pesan')): ?>
+                            <div class="alert alert-success alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <h4><i class="icon fa fa-check"></i> Informasi!</h4>
+                                <?php echo $this->session->flashdata('pesan'); ?>
+                            </div>
+                        <?php endif; ?>
                     </div>
                     <table class="table table-bordered table-hover table-sm">
                         <thead class="thead-light">
@@ -53,8 +60,10 @@ $userdetails = $this->session->userdata('userdetails');
                             <th scope="row"><?= $nomor; ?></th>
                             <td  class="text-left"><?= $rshki->judul; ?>
                                 <br /><?= $rshki->jenis; ?> | <?= $rshki->no_daftar; ?> | <?= $rshki->tahun; ?> | <?= $rshki->status; ?> | <?= $rshki->no_hki; ?>
-                                <br /><a href="<?=base_url() ?>manage/edit/incomebased_invensi" class="btn btn-warning btn-sm">Ubah</a>
-                                <a href="<?=base_url() ?>manage/add/incomebased_invensi" class="btn btn-danger btn-sm">Hapus</a>
+                                <br /><a href="<?=base_url('manage/edit/incomebased_invensi/'.$rshki->hki_id) ?>" class="btn btn-warning btn-sm">Ubah</a>
+                                <!-- <a href="<?=base_url() ?>manage/add/incomebased_invensi" class="btn btn-danger btn-sm">Hapus</a> -->
+                                <a onclick="deleteConfirm('<?php echo site_url('manage/delete/incomebased_invensi/'.$rshki->hki_id) ?>')"
+								href="#!" class="btn btn-danger btn-sm"> Hapus</a>
                             </td>
                             
                             <td>
@@ -64,10 +73,12 @@ $userdetails = $this->session->userdata('userdetails');
                                     </button>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1">Hitung Valuasi</a>
+                                        <!--
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1"">Edit</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1"">Hapus</a>
+                                        -->
                                     </div>
                                 </div>
                             </td>
@@ -81,3 +92,29 @@ $userdetails = $this->session->userdata('userdetails');
     </div>
     
 </div>
+
+<!-- Modal Delete Confirmation-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-light">
+        <h3 class="modal-title" id="exampleModalLabel">Apakah Data Dihapus?</h3>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Batal</button>
+        <a id="btn-delete" class="btn btn-danger btn-sm" href="#">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Trigger Modal Delete Confirmation-->
+<script type="text/javascript">
+    function deleteConfirm(url){
+        $('#btn-delete').attr('href', url);
+        $('#deleteModal').modal();
+    }
+</script>
