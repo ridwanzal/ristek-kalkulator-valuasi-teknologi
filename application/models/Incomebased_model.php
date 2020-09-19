@@ -14,6 +14,12 @@ class Incomebased_model extends CI_Model {
         return $this->db->get_where($this->table, ["sinta_id" => $sinta_id])->result();
     }
 
+    // insert data
+    function insert($data)
+    {
+        $this->db->insert($this->table, $data);
+    }
+
 }
 
 /* End of file Incomebased_model.php */

@@ -7,7 +7,7 @@ class Incomebased extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        //$this->load->model('Incomebased_model'); 
+        $this->load->model('incomebased_model'); 
         $this->load->library('form_validation'); 
         $this->load->library('upload'); 
         $this->load->helper(array('form', 'url'));     
@@ -23,34 +23,32 @@ class Incomebased extends CI_Controller {
         $this->form_validation->set_rules('judul', 'Judul', 'trim|required');
         $this->form_validation->set_rules('jenis', 'Jenis HKI', 'trim|required');
         $this->form_validation->set_rules('tahun', 'Tahun Pelaksanaan', 'trim|required'); 
-        $this->form_validation->set_rules('nodaftar', 'No. Pendaftaran', 'trim|required');
+        $this->form_validation->set_rules('no_daftar', 'No. Pendaftaran', 'trim|required');
         $this->form_validation->set_rules('status', 'Status', 'trim|required');
-        $this->form_validation->set_rules('nohki', 'Nomor HKI', 'trim|required');
+        $this->form_validation->set_rules('no_hki', 'Nomor HKI', 'trim|required');
         $this->form_validation->set_rules('url_hki', 'URL HKI', 'trim|required');
-        $this->form_validation->set_rules('dokumen_hki', 'Upload Dokumen Pendukung', 'trim|required');
-
+        //$this->form_validation->set_rules('dokumen_hki', 'Upload Dokumen Pendukung', 'trim|required');
+        
+        //ambil sinta_id dari session user yang aktif
+		$userdetails = $this->session->userdata('userdetails');
+        $sinta_id = $userdetails['sinta_id'];
+        
         if ($this->form_validation->run() == TRUE) {
             $data= array(
+                'sinta_id' => $sinta_id,
                 'inventor' => $this->input->post('inventor', TRUE),
                 'judul' => $this->input->post('judul', TRUE),
                 'jenis' => $this->input->post('jenis', TRUE),
                 'tahun' => $this->input->post('tahun', TRUE),
-                'nodaftar' => $this->input->post('nodaftar', TRUE),
+                'no_daftar' => $this->input->post('no_daftar', TRUE),
                 'status' => $this->input->post('status', TRUE),
-                'nohki' => $this->input->post('nohki', TRUE),
-                'url_hki' => $this->input->post('url_hki', TRUE),
-                'dokumen_hki' => $this->input->post('dokumen_hki', TRUE)
+                'no_hki' => $this->input->post('no_hki', TRUE),
+                'url_hki' => $this->input->post('url_hki', TRUE)
+                //'dokumen_hki' => $this->input->post('dokumen_hki', TRUE)
             );
-            //tambahkan pengecekan primary key untuk level_id
-            //$level_id = $this->input->post('level_id', TRUE);
-            //$cek_pk = $this->leveluser_model->getById($level_id);
-            //if ($cek_pk>0){
-                //$this->session->set_flashdata('cek_pk','Level_ID Telah Terdapat dalam Database, Silahkan isi dengan Level_ID yang baru!');
-                //redirect('leveluser/add');
-            //}else{
-                //$this->leveluser_model->insert($data);
-                $this->session->set_flashdata('pesan','Input Data Berhasil');
-            //}            
+            $this->incomebased_model->insert($data);
+            $this->session->set_flashdata('pesan','Input Data Berhasil');
+            redirect('manage/add/incomebased');          
         }else{
             //supaya pesan errornya tampil
             //kembalikan ke form input data

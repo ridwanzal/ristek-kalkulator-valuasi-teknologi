@@ -88,7 +88,7 @@ $userdetails = $this->session->userdata('userdetails');
                                     <label>No. Pendaftaran <i style="color: red">*</i></label>
                                 </div>
                                 <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <input type="text" id="nodaftar" name="nodaftar" class="form-control form-control-sm" placeholder="Nomor Pendaftaran Paten" value="<?php echo $this->input->post('nodaftar'); ?>">
+                                    <input type="text" id="no_daftar" name="no_daftar" class="form-control form-control-sm" placeholder="Nomor Pendaftaran Paten" value="<?php echo $this->input->post('nodaftar'); ?>">
                                 </div>
                                 <div class="col-md-3 text-right">
                                     <label>Status <i style="color: red">*</i></label>
@@ -107,7 +107,7 @@ $userdetails = $this->session->userdata('userdetails');
                                     <label>Nomor HKI <i style="color: red">*</i></label>
                                 </div>
                                 <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <input type="text" id="nohki" name="nohki" class="form-control form-control-sm" placeholder="Nomor HKI" value="<?php echo $this->input->post('nohki'); ?>">
+                                    <input type="text" id="no_hki" name="no_hki" class="form-control form-control-sm" placeholder="Nomor HKI" value="<?php echo $this->input->post('nohki'); ?>">
                                 </div>
                                 <div class="col-md-3 text-right">
                                     <label>URL HKI <i style="color: red">*</i></label>

@@ -50,7 +50,7 @@ $userdetails = $this->session->userdata('userdetails');
                                 $hki_id = $rshki->hki_id;  
                             ?>
                             <tr>
-                            <th scope="row">1</th>
+                            <th scope="row"><?= $nomor; ?></th>
                             <td  class="text-left"><?= $rshki->judul; ?>
                                 <br /><?= $rshki->jenis; ?> | <?= $rshki->no_daftar; ?> | <?= $rshki->tahun; ?> | <?= $rshki->status; ?> | <?= $rshki->no_hki; ?>
                                 <br /><a href="<?=base_url() ?>manage/add/incomebased_invensi" class="btn btn-warning btn-sm">Ubah</a>
