@@ -19,6 +19,7 @@ class Incomebased extends CI_Controller {
     }
     public function add(){
         // Fungsi rules atau aturan untuk pengisian pada form (create/input dan update)
+        $this->form_validation->set_rules('inventor', 'Inventor', 'trim|required');
         $this->form_validation->set_rules('judul', 'Judul', 'trim|required');
         $this->form_validation->set_rules('jenis', 'Jenis HKI', 'trim|required');
         $this->form_validation->set_rules('tahun', 'Tahun Pelaksanaan', 'trim|required'); 
@@ -30,6 +31,7 @@ class Incomebased extends CI_Controller {
 
         if ($this->form_validation->run() == TRUE) {
             $data= array(
+                'inventor' => $this->input->post('inventor', TRUE),
                 'judul' => $this->input->post('judul', TRUE),
                 'jenis' => $this->input->post('jenis', TRUE),
                 'tahun' => $this->input->post('tahun', TRUE),

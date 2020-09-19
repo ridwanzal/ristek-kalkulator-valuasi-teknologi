@@ -48,6 +48,12 @@ $userdetails = $this->session->userdata('userdetails');
                     <form action="<?= base_url('incomebased/add') ?>" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-3 text-right">
+                                    <label>Inventor <i style="color: red">*</i></label>
+                                </div>
+                                <div class="col-md-9" style="padding-bottom: 5px;">
+                                    <input type="text" id="inventor" name="inventor" class="form-control form-control-sm" placeholder="Pisahkan tanda titik koma, jika inventor lebih dari satu." value="<?php echo $this->input->post('inventor'); ?>"> 
+                                </div>
+                                <div class="col-md-3 text-right">
                                     <label>Judul <i style="color: red">*</i></label>
                                 </div>
                                 <div class="col-md-9" style="padding-bottom: 5px;">
@@ -58,14 +64,14 @@ $userdetails = $this->session->userdata('userdetails');
                                 </div>
                                 <div class="col-md-9" style="padding-bottom: 5px;">
                                     <select id="jenis" name="jenis" class="form-control form-control-sm">
-                                        <option value="Paten" <?php if($this->input->post('judul')=='Paten'){echo "selected";} ?>>Paten</option>
-                                        <option value="Paten Sederhana" <?php if($this->input->post('judul')=='Paten Sederhana'){echo "selected";} ?>>Paten Sederhana</option>                                        
-                                        <option value="Merk Dagang" <?php if($this->input->post('judul')=='Merk Dagang'){echo "selected";} ?>>Merk Dagang</option>
-                                        <option value="Rahasia Dagang" <?php if($this->input->post('judul')=='Rahasia Dagang'){echo "selected";} ?>>Rahasia Dagang</option>
-                                        <option value="Desain Produk Industri" <?php if($this->input->post('judul')=='Desain Produk Industri'){echo "selected";} ?>>Desain Produk Industri</option>
-                                        <option value="Indikasi Geografis" <?php if($this->input->post('judul')=='Indikasi Geografis'){echo "selected";} ?>>Indikasi Geografis</option>
-                                        <option value="Perlindungan Varietas Tanaman" <?php if($this->input->post('judul')=='Perlindungan Varietas Tanaman'){echo "selected";} ?>>Perlindungan Varietas Tanaman</option>
-                                        <option value="Perlindungan Topografi Sirkuit Terpadu" <?php if($this->input->post('judul')=='Perlindungan Topografi Sirkuit Terpadu'){echo "selected";} ?>>Perlindungan Topografi Sirkuit Terpadu</option>
+                                        <option value="Paten" <?php if($this->input->post('jenis')=='Paten'){echo "selected=\"selected\"";} ?>>Paten</option>
+                                        <option value="Paten Sederhana" <?php if($this->input->post('jenis')=='Paten Sederhana'){echo "selected=\"selected\"";} ?>>Paten Sederhana</option>                                        
+                                        <option value="Merk Dagang" <?php if($this->input->post('jenis')=='Merk Dagang'){echo "selected=\"selected\"";} ?>>Merk Dagang</option>
+                                        <option value="Rahasia Dagang" <?php if($this->input->post('jenis')=='Rahasia Dagang'){echo "selected=\"selected\"";} ?>>Rahasia Dagang</option>
+                                        <option value="Desain Produk Industri" <?php if($this->input->post('jenis')=='Desain Produk Industri'){echo "selected=\"selected\"";} ?>>Desain Produk Industri</option>
+                                        <option value="Indikasi Geografis" <?php if($this->input->post('jenis')=='Indikasi Geografis'){echo "selected=\"selected\"";} ?>>Indikasi Geografis</option>
+                                        <option value="Perlindungan Varietas Tanaman" <?php if($this->input->post('jenis')=='Perlindungan Varietas Tanaman'){echo "selected=\"selected\"";} ?>>Perlindungan Varietas Tanaman</option>
+                                        <option value="Perlindungan Topografi Sirkuit Terpadu" <?php if($this->input->post('jenis')=='Perlindungan Topografi Sirkuit Terpadu'){echo "selected=\"selected\"";} ?>>Perlindungan Topografi Sirkuit Terpadu</option>
                                     </select>
                                 </div>
                                 <div class="col-md-3 text-right">
@@ -74,7 +80,7 @@ $userdetails = $this->session->userdata('userdetails');
                                 <div class="col-md-9" style="padding-bottom: 5px;">
                                     <select class="form-control form-control-sm" id="tahun" name="tahun">
                                         <?php for($i=(date('Y')-15);$i<=date('Y');$i++){ ?>
-                                        <option value="<?php echo $i; ?>"><?= $i ?></option>
+                                        <option value="<?php echo $i; ?>" <?php if($this->input->post('tahun')==$i){echo "selected=\"selected\"";} ?>><?= $i ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
