@@ -1,8 +1,7 @@
 const base_url_access = 'http://api.sinta.ristekdikti.go.id/fusio/public/consumer/login';
 const base_url_login = 'http://api.sinta.ristekdikti.go.id/v2/author/login';
 const base_url_api = 'http://api.sinta.ristekdikti.go.id/v2';
-//const web_url = 'http://sikav.ridwanzal.com';
-const web_url = 'http://localhost/ristek-kalkulator-valuasi-teknologi';
+const web_url = 'http://sikav.ridwanzal.com';
 const el_click_login = $('#submit_login');
 const access_api = {
     username : 'KALKULATORHKI',
