@@ -4,7 +4,7 @@ Source Host: localhost
 Source Database: sikav_database
 Target Host: localhost
 Target Database: sikav_database
-Date: 19/09/2020 09.39.32
+Date: 19/09/2020 10.03.01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -16,6 +16,7 @@ CREATE TABLE `sikav_hki` (
   `hki_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `sinta_id` int(11) NOT NULL,
   `email` varchar(100) DEFAULT NULL,
+  `inventor` varchar(255) DEFAULT NULL,
   `judul` varchar(255) DEFAULT NULL,
   `jenis` varchar(100) DEFAULT NULL,
   `tahun` year(4) DEFAULT NULL,
@@ -41,5 +42,5 @@ CREATE TABLE `sikav_users` (
 -- ----------------------------
 -- Records 
 -- ----------------------------
-INSERT INTO `sikav_hki` VALUES ('1', '1', null, 'APLIKASI MOBILE MUSICMOO SEBAGAI SARANA PENCARIAN JUDUL LAGU', 'Paten Sederhana', '2017', '2017-01/X/012', 'terdaftar', '2017-01', null, null);
-INSERT INTO `sikav_hki` VALUES ('2', '1', null, 'Spektroskopi Vibrasional: Teori dan Aplikasinya untuk Analisis Farmasi', 'Paten', '2017', '2017-01/SBP-0999', 'terdaftar', '2017-01', null, null);
+INSERT INTO `sikav_hki` VALUES ('1', '1', null, 'ANIS MASHDUROHATUN', 'APLIKASI MOBILE MUSICMOO SEBAGAI SARANA PENCARIAN JUDUL LAGU', 'Paten Sederhana', '2017', '2017-01/X/012', 'terdaftar', '2017-01', null, null);
+INSERT INTO `sikav_hki` VALUES ('2', '1', null, 'ANIS MASHDUROHATUN', 'Spektroskopi Vibrasional: Teori dan Aplikasinya untuk Analisis Farmasi', 'Paten', '2017', '2017-01/SBP-0999', 'terdaftar', '2017-01', null, null);
