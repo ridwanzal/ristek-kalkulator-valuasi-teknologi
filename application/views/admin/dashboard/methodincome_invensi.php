@@ -57,7 +57,7 @@ $userdetails = $this->session->userdata('userdetails');
                                     <label>Judul <i style="color: red">*</i></label>
                                 </div>
                                 <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <input type="text" id="judul" name="judul" class="form-control form-control-sm" placeholder="Masukkan Judul Penelitian/Judul Invensi" value="<?php echo $this->input->post('judul'); ?>"> 
+                                    <textarea id="judul" name="judul" rows="4" class="form-control form-control-sm" placeholder="Masukkan Judul Penelitian/Judul Invensi"><?php echo $this->input->post('judul'); ?></textarea> 
                                 </div>
                                 <div class="col-md-3 text-right">
                                     <label>Jenis HKI <i style="color: red">*</i></label>
