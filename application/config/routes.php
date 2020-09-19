@@ -56,6 +56,7 @@ $route['manage'] = 'manage';
 $route['manage/add/costbased'] = 'manage/add_costbased';
 $route['manage/add/incomebased'] = 'manage/add_incomebased';
 $route['manage/add/incomebased_invensi'] = 'manage/add_incomebased_invensi';
+$route['manage/edit/incomebased_invensi'] = 'manage/edit_incomebased_invensi';
 $route['incomebased/add'] = 'incomebased/add';
 $route['incomebased/data_halaman1'] = 'incomebased/data_halaman1';
 $route['incomebased/data_halaman2'] = 'incomebased/data_halaman2';

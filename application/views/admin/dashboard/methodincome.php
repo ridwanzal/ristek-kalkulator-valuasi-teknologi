@@ -53,7 +53,7 @@ $userdetails = $this->session->userdata('userdetails');
                             <th scope="row"><?= $nomor; ?></th>
                             <td  class="text-left"><?= $rshki->judul; ?>
                                 <br /><?= $rshki->jenis; ?> | <?= $rshki->no_daftar; ?> | <?= $rshki->tahun; ?> | <?= $rshki->status; ?> | <?= $rshki->no_hki; ?>
-                                <br /><a href="<?=base_url() ?>manage/add/incomebased_invensi" class="btn btn-warning btn-sm">Ubah</a>
+                                <br /><a href="<?=base_url() ?>manage/edit/incomebased_invensi" class="btn btn-warning btn-sm">Ubah</a>
                                 <a href="<?=base_url() ?>manage/add/incomebased_invensi" class="btn btn-danger btn-sm">Hapus</a>
                             </td>
                             
