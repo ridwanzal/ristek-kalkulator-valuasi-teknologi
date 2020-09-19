@@ -4,7 +4,7 @@ Source Host: localhost
 Source Database: sikav_database
 Target Host: localhost
 Target Database: sikav_database
-Date: 19/09/2020 10.03.01
+Date: 19/09/2020 10.41.09
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,7 +26,7 @@ CREATE TABLE `sikav_hki` (
   `url_hki` varchar(255) DEFAULT NULL,
   `berkas` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`hki_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Table structure for sikav_users
@@ -44,3 +44,7 @@ CREATE TABLE `sikav_users` (
 -- ----------------------------
 INSERT INTO `sikav_hki` VALUES ('1', '1', null, 'ANIS MASHDUROHATUN', 'APLIKASI MOBILE MUSICMOO SEBAGAI SARANA PENCARIAN JUDUL LAGU', 'Paten Sederhana', '2017', '2017-01/X/012', 'terdaftar', '2017-01', null, null);
 INSERT INTO `sikav_hki` VALUES ('2', '1', null, 'ANIS MASHDUROHATUN', 'Spektroskopi Vibrasional: Teori dan Aplikasinya untuk Analisis Farmasi', 'Paten', '2017', '2017-01/SBP-0999', 'terdaftar', '2017-01', null, null);
+INSERT INTO `sikav_hki` VALUES ('3', '1', null, 'ANIS MASHDUROHATUN', 'FORMULA SABUN CAIR PENYUCI NAJIS MUGHALLADZAH', 'Paten Sederhana', '2017', '2017-099999', 'terdaftar', '2017-099999', '2017-099999', null);
+INSERT INTO `sikav_hki` VALUES ('4', '1', null, 'ANIS MASHDUROHATUN', 'SERANGKAIAN PRIMER UNTUK DETEKSI GELATIN BABI DALAM PRODUK PERMEN', 'Paten', '2019', 'S00201909101', 'terdaftar', 'S00201909101', 'S00201909101', null);
+INSERT INTO `sikav_hki` VALUES ('5', '1', null, 'ANIS MASHDUROHATUN', 'METODE ISOLASI KOLAGEN DARI TULANG', 'Paten', '2019', 'S00201909445', 'terdaftar', 'S00201909445', 'S00201909445', null);
+INSERT INTO `sikav_hki` VALUES ('6', '1', null, 'ANIS MASHDUROHATUN', 'KOLAGEN DARI KULIT KAMBING KACANG', 'Paten', '2019', 'S00201909101', 'terdaftar', 'S00201909101', 'S00201909101', null);
