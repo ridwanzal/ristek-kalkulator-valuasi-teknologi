@@ -46,7 +46,7 @@ if($this->session->userdata('inventor')){
                         <div class="col-md-8 text-left">
                             <select class="form-control form-control-sm" id="periode" name="periode" aria-describedby="periodeDesc">
                             <?php for($i=1;$i<=20;$i++){ ?>    
-                                <option value="<?=$i ?>"><?php echo $i ." Tahun"; ?></option>
+                                <option value="<?=$i ?>" <?php if($periode==$i){echo "selected=\"selected\"";} ?>><?php echo $i ." Tahun"; ?></option>
                             <?php } ?>
                             </select>
                             <small id="periodeDesc" class="form-text text-muted">Berapa lama periode proyeksi dalam satuan tahun, isi 1 sampai dengan 20</small>
@@ -92,9 +92,11 @@ if($this->session->userdata('inventor')){
                         </div>
                     </div>
                     <div class="form-group row">                    
-                        <label for="tombol1" class="col-sm-4 col-form-label text-right">&nbsp;</label>
+                        <div class="col-md-4 text-right">
+                            <a href="<?=base_url() ?>manage/add/incomebased" id="kembali" name="kembali" class="btn btn-warning btn-sm">Kembali</a>
+                        </div>
                         <div class="col-md-8 text-left">
-                        <a href="<?=base_url() ?>manage/add/incomebased_calculator2" id="tombol1" class="btn btn-success btn-sm">Lanjut Halaman 2</a>
+                            <a href="<?=base_url() ?>manage/add/incomebased_calculator2" id="tombol1" class="btn btn-success btn-sm">Lanjut Halaman 2</a>
                         </div>
                     </div>
                 </form>  <!-- Form Halaman 1 END -->

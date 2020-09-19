@@ -18,7 +18,8 @@ class Manage extends CI_Controller {
 		$login_status = $this->session->userdata('token');
         if($login_status == NULL || $login_status == ''){
               redirect(base_url('login'));
-        }
+		}
+		$this->load->model('incomebased_model');
       }
       
       public function index(){
@@ -44,9 +45,13 @@ class Manage extends CI_Controller {
 	  }
 
 	  public function add_incomebased(){
+		//ambil sinta_id dari session user yang aktif
+		$userdetails = $this->session->userdata('userdetails');
+		$sinta_id = $userdetails['sinta_id'];
 		$data['title_bar'] = "Income Based";
         $data['header_page'] = "Tambah Kalkulasi baru - Income Based";
-        $data['breadcrumbs'] = 'Tambah Kalkulasi baru - Income Based';
+		$data['breadcrumbs'] = 'Tambah Kalkulasi baru - Income Based';
+		$data["sikav_hki"] = $this->incomebased_model->get_hki_sinta_id($sinta_id);
 		$this->load->view('admin/header');
 		$this->load->view('admin/navbar');
 		$this->load->view('admin/components/breadcrumbs', $data);

@@ -44,10 +44,15 @@ $userdetails = $this->session->userdata('userdetails');
                             </tr>
                         </thead>
                         <tbody>
+                            <?php 
+                                $nomor = 1;
+                                foreach ($sikav_hki as $rshki) {   
+                                $hki_id = $rshki->hki_id;  
+                            ?>
                             <tr>
                             <th scope="row">1</th>
-                            <td  class="text-left">Prototipe alat pendeteksi kebocoran gas beracun CO pada mobil menggunakan Array Sensor berbasis SMS Gateway
-                                <br />Jenis HKI | No. Pendaftaran | Tahun Pelaksanaan | Status | No. HKI
+                            <td  class="text-left"><?= $rshki->judul; ?>
+                                <br /><?= $rshki->jenis; ?> | <?= $rshki->no_daftar; ?> | <?= $rshki->tahun; ?> | <?= $rshki->status; ?> | <?= $rshki->no_hki; ?>
                                 <br /><a href="<?=base_url() ?>manage/add/incomebased_invensi" class="btn btn-warning btn-sm">Ubah</a>
                                 <a href="<?=base_url() ?>manage/add/incomebased_invensi" class="btn btn-danger btn-sm">Hapus</a>
                             </td>
@@ -55,7 +60,7 @@ $userdetails = $this->session->userdata('userdetails');
                             <td>
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Action
+                                        Kalkulasi
                                     </button>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1">Hitung Valuasi</a>
@@ -67,44 +72,7 @@ $userdetails = $this->session->userdata('userdetails');
                                 </div>
                             </td>
                             </tr>
-                            <tr>
-                            <th scope="row">2</th>
-                            <td class="text-left">The Design of The Monitoring Tools Of Clean Air Condition And Dangerous Gas CO, CO2 CH4 In Chemical Laboratory By Using Fuzzy Logic Based On Microcontroller</td>
-                            
-                            <td>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Action
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1">Hitung Valuasi</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1"">Edit</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1"">Hapus</a>
-                                    </div>
-                                </div>
-                            </td>
-                            </tr>
-                            <tr>
-                            <th scope="row">3</th>
-                            <td class="text-left">A Flood Early Warning System Design Based on Water Level Using Fuzzy Logic and Short Message Service Gateway</td>
-                            
-                            <td>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Action
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1">Hitung Valuasi</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1"">Edit</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1"">Hapus</a>                                                                                
-                                    </div>
-                                </div>
-                            </td>
-                            </tr>
+                            <?php $nomor++; } ?>
                         </tbody>
                     </table>
                 </div>
