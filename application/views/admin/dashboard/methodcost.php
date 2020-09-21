@@ -168,11 +168,11 @@
                                                                 <label class="captions">Jenis Paten <i style="color: red">*</i> </label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
-                                                                <input class="form-check-input" type="radio" name="jpt" id="par_cb_paten_granted_1" value="option1">
+                                                                <input class="form-check-input par_cb_jenis_paten_1" type="radio" name="jpt_1"  value="paten_granted">
                                                                 <label class="form-check-label" for="inlineRadio1">Paten Granted </label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
-                                                                <input class="form-check-input" type="radio" name="jpt" id="par_cb_paten_sd_1" value="option2">
+                                                                <input class="form-check-input par_cb_jenis_paten_1" type="radio" name="jpt_1"  value="paten_sederhana">
                                                                 <label class="form-check-label" for="inlineRadio2">Paten Sederhana </label>
                                                             </div>
                                                     </div>
@@ -181,11 +181,11 @@
                                                             <label class="captions">Status Peromohonan <i style="color: red">*</i></label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="stp" id="par_cb_paten_terdaftar_1" value="option1">
+                                                            <input class="form-check-input par_cb_status_paten_1" type="radio" name="stp_1"  value="tedaftar">
                                                             <label class="form-check-label" for="inlineRadio1">Terdaftar</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="stp" id="par_cb_paten_tersertifikasi_1" value="option2">
+                                                            <input class="form-check-input par_cb_status_paten_1" type="radio" name="stp_1" value="tersertifikasi">
                                                             <label class="form-check-label" for="inlineRadio2">Tersertifikasi</label>
                                                         </div>
                                                     </div>
@@ -227,7 +227,7 @@
                                                     <div class="col-lg-6">
                                                         <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung <i style="color: red">*</i></label>
                                                         <div class="custom-file">
-                                                            <input type="file" class="form-control" multiple style="height:45px;" id="par_cb_asalbiayadaftar_1">
+                                                            <input type="file" class="form-control" multiple style="height:45px;" id="par_cb_file2">
                                                             <small>berupa Formulir (Bukti) pendaftaran dan/atau
                                                         Sertifikat Paten/Paten Sederhana (Unggah file dlm format PDF, MS Word, PPT)</small>
                                                         </div>
@@ -236,12 +236,14 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <button style="margin-top:10px;" class="btn btn-sm btn-secondary btn-block" id="proc_p_data">Proses data</button>
                                 </div>
                             </div>
                             <br/>
                     </div>
                 </div>
-
+                <br/>
+                <br/>
                 <!-- POIN B -->
                 <div class="row">
                     <div class="col-lg-9 col-md-9">
@@ -308,18 +310,21 @@
                                 </tr>
                                 <tr style="background : #f1f1f1 !important;">
                                     <td></td>
-                                    <td><b>Total bobot keluaran penelitian non paten (Qi)</b></td>
+                                    <td><b>Total bobot keluaran penelitian non paten (&Sigma;Qi)</b></td>
                                     <td></td>
                                     <td></td>
                                     <td id="np_total_bobot">0</td>
                                 </tr>
-                                <tr>
+                                <tr class="luaran_penelitan_title">
                                     <td>B.</td>
                                     <td>Luaran Penelitian Paten</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
+                                <tbody class="luaran_paten_list">
+                                  
+                                </tbody>
                                 <!-- <tr>
                                     <td>1.</td>
                                     <td>Publikasi pada jurnal internasional</td>
@@ -336,16 +341,22 @@
                                 </tr> -->
                                 <tr style="background : #f1f1f1 !important;">
                                     <td></td>
-                                    <td><b>Total bobot keluaran penelitian non paten (Ti)</b></td>
+                                    <td><b>Total bobot keluaran penelitian non paten (&Sigma;Ti)</b></td>
                                     <td></td>
                                     <td></td>
-                                    <td></td>
+                                    <td id="p_total_bobot">0</td>
                                 </tr>
                             </tbody>
                         </table>
+                        <div>Nilai total bobot keluaran penelitian berupa paten (&Sigma;Ti) = <span id="out_paten">0</span></div>
+                        <div>Nilai total bobot keluaran penelitian non paten (&Sigma;Qi) = <span id="out_nonpaten">0</span></div>
+                        <div>Nilai realisasi pagu (R) = Rp. <span id="out_pagu">0</span></div>
+                        <div>Total Nilai Keluaran Penelitian Berupa Paten (Ki = Ti / (&Sigma;Ti+&Sigma;Qi)× R) = Rp. <span>0</span></div>
                     </div>
                 </div>
 
+                <br/>
+                <br/>
                 <br/>
                 <!-- POIN C -->
                 <div class="row">
@@ -404,13 +415,13 @@
                     </div>
                 </div>
 
-                <br/>
+                <!-- <br/>
                 <div class="row">
                     <div class="col-lg-9 col-md-9">
                         <button class="btn btn-primary btn-sm">Hitung</button>
                         <button class="btn btn-success btn-sm" disabled>Simpan</button>
                     </div>
-                </div>
+                </div> -->
                 <br/>
                 <div class="row">
                     <div class="col-lg-9 col-md-9">

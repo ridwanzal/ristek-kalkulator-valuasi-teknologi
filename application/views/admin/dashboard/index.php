@@ -78,7 +78,7 @@
                 <br/>
                 <div class="row">
                     <div class="col-lg-10 col-md-10 col-xs-10">
-                        <h5 class="bolds"><img width="16" style="border-radius:50%;" src="<?php echo base_url()?>assets/img/gscholar.png">&nbsp;&nbsp;
+                        <h5 class="bolds"><img width="16" style="border-radius:50%;" src="<?php echo base_url()?>assets/img/copyrights.png">&nbsp;&nbsp;
                         IPR (Intellectual Property Rights)</h5>
                     </div>
                     <div class="col-lg-2 col-md-2">

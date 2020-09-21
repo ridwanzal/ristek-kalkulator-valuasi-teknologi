@@ -15,6 +15,7 @@
     
     loader.hide();
     el_click_login.on('click', function(){
+        el_click_login.prop('disabled', true)
         const _el_uname = $('#p_username');
         const el_pass = $('#p_password');
         
@@ -73,6 +74,7 @@
                                                     sessionStorage.setItem('index_luaran_paten', 1)
                                                     console.log('apa nih response');
                                                     console.log(res);
+                                                    el_click_login.prop('disabled', false)
                                                     /**
                                                      * redirect to manage
                                                      */
@@ -87,14 +89,17 @@
                                 },
                                 done : function(res){
                                     console.log(res);
+                                    el_click_login.prop('disabled', false)
                                 },
                                 failed : function(res){
                                     console.log(res)
                                     alert('Login failed')
+                                    el_click_login.prop('disabled', false)
                                 },
                                 error: function(res){
                                     console.log(res)
                                     alert('Login failed')
+                                    el_click_login.prop('disabled', false)
                                 }
                             });
                     }
