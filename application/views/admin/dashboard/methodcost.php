@@ -351,7 +351,10 @@
                         <div>Nilai total bobot keluaran penelitian berupa paten (&Sigma;Ti) = <span id="out_paten">0</span></div>
                         <div>Nilai total bobot keluaran penelitian non paten (&Sigma;Qi) = <span id="out_nonpaten">0</span></div>
                         <div>Nilai realisasi pagu (R) = Rp. <span id="out_pagu">0</span></div>
-                        <div>Total Nilai Keluaran Penelitian Berupa Paten (Ki = Ti / (&Sigma;Ti+&Sigma;Qi)× R) = Rp. <span>0</span></div>
+                        <div>Nilai keluaran untuk masing-masin Paten : </div>
+                        <ul id="out_ki_list">
+                        </ul>
+                        <div>Total Nilai Keluaran Penelitian Berupa Paten (Ki = Ti / (&Sigma;Ti+&Sigma;Qi)× R) = Rp. <span id="out_ki">0</span></div>
                     </div>
                 </div>
 
@@ -427,16 +430,6 @@
                     <div class="col-lg-9 col-md-9">
                         <p>D. Nilai Aset Tak Berwujud berupa Paten/ATB-P (Vi)</p>   
                         <p>1. Nilai ATB-P masing-masing paten:</p>   
-                        <div class="form-row form-group">
-                            <div class="col">
-                                <label class="captions" for="formGroupExampleInput2">Paten Terdaftar : </label>
-                                <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
-                            </div>
-                            <div class="col-lg-6">
-                                <label class="captions" for="formGroupExampleInput2">Paten Sederhana Terdaftar S : </label>
-                                <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
-                            </div>
-                        </div>
                         <p>2. Total Nilai ATB-P :</p>   
                         <div class="form-group">
                             <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">

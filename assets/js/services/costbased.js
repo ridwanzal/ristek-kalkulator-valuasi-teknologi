@@ -42,7 +42,10 @@ const _luaran_paten_list = $('.luaran_paten_list');
 // daftar view output luaran
 const _out_paten = $('#out_paten');
 const _out_nonpaten = $('#out_nonpaten');
-const _out_pagu = $('#out_pagu')
+const _out_pagu = $('#out_pagu');
+
+const _out_ki = $('#out_ki'); // total luaran penelitian berupa paten
+const _out_ki_list = $('#out_ki_list'); // daftar nilai luaran penelitian berupa paten
 
 // non paten button process
 const _proc_np_data = $('#proc_np_data');
@@ -72,6 +75,7 @@ let obj_model_cb = {
          data : [],
          total_bobot_seluruh : 0
      },
+     tanggal : ''
 };
 
     
@@ -190,6 +194,8 @@ function luaran_paten(){
             if(container_luaran_paten.length > 0){
                 let i  = 1;
                 let total_bobot_seluruh = 0;
+                _luaran_paten_list.empty();
+                _out_ki_list.empty();
                 for(i; i <= container_luaran_paten.length; i++){
                     let _par_cb_jd_invensi= $('#par_cb_jd_invensi_' + i).val();
                     let _par_cb_jenis_paten = $('input[name="jpt_'+i+'"]:checked').val();
@@ -216,7 +222,39 @@ function luaran_paten(){
 
                     total_bobot_per_row = parseInt(jumlah) * parseInt(bobot);
                     total_bobot_seluruh = total_bobot_seluruh + total_bobot_per_row;
-        
+                    
+                    let list_adapter = 
+                    `<tr>
+                            <td>`+i+`</td>
+                            <td>`+_par_cb_jd_invensi+`</td>
+                            <td>`+jumlah+`</td>
+                            <td>`+bobot+`</td>
+                            <td>`+total_bobot_per_row+`</td>
+                    </tr>`;
+                    _luaran_paten_list.append(list_adapter);
+                    _p_total_bobot.text(total_bobot_seluruh);
+                    
+                    // print output
+                    _out_pagu.text(_par_pagu_riset.val())
+                    _out_paten.text(total_bobot_seluruh)
+                    _out_nonpaten.text(_np_total_bobot.text());
+
+                    // ki = (Ki = Ti / (Total(Ti)+Total(Qi))× R)
+
+                    let x = parseInt(total_bobot_seluruh)/ (parseInt(total_bobot_seluruh) + parseInt(_np_total_bobot.text()) );
+                    let ki = x * parseInt(_par_pagu_riset.val());
+
+                    console.log(ki);
+                    _out_ki.text(ki);
+
+                    let y = total_bobot_per_row / (parseInt(total_bobot_seluruh) + parseInt(_np_total_bobot.text()) );
+                    let ki_list = y * parseInt(_par_pagu_riset.val());
+                    let adapter_out_ki_list = `
+                                                    <li id="list_`+i+`">`+_par_cb_jenis_paten+` `+_par_cb_status_paten+` = Rp.`+ki_list+`</li>
+                                                `;
+                    _out_ki_list.append(adapter_out_ki_list);
+
+
                     obj_paten = {
                         par_cb_jd_invensi : '' + _par_cb_jd_invensi,
                         par_cb_jenis_paten : '' + _par_cb_jenis_paten,
@@ -226,30 +264,12 @@ function luaran_paten(){
                         jumlah : 1,
                         bobot : bobot,
                         total_bobot_per_row : total_bobot_per_row,
-                        total_bobot_seluruh : total_bobot_seluruh 
                     };
-        
-                    _luaran_paten_list.empty();
+                
                     obj_model_cb.obj_paten.data = [];
-        
+                
                     obj_model_cb.obj_paten.data.push(obj_paten);
                     obj_model_cb.obj_paten.total_bobot_seluruh = total_bobot_seluruh;
-
-                    let list_adapter = 
-                    `<tr>
-                            <td>`+i+`</td>
-                            <td>`+_par_cb_jd_invensi+`</td>
-                            <td>`+jumlah+`</td>
-                            <td>`+bobot+`</td>
-                            <td>`+total_bobot_per_row+`</td>
-                    </tr>`;
-                    _p_total_bobot.text(total_bobot_seluruh);
-                    _luaran_paten_list.append(list_adapter);
-                    
-                    // print output
-                    _out_pagu.text(_par_pagu_riset.val())
-                    _out_paten.text(total_bobot_seluruh)
-                    _out_nonpaten.text(_par_pagu_riset.val())
                 } 
             }
         }
