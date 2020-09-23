@@ -392,24 +392,15 @@
                                                     (Rp.)</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="nilai_luaran_paten_list">
                                 <tr>
                                    <td>1.</td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                </tr>
-                                <tr>
-                                   <td>2. </td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
+                                   <td>-</td>
+                                   <td>-</td>
+                                   <td>-</td>
+                                   <td>-</td>
+                                   <td>-</td>
+                                   <td>-</td>
                                 </tr>
                             </tbody>
                         </table>

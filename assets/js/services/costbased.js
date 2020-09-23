@@ -38,6 +38,7 @@ const _pub_prod_np_ns_total = $('#pub_prod_np_ns_total');
 const _np_total_bobot = $('#np_total_bobot'); // Qi
 const _p_total_bobot = $('#p_total_bobot'); // Ti
 const _luaran_paten_list = $('.luaran_paten_list');
+const _nilai_luaran_paten_list = $('#nilai_luaran_paten_list');
 
 // daftar view output luaran
 const _out_paten = $('#out_paten');
@@ -60,6 +61,20 @@ const buk_ns = 30;
 
 const pub_pros_int = 25;
 const pub_pros_ns = 10;
+
+// konstanta biaya permohonan paten
+
+/**
+ * referensi terkait tarif permohonan poten di :
+ * https://dgip.go.id/tarif-paten
+ */
+
+const biaya_permohonan_paten = 350000;
+const biaya_permohonan_paten_sederhana = 200000;
+const biaya_substantif_paten = 3000000;
+const biaya_substantif_paten_sederhana = 500000;
+const biaya_percepatan_pengumuman_publikasi = 400000;
+
 
 // konstanta bobot paten
 const granted_tersertifikat = 48;
@@ -206,16 +221,31 @@ function luaran_paten(){
         
                     var bobot = 0;
                     let jumlah = 1;
+                    let biaya_pendaftaran;
+                    let biaya_substantif;
+                    let biaya_percepatan;
                     let total_bobot = 0;
                     console.log(_par_cb_jenis_paten + '|' + _par_cb_status_paten);
                     if(_par_cb_jenis_paten === "paten_granted" && _par_cb_status_paten === "tersertifikasi"){
                         bobot = granted_tersertifikat;
+                        biaya_pendaftaran = biaya_permohonan_paten;
+                        biaya_substantif = biaya_substantif_paten;
+                        biaya_percepatan = biaya_percepatan_pengumuman_publikasi;
                     }else if(_par_cb_jenis_paten === "paten_granted" && _par_cb_status_paten === "tedaftar"){
                         bobot = granted_terdaftar;
+                        biaya_pendaftaran = biaya_permohonan_paten;
+                        biaya_substantif = biaya_substantif_paten;
+                        biaya_percepatan = biaya_percepatan_pengumuman_publikasi;
                     }else if(_par_cb_jenis_paten === "paten_sederhana" && _par_cb_status_paten === "tersertifikasi"){
                         bobot = sederhana_tersertifikat;
+                        biaya_pendaftaran = biaya_permohonan_paten_sederhana;
+                        biaya_substantif = biaya_substantif_paten_sederhana;
+                        biaya_percepatan = biaya_percepatan_pengumuman_publikasi;
                     }else if(_par_cb_jenis_paten === "paten_sederhana" && _par_cb_status_paten === "tedaftar"){
                         bobot = sederhana_terdaftar;
+                        biaya_pendaftaran = biaya_permohonan_paten_sederhana;
+                        biaya_substantif = biaya_substantif_paten_sederhana;
+                        biaya_percepatan = biaya_percepatan_pengumuman_publikasi;
                     }
                     
                     console.log('nilai bobot : ' + bobot);
@@ -233,6 +263,18 @@ function luaran_paten(){
                     </tr>`;
                     _luaran_paten_list.append(list_adapter);
                     _p_total_bobot.text(total_bobot_seluruh);
+
+                    let list_adapter_nilai = `<tr>
+                                                <td>1.</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                                `;
+                    _nilai_luaran_paten_list.append(list_adapter_nilai);
                     
                     // print output
                     _out_pagu.text(_par_pagu_riset.val())
@@ -249,11 +291,8 @@ function luaran_paten(){
 
                     let y = total_bobot_per_row / (parseInt(total_bobot_seluruh) + parseInt(_np_total_bobot.text()) );
                     let ki_list = y * parseInt(_par_pagu_riset.val());
-                    let adapter_out_ki_list = `
-                                                    <li id="list_`+i+`">`+_par_cb_jenis_paten+` `+_par_cb_status_paten+` = Rp.`+ki_list+`</li>
-                                                `;
+                    let adapter_out_ki_list = `<li id="list_`+i+`">`+_par_cb_jenis_paten+` `+_par_cb_status_paten+` = Rp.`+ki_list+`</li>`;
                     _out_ki_list.append(adapter_out_ki_list);
-
 
                     obj_paten = {
                         par_cb_jd_invensi : '' + _par_cb_jd_invensi,
@@ -261,6 +300,9 @@ function luaran_paten(){
                         par_cb_status_paten : '' + _par_cb_status_paten,
                         par_cb_nodaftar : '' + _par_cb_nodaftar,
                         par_cb_sertifikat_paten : ''  + _par_cb_sertifikat_paten,
+                        biaya_pendaftaran : '' + biaya_pendaftaran,
+                        biaya_substantif : '' + biaya_substantif,
+                        biaya_percepatan : '' + biaya_percepatan,
                         jumlah : 1,
                         bobot : bobot,
                         total_bobot_per_row : total_bobot_per_row,
