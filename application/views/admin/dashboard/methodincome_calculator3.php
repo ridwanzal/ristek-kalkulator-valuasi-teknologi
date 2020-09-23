@@ -34,70 +34,70 @@ if($this->session->userdata('biaya_investasi')){
                 <div class="card-body">
                 <form>
                     <div class="form-group row">                        
-                        <label for="biaya_investasi" class="col-sm-6 col-form-label text-right">3.1 Biaya Investasi Mesin, Kendaraan, dan Peralatan</label>
+                        <label for="biaya_investasi" class="col-sm-6 col-form-label text-right">Biaya Investasi Mesin, Kendaraan, dan Peralatan &nbsp;<span class="badge badge-pill  badge-warning">3.1</span> &nbsp;<a href="#" class="badge badge-info">Info</a></label>
                         <div class="col-sm-6">
                             <input type="text" value="<?= $biaya_investasi; ?>" class="form-control  form-control-sm col-sm-12" id="biaya_investasi" name="biaya_investasi" aria-describedby="biaya_investasiDesc" required>
                             <small id="biaya_investasiDesc" class="form-text text-muted text-left">Komponen untuk memasukkan biaya investasi</small>
                         </div>
                     </div>                    
                     <div class="form-group row">                        
-                        <label for="biaya_riset" class="col-sm-6 col-form-label text-right">3.2 Biaya Riset dan Pengembangan</label>
+                        <label for="biaya_riset" class="col-sm-6 col-form-label text-right">Biaya Riset dan Pengembangan &nbsp;<span class="badge badge-pill  badge-warning">3.2</span> &nbsp;<a href="#" class="badge badge-info">Info</a></label>
                         <div class="col-sm-6">
                             <input type="text" value="<?= $biaya_riset; ?>" class="form-control  form-control-sm col-sm-12" id="biaya_riset" name="biaya_riset" aria-describedby="biaya_risetDesc" required>
                             <small id="biaya_risetDesc" class="form-text text-muted text-left">Komponen untuk Biaya Riset dan Pengembangan</small>
                         </div>
                     </div>
                     <div class="form-group row">                        
-                        <label for="biaya_lisensi" class="col-sm-6 col-form-label text-right">3.3 Biaya License + ISO9001 (Tahun Pertama)</label>
+                        <label for="biaya_lisensi" class="col-sm-6 col-form-label text-right">Biaya License + ISO9001 (Tahun Pertama) &nbsp;<span class="badge badge-pill  badge-warning">3.3</span> &nbsp;<a href="#" class="badge badge-info">Info</a></label>
                         <div class="col-md-6 text-left">
                         <input type="text" value="<?= $biaya_lisensi; ?>" class="form-control  form-control-sm col-sm-12" id="biaya_lisensi" name="biaya_lisensi" aria-describedby="biaya_lisensiDesc" required>
                             <small id="biaya_lisensiDesc" class="form-text text-muted">Komponen untuk memasukkan biaya lisensi</small>
                         </div>
                     </div>                    
                     <div class="form-group row">                        
-                        <label for="persen_lisensi" class="col-sm-6 col-form-label text-right">3.4 Biaya License + ISO9002 mulai tahun ke-2 (Prosentase)</label>
+                        <label for="persen_lisensi" class="col-sm-6 col-form-label text-right">Biaya License + ISO9002 mulai tahun ke-2 (Prosentase) &nbsp;<span class="badge badge-pill  badge-warning">3.4</span> &nbsp;<a href="#" class="badge badge-info">Info</a></label>
                         <div class="col-sm-6">
                             <input type="text" value="<?= $persen_lisensi; ?>" class="form-control  form-control-sm col-sm-3" id="persen_lisensi" name="persen_lisensi" aria-describedby="persen_lisensiDesc" required>
                             <small id="persen_lisensiDesc" class="form-text text-muted text-left">Prosentase biaya lisensi untuk tahun ke - 2 dan seterusnya</small>
                         </div>
                     </div>
                     <div class="form-group row">                        
-                        <label for="biaya_cogs" class="col-sm-6 col-form-label text-right">3.5 Biaya Cost of Goods Sold (Biaya Investasi Produk)</label>
+                        <label for="biaya_cogs" class="col-sm-6 col-form-label text-right">Biaya Cost of Goods Sold (Biaya Investasi Produk) &nbsp;<span class="badge badge-pill  badge-warning">3.5</span> &nbsp;<a href="#" class="badge badge-info">Info</a></label>
                         <div class="col-md-6 text-left">
                         <input type="text" value="<?= $biaya_cogs; ?>" class="form-control  form-control-sm col-sm-12" id="biaya_cogs" name="biaya_cogs" aria-describedby="biaya_cogsDesc" required>                        
                             <small id="biaya_cogsDesc" class="form-text text-muted">Biaya Investasi Produk</small>
                         </div>
                     </div>
                     <div class="form-group row">                        
-                        <label for="biaya_tetap" class="col-sm-6 col-form-label text-right">3.6 Biaya Operasional Tetap (Fixed Cost)</label>
+                        <label for="biaya_tetap" class="col-sm-6 col-form-label text-right">Biaya Operasional Tetap (Fixed Cost) &nbsp;<span class="badge badge-pill  badge-warning">3.6</span> &nbsp;<a href="#" class="badge badge-info">Info</a></label>
                         <div class="col-sm-6">
                             <input type="text" value="<?= $biaya_tetap; ?>" class="form-control  form-control-sm col-sm-6" id="biaya_tetap" name="biaya_tetap" aria-describedby="biaya_tetapDesc">
                             <small id="biaya_tetapDesc" class="form-text text-muted text-left">Biaya tetap</small>
                         </div>
                     </div>
                     <div class="form-group row">                        
-                        <label for="biaya_marketing" class="col-sm-6 col-form-label text-right">3.7 Biaya Marketing (Prosentase)</label>
+                        <label for="biaya_marketing" class="col-sm-6 col-form-label text-right">Biaya Marketing (Prosentase) &nbsp;<span class="badge badge-pill  badge-warning">3.7</span> &nbsp;<a href="#" class="badge badge-info">Info</a></label>
                         <div class="col-sm-6">
                             <input type="text" value="<?= $biaya_marketing; ?>" class="form-control  form-control-sm col-sm-3" id="biaya_marketing" name="biaya_marketing" aria-describedby="biaya_marketingDesc">
                             <small id="biaya_marketingDesc" class="form-text text-muted text-left">Prosentase Komponen Biaya Marketing</small>
                         </div>
                     </div>
                     <div class="form-group row">                        
-                        <label for="biaya_perawatan" class="col-sm-6 col-form-label text-right">3.8 Biaya Maintenance (Perawatan)</label>
+                        <label for="biaya_perawatan" class="col-sm-6 col-form-label text-right">Biaya Maintenance (Perawatan) &nbsp;<span class="badge badge-pill  badge-warning">3.8</span> &nbsp;<a href="#" class="badge badge-info">Info</a></label>
                         <div class="col-sm-6">
                             <input type="text" value="<?= $biaya_perawatan; ?>" class="form-control  form-control-sm col-sm-6" id="biaya_perawatan" name="biaya_perawatan" aria-describedby="biaya_perawatanDesc">
                             <small id="biaya_perawatanDesc" class="form-text text-muted text-left">Komponen Biaya Perawatan</small>
                         </div>
                     </div>
                     <div class="form-group row">                        
-                        <label for="biaya_warehouse" class="col-sm-6 col-form-label text-right">3.9 Biaya Warehouse</label>
+                        <label for="biaya_warehouse" class="col-sm-6 col-form-label text-right">Biaya Warehouse &nbsp;<span class="badge badge-pill  badge-warning">3.9</span> &nbsp;<a href="#" class="badge badge-info">Info</a></label>
                         <div class="col-sm-6">
                             <input type="text" value="<?= $biaya_warehouse; ?>" class="form-control  form-control-sm col-sm-6" id="biaya_warehouse" name="biaya_warehouse" aria-describedby="biaya_warehouseDesc">
                             <small id="biaya_warehouseDesc" class="form-text text-muted text-left">Komponen Biaya Warehouse</small>
                         </div>
                     </div>
                     <div class="form-group row">                        
-                        <label for="biaya_depresiasi" class="col-sm-6 col-form-label text-right">3.10 Biaya Depresiasi</label>
+                        <label for="biaya_depresiasi" class="col-sm-6 col-form-label text-right">Biaya Depresiasi &nbsp;<span class="badge badge-pill  badge-warning">3.10</span> &nbsp;<a href="#" class="badge badge-info">Info</a></label>
                         <div class="col-sm-6">
                             <input type="text" value="<?= $biaya_depresiasi; ?>" class="form-control  form-control-sm col-sm-6" id="biaya_depresiasi" name="biaya_depresiasi" aria-describedby="biaya_depresiasiDesc" required>
                             <small id="biaya_depresiasiDesc" class="form-text text-muted text-left">Biaya Depresiasi untuk setiap tahunnya</small>
