@@ -66,6 +66,7 @@
 <script src="<?php echo base_url();?>/assets/js/services/author_detail.js"></script>
 <script src="<?php echo base_url();?>/assets/js/services/incomebased.js"></script>
 <script src="<?php echo base_url();?>/assets/js/services/costbased.js"></script>
+<script src="<?php echo base_url();?>/assets/js/services/info.js"></script>
 </body>
 
 </html> 
