@@ -55,6 +55,7 @@
 <script src="<?php echo base_url();?>/assets/frontview/js/jquery-3.3.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="<?php echo base_url();?>/assets/frontview/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url();?>/assets/frontview/js/jquery.mask.min.js"></script>
 <script src="<?php echo base_url();?>/assets/frontview/js/jquery.magnific-popup.min.js"></script>
 <script src="<?php echo base_url();?>/assets/frontview/js/jquery-ui.min.js"></script>
 <script src="<?php echo base_url();?>/assets/frontview/js/jquery.nice-select.min.js"></script>
@@ -64,9 +65,9 @@
 <script src="<?php echo base_url();?>/assets/js/services/global.js"></script>
 <script src="<?php echo base_url();?>/assets/js/services/logout.js"></script>
 <script src="<?php echo base_url();?>/assets/js/services/author_detail.js"></script>
-<script src="<?php echo base_url();?>/assets/js/services/incomebased.js"></script>
 <script src="<?php echo base_url();?>/assets/js/services/costbased.js"></script>
 <script src="<?php echo base_url();?>/assets/js/services/info.js"></script>
+<script src="<?php echo base_url();?>/assets/js/services/incomebased.js"></script>
 </body>
 
 </html> 

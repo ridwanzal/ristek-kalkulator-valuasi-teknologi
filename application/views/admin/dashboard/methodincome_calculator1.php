@@ -65,21 +65,21 @@ if($this->session->userdata('inventor')){
                     <div class="form-group row">                        
                         <label for="modal" class="col-sm-4 col-form-label text-right">Modal Awal/Pinjaman Modal &nbsp;<span class="badge badge-pill  badge-warning">1.4</span> &nbsp;<a data-toggle="popover" title="Modal Awal/Pinjaman Modal" data-content="Besaran modal awal/pinjaman awal yang berasal dari Bank. Memungkinkan untuk memulai usaha dengan menggunakan modal dari pinjaman Bank, jika memang tidak ada biaya dari modal awal dengan dana sendiri." class="badge badge-info text-white">Info</a> </label>
                         <div class="col-md-8 text-left">
-                        <input type="text" value="<?= $modal; ?>" class="form-control  form-control-sm col-sm-12" id="modal" name="modal" aria-describedby="periodeDesc" required>                        
+                        <input type="text" value="<?= $modal; ?>" class="form-control  form-control-sm col-sm-12" id="modal" name="modal" aria-describedby="periodeDesc" placeholder="#.##0,00" required>                        
                             <small id="modalDesc" class="form-text text-muted">Modal awal/Pinjaman Modal</small>
                         </div>
                     </div>
                     <div class="form-group row">                        
                         <label for="sukubunga" class="col-sm-4 col-form-label text-right">Suku Bunga (Interest) Bank &nbsp;<span class="badge badge-pill  badge-warning">1.5</span> &nbsp;<a data-toggle="popover" title="Suku Bunga" data-content="Besaran suku bunga dari pinjaman yang diperoleh dari modal awal pinjaman Bank. Suku bunga tahunan dalam satuan persen (%)." class="badge badge-info text-white">Info</a> </label>
                         <div class="col-md-8 text-left">
-                        <input type="text" value="<?= $sukubunga; ?>" class="form-control  form-control-sm col-sm-2" id="sukubunga" name="sukubunga" aria-describedby="sukubungaDesc" required>                        
+                        <input type="text" value="<?= $sukubunga; ?>" class="form-control  form-control-sm col-sm-2" id="sukubunga" name="sukubunga" aria-describedby="sukubungaDesc" placeholder="##0,00%" required>                        
                             <small id="sukubungaDesc" class="form-text text-muted">Suku Bunga (Interest) Bank dalam satuan persen(%)</small>
                         </div>
                     </div>
                     <div class="form-group row">                        
                         <label for="marketsize" class="col-sm-4 col-form-label text-right">Market Size &nbsp;<span class="badge badge-pill  badge-warning">1.6</span> &nbsp;<a data-toggle="popover" title="Market Size" data-content="Proyeksi banyaknya jumlah unit dengan produk serupa, yang ada di pasaran." class="badge badge-info text-white">Info</a></label>
                         <div class="col-sm-8">
-                            <input type="text" value="<?= $marketsize; ?>" class="form-control  form-control-sm col-sm-3" id="marketsize" name="marketsize" aria-describedby="marketsiezeDesc">
+                            <input type="text" value="<?= $marketsize; ?>" class="form-control  form-control-sm col-sm-3" id="marketsize" name="marketsize" aria-describedby="marketsiezeDesc" placeholder="#.##0,00" required>
                             <small id="marketsiezeDesc" class="form-text text-muted text-left">Isi nilai numerik dengan satuan unit</small>
                         </div>
                     </div>

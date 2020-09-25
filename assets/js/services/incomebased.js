@@ -4,12 +4,44 @@ const tombol2_kehalaman3 = $('#tombol23');
 const tombol2_kehalaman1 = $('#tombol21');
 const tombol3_kehalaman3 = $('#tombol33');
 
+//masking input data halaman 1
+$('#modal').mask("#.##0,00", {reverse: true});
+$('#sukubunga').mask('##0,00%', {reverse: true});
+$('#marketsize').mask("#.##0,00", {reverse: true});
+
+//masking input data halaman 2
+$('#target').mask("#.##0,00", {reverse: true});
+$('#marketshare_persen').mask('##0,00%', {reverse: true});
+$('#qty_tahun1').mask("#.##0,00", {reverse: true});
+$('#marketshare_tahun2').mask("##0,00%", {reverse: true});
+$('#harga_tahun1').mask("#.##0,00", {reverse: true});
+$('#harga_tahun2').mask("##0,00%", {reverse: true});
+
+//masking input data halaman 3
+$('#biaya_investasi').mask("#.##0,00", {reverse: true});
+$('#biaya_riset').mask("#.##0,00", {reverse: true});
+$('#biaya_lisensi').mask("#.##0,00", {reverse: true});
+$('#persen_lisensi').mask("##0,00%", {reverse: true});
+$('#biaya_cogs').mask("#.##0,00", {reverse: true});
+$('#biaya_tetap').mask("#.##0,00", {reverse: true});
+$('#biaya_marketing').mask("##0,00%", {reverse: true});
+$('#biaya_perawatan').mask("#.##0,00", {reverse: true});
+$('#biaya_warehouse').mask("#.##0,00", {reverse: true});
+$('#biaya_depresiasi').mask("#.##0,00", {reverse: true});
+
 $(function(){
-    
+    //fungsi untuk menampilkan angka dengan pemisah ribuan (.) dan desimal dengan (,)
+    //fungsi ini akan mengembalikan nilai sebanyak 2 digit di belakang koma
+    function formatNumber(num) {
+        return (
+          num.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+        ) 
+    } 
+
     //untuk market share ketika diklik/change untuk prosentase
     $('#marketshare').on('change', function() {
         var m_pilihan = $(this).find(":selected").val();
-        var m_size = $('#marketsize').val();
+        var m_size = parseFloat($('#marketsize').val().replace(/[^\d,]/g,'').replace(',','.')); 
         var m_produk = 0;            
         if(m_pilihan=='persen1'){                
             m_produk = m_size * 0.25;
@@ -18,9 +50,15 @@ $(function(){
         }else if(m_pilihan=='persen3'){
             m_produk = m_size * 0.10;
         }            
-        $('#qty').val(m_produk);
+        $('#qty').val(formatNumber(m_produk));
     });
-    //
+    //untuk perhitungan di halaman ke - 2
+    $("#marketshare_persen").keyup(function() {
+        var m_target = parseFloat($('#target').val().replace(/[^\d,]/g,'').replace(',','.'));
+        var m_marketshare_persen = parseFloat($('#marketshare_persen').val().replace(/[^\d,]/g,'').replace(',','.'));
+        var m_qty_tahun1 = (m_target * m_marketshare_persen)/100;
+        $('#qty_tahun1').val(formatNumber(m_qty_tahun1));
+    });
     
     //ketika tombol dari halaman 1 ke halaman 2 diklik
     tombol1_kehalaman2.on('click', function(){
