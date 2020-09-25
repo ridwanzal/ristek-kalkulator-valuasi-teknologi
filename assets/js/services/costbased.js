@@ -41,6 +41,7 @@ const _luaran_paten_list = $('.luaran_paten_list');
 const _nilai_luaran_paten_list = $('#nilai_luaran_paten_list');
 
 // daftar view output luaran
+const _out_container_parent = $('.container_all_output');
 const _out_paten = $('#out_paten');
 const _out_nonpaten = $('#out_nonpaten');
 const _out_pagu = $('#out_pagu');
@@ -49,8 +50,7 @@ const _out_ki = $('#out_ki'); // total luaran penelitian berupa paten
 const _out_ki_list = $('#out_ki_list'); // daftar nilai luaran penelitian berupa paten
 
 // non paten button process
-const _proc_np_data = $('#proc_np_data');
-const _proc_p_data = $('#proc_p_data');
+const _proc_data = $('#proc_data');
 
 // konstanta bobot
 const pub_int = 40;
@@ -97,13 +97,6 @@ let obj_model_cb = {
 
 $(function () {
     get_daftar_penelitian();
-    luaran_nonpaten();
-    luaran_paten();
-});
-
-
-
-function luaran_nonpaten(){
     // publikasi internasional
     let get_scopus = JSON.parse(sessionStorage.getItem('get_scopus'));
     if(get_scopus.length > 0){
@@ -113,13 +106,34 @@ function luaran_nonpaten(){
         _pub_np_int_total.text(total_bobot);
     }
 
+    _par_pagu_riset.on('keydown', function(){
+        console.log($(this).val());
+        let result = money.format(_par_pagu_riset.val());
+        console.log(result)
+        _par_pagu_riset.val(result);
+    })
+    
+    _proc_data.on('click', function(){
+        let check = validate_input_identitas(); // isi terlebih dulu form indentitas
+        if(check){
+            luaran_nonpaten();
+            luaran_paten();
+            _out_container_parent.show();
+        }
+    });
+});
+
+
+
+function luaran_nonpaten(){
+
     // on change input
     _par_cb_pub_internasional.on('change', function(){
         let total_bobot = _par_cb_pub_internasional.val() * pub_int;
         _pub_np_int.text(_par_cb_pub_internasional.val());
         _pub_np_int_total.text(total_bobot);
     });
-
+    
     _par_cb_pub_nasional.on('change', function(){
         let total_bobot = _par_cb_pub_nasional.val() * pub_ns;
         _pub_np_ns.text(_par_cb_pub_nasional.val());
@@ -151,66 +165,61 @@ function luaran_nonpaten(){
         _pub_prod_np_ns_total.text(total_bobot);
     });
 
-    _proc_np_data.on('click', function(){
-        let check = validate_input_identitas(); // isi terlebih dulu form indentitas
-        if(check){
-            let total_np = 
-            parseInt(_pub_np_int_total.html()) +
-            parseInt(_pub_np_ns_total.html()) +
-            parseInt(_buk_np_int_total.html()) +
-            parseInt(_buk_np_ns_total.html()) +
-            parseInt(_pub_prod_np_int_total.html()) +
-            parseInt(_pub_prod_np_ns_total.html());
-            _np_total_bobot.text(total_np);
 
-    
-            let obj_non_paten = {
-                pub_np_int : '' + _pub_np_int.html(),
-                pub_np_ns : '' + _pub_np_ns.html(),
-                buk_np_int : ''  + _buk_np_int.html(),
-                buk_np_ns : ''  + _buk_np_ns.html(),
-                pub_prod_np_int : ''  + _pub_prod_np_int.html(),
-                pub_prod_np_ns : ''  + _pub_prod_np_ns.html(),
-                pub_np_int_total : '' + _pub_np_int_total.text(),
-                pub_np_ns_total : '' + _pub_np_ns_total.text(),
-                buk_np_int_total : '' + _buk_np_int_total.text(),
-                buk_np_ns_total : '' + _buk_np_ns_total.text(),
-                pub_prod_np_int_total : '' + _pub_prod_np_int_total.text() ,
-                pub_prod_np_ns_total : '' + _pub_prod_np_ns_total.text(),
-                np_total_bobot : ''  + _np_total_bobot.html()
-                };
-    
-                let obj_identitas_pi = {
-                    par_cb_nama_inventor : '' + _par_cb_nama_inventor.val(),
-                    par_cb_nama_institusi : '' + _par_cb_nama_institusi.val(),
-                    par_cb_unit_kerja : '' + _par_cb_unit_kerja.val(),
-                    par_cb_judul_riset : '' + _par_cb_judul_riset.val() ,
-                    par_pagu_riset : '' + _par_pagu_riset.val(),
-                    par_cb_asal_biaya : '' + _par_cb_asal_biaya.val(),
-                    total_bobot_seluruh : '' + _np_total_bobot.html()
-                };
-    
-                obj_model_cb.obj_identitas_pi = obj_identitas_pi
-                obj_model_cb.obj_non_paten  = obj_non_paten;
-                console.log(obj_model_cb);
-        }
-        
-    });
+    let total_np = 
+    parseInt(_pub_np_int_total.html()) +
+    parseInt(_pub_np_ns_total.html()) +
+    parseInt(_buk_np_int_total.html()) +
+    parseInt(_buk_np_ns_total.html()) +
+    parseInt(_pub_prod_np_int_total.html()) +
+    parseInt(_pub_prod_np_ns_total.html());
+    _np_total_bobot.text(total_np);
+
+
+    let obj_non_paten = {
+        pub_np_int : '' + _pub_np_int.html(),
+        pub_np_ns : '' + _pub_np_ns.html(),
+        buk_np_int : ''  + _buk_np_int.html(),
+        buk_np_ns : ''  + _buk_np_ns.html(),
+        pub_prod_np_int : ''  + _pub_prod_np_int.html(),
+        pub_prod_np_ns : ''  + _pub_prod_np_ns.html(),
+        pub_np_int_total : '' + _pub_np_int_total.text(),
+        pub_np_ns_total : '' + _pub_np_ns_total.text(),
+        buk_np_int_total : '' + _buk_np_int_total.text(),
+        buk_np_ns_total : '' + _buk_np_ns_total.text(),
+        pub_prod_np_int_total : '' + _pub_prod_np_int_total.text() ,
+        pub_prod_np_ns_total : '' + _pub_prod_np_ns_total.text(),
+        np_total_bobot : ''  + _np_total_bobot.html(),
+        total_bobot_seluruh : '' + _np_total_bobot.html()
+        };
+
+        let obj_identitas_pi = {
+            par_cb_nama_inventor : '' + _par_cb_nama_inventor.val(),
+            par_cb_nama_institusi : '' + _par_cb_nama_institusi.val(),
+            par_cb_unit_kerja : '' + _par_cb_unit_kerja.val(),
+            par_cb_judul_riset : '' + _par_cb_judul_riset.val() ,
+            par_pagu_riset : '' + money.reverse(_par_pagu_riset.val()),
+            par_cb_asal_biaya : '' + _par_cb_asal_biaya.val()
+        };
+
+        obj_model_cb.obj_identitas_pi = obj_identitas_pi
+        obj_model_cb.obj_non_paten  = obj_non_paten;
+        console.log(obj_model_cb);
+
 }
 
 
 
 function luaran_paten(){
-    _proc_p_data.on('click', function(){
-        let check = validate_input_identitas(); // isi terlebih dulu form indentitas
-        if(check){
             let container_luaran_paten = $('.luaran_paten_wrapper');
             console.log(container_luaran_paten.length);
             if(container_luaran_paten.length > 0){
                 let i  = 1;
                 let total_bobot_seluruh = 0;
+                let total_nilai_perolehan_patne = 0;
                 _luaran_paten_list.empty();
                 _out_ki_list.empty();
+                _nilai_luaran_paten_list.empty();
                 for(i; i <= container_luaran_paten.length; i++){
                     let _par_cb_jd_invensi= $('#par_cb_jd_invensi_' + i).val();
                     let _par_cb_jenis_paten = $('input[name="jpt_'+i+'"]:checked').val();
@@ -224,6 +233,7 @@ function luaran_paten(){
                     let biaya_pendaftaran;
                     let biaya_substantif;
                     let biaya_percepatan;
+                    let total_biaya_permohonan = 0;
                     let total_bobot = 0;
                     console.log(_par_cb_jenis_paten + '|' + _par_cb_status_paten);
                     if(_par_cb_jenis_paten === "paten_granted" && _par_cb_status_paten === "tersertifikasi"){
@@ -247,6 +257,8 @@ function luaran_paten(){
                         biaya_substantif = biaya_substantif_paten_sederhana;
                         biaya_percepatan = biaya_percepatan_pengumuman_publikasi;
                     }
+
+                    total_biaya_permohonan = parseInt(biaya_pendaftaran) + parseInt(biaya_substantif) + parseInt(biaya_percepatan)
                     
                     console.log('nilai bobot : ' + bobot);
 
@@ -255,27 +267,27 @@ function luaran_paten(){
                     
                     let list_adapter = 
                     `<tr>
-                            <td>`+i+`</td>
+                            <td>`+i+`.</td>
                             <td>`+_par_cb_jd_invensi+`</td>
                             <td>`+jumlah+`</td>
                             <td>`+bobot+`</td>
                             <td>`+total_bobot_per_row+`</td>
                     </tr>`;
                     _luaran_paten_list.append(list_adapter);
-                    _p_total_bobot.text(total_bobot_seluruh);
-
-                    let list_adapter_nilai = `<tr>
-                                                <td>1.</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                            </tr>
-                                                `;
-                    _nilai_luaran_paten_list.append(list_adapter_nilai);
                     
+                    let list_adapter_nilai = `<tr>
+                    <td>`+i+`.</td>
+                            <td>`+_par_cb_nodaftar+`</td>
+                            <td>`+biaya_pendaftaran+`</td>
+                            <td>`+biaya_substantif+`</td>
+                            <td>`+biaya_percepatan+`</td>
+                            <td>0</td>
+                            <td>`+total_biaya_permohonan+`</td>
+                            </tr>
+                            `;
+                    _nilai_luaran_paten_list.append(list_adapter_nilai);
+                
+                    _p_total_bobot.text(total_bobot_seluruh);
                     // print output
                     _out_pagu.text(_par_pagu_riset.val())
                     _out_paten.text(total_bobot_seluruh)
@@ -284,13 +296,13 @@ function luaran_paten(){
                     // ki = (Ki = Ti / (Total(Ti)+Total(Qi))× R)
 
                     let x = parseInt(total_bobot_seluruh)/ (parseInt(total_bobot_seluruh) + parseInt(_np_total_bobot.text()) );
-                    let ki = x * parseInt(_par_pagu_riset.val());
+                    let ki = x * parseInt(money.reverse(_par_pagu_riset.val()));
 
                     console.log(ki);
                     _out_ki.text(ki);
 
                     let y = total_bobot_per_row / (parseInt(total_bobot_seluruh) + parseInt(_np_total_bobot.text()) );
-                    let ki_list = y * parseInt(_par_pagu_riset.val());
+                    let ki_list = y * parseInt(money.reverse(_par_pagu_riset.val()));
                     let adapter_out_ki_list = `<li id="list_`+i+`">`+_par_cb_jenis_paten+` `+_par_cb_status_paten+` = Rp.`+ki_list+`</li>`;
                     _out_ki_list.append(adapter_out_ki_list);
 
@@ -314,8 +326,6 @@ function luaran_paten(){
                     obj_model_cb.obj_paten.total_bobot_seluruh = total_bobot_seluruh;
                 } 
             }
-        }
-    });
 }
 
 

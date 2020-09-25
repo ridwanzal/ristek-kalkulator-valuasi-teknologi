@@ -40,7 +40,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">5</span>&nbsp;Total Biaya Masukan/Realisasi Pagu Penelitian (R) <i style="color: red">*</i></label>
-                                            <input type="number" class="form-control form-control-sm" id="par_pagu_riset" placeholder="">
+                                            <input type="text" class="form-control form-control-sm" id="par_pagu_riset" placeholder="">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">6</span>&nbsp;Asal Biaya Masukan Masukan/Realisasi Pagu Penelitian <i style="color: red">*</i> </label>
@@ -54,9 +54,9 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="captions" for="formGroupExampleInput2">Upload dokumen pendukung <i style="color: red">*</i></label>
+                                        <label class="captions" for="formGroupExampleInput2">Upload dokumen pendukung </label>
                                             <div class="custom-file">
-                                                <input id="par_cb_file1" type="file" class="form-control" multiple style="height:45px;">
+                                                <input disabled="disabled" id="par_cb_file1" type="file" class="form-control" multiple style="height:45px;">
                                                 <small>Unggah file dlm format PDF, MS Word, PPT</small>
                                             </div>
                                     </div>
@@ -74,7 +74,7 @@
                                     </div>
                                     <div class="form-row form-group">
                                         <div class="col">
-                                            <label class="captions">Publikasi pada jurnal internasional <i style="color: red">*</i></label>
+                                            <label class="captions">Publikasi pada jurnal internasional </label>
                                             <input id="par_cb_pub_internasional" type="number" class="form-control" placeholder="" value="0">
                                         </div>
                                         <div class="col-lg-6">
@@ -85,7 +85,7 @@
 
                                     <div class="form-row form-group">
                                         <div class="col">
-                                            <label class="captions">Publikasi pada jurnal nasional <i style="color: red">*</i></label>
+                                            <label class="captions">Publikasi pada jurnal nasional </label>
                                             <input id="par_cb_pub_nasional" type="number" class="form-control" placeholder="" value="0">
                                         </div>
                                         <div class="col-lg-6">
@@ -96,7 +96,7 @@
 
                                     <div class="form-row form-group">
                                         <div class="col">
-                                            <label class="captions">Buku Internasional <i style="color: red">*</i></label>
+                                            <label class="captions">Buku Internasional </label>
                                             <input id="par_cb_buku_internasional" type="number" class="form-control" placeholder="" value="0">
                                         </div>
                                         <div class="col-lg-6">
@@ -107,7 +107,7 @@
 
                                     <div class="form-row form-group">
                                         <div class="col">
-                                            <label class="captions">Buku Nasional <i style="color: red">*</i></label>
+                                            <label class="captions">Buku Nasional </label>
                                             <input id="par_cb_buku_nasional" type="number" class="form-control" placeholder="" value="0">
                                         </div>
                                         <div class="col-lg-6">
@@ -118,7 +118,7 @@
 
                                     <div class="form-row form-group">
                                         <div class="col">
-                                            <label class="captions">Publikasi pada prosiding internasional <i style="color: red">*</i></label>
+                                            <label class="captions">Publikasi pada prosiding internasional </label>
                                             <input id="par_cb_pros_internasional" type="number" class="form-control" placeholder="" value="0">
                                         </div>
                                         <div class="col-lg-6">
@@ -129,7 +129,7 @@
 
                                     <div class="form-row form-group">
                                         <div class="col">
-                                            <label class="captions">Publikasi pada prosiding nasional <i style="color: red">*</i></label>
+                                            <label class="captions">Publikasi pada prosiding nasional </label>
                                             <input id="par_cb_pros_nasional"  type="number" class="form-control" placeholder="" value="0">
                                         </div>
                                         <div class="col-lg-6">
@@ -137,7 +137,6 @@
                                             <input disabled type="number" class="form-control" placeholder="1" value="10">
                                         </div>
                                     </div>
-                                    <button class="btn btn-sm btn-secondary btn-block" id="proc_np_data">Proses data</button>
                                 </div>
                             </div>
 
@@ -227,7 +226,7 @@
                                                     <div class="col-lg-6">
                                                         <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung <i style="color: red">*</i></label>
                                                         <div class="custom-file">
-                                                            <input type="file" class="form-control" multiple style="height:45px;" id="par_cb_file2">
+                                                            <input disabled="disabled" type="file" class="form-control" multiple style="height:45px;" id="par_cb_file2">
                                                             <small>berupa Formulir (Bukti) pendaftaran dan/atau
                                                         Sertifikat Paten/Paten Sederhana (Unggah file dlm format PDF, MS Word, PPT)</small>
                                                         </div>
@@ -236,7 +235,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button style="margin-top:10px;" class="btn btn-sm btn-secondary btn-block" id="proc_p_data">Proses data</button>
+                                    <button style="margin-top:10px;" class="btn btn-sm btn-success btn-block" id="proc_data">Proses data</button>
                                 </div>
                             </div>
                             <br/>
@@ -244,186 +243,188 @@
                 </div>
                 <br/>
                 <br/>
-                <!-- POIN B -->
-                <div class="row">
-                    <div class="col-lg-9 col-md-9">
-                        <p>B. Nilai Keluaran Penelitian Berupa Paten (Ki)</p>
-                        <table class="table table-sm table-bordered">
-                            <thead>
-                                <tr>
-                                    <th scope="col">No</th>
-                                    <th scope="col">Luaran Penelitian</th>
-                                    <th scope="col">Jumlah</th>
-                                    <th scope="col">Bobot</th>
-                                    <th scope="col">Total Bobot</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>A.</td>
-                                    <td>Luaran Penelitian Non Paten</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>Publikasi pada jurnal internasional</td>
-                                    <td id="pub_np_int">0</td>
-                                    <td>40</td>
-                                    <td id="pub_np_int_total">0</td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>Publikasi pada jurnal nasional</td>
-                                    <td id="pub_np_ns">0</td>
-                                    <td>25</td>
-                                    <td id="pub_np_ns_total">0</td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td>Buku Internasional</td>
-                                    <td id="buk_np_int">0</td>
-                                    <td>40</td>
-                                    <td id="buk_np_int_total">0</td>
-                                </tr>
-                                <tr>
-                                    <td>4.</td>
-                                    <td>Buku Nasional</td>
-                                    <td id="buk_np_ns">0</td>
-                                    <td>30</td>
-                                    <td id="buk_np_ns_total">0</td>
-                                </tr>
-                                <tr>
-                                    <td>5.</td>
-                                    <td>Publikasi pada prosiding internasional</td>
-                                    <td id="pub_prod_np_int">0</td>
-                                    <td>25</td>
-                                    <td id="pub_prod_np_int_total">0</td>
-                                </tr>
-                                <tr>
-                                    <td>6.</td>
-                                    <td>Publikasi pada prosiding nasional</td>
-                                    <td id="pub_prod_np_ns">0</td>
-                                    <td>10</td>
-                                    <td id="pub_prod_np_ns_total">0</td>
-                                </tr>
-                                <tr style="background : #f1f1f1 !important;">
-                                    <td></td>
-                                    <td><b>Total bobot keluaran penelitian non paten (&Sigma;Qi)</b></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td id="np_total_bobot">0</td>
-                                </tr>
-                                <tr class="luaran_penelitan_title">
-                                    <td>B.</td>
-                                    <td>Luaran Penelitian Paten</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tbody class="luaran_paten_list">
-                                  
+                <div class="container_all_output" style="display:none;">
+                    <!-- POIN B -->
+                    <div class="row">
+                        <div class="col-lg-9 col-md-9">
+                            <p>B. Nilai Keluaran Penelitian Berupa Paten (Ki)</p>
+                            <table class="table table-sm table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Luaran Penelitian</th>
+                                        <th scope="col">Jumlah</th>
+                                        <th scope="col">Bobot</th>
+                                        <th scope="col">Total Bobot</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>A.</td>
+                                        <td>Luaran Penelitian Non Paten</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>Publikasi pada jurnal internasional</td>
+                                        <td id="pub_np_int">0</td>
+                                        <td>40</td>
+                                        <td id="pub_np_int_total">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2.</td>
+                                        <td>Publikasi pada jurnal nasional</td>
+                                        <td id="pub_np_ns">0</td>
+                                        <td>25</td>
+                                        <td id="pub_np_ns_total">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3.</td>
+                                        <td>Buku Internasional</td>
+                                        <td id="buk_np_int">0</td>
+                                        <td>40</td>
+                                        <td id="buk_np_int_total">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4.</td>
+                                        <td>Buku Nasional</td>
+                                        <td id="buk_np_ns">0</td>
+                                        <td>30</td>
+                                        <td id="buk_np_ns_total">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5.</td>
+                                        <td>Publikasi pada prosiding internasional</td>
+                                        <td id="pub_prod_np_int">0</td>
+                                        <td>25</td>
+                                        <td id="pub_prod_np_int_total">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6.</td>
+                                        <td>Publikasi pada prosiding nasional</td>
+                                        <td id="pub_prod_np_ns">0</td>
+                                        <td>10</td>
+                                        <td id="pub_prod_np_ns_total">0</td>
+                                    </tr>
+                                    <tr style="background : #f1f1f1 !important;">
+                                        <td></td>
+                                        <td><b>Total bobot keluaran penelitian non paten (&Sigma;Qi)</b></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td id="np_total_bobot">0</td>
+                                    </tr>
+                                    <tr class="luaran_penelitan_title">
+                                        <td>B.</td>
+                                        <td>Luaran Penelitian Paten</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tbody class="luaran_paten_list">
+                                    
+                                    </tbody>
+                                    <!-- <tr>
+                                        <td>1.</td>
+                                        <td>Publikasi pada jurnal internasional</td>
+                                        <td>1</td>
+                                        <td>40</td>
+                                        <td>40</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2.</td>
+                                        <td>Publikasi pada jurnal internasional</td>
+                                        <td>1</td>
+                                        <td>40</td>
+                                        <td>40</td>
+                                    </tr> -->
+                                    <tr style="background : #f1f1f1 !important;">
+                                        <td></td>
+                                        <td><b>Total bobot keluaran penelitian non paten (&Sigma;Ti)</b></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td id="p_total_bobot">0</td>
+                                    </tr>
                                 </tbody>
-                                <!-- <tr>
+                            </table>
+                            <div>Nilai total bobot keluaran penelitian berupa paten (&Sigma;Ti) = <span id="out_paten">0</span></div>
+                            <div>Nilai total bobot keluaran penelitian non paten (&Sigma;Qi) = <span id="out_nonpaten">0</span></div>
+                            <div>Nilai realisasi pagu (R) = Rp. <span id="out_pagu">0</span></div>
+                            <div>Nilai keluaran untuk masing-masin Paten : </div>
+                            <ul id="out_ki_list">
+                            </ul>
+                            <div>Total Nilai Keluaran Penelitian Berupa Paten (Ki = Ti / (&Sigma;Ti+&Sigma;Qi)× R) = Rp. <span id="out_ki">0</span></div>
+                        </div>
+                    </div>
+
+                    <br/>
+                    <br/>
+                    <br/>
+                    <!-- POIN C -->
+                    <div class="row">
+                        <div class="col-lg-9 col-md-9">
+                            <p>C. Nilai Perolehan Paten (Pi)</p>   
+                            <table class="table table-sm table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="align-middle" scope="col">No</th>
+                                        <th class="align-middle" scope="col">Nomor
+                                                        Pendaftaran/Sertifikat
+                                                        Paten/Paten
+                                                        Sederhana *</th>
+                                        <th class="align-middle" scope="col">Biaya
+                                                        Pendaftaran
+                                                        (Rp.)</th>
+                                        <th class="align-middle" scope="col">Biaya
+                                                        Pemeriksaan
+                                                        Substantif
+                                                        (Rp.)</th>
+                                        <th class="align-middle" scope="col">Biaya
+                                                        Percepatan
+                                                        Publikasi
+                                                        (Rp.)</th>
+                                        <th class="align-middle" scope="col">Biaya
+                                                        Proses
+                                                        Lainnya
+                                                        (Rp.)</th>
+                                        <th class="align-middle" scope="col">Jumlah
+                                                        (Rp.)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="nilai_luaran_paten_list">
+                                    <tr>
                                     <td>1.</td>
-                                    <td>Publikasi pada jurnal internasional</td>
-                                    <td>1</td>
-                                    <td>40</td>
-                                    <td>40</td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>Publikasi pada jurnal internasional</td>
-                                    <td>1</td>
-                                    <td>40</td>
-                                    <td>40</td>
-                                </tr> -->
-                                <tr style="background : #f1f1f1 !important;">
-                                    <td></td>
-                                    <td><b>Total bobot keluaran penelitian non paten (&Sigma;Ti)</b></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td id="p_total_bobot">0</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div>Nilai total bobot keluaran penelitian berupa paten (&Sigma;Ti) = <span id="out_paten">0</span></div>
-                        <div>Nilai total bobot keluaran penelitian non paten (&Sigma;Qi) = <span id="out_nonpaten">0</span></div>
-                        <div>Nilai realisasi pagu (R) = Rp. <span id="out_pagu">0</span></div>
-                        <div>Nilai keluaran untuk masing-masin Paten : </div>
-                        <ul id="out_ki_list">
-                        </ul>
-                        <div>Total Nilai Keluaran Penelitian Berupa Paten (Ki = Ti / (&Sigma;Ti+&Sigma;Qi)× R) = Rp. <span id="out_ki">0</span></div>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <small id="emailHelp" class="form-text text-muted">Biaya pendaftaran, pemeriksaan substantif, dan percepatan publikasi, sesuai dengan tarif
+                                                                            PNBP yang berlaku di DJKI.</small>
+                        </div>
                     </div>
-                </div>
 
-                <br/>
-                <br/>
-                <br/>
-                <!-- POIN C -->
-                <div class="row">
-                    <div class="col-lg-9 col-md-9">
-                        <p>C. Nilai Perolehan Paten (Pi)</p>   
-                        <table class="table table-sm table-bordered">
-                            <thead>
-                                <tr>
-                                    <th class="align-middle" scope="col">No</th>
-                                    <th class="align-middle" scope="col">Nomor
-                                                    Pendaftaran/Sertifikat
-                                                    Paten/Paten
-                                                    Sederhana *</th>
-                                    <th class="align-middle" scope="col">Biaya
-                                                    Pendaftaran
-                                                    (Rp.)</th>
-                                    <th class="align-middle" scope="col">Biaya
-                                                    Pemeriksaan
-                                                    Substantif
-                                                    (Rp.)</th>
-                                    <th class="align-middle" scope="col">Biaya
-                                                    Percepatan
-                                                    Publikasi
-                                                    (Rp.)</th>
-                                    <th class="align-middle" scope="col">Biaya
-                                                    Proses
-                                                    Lainnya
-                                                    (Rp.)</th>
-                                    <th class="align-middle" scope="col">Jumlah
-                                                    (Rp.)</th>
-                                </tr>
-                            </thead>
-                            <tbody id="nilai_luaran_paten_list">
-                                <tr>
-                                   <td>1.</td>
-                                   <td>-</td>
-                                   <td>-</td>
-                                   <td>-</td>
-                                   <td>-</td>
-                                   <td>-</td>
-                                   <td>-</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <small id="emailHelp" class="form-text text-muted">Biaya pendaftaran, pemeriksaan substantif, dan percepatan publikasi, sesuai dengan tarif
-                                                                           PNBP yang berlaku di DJKI.</small>
-                    </div>
-                </div>
-
-                <!-- <br/>
-                <div class="row">
-                    <div class="col-lg-9 col-md-9">
-                        <button class="btn btn-primary btn-sm">Hitung</button>
-                        <button class="btn btn-success btn-sm" disabled>Simpan</button>
-                    </div>
-                </div> -->
-                <br/>
-                <div class="row">
-                    <div class="col-lg-9 col-md-9">
-                        <p>D. Nilai Aset Tak Berwujud berupa Paten/ATB-P (Vi)</p>   
-                        <p>1. Nilai ATB-P masing-masing paten:</p>   
-                        <p>2. Total Nilai ATB-P :</p>   
-                        <div class="form-group">
-                            <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
+                    <!-- <br/>
+                    <div class="row">
+                        <div class="col-lg-9 col-md-9">
+                            <button class="btn btn-primary btn-sm">Hitung</button>
+                            <button class="btn btn-success btn-sm" disabled>Simpan</button>
+                        </div>
+                    </div> -->
+                    <br/>
+                    <div class="row">
+                        <div class="col-lg-9 col-md-9">
+                            <p>D. Nilai Aset Tak Berwujud berupa Paten/ATB-P (Vi)</p>   
+                            <p>1. Nilai ATB-P masing-masing paten:</p>   
+                            <p>2. Total Nilai ATB-P :</p>   
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
+                            </div>
                         </div>
                     </div>
                 </div>

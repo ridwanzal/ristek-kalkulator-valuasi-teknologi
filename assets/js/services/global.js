@@ -1,7 +1,7 @@
 const base_url_access = 'http://api.sinta.ristekdikti.go.id/fusio/public/consumer/login';
 const base_url_login = 'http://api.sinta.ristekdikti.go.id/v2/author/login';
 const base_url_api = 'http://api.sinta.ristekdikti.go.id/v2';
-const web_url = 'http://sikav.ridwanzal.com';
+const web_url = 'http://localhost/ristek-kalkulator-valuasi-teknologi';
 const el_click_login = $('#submit_login');
 const access_api = {
     username : 'KALKULATORHKI',
@@ -22,6 +22,8 @@ const loader = {
     }
 }
 
+// module helper
+
 function checkEmpty(el){
     if(el.val() == '' || el.val() == null){
         el.css({
@@ -33,5 +35,31 @@ function checkEmpty(el){
             'border-bottom' : '1px solid #ccc'
         })
         return false;
+    }
+}
+
+const money = {
+    format : function(str){
+        let number_string = str.replace(/[^,\d]/g, '').toString(),
+        split	= number_string.split(','),
+        sisa 	= split[0].length % 3,
+        rupiah 	= split[0].substr(0, sisa),
+        ribuan 	= split[0].substr(sisa).match(/\d{1,3}/gi);
+            
+        if (ribuan) {
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+        
+        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+        return rupiah;
+    },
+    formatdec : function(){
+
+    },
+    reverse : function(str){
+        let rupiah = str;
+        let clean = rupiah.replace(/\D/g, '');
+        return clean
     }
 }
