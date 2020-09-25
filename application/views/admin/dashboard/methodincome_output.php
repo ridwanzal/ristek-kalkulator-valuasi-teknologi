@@ -16,12 +16,49 @@
 ($this->session->userdata('biaya_investasi')!==null) ? $biaya_investasi = $this->session->userdata('biaya_investasi'): $biaya_investasi=0.00;
 ($this->session->userdata('biaya_riset')!==null) ? $biaya_riset = $this->session->userdata('biaya_riset'): $biaya_riset=0.00;
 ($this->session->userdata('biaya_lisensi')!==null) ? $biaya_lisensi = $this->session->userdata('biaya_lisensi'): $biaya_lisensi=0.00;
+($this->session->userdata('persen_lisensi')!==null) ? $persen_lisensi = $this->session->userdata('persen_lisensi'): $persen_lisensi=0.00;
 ($this->session->userdata('biaya_cogs')!==null) ? $biaya_cogs = $this->session->userdata('biaya_cogs'): $biaya_cogs=0.00;
 ($this->session->userdata('biaya_tetap')!==null) ? $biaya_tetap = $this->session->userdata('biaya_tetap'): $biaya_tetap=0.00;
 ($this->session->userdata('biaya_marketing')!==null) ? $biaya_marketing = $this->session->userdata('biaya_marketing'): $biaya_marketing=0.00;
 ($this->session->userdata('biaya_perawatan')!==null) ? $biaya_perawatan = $this->session->userdata('biaya_perawatan'): $biaya_perawatan=0.00;
 ($this->session->userdata('biaya_warehouse')!==null) ? $biaya_warehouse = $this->session->userdata('biaya_warehouse'): $biaya_warehouse=0.00;
 ($this->session->userdata('biaya_depresiasi')!==null) ? $biaya_depresiasi = $this->session->userdata('biaya_depresiasi'): $biaya_depresiasi=0.00;
+
+//inisialisasi variabel untuk perhitungan proyeksi
+$periode = get_numeric($periode);
+$modal = get_numeric($modal);
+$sukubunga = get_numeric($sukubunga);
+//
+$target = get_numeric($target);
+$qty_tahun1 = get_numeric($qty_tahun1);
+$marketshare_tahun2 = get_numeric($marketshare_tahun2);
+$harga_tahun1 = get_numeric($harga_tahun1);
+$harga_tahun2 = get_numeric($harga_tahun2);
+//
+$biaya_investasi = get_numeric($biaya_investasi);
+$biaya_riset = get_numeric($biaya_riset);
+$biaya_lisensi = get_numeric($biaya_lisensi);
+$persen_lisensi = get_numeric($persen_lisensi);
+$biaya_cogs = get_numeric($biaya_cogs);
+$biaya_tetap = get_numeric($biaya_tetap);
+$biaya_marketing = get_numeric($biaya_marketing);
+$biaya_perawatan = get_numeric($biaya_perawatan);
+$biaya_warehouse = get_numeric($biaya_warehouse);
+$biaya_depresiasi = get_numeric($biaya_depresiasi);
+
+
+//fungsi untuk menampilkan angka dalam rupiah
+function rupiah($angka){
+	$hasil_rupiah = number_format($angka,2,',','.');
+	return $hasil_rupiah;
+}
+//fungsi membuat titik (.) dan mengganti koma (,) dengan titik(.) kemudian jika ada persen (%) dibuang
+function get_numeric($angka){
+    $angka= str_replace(".", "", $angka);
+    $angka= str_replace(",", ".", $angka);
+    $angka= str_replace("%", "", $angka);
+    return $angka;
+}
 
 //perhitungan variabel proyeksi
 $indeks = $periode;
@@ -121,12 +158,6 @@ for($w=1;$w<=$indeks;$w++){
 $depresiasi = array();
 for($d=1;$d<=$indeks;$d++){
     $depresiasi[$d] = $biaya_depresiasi;
-}
-
-//fungsi untuk menampilkan angka dalam rupiah
-function rupiah($angka){
-	$hasil_rupiah = number_format($angka,2,',','.');
-	return $hasil_rupiah;
 }
 ?>
 <div class="container mt-3 mb-3">
