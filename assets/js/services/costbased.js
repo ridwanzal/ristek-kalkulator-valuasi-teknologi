@@ -112,6 +112,44 @@ $(function () {
         console.log(result)
         _par_pagu_riset.val(result);
     })
+
+    // on change input
+    _par_cb_pub_internasional.on('change', function(){
+        let total_bobot = _par_cb_pub_internasional.val() * pub_int;
+        _pub_np_int.text(_par_cb_pub_internasional.val());
+        _pub_np_int_total.text(total_bobot);
+    });
+    
+    _par_cb_pub_nasional.on('change', function(){
+        let total_bobot = _par_cb_pub_nasional.val() * pub_ns;
+        _pub_np_ns.text(_par_cb_pub_nasional.val());
+        _pub_np_ns_total.text(total_bobot);
+    });
+    
+    _par_cb_buku_internasional.on('change', function(){
+        let total_bobot = _par_cb_buku_internasional.val() * buk_int;
+        _buk_np_int.text(_par_cb_buku_internasional.val());
+        _buk_np_int_total.text(total_bobot);
+    });
+    
+    _par_cb_buku_nasional.on('change', function(){
+        let total_bobot = _par_cb_buku_nasional.val() * buk_ns;
+        _buk_np_ns.text(_par_cb_buku_nasional.val());
+        _buk_np_ns_total.text(total_bobot);
+    });
+    
+    
+    _par_cb_pros_internasional.on('change', function(){
+        let total_bobot = _par_cb_pros_internasional.val() * pub_pros_int;
+        _pub_prod_np_int.text(_par_cb_pros_internasional.val());
+        _pub_prod_np_int_total.text(total_bobot);
+    });
+    
+    _par_cb_pros_nasional.on('change', function(){
+        let total_bobot = _par_cb_pros_nasional.val() * pub_pros_ns;
+        _pub_prod_np_ns.text(_par_cb_pros_nasional.val());
+        _pub_prod_np_ns_total.text(total_bobot);
+    });
     
     _proc_data.on('click', function(){
         let check = validate_input_identitas(); // isi terlebih dulu form indentitas
@@ -126,47 +164,7 @@ $(function () {
 
 
 function luaran_nonpaten(){
-
-    // on change input
-    _par_cb_pub_internasional.on('change', function(){
-        let total_bobot = _par_cb_pub_internasional.val() * pub_int;
-        _pub_np_int.text(_par_cb_pub_internasional.val());
-        _pub_np_int_total.text(total_bobot);
-    });
-    
-    _par_cb_pub_nasional.on('change', function(){
-        let total_bobot = _par_cb_pub_nasional.val() * pub_ns;
-        _pub_np_ns.text(_par_cb_pub_nasional.val());
-        _pub_np_ns_total.text(total_bobot);
-    });
-
-    _par_cb_buku_internasional.on('change', function(){
-        let total_bobot = _par_cb_buku_internasional.val() * buk_int;
-        _buk_np_int.text(_par_cb_buku_internasional.val());
-        _buk_np_int_total.text(total_bobot);
-    });
-
-    _par_cb_buku_nasional.on('change', function(){
-        let total_bobot = _par_cb_buku_nasional.val() * buk_ns;
-        _buk_np_ns.text(_par_cb_buku_nasional.val());
-        _buk_np_ns_total.text(total_bobot);
-    });
-
-
-    _par_cb_pros_internasional.on('change', function(){
-        let total_bobot = _par_cb_pros_internasional.val() * pub_pros_int;
-        _pub_prod_np_int.text(_par_cb_pros_internasional.val());
-        _pub_prod_np_int_total.text(total_bobot);
-    });
-
-    _par_cb_pros_nasional.on('change', function(){
-        let total_bobot = _par_cb_pros_nasional.val() * pub_pros_ns;
-        _pub_prod_np_ns.text(_par_cb_pros_nasional.val());
-        _pub_prod_np_ns_total.text(total_bobot);
-    });
-
-
-    let total_np = 
+    let total_np = 0;
     parseInt(_pub_np_int_total.html()) +
     parseInt(_pub_np_ns_total.html()) +
     parseInt(_buk_np_int_total.html()) +

@@ -48,6 +48,7 @@
                                 url : url_req,
                                 type : 'POST',
                                 cache : true,
+                                crossDomain : true,
                                 beforeSend: function(request) {
                                     request.setRequestHeader("Content-Type", 'application/x-www-form-urlencoded');
                                     request.setRequestHeader("Authorization", 'Bearer ' + access_token);
