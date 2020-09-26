@@ -52,6 +52,7 @@ $(function(){
         }            
         $('#qty').val(formatNumber(m_produk));
     });
+    
     //untuk perhitungan di halaman ke - 2
     $("#marketshare_persen").keyup(function() {
         var m_target = parseFloat($('#target').val().replace(/[^\d,]/g,'').replace(',','.'));
