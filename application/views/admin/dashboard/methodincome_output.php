@@ -271,6 +271,42 @@ $pajak_penjualan = array();
 for($i=1;$i<=$indeks;$i++){
     $pajak_penjualan[$i] = $total_cash_received[$i]*0.025;
 }
+
+//variabel dummy profit_loss.pph_badan
+$pph_badan = array();
+for($i=1;$i<=$indeks;$i++){
+    $pagu = 4800000000;
+    $pkp_fasilitas[$i] = $pagu*$pkp[$i]/$total_cash_received[$i];
+    $pkp_non_fasilitas[$i] = $pkp[$i]-$pkp_fasilitas[$i];
+    $fasilitas[$i] = 0.5*0.25*$pkp_fasilitas[$i];
+    $non_fasilitas[$i] = 0.25*$pkp_non_fasilitas[$i];
+    $pph_badan[$i] = $fasilitas[$i]+$non_fasilitas[$i];
+    if($pph_badan[$i]<=0){$pph_badan[$i]=0;}
+}
+
+//variabel dummy profit_loss.eat
+$eat = array();
+for($i=1;$i<=$indeks;$i++){
+    $eat[$i] = $ebit[$i]-$interest[$i]-$pajak_penjualan[$i]-$pph_badan[$i];
+}
+
+//variabel dummy profit_loss.capital_expenditure
+$capital_expenditure = array();
+for($i=1;$i<=$indeks;$i++){
+    $capital_expenditure[$i] = $angsuran_modal[$i]+$perawatan[$i];
+}
+
+//variabel dummy profit_loss.total_expenditure
+$total_expenditure = array();
+for($i=1;$i<=$indeks;$i++){
+    $total_expenditure[$i] = $cogs[$i]+$tetap[$i]+$marketing[$i]+$warehouse[$i]+$depresiasi[$i]+$interest[$i]+$pajak_penjualan[$i]+$pph_badan[$i]+$capital_expenditure[$i];
+}
+
+//variabel dummy profit_loss.fcf
+$fcf = array();
+for($i=1;$i<=$indeks;$i++){
+    $fcf[$i] = $eat[$i]+$depresiasi[$i]-$capital_expenditure[$i];
+}
 ?>
 <div class="container mt-3 mb-3">
     <div class="row mb-3">
@@ -801,15 +837,19 @@ for($i=1;$i<=$indeks;$i++){
                                     <td class="text-left">PPH Badan</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($pph_badan[$i]<=0){
+                                            echo "<td>".rupiah("0.00")."</td>";
+                                        }else{
+                                            echo "<td>".rupiah($pph_badan[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
-                                <tr>
-                                    <td class="text-left bg-light">Eearning After Tax (EAT)</td>
+                                <tr class="bg-secondary text-white">
+                                    <td class="text-center">Eearning After Tax (EAT)</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($eat[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
@@ -817,7 +857,7 @@ for($i=1;$i<=$indeks;$i++){
                                     <td class="text-left">Depresiasi</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($depresiasi[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
@@ -825,23 +865,15 @@ for($i=1;$i<=$indeks;$i++){
                                     <td class="text-left">Capital Expenditure</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($capital_expenditure[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
-                                <tr>
-                                    <td class="text-left bg-light">Total Expenditure</td>
+                                <tr class="bg-secondary text-white">
+                                    <td class="text-center">Total Expenditure</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
-                                    }
-                                    ?>
-                                </tr>
-                                <tr>
-                                    <td class="text-left">Net Cash Flow/FCF</td>
-                                    <?php
-                                    for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($total_expenditure[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
@@ -849,7 +881,7 @@ for($i=1;$i<=$indeks;$i++){
                                     <td class="text-left">Net Cash Flow/FCF</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($fcf[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
