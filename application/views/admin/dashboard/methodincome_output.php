@@ -235,6 +235,36 @@ for($i=1;$i<=$indeks;$i++){
         $ending_balance[$i] = $begining_balance[$i]+$surplus[$i]-$investment_capital_credit[$i]-$working_capital_credit[$i]-$interest_investment_capital[$i]-$interest_working_capital[$i];
     }
 }
+
+//variabel dummy profit_loss.gross_profit
+$gross_profit = array();
+for($i=1;$i<=$indeks;$i++){
+    $gross_profit[$i] = $total_cash_received[$i]-$cogs[$i];
+}
+
+//variabel dummy profit_loss.ebitda
+$ebitda = array();
+for($i=1;$i<=$indeks;$i++){
+    $ebitda[$i] = $total_cash_received[$i]-$cogs[$i]-$tetap[$i]-$marketing[$i]-$warehouse[$i];
+}
+
+//variabel dummy profit_loss.ebit
+$ebit = array();
+for($i=1;$i<=$indeks;$i++){
+    $ebit[$i] = $ebitda[$i]-$depresiasi[$i];
+}
+
+//variabel dummy profit_loss.interest
+$interest = array();
+for($i=1;$i<=$indeks;$i++){
+    $interest[$i] = $interest_investment_capital[$i]+$interest_working_capital[$i];
+}
+
+//variabel dummy profit_loss.pkp
+$pkp = array();
+for($i=1;$i<=$indeks;$i++){
+    $pkp[$i] = ($ebit[$i]-$interest[$i])-4800000000;
+}
 ?>
 <div class="container mt-3 mb-3">
     <div class="row mb-3">
@@ -647,7 +677,7 @@ for($i=1;$i<=$indeks;$i++){
                         <div class="card-body">
                             <table class="table table-bordered table-responsive table-hover table-sm">
                             <thead>
-                                <tr class="bg-light">
+                                <tr class="bg-success">
                                     <th>Tahun </th>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
@@ -657,7 +687,7 @@ for($i=1;$i<=$indeks;$i++){
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="bg-light">
+                                <tr class="bg-success">
                                     <td>KOMPONEN</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
@@ -669,23 +699,23 @@ for($i=1;$i<=$indeks;$i++){
                                     <td class="text-left">Sales (Penjualan)</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($total_cash_received[$i])."</td>";
                                     }
-                                    ?>
+                                    ?>                                    
                                 </tr> 
                                 <tr>
                                     <td class="text-left">COGs</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($cogs[$i])."</td>";
                                     }
                                     ?>
                                 </tr>   
-                                <tr class="bg-light">
-                                    <td class="text-left">Gross Profit</td>
+                                <tr class="bg-secondary text-white">
+                                    <td class="text-center">Gross Profit</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($gross_profit[$i])."</td>";
                                     }
                                     ?>
                                 </tr>        
@@ -693,7 +723,7 @@ for($i=1;$i<=$indeks;$i++){
                                     <td class="text-left">Fixed Cost</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($tetap[$i])."</td>";
                                     }
                                     ?>
                                 </tr>  
@@ -701,7 +731,7 @@ for($i=1;$i<=$indeks;$i++){
                                     <td class="text-left">Marketing</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($marketing[$i])."</td>";
                                     }
                                     ?>
                                 </tr>    
@@ -709,15 +739,15 @@ for($i=1;$i<=$indeks;$i++){
                                     <td class="text-left">Warehouse</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($warehouse[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
-                                <tr>
-                                    <td class="text-left bg-light">Operation Profit (EBITDA)</td>
+                                <tr class="bg-secondary text-white">
+                                    <td class="text-center">Operation Profit (EBITDA)</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($ebitda[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
@@ -725,15 +755,15 @@ for($i=1;$i<=$indeks;$i++){
                                     <td class="text-left">Depresiasi</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($depresiasi[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
-                                <tr>
-                                    <td class="text-left bg-light">EBIT</td>
+                                <tr class="bg-secondary text-white">
+                                    <td class="text-center">EBIT</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($ebit[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
@@ -741,15 +771,15 @@ for($i=1;$i<=$indeks;$i++){
                                     <td class="text-left">Interest</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($interest[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
-                                <tr>
-                                    <td class="text-left bg-light">Penghasilan Kena Pajak</td>
+                                <tr class="bg-secondary text-white">
+                                    <td class="text-center">Penghasilan Kena Pajak</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($pkp[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
