@@ -169,17 +169,17 @@ for($d=1;$d<=$indeks;$d++){
                 </div>
                 <div class="card-body">
                     <div class="form-group row">                        
-                        <label for="marketsize" class="col-sm-4 col-form-label text-right">Nama Inventor</label>
+                        <label for="inventor" class="col-sm-4 col-form-label text-right">Nama Inventor</label>
                         <div class="col-sm-8">
-                            <input type="text" value="<?=$this->session->userdata('sesi_inventor'); ?>" class="form-control  form-control-sm col-sm-12" id="marketsize" aria-describedby="marketsiezeDesc" readonly>
-                            <small id="marketsiezeDesc" class="form-text text-muted text-left">Nama Pemilik/Lembaga Invensi</small>
+                            <input type="text" value="<?=$this->session->userdata('sesi_inventor'); ?>" class="form-control  form-control-sm col-sm-12" id="inventor" aria-describedby="inventorDesc" readonly>
+                            <small id="inventorDesc" class="form-text text-muted text-left">Nama Pemilik/Lembaga Invensi</small>
                         </div>
                     </div>                    
                     <div class="form-group row">                        
-                        <label for="marketsize" class="col-sm-4 col-form-label text-right">Judul Penelitian/Invensi</label>
+                        <label for="judul" class="col-sm-4 col-form-label text-right">Judul Penelitian/Invensi</label>
                         <div class="col-sm-8">
-                            <textarea  class="form-control  form-control-sm col-sm-12" id="marketsize" aria-describedby="marketsiezeDesc" readonly><?=$this->session->userdata('sesi_judul'); ?></textarea>
-                            <small id="marketsiezeDesc" class="form-text text-muted text-left">Judul Penelitian/Invensi</small>
+                            <textarea  class="form-control  form-control-sm col-sm-12" id="judul" aria-describedby="marketsiezeDesc" readonly><?=$this->session->userdata('sesi_judul'); ?></textarea>
+                            <small id="judulDesc" class="form-text text-muted text-left">Judul Penelitian/Invensi</small>
                         </div>
                     </div>
                     <!-- untuk tombol previous next -->

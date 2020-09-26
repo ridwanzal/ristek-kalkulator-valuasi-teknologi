@@ -18,14 +18,14 @@ if($this->session->userdata('inventor')){
     $qty = null;
 }
     
-    foreach ($sikav_hki as $rshki) {   
-        $hki_id = $rshki->hki_id;
-        $inventor = $rshki->inventor;
-        $judul = $rshki->judul;
-        $this->session->set_userdata('sesi_hki',$hki_id);
-        $this->session->set_userdata('sesi_inventor',$inventor);
-        $this->session->set_userdata('sesi_judul',$judul);
-    }  
+foreach ($sikav_hki as $rshki) {   
+    $hki_id = $rshki->hki_id;
+    $inventor = $rshki->inventor;
+    $judul = $rshki->judul;
+    $this->session->set_userdata('sesi_hki', $hki_id);
+    $this->session->set_userdata('sesi_inventor', $inventor);
+    $this->session->set_userdata('sesi_judul', $judul);
+}  
 
 ?>
 <div class="container mt-3 mb-3">
