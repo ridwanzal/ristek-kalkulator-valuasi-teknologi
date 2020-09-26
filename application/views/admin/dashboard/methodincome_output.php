@@ -340,6 +340,16 @@ for($i=1;$i<=$indeks;$i++){
 //jumlahkan isi array discount_fcf untuk memperoleh profit_loss.npv
 $npv = array_sum($discount_fcf);
 
+//variabel dummy npv.npv2
+$npv2 = array();
+for($i=1;$i<=$indeks;$i++){
+    if($i==1){
+        $npv2[$i] = $discount_fcf[$i];
+    }else{
+        $npv2[$i] = $discount_fcf[$i]+$npv2[$i-1];
+    }
+}
+
 ?>
 <div class="container mt-3 mb-3">
     <div class="row mb-3">
@@ -963,9 +973,9 @@ $npv = array_sum($discount_fcf);
                             Net Present Value (NPV)
                         </div>
                         <div class="card-body">
-                            <table class="table table-bordered table-hover">
+                            <table class="table table-bordered table-hover table-striped">
                             <thead>
-                                <tr class="bg-warning">
+                                <tr class="bg-primary text-white">
                                 <th scope="col">Tahun</th>
                                 <th scope="col">FCF</th>
                                 <th scope="col">Disc Rate</th>
@@ -977,15 +987,15 @@ $npv = array_sum($discount_fcf);
                                 <?php for($i=1;$i<=$periode;$i++){ ?>
                                     <tr>
                                         <th scope="row" class="text-left">Tahun <?=$i ?></th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td><?= rupiah($fcf[$i]) ?></td>
+                                        <td><?= $discount[$i] ?></td>
+                                        <td><?= rupiah($discount_fcf[$i]) ?></td>
+                                        <td><?= rupiah($npv2[$i]) ?></td>
                                     </tr> 
                                 <?php } ?>           
                                 <tr>
-                                    <th scope="row" class="text-right" colspan="4">i</th>
-                                    <td class="bg-primary text-white">Nilai NPV</td>
+                                    <th scope="row" class="text-right" colspan="4">Nilai NPV = </th>
+                                    <td class="bg-primary text-white"><?= rupiah($npv) ?></td>
                                 </tr>    
                             </tbody>
                             </table>
