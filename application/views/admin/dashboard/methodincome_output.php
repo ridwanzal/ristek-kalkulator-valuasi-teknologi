@@ -159,6 +159,82 @@ $depresiasi = array();
 for($d=1;$d<=$indeks;$d++){
     $depresiasi[$d] = $biaya_depresiasi;
 }
+
+//variabel dummy cashflow.total_expenditure
+$total_expenditure = array();
+for($te=1;$te<=$indeks;$te++){
+    if($te==1){
+        $total_expenditure[$te] = $biaya_investasi+$biaya_riset+$lisensi[$te]+$cogs[$te]+$tetap[$te]+$marketing[$te]+$perawatan[$te]+$warehouse[$te]+$depresiasi[$te];
+    }else{
+        $total_expenditure[$te] = $lisensi[$te]+$cogs[$te]+$tetap[$te]+$marketing[$te]+$perawatan[$te]+$warehouse[$te]+$depresiasi[$te];
+    }    
+}
+
+//variabel dummy cashflow.surplus
+$surplus = array();
+for($i=1;$i<=$indeks;$i++){
+    $surplus[$i] = $total_cash_received[$i]-$total_expenditure[$i];   
+}
+
+//variabel dummy cashflow.investment_capital
+$investment_capital = $biaya_investasi+$biaya_riset+$total_lisensi;
+
+//variabel dummy cashflow.investment_capital
+$working_capital = $modal-$investment_capital;
+
+//variabel dummy cashflow.investment_capital_credit
+$investment_capital_credit = array();
+for($i=1;$i<=$indeks;$i++){
+    $investment_capital_credit[$i] = $investment_capital/$indeks;   
+}
+
+//variabel dummy cashflow.working_capital_credit
+$working_capital_credit = array();
+for($i=1;$i<=$indeks;$i++){
+    $working_capital_credit[$i] = $working_capital/$indeks;   
+}
+
+//variabel dummy cashflow.interest_investment_capital
+$interest_investment_capital = array();
+for($i=1;$i<=$indeks;$i++){
+    $interest_investment_capital[$i] = ($sukubunga/100)*$investment_capital;
+}
+
+//variabel dummy cashflow.angsuran_modal
+$angsuran_modal = array();
+for($i=1;$i<=$indeks;$i++){
+    $angsuran_modal[$i] = $investment_capital_credit[$i]+$working_capital_credit[$i];
+}
+
+//variabel dummy cashflow.interest_working_capital
+$interest_working_capital = array();
+for($i=1;$i<=$indeks;$i++){
+    $var0 = $working_capital;
+    $var1[$i] = $var0/$indeks;
+    if($i==1){
+        $var2[$i] = $var0-$var1[$i];
+    }else{
+        $var2[$i] = $var2[$i-1]-$var1[$i];
+    }
+    if($i==1){
+        $interest_working_capital[$i] = $var0*($sukubunga/100);
+    }else{
+        $interest_working_capital[$i] = $var2[$i-1]*($sukubunga/100);
+    }
+}
+
+//variabel dummy cashflow.begining_balance && cashflow.ending_balance
+$begining_balance = array();
+$ending_balance = array();
+for($i=1;$i<=$indeks;$i++){
+    if($i==1){
+        $begining_balance[$i] = $modal;
+        $ending_balance[$i] = $begining_balance[$i]+$surplus[$i]-$investment_capital_credit[$i]-$working_capital_credit[$i]-$interest_investment_capital[$i]-$interest_working_capital[$i];
+    }else{
+        $begining_balance[$i] = $ending_balance[$i-1];
+        $ending_balance[$i] = $begining_balance[$i]+$surplus[$i]-$investment_capital_credit[$i]-$working_capital_credit[$i]-$interest_investment_capital[$i]-$interest_working_capital[$i];
+    }
+}
 ?>
 <div class="container mt-3 mb-3">
     <div class="row mb-3">
@@ -292,7 +368,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Investment Capital</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<td>&nbsp;</td>";
+                                        if($i==0){
+                                            echo "<td>".rupiah($investment_capital)."</td>";
+                                        }else{
+                                            echo "<td>&nbsp;</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>    
@@ -300,7 +380,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Working Capital</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<td>&nbsp;</td>";
+                                        if($i==0){
+                                            echo "<td>".rupiah($working_capital)."</td>";
+                                        }else{
+                                            echo "<td>&nbsp;</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -432,7 +516,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">TOTAL EXPENDITURE</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<td class=\"text-right\">&nbsp;</td>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($total_expenditure[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -440,7 +528,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Surplus</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<td class=\"text-right\">".rupiah($modal)."</td>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($surplus[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -456,7 +548,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left" style="text-indent: 30px;">Installment Invest. Cap. Credit</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<th>&nbsp;</th>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($investment_capital_credit[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -464,7 +560,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left" style="text-indent: 30px;">Installment Working Cap. Credit</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<th>&nbsp;</th>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($working_capital_credit[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -472,7 +572,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left" style="text-indent: 30px;">Interest Investment Cap </td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<th>&nbsp;</th>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($interest_investment_capital[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -480,7 +584,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left" style="text-indent: 30px;">Interest Working Cap </td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<th>&nbsp;</th>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($interest_working_capital[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -488,7 +596,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left" style="text-indent: 30px;">Angsuran Modal </td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<th>&nbsp;</th>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($angsuran_modal[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -496,7 +608,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Beginning Balance</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<th>".rupiah($modal)."</th>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($begining_balance[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -504,7 +620,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Ending Balance</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<th>".rupiah($modal)."</th>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($ending_balance[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
