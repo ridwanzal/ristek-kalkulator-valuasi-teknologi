@@ -265,6 +265,12 @@ $pkp = array();
 for($i=1;$i<=$indeks;$i++){
     $pkp[$i] = ($ebit[$i]-$interest[$i])-4800000000;
 }
+
+//variabel dummy profit_loss.pajak_penjualan
+$pajak_penjualan = array();
+for($i=1;$i<=$indeks;$i++){
+    $pajak_penjualan[$i] = $total_cash_received[$i]*0.025;
+}
 ?>
 <div class="container mt-3 mb-3">
     <div class="row mb-3">
@@ -787,7 +793,7 @@ for($i=1;$i<=$indeks;$i++){
                                     <td class="text-left">Pajak Penjualan 2.5%</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($pajak_penjualan[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
