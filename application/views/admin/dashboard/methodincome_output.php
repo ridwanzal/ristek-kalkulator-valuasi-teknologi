@@ -307,6 +307,39 @@ $fcf = array();
 for($i=1;$i<=$indeks;$i++){
     $fcf[$i] = $eat[$i]+$depresiasi[$i]-$capital_expenditure[$i];
 }
+
+//variabel dummy profit_loss.discount (Discount Factor 10%)
+$discount = array();
+$discount[1] = 0.909;
+$discount[2] = 0.826;
+$discount[3] = 0.751;
+$discount[4] = 0.683;
+$discount[5] = 0.621;
+$discount[6] = 0.564;
+$discount[7] = 0.513;
+$discount[8] = 0.467;
+$discount[9] = 0.424;
+$discount[10] = 0.386;
+$discount[11] = 0.350;
+$discount[12] = 0.319;
+$discount[13] = 0.290;
+$discount[14] = 0.263;
+$discount[15] = 0.239;
+$discount[16] = 0.219;
+$discount[17] = 0.198;
+$discount[18] = 0.180;
+$discount[19] = 0.164;
+$discount[20] = 0.149;
+
+//variabel dummy profit_loss.discount_fcf
+$discount_fcf = array();
+for($i=1;$i<=$indeks;$i++){
+    $discount_fcf[$i] = $fcf[$i]*$discount[$i];
+}
+
+//jumlahkan isi array discount_fcf untuk memperoleh profit_loss.npv
+$npv = array_sum($discount_fcf);
+
 ?>
 <div class="container mt-3 mb-3">
     <div class="row mb-3">
@@ -889,23 +922,27 @@ for($i=1;$i<=$indeks;$i++){
                                     <td class="text-left">Discount Factor at interest rate 10%</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".$discount[$i]."</td>";
                                     }
                                     ?>
                                 </tr>
-                                <tr class="bg-light">
-                                    <td class="text-left">Discounted FCF</td>
+                                <tr class="bg-warning text-blue">
+                                    <td class="text-center">Discounted FCF</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($discount_fcf[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
-                                <tr class="bg-success">
+                                <tr class="bg-success text-white">
                                     <td class="text-left">Net Present Value (NPV)</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==1){
+                                            echo "<td>".rupiah($npv)."</td>";
+                                        }else{
+                                            echo "<td>&nbsp</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>                                
