@@ -404,7 +404,7 @@
                                     </tr>
                                 </tbody>
                                 <tbody>
-                                    <tr>
+                                    <tr style="background : #f1f1f1 !important;">
                                         <td></td>
                                         <td><b>Jumlah (Rp.)</b></td>
                                         <td id="total_biaya_pendaftaran_seluruh">0</td>
