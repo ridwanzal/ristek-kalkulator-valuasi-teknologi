@@ -1,28 +1,39 @@
 <?php
 //mengambil data dari AJAX di /incomebased/data_halaman3
-if($this->session->userdata('biaya_investasi')){
-    $biaya_investasi = $this->session->userdata('biaya_investasi');
-    $biaya_riset = $this->session->userdata('biaya_riset');
-    $biaya_lisensi = $this->session->userdata('biaya_lisensi');
-    $persen_lisensi = $this->session->userdata('persen_lisensi');
-    $biaya_cogs = $this->session->userdata('biaya_cogs');
-    $biaya_tetap = $this->session->userdata('biaya_tetap');
-    $biaya_marketing = $this->session->userdata('biaya_marketing');
-    $biaya_perawatan = $this->session->userdata('biaya_perawatan');
-    $biaya_warehouse = $this->session->userdata('biaya_warehouse');
-    $biaya_depresiasi = $this->session->userdata('biaya_depresiasi');
-}else{
-    $biaya_investasi = null;
-    $biaya_riset = null;
-    $biaya_lisensi = null;
-    $persen_lisensi = null;
-    $biaya_cogs = null;
-    $biaya_tetap = null;
-    $biaya_marketing = null;
-    $biaya_perawatan = null;
-    $biaya_warehouse = null;
-    $biaya_depresiasi = null;
-}
+($this->session->userdata('biaya_investasi')!=null) ? $biaya_investasi = $this->session->userdata('biaya_investasi'): $biaya_investasi=null;
+($this->session->userdata('biaya_riset')!=null) ? $biaya_riset = $this->session->userdata('biaya_riset'): $biaya_riset=null;
+($this->session->userdata('biaya_lisensi')!=null) ? $biaya_lisensi = $this->session->userdata('biaya_lisensi'): $biaya_lisensi=null;
+($this->session->userdata('persen_lisensi')!=null) ? $persen_lisensi = $this->session->userdata('persen_lisensi'): $persen_lisensi=null;
+($this->session->userdata('biaya_cogs')!=null) ? $biaya_cogs = $this->session->userdata('biaya_cogs'): $biaya_cogs=null;
+($this->session->userdata('biaya_tetap')!=null) ? $biaya_tetap = $this->session->userdata('biaya_tetap'): $biaya_tetap=null;
+($this->session->userdata('biaya_marketing')!=null) ? $biaya_marketing = $this->session->userdata('biaya_marketing'): $biaya_marketing=null;
+($this->session->userdata('biaya_perawatan')!=null) ? $biaya_perawatan = $this->session->userdata('biaya_perawatan'): $biaya_perawatan=null;
+($this->session->userdata('biaya_warehouse')!=null) ? $biaya_warehouse = $this->session->userdata('biaya_warehouse'): $biaya_warehouse=null;
+($this->session->userdata('biaya_depresiasi')!=null) ? $biaya_depresiasi = $this->session->userdata('biaya_depresiasi'): $biaya_depresiasi=null;
+
+//if($this->session->userdata('biaya_investasi')){
+//    $biaya_investasi = $this->session->userdata('biaya_investasi');
+//    $biaya_riset = $this->session->userdata('biaya_riset');
+//    $biaya_lisensi = $this->session->userdata('biaya_lisensi');
+//    $persen_lisensi = $this->session->userdata('persen_lisensi');
+//    $biaya_cogs = $this->session->userdata('biaya_cogs');
+//    $biaya_tetap = $this->session->userdata('biaya_tetap');
+//    $biaya_marketing = $this->session->userdata('biaya_marketing');
+//    $biaya_perawatan = $this->session->userdata('biaya_perawatan');
+//    $biaya_warehouse = $this->session->userdata('biaya_warehouse');
+//    $biaya_depresiasi = $this->session->userdata('biaya_depresiasi');
+//}else{
+//    $biaya_investasi = null;
+//    $biaya_riset = null;
+//    $biaya_lisensi = null;
+//    $persen_lisensi = null;
+//    $biaya_cogs = null;
+//    $biaya_tetap = null;
+//    $biaya_marketing = null;
+//    $biaya_perawatan = null;
+//    $biaya_warehouse = null;
+//    $biaya_depresiasi = null;
+//}
 ?>
 <div class="container mt-3 mb-3">
     <div class="row mb-3">

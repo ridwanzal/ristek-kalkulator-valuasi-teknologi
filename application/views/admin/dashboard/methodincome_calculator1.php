@@ -1,31 +1,38 @@
 <?php
 //mengambil data dari AJAX di /incomebased/data_halaman1
-if($this->session->userdata('inventor')){
-    $inventor = $this->session->userdata('inventor');
-    $periode = $this->session->userdata('periode');
-    $modal = $this->session->userdata('modal');
-    $sukubunga = $this->session->userdata('sukubunga');
-    $marketsize = $this->session->userdata('marketsize');
-    $marketshare = $this->session->userdata('marketshare');
-    $qty = $this->session->userdata('qty');
-}else{
-    $inventor = null;
-    $periode = null;
-    $modal = null;
-    $sukubunga = null;
-    $marketsize = null;
-    $marketshare = null;
-    $qty = null;
-}
+($this->session->userdata('inventor')!=null) ? $inventor = $this->session->userdata('inventor'): $inventor=null;
+($this->session->userdata('periode')!=null) ? $periode = $this->session->userdata('periode'): $periode=null;
+($this->session->userdata('modal')!=null) ? $modal = $this->session->userdata('modal'): $modal=null;
+($this->session->userdata('sukubunga')!=null) ? $sukubunga = $this->session->userdata('sukubunga'): $sukubunga=null;
+($this->session->userdata('marketsize')!=null) ? $marketsize = $this->session->userdata('marketsize'): $marketsize=null;
+($this->session->userdata('marketshare')!=null) ? $marketshare = $this->session->userdata('marketshare'): $marketshare=null;
+($this->session->userdata('qty')!=null) ? $qty = $this->session->userdata('qty'): $qty=null;
+//if($this->session->userdata('inventor')){
+//    $inventor = $this->session->userdata('inventor');
+//    $periode = $this->session->userdata('periode');
+//    $modal = $this->session->userdata('modal');
+//    $sukubunga = $this->session->userdata('sukubunga');
+//    $marketsize = $this->session->userdata('marketsize');
+//    $marketshare = $this->session->userdata('marketshare');
+//    $qty = $this->session->userdata('qty');
+//}else{
+//    $inventor = null;
+//    $periode = null;
+//    $modal = null;
+//    $sukubunga = null;
+//    $marketsize = null;
+//    $marketshare = null;
+//    $qty = null;
+//}
     
-    foreach ($sikav_hki as $rshki) {   
-        $hki_id = $rshki->hki_id;
-        $inventor = $rshki->inventor;
-        $judul = $rshki->judul;
-        $this->session->set_userdata('sesi_hki',$hki_id);
-        $this->session->set_userdata('sesi_inventor',$inventor);
-        $this->session->set_userdata('sesi_judul',$judul);
-    }  
+foreach ($sikav_hki as $rshki) {   
+    $hki_id = $rshki->hki_id;
+    $inventor = $rshki->inventor;
+    $judul = $rshki->judul;
+    $this->session->set_userdata('sesi_hki', $hki_id);
+    $this->session->set_userdata('sesi_inventor', $inventor);
+    $this->session->set_userdata('sesi_judul', $judul);
+}  
 
 ?>
 <div class="container mt-3 mb-3">

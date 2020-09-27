@@ -159,6 +159,197 @@ $depresiasi = array();
 for($d=1;$d<=$indeks;$d++){
     $depresiasi[$d] = $biaya_depresiasi;
 }
+
+//variabel dummy cashflow.total_expenditure
+$total_expenditure = array();
+for($te=1;$te<=$indeks;$te++){
+    if($te==1){
+        $total_expenditure[$te] = $biaya_investasi+$biaya_riset+$lisensi[$te]+$cogs[$te]+$tetap[$te]+$marketing[$te]+$perawatan[$te]+$warehouse[$te]+$depresiasi[$te];
+    }else{
+        $total_expenditure[$te] = $lisensi[$te]+$cogs[$te]+$tetap[$te]+$marketing[$te]+$perawatan[$te]+$warehouse[$te]+$depresiasi[$te];
+    }    
+}
+
+//variabel dummy cashflow.surplus
+$surplus = array();
+for($i=1;$i<=$indeks;$i++){
+    $surplus[$i] = $total_cash_received[$i]-$total_expenditure[$i];   
+}
+
+//variabel dummy cashflow.investment_capital
+$investment_capital = $biaya_investasi+$biaya_riset+$total_lisensi;
+
+//variabel dummy cashflow.investment_capital
+$working_capital = $modal-$investment_capital;
+
+//variabel dummy cashflow.investment_capital_credit
+$investment_capital_credit = array();
+for($i=1;$i<=$indeks;$i++){
+    $investment_capital_credit[$i] = $investment_capital/$indeks;   
+}
+
+//variabel dummy cashflow.working_capital_credit
+$working_capital_credit = array();
+for($i=1;$i<=$indeks;$i++){
+    $working_capital_credit[$i] = $working_capital/$indeks;   
+}
+
+//variabel dummy cashflow.interest_investment_capital
+$interest_investment_capital = array();
+for($i=1;$i<=$indeks;$i++){
+    $interest_investment_capital[$i] = ($sukubunga/100)*$investment_capital;
+}
+
+//variabel dummy cashflow.angsuran_modal
+$angsuran_modal = array();
+for($i=1;$i<=$indeks;$i++){
+    $angsuran_modal[$i] = $investment_capital_credit[$i]+$working_capital_credit[$i];
+}
+
+//variabel dummy cashflow.interest_working_capital
+$interest_working_capital = array();
+for($i=1;$i<=$indeks;$i++){
+    $var0 = $working_capital;
+    $var1[$i] = $var0/$indeks;
+    if($i==1){
+        $var2[$i] = $var0-$var1[$i];
+    }else{
+        $var2[$i] = $var2[$i-1]-$var1[$i];
+    }
+    if($i==1){
+        $interest_working_capital[$i] = $var0*($sukubunga/100);
+    }else{
+        $interest_working_capital[$i] = $var2[$i-1]*($sukubunga/100);
+    }
+}
+
+//variabel dummy cashflow.begining_balance && cashflow.ending_balance
+$begining_balance = array();
+$ending_balance = array();
+for($i=1;$i<=$indeks;$i++){
+    if($i==1){
+        $begining_balance[$i] = $modal;
+        $ending_balance[$i] = $begining_balance[$i]+$surplus[$i]-$investment_capital_credit[$i]-$working_capital_credit[$i]-$interest_investment_capital[$i]-$interest_working_capital[$i];
+    }else{
+        $begining_balance[$i] = $ending_balance[$i-1];
+        $ending_balance[$i] = $begining_balance[$i]+$surplus[$i]-$investment_capital_credit[$i]-$working_capital_credit[$i]-$interest_investment_capital[$i]-$interest_working_capital[$i];
+    }
+}
+
+//variabel dummy profit_loss.gross_profit
+$gross_profit = array();
+for($i=1;$i<=$indeks;$i++){
+    $gross_profit[$i] = $total_cash_received[$i]-$cogs[$i];
+}
+
+//variabel dummy profit_loss.ebitda
+$ebitda = array();
+for($i=1;$i<=$indeks;$i++){
+    $ebitda[$i] = $total_cash_received[$i]-$cogs[$i]-$tetap[$i]-$marketing[$i]-$warehouse[$i];
+}
+
+//variabel dummy profit_loss.ebit
+$ebit = array();
+for($i=1;$i<=$indeks;$i++){
+    $ebit[$i] = $ebitda[$i]-$depresiasi[$i];
+}
+
+//variabel dummy profit_loss.interest
+$interest = array();
+for($i=1;$i<=$indeks;$i++){
+    $interest[$i] = $interest_investment_capital[$i]+$interest_working_capital[$i];
+}
+
+//variabel dummy profit_loss.pkp
+$pkp = array();
+for($i=1;$i<=$indeks;$i++){
+    $pkp[$i] = ($ebit[$i]-$interest[$i])-4800000000;
+}
+
+//variabel dummy profit_loss.pajak_penjualan
+$pajak_penjualan = array();
+for($i=1;$i<=$indeks;$i++){
+    $pajak_penjualan[$i] = $total_cash_received[$i]*0.025;
+}
+
+//variabel dummy profit_loss.pph_badan
+$pph_badan = array();
+for($i=1;$i<=$indeks;$i++){
+    $pagu = 4800000000;
+    $pkp_fasilitas[$i] = $pagu*$pkp[$i]/$total_cash_received[$i];
+    $pkp_non_fasilitas[$i] = $pkp[$i]-$pkp_fasilitas[$i];
+    $fasilitas[$i] = 0.5*0.25*$pkp_fasilitas[$i];
+    $non_fasilitas[$i] = 0.25*$pkp_non_fasilitas[$i];
+    $pph_badan[$i] = $fasilitas[$i]+$non_fasilitas[$i];
+    if($pph_badan[$i]<=0){$pph_badan[$i]=0;}
+}
+
+//variabel dummy profit_loss.eat
+$eat = array();
+for($i=1;$i<=$indeks;$i++){
+    $eat[$i] = $ebit[$i]-$interest[$i]-$pajak_penjualan[$i]-$pph_badan[$i];
+}
+
+//variabel dummy profit_loss.capital_expenditure
+$capital_expenditure = array();
+for($i=1;$i<=$indeks;$i++){
+    $capital_expenditure[$i] = $angsuran_modal[$i]+$perawatan[$i];
+}
+
+//variabel dummy profit_loss.total_expenditure
+$total_expenditure = array();
+for($i=1;$i<=$indeks;$i++){
+    $total_expenditure[$i] = $cogs[$i]+$tetap[$i]+$marketing[$i]+$warehouse[$i]+$depresiasi[$i]+$interest[$i]+$pajak_penjualan[$i]+$pph_badan[$i]+$capital_expenditure[$i];
+}
+
+//variabel dummy profit_loss.fcf
+$fcf = array();
+for($i=1;$i<=$indeks;$i++){
+    $fcf[$i] = $eat[$i]+$depresiasi[$i]-$capital_expenditure[$i];
+}
+
+//variabel dummy profit_loss.discount (Discount Factor 10%)
+$discount = array();
+$discount[1] = 0.909;
+$discount[2] = 0.826;
+$discount[3] = 0.751;
+$discount[4] = 0.683;
+$discount[5] = 0.621;
+$discount[6] = 0.564;
+$discount[7] = 0.513;
+$discount[8] = 0.467;
+$discount[9] = 0.424;
+$discount[10] = 0.386;
+$discount[11] = 0.350;
+$discount[12] = 0.319;
+$discount[13] = 0.290;
+$discount[14] = 0.263;
+$discount[15] = 0.239;
+$discount[16] = 0.219;
+$discount[17] = 0.198;
+$discount[18] = 0.180;
+$discount[19] = 0.164;
+$discount[20] = 0.149;
+
+//variabel dummy profit_loss.discount_fcf
+$discount_fcf = array();
+for($i=1;$i<=$indeks;$i++){
+    $discount_fcf[$i] = $fcf[$i]*$discount[$i];
+}
+
+//jumlahkan isi array discount_fcf untuk memperoleh profit_loss.npv
+$npv = array_sum($discount_fcf);
+
+//variabel dummy npv.npv2
+$npv2 = array();
+for($i=1;$i<=$indeks;$i++){
+    if($i==1){
+        $npv2[$i] = $discount_fcf[$i];
+    }else{
+        $npv2[$i] = $discount_fcf[$i]+$npv2[$i-1];
+    }
+}
+
 ?>
 <div class="container mt-3 mb-3">
     <div class="row mb-3">
@@ -169,17 +360,17 @@ for($d=1;$d<=$indeks;$d++){
                 </div>
                 <div class="card-body">
                     <div class="form-group row">                        
-                        <label for="marketsize" class="col-sm-4 col-form-label text-right">Nama Inventor</label>
+                        <label for="inventor" class="col-sm-4 col-form-label text-right">Nama Inventor</label>
                         <div class="col-sm-8">
-                            <input type="text" value="<?=$this->session->userdata('sesi_inventor'); ?>" class="form-control  form-control-sm col-sm-12" id="marketsize" aria-describedby="marketsiezeDesc" readonly>
-                            <small id="marketsiezeDesc" class="form-text text-muted text-left">Nama Pemilik/Lembaga Invensi</small>
+                            <input type="text" value="<?=$this->session->userdata('sesi_inventor'); ?>" class="form-control  form-control-sm col-sm-12" id="inventor" aria-describedby="inventorDesc" readonly>
+                            <small id="inventorDesc" class="form-text text-muted text-left">Nama Pemilik/Lembaga Invensi</small>
                         </div>
                     </div>                    
                     <div class="form-group row">                        
-                        <label for="marketsize" class="col-sm-4 col-form-label text-right">Judul Penelitian/Invensi</label>
+                        <label for="judul" class="col-sm-4 col-form-label text-right">Judul Penelitian/Invensi</label>
                         <div class="col-sm-8">
-                            <textarea  class="form-control  form-control-sm col-sm-12" id="marketsize" aria-describedby="marketsiezeDesc" readonly><?=$this->session->userdata('sesi_judul'); ?></textarea>
-                            <small id="marketsiezeDesc" class="form-text text-muted text-left">Judul Penelitian/Invensi</small>
+                            <textarea  class="form-control  form-control-sm col-sm-12" id="judul" aria-describedby="marketsiezeDesc" readonly><?=$this->session->userdata('sesi_judul'); ?></textarea>
+                            <small id="judulDesc" class="form-text text-muted text-left">Judul Penelitian/Invensi</small>
                         </div>
                     </div>
                     <!-- untuk tombol previous next -->
@@ -292,7 +483,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Investment Capital</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<td>&nbsp;</td>";
+                                        if($i==0){
+                                            echo "<td>".rupiah($investment_capital)."</td>";
+                                        }else{
+                                            echo "<td>&nbsp;</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>    
@@ -300,7 +495,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Working Capital</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<td>&nbsp;</td>";
+                                        if($i==0){
+                                            echo "<td>".rupiah($working_capital)."</td>";
+                                        }else{
+                                            echo "<td>&nbsp;</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -432,7 +631,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">TOTAL EXPENDITURE</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<td class=\"text-right\">&nbsp;</td>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($total_expenditure[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -440,7 +643,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Surplus</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<td class=\"text-right\">".rupiah($modal)."</td>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($surplus[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -456,7 +663,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left" style="text-indent: 30px;">Installment Invest. Cap. Credit</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<th>&nbsp;</th>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($investment_capital_credit[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -464,7 +675,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left" style="text-indent: 30px;">Installment Working Cap. Credit</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<th>&nbsp;</th>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($working_capital_credit[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -472,7 +687,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left" style="text-indent: 30px;">Interest Investment Cap </td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<th>&nbsp;</th>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($interest_investment_capital[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -480,7 +699,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left" style="text-indent: 30px;">Interest Working Cap </td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<th>&nbsp;</th>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($interest_working_capital[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -488,7 +711,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left" style="text-indent: 30px;">Angsuran Modal </td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<th>&nbsp;</th>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($angsuran_modal[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -496,7 +723,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Beginning Balance</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<th>".rupiah($modal)."</th>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($begining_balance[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -504,7 +735,11 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Ending Balance</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==0){
+                                            echo "<th>".rupiah($modal)."</th>";
+                                        }else{
+                                            echo "<td class=\"text-right\">".rupiah($ending_balance[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
@@ -527,7 +762,7 @@ for($d=1;$d<=$indeks;$d++){
                         <div class="card-body">
                             <table class="table table-bordered table-responsive table-hover table-sm">
                             <thead>
-                                <tr class="bg-light">
+                                <tr class="bg-success">
                                     <th>Tahun </th>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
@@ -537,7 +772,7 @@ for($d=1;$d<=$indeks;$d++){
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="bg-light">
+                                <tr class="bg-success">
                                     <td>KOMPONEN</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
@@ -549,23 +784,23 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Sales (Penjualan)</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($total_cash_received[$i])."</td>";
                                     }
-                                    ?>
+                                    ?>                                    
                                 </tr> 
                                 <tr>
                                     <td class="text-left">COGs</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($cogs[$i])."</td>";
                                     }
                                     ?>
                                 </tr>   
-                                <tr class="bg-light">
-                                    <td class="text-left">Gross Profit</td>
+                                <tr class="bg-secondary text-white">
+                                    <td class="text-center">Gross Profit</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($gross_profit[$i])."</td>";
                                     }
                                     ?>
                                 </tr>        
@@ -573,7 +808,7 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Fixed Cost</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($tetap[$i])."</td>";
                                     }
                                     ?>
                                 </tr>  
@@ -581,7 +816,7 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Marketing</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($marketing[$i])."</td>";
                                     }
                                     ?>
                                 </tr>    
@@ -589,15 +824,15 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Warehouse</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($warehouse[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
-                                <tr>
-                                    <td class="text-left bg-light">Operation Profit (EBITDA)</td>
+                                <tr class="bg-secondary text-white">
+                                    <td class="text-center">Operation Profit (EBITDA)</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($ebitda[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
@@ -605,15 +840,15 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Depresiasi</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($depresiasi[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
-                                <tr>
-                                    <td class="text-left bg-light">EBIT</td>
+                                <tr class="bg-secondary text-white">
+                                    <td class="text-center">EBIT</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($ebit[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
@@ -621,15 +856,15 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Interest</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($interest[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
-                                <tr>
-                                    <td class="text-left bg-light">Penghasilan Kena Pajak</td>
+                                <tr class="bg-secondary text-white">
+                                    <td class="text-center">Penghasilan Kena Pajak</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($pkp[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
@@ -637,7 +872,7 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Pajak Penjualan 2.5%</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($pajak_penjualan[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
@@ -645,15 +880,19 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">PPH Badan</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($pph_badan[$i]<=0){
+                                            echo "<td>".rupiah("0.00")."</td>";
+                                        }else{
+                                            echo "<td>".rupiah($pph_badan[$i])."</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>
-                                <tr>
-                                    <td class="text-left bg-light">Eearning After Tax (EAT)</td>
+                                <tr class="bg-secondary text-white">
+                                    <td class="text-center">Eearning After Tax (EAT)</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($eat[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
@@ -661,7 +900,7 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Depresiasi</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($depresiasi[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
@@ -669,23 +908,15 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Capital Expenditure</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($capital_expenditure[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
-                                <tr>
-                                    <td class="text-left bg-light">Total Expenditure</td>
+                                <tr class="bg-secondary text-white">
+                                    <td class="text-center">Total Expenditure</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
-                                    }
-                                    ?>
-                                </tr>
-                                <tr>
-                                    <td class="text-left">Net Cash Flow/FCF</td>
-                                    <?php
-                                    for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($total_expenditure[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
@@ -693,7 +924,7 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Net Cash Flow/FCF</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($fcf[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
@@ -701,23 +932,27 @@ for($d=1;$d<=$indeks;$d++){
                                     <td class="text-left">Discount Factor at interest rate 10%</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".$discount[$i]."</td>";
                                     }
                                     ?>
                                 </tr>
-                                <tr class="bg-light">
-                                    <td class="text-left">Discounted FCF</td>
+                                <tr class="bg-warning text-blue">
+                                    <td class="text-center">Discounted FCF</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        echo "<td>".rupiah($discount_fcf[$i])."</td>";
                                     }
                                     ?>
                                 </tr>
-                                <tr class="bg-success">
+                                <tr class="bg-success text-white">
                                     <td class="text-left">Net Present Value (NPV)</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<th>&nbsp;</th>";
+                                        if($i==1){
+                                            echo "<td>".rupiah($npv)."</td>";
+                                        }else{
+                                            echo "<td>&nbsp</td>";
+                                        }
                                     }
                                     ?>
                                 </tr>                                
@@ -738,9 +973,9 @@ for($d=1;$d<=$indeks;$d++){
                             Net Present Value (NPV)
                         </div>
                         <div class="card-body">
-                            <table class="table table-bordered table-hover">
+                            <table class="table table-bordered table-hover table-striped">
                             <thead>
-                                <tr class="bg-warning">
+                                <tr class="bg-primary text-white">
                                 <th scope="col">Tahun</th>
                                 <th scope="col">FCF</th>
                                 <th scope="col">Disc Rate</th>
@@ -752,15 +987,15 @@ for($d=1;$d<=$indeks;$d++){
                                 <?php for($i=1;$i<=$periode;$i++){ ?>
                                     <tr>
                                         <th scope="row" class="text-left">Tahun <?=$i ?></th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td><?= rupiah($fcf[$i]) ?></td>
+                                        <td><?= $discount[$i] ?></td>
+                                        <td><?= rupiah($discount_fcf[$i]) ?></td>
+                                        <td><?= rupiah($npv2[$i]) ?></td>
                                     </tr> 
                                 <?php } ?>           
                                 <tr>
-                                    <th scope="row" class="text-right" colspan="4">i</th>
-                                    <td class="bg-primary text-white">Nilai NPV</td>
+                                    <th scope="row" class="text-right" colspan="4">Nilai NPV = </th>
+                                    <td class="bg-primary text-white"><?= rupiah($npv) ?></td>
                                 </tr>    
                             </tbody>
                             </table>
