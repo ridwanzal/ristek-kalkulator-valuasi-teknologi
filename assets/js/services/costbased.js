@@ -315,6 +315,7 @@ function luaran_paten(){
 
                     _out_ki.text(ki);
 
+                    console.log(total_bobot_per_row + '/' + total_bobot_seluruh + '+' + _np_total_bobot)
                     let y = total_bobot_per_row / (parseInt(total_bobot_seluruh) + parseInt(_np_total_bobot.text()) );
                     let ki_list = y * parseInt(money.reverse(_par_pagu_riset.val()));
                     let adapter_out_ki_list = `<li id="list_`+i+`">`+_par_cb_jenis_paten+` `+_par_cb_status_paten+` = Rp.`+ki_list+`</li>`;
