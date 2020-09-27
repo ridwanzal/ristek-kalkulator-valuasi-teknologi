@@ -393,15 +393,6 @@
                                     </tr>
                                 </thead>
                                 <tbody id="nilai_luaran_paten_list">
-                                    <tr>
-                                        <td>1.</td>
-                                        <td>-</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
                                 </tbody>
                                 <tbody>
                                     <tr style="background : #f1f1f1 !important;">
