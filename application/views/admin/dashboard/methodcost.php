@@ -28,7 +28,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">3</span>&nbsp;Unit Kerja Penghasil/ Pemilik Invensi <i style="color: red">*</i> </label>
-                                            <input type="text" class="form-control form-control-sm" id="par_cb_unit_kerja" placeholder="">
+                                            <input type="text" class="form-control form-control-sm" id="par_cb_unit_kerja" placeholder="" value="Fasilkom UNSRI">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">4</span>&nbsp;Judul Penelitian <i style="color: red">*</i> </label>
@@ -46,7 +46,7 @@
                                             <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">6</span>&nbsp;Asal Biaya Masukan Masukan/Realisasi Pagu Penelitian <i style="color: red">*</i> </label>
                                             <select id="par_cb_asal_biaya" class="custom-select custom-select-sm">
                                                 <option value="">-- Silahkan pilih</option>
-                                                <option value="Hibah Ristek">Hibah Ristek</option>
+                                                <option selected value="Hibah Ristek">Hibah Ristek</option>
                                                 <option value="Dikti Kemendikbud">Dikti Kemendikbud</option>
                                                 <option value="LPDP">LPDP</option>
                                                 <option value="Lainnya">Lainnya</option>
@@ -243,7 +243,7 @@
                 </div>
                 <br/>
                 <br/>
-                <div class="container_all_output" style="display:none;">
+                <div class="container_all_output" style="display:block;">
                     <!-- POIN B -->
                     <div class="row">
                         <div class="col-lg-9 col-md-9">
@@ -394,18 +394,31 @@
                                 </thead>
                                 <tbody id="nilai_luaran_paten_list">
                                     <tr>
-                                    <td>1.</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
+                                        <td>1.</td>
+                                        <td>-</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td><b>Jumlah (Rp.)</b></td>
+                                        <td id="total_biaya_pendaftaran_seluruh">0</td>
+                                        <td id="total_biaya_substantif_seluruh">0</td>
+                                        <td id="total_biaya_percepatan_seluruh">0</td>
+                                        <td id="">0</td>
+                                        <td id="total_biaya_permohonan_seluruh">0</td>
                                     </tr>
                                 </tbody>
                             </table>
                             <small id="emailHelp" class="form-text text-muted">Biaya pendaftaran, pemeriksaan substantif, dan percepatan publikasi, sesuai dengan tarif
                                                                             PNBP yang berlaku di DJKI.</small>
+                            <br/>                                                                            
+                            <div>Total Nilai perolehan Paten (Pi = &Sigma;A+&Sigma;B+&Sigma;C+&Sigma;D) = <span id="out_pi">Rp. 0</span></div>
                         </div>
                     </div>
 
@@ -417,14 +430,16 @@
                         </div>
                     </div> -->
                     <br/>
+                    <br/>
+                    <br/>
                     <div class="row">
                         <div class="col-lg-9 col-md-9">
                             <p>D. Nilai Aset Tak Berwujud berupa Paten/ATB-P (Vi)</p>   
                             <p>1. Nilai ATB-P masing-masing paten:</p>   
-                            <p>2. Total Nilai ATB-P :</p>   
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
-                            </div>
+                            <ul id="out_atbp_list">
+                            </ul>
+                            <p style="font-weight:bold;font-size:18px;">2. Total Nilai ATB-P : Rp. <span id="out_atbp_total"></span></p>   
+                            
                         </div>
                     </div>
                 </div>
