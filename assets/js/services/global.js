@@ -1,7 +1,17 @@
 const base_url_access = 'http://api.sinta.ristekdikti.go.id/fusio/public/consumer/login';
 const base_url_login = 'http://api.sinta.ristekdikti.go.id/v2/author/login';
 const base_url_api = 'http://api.sinta.ristekdikti.go.id/v2';
-const web_url = 'http://localhost/ristek-kalkulator-valuasi-teknologi';
+// const web_url = 'http://localhost/ristek-kalkulator-valuasi-teknologi';
+let web_url = '';
+let env = '';
+env = location.href.includes('localhost') ? 'dev' : 'production';
+console.log(env);
+if(env == 'dev'){
+    web_url = 'http://localhost/ristek-kalkulator-valuasi-teknologi';
+}else{
+    web_url = 'http://sikav.ridwanzal.com';
+}
+
 const el_click_login = $('#submit_login');
 const access_api = {
     username : 'KALKULATORHKI',

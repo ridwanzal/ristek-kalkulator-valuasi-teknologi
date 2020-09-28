@@ -168,7 +168,7 @@
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input par_cb_jenis_paten_1" type="radio" name="jpt_1"  value="paten_granted">
-                                                                <label class="form-check-label" for="inlineRadio1">Paten Granted </label>
+                                                                <label class="form-check-label" for="inlineRadio1">Paten</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input par_cb_jenis_paten_1" type="radio" name="jpt_1"  value="paten_sederhana">
