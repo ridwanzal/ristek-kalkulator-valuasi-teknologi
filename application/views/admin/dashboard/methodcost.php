@@ -159,7 +159,6 @@
                                                     <label class="captions">Judul Invensi <i style="color: red">*</i></label>
                                                     <input type="text" class="form-control form-control-sm" id="par_cb_jd_invensi_1" placeholder="">
                                                 </div>
-                                                
 
                                                 <div class="form-row form-group">
                                                     <div class="col">
@@ -175,6 +174,7 @@
                                                                 <label class="form-check-label" for="inlineRadio2">Paten Sederhana </label>
                                                             </div>
                                                     </div>
+                                                    
                                                     <div class="col-lg-6">
                                                         <div class="form-group">
                                                             <label class="captions">Status Peromohonan <i style="color: red">*</i></label>
@@ -208,7 +208,7 @@
                                                         <input type="text" class="form-control form-control-sm" id="par_cb_nodaftar_1" placeholder="">
                                                     </div>
                                                     <div class="col-lg-6">
-                                                        <label class="captions">Nomor Sertifikat Paten/Paten Sederhana <i style="color: red">*</i></label>
+                                                        <label class="captions">Nomor Sertifikat Paten/Paten Sederhana </label>
                                                         <input type="text" class="form-control form-control-sm" id="par_cb_sertifikat_paten_1" placeholder="">
                                                         <small> (jika sudah granted)</small>
                                                     </div>
@@ -224,12 +224,18 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-lg-6">
-                                                        <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung <i style="color: red">*</i></label>
+                                                        <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung</label>
                                                         <div class="custom-file">
                                                             <input disabled="disabled" type="file" class="form-control" multiple style="height:45px;" id="par_cb_file2">
                                                             <small>berupa Formulir (Bukti) pendaftaran dan/atau
                                                         Sertifikat Paten/Paten Sederhana (Unggah file dlm format PDF, MS Word, PPT)</small>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row form-group">
+                                                    <div class="col-lg-6">
+                                                        <label class="captions">Biaya Proses Lainnya</label>
+                                                        <input type="text" class="form-control form-control-sm" id="par_biaya_proses_1" placeholder="" value="0">
                                                     </div>
                                                 </div>
                                             </div>

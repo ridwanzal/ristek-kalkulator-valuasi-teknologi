@@ -237,7 +237,9 @@ function luaran_paten(){
                     let _par_cb_jenis_paten = $('input[name="jpt_'+i+'"]:checked').val();
                     let _par_cb_status_paten = $('input[name="stp_'+i+'"]:checked').val();
                     let _par_cb_nodaftar= $('#par_cb_nodaftar_' + i).val();
+                    let _par_biaya_proses = $('#par_biaya_proses_' + i).val();
                     let _par_cb_sertifikat_paten = $('#par_cb_sertifikat_paten_' + i).val();
+
                     let _par_cb_file2 = $('#par_cb_file2');
         
                     var bobot = 0;
@@ -247,6 +249,7 @@ function luaran_paten(){
                     let biaya_percepatan;
                     let total_biaya_permohonan = 0;
                     let total_bobot = 0;
+                    
                     if(_par_cb_jenis_paten === "paten_granted" && _par_cb_status_paten === "tersertifikasi"){
                         bobot = granted_tersertifikat;
                         biaya_pendaftaran = biaya_permohonan_paten;
@@ -332,6 +335,7 @@ function luaran_paten(){
                         par_cb_status_paten : '' + _par_cb_status_paten,
                         par_cb_nodaftar : '' + _par_cb_nodaftar,
                         par_cb_sertifikat_paten : ''  + _par_cb_sertifikat_paten,
+                        par_biaya_proses : '' + _par_biaya_proses,
                         biaya_pendaftaran : '' + biaya_pendaftaran,
                         biaya_substantif : '' + biaya_substantif,
                         biaya_percepatan : '' + biaya_percepatan,
@@ -341,8 +345,6 @@ function luaran_paten(){
                         total_bobot_per_row : total_bobot_per_row,
                     };
 
-                    console.log(obj_paten);
-                
                     obj_model_cb.obj_paten.data.push(obj_paten);
                     obj_model_cb.obj_paten.total_bobot_seluruh = total_bobot_seluruh;
                 } 
@@ -362,6 +364,7 @@ function luaran_paten(){
                 _out_atbp_total.text(total_atbp);
 
                 obj_model_cb.total_atbp = total_atbp;
+                console.log(obj_model_cb);
                 
             }
 }
@@ -512,7 +515,7 @@ function add_luaran_paten(){
                                         <input type="text" class="form-control form-control-sm" id="par_cb_nodaftar_`+index+`" placeholder="">
                                     </div>
                                     <div class="col-lg-6">
-                                        <label class="captions">Nomor Sertifikat Paten/Paten Sederhana <i style="color: red">*</i></label>
+                                        <label class="captions">Nomor Sertifikat Paten/Paten Sederhana</label>
                                         <input type="text" class="form-control form-control-sm" id="par_cb_sertifikat_paten_`+index+`" placeholder="">
                                         <small> (jika sudah granted)</small>
                                     </div>
@@ -528,14 +531,20 @@ function add_luaran_paten(){
                                         </select>
                                     </div>
                                     <div class="col-lg-6">
-                                        <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung <i style="color: red">*</i></label>
+                                        <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung</label>
                                         <div class="custom-file">
                                             <input type="file" class="form-control" multiple style="height:45px;" id="par_cb_file2">
                                             <small>berupa Formulir (Bukti) pendaftaran dan/atau
                                         Sertifikat Paten/Paten Sederhana (Unggah file dlm format PDF, MS Word, PPT)</small>
                                         </div>
                                     </div>
-                                </div>
+                                    </div>
+                                    <div class="form-row form-group">
+                                        <div class="col-lg-6">
+                                            <label class="captions">Biaya Proses Lainnya</label>
+                                            <input type="text" class="form-control form-control-sm" id="par_biaya_proses_`+index+`" placeholder="" value="0">
+                                        </div>
+                                    </div>
                             </div>
                         </div>`;
         $('.container_luaran_paten').append(adapter);
