@@ -533,7 +533,7 @@ function add_luaran_paten(){
                                     <div class="col-lg-6">
                                         <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung</label>
                                         <div class="custom-file">
-                                            <input type="file" class="form-control" multiple style="height:45px;" id="par_cb_file2">
+                                            <input disabled="disabled" type="file" class="form-control" multiple style="height:45px;" id="par_cb_file2">
                                             <small>berupa Formulir (Bukti) pendaftaran dan/atau
                                         Sertifikat Paten/Paten Sederhana (Unggah file dlm format PDF, MS Word, PPT)</small>
                                         </div>
