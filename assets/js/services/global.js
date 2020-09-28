@@ -1,7 +1,11 @@
 const base_url_access = 'http://api.sinta.ristekdikti.go.id/fusio/public/consumer/login';
 const base_url_login = 'http://api.sinta.ristekdikti.go.id/v2/author/login';
 const base_url_api = 'http://api.sinta.ristekdikti.go.id/v2';
-// const web_url = 'http://localhost/ristek-kalkulator-valuasi-teknologi';
+
+/**
+ * environment checking
+ */
+ 
 let web_url = '';
 let env = '';
 env = location.href.includes('localhost') ? 'dev' : 'production';
