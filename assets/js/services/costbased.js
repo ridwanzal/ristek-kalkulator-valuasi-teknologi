@@ -115,7 +115,7 @@ $(function () {
         _pub_np_int_total.text(total_bobot);
     }
 
-    _par_pagu_riset.on('keydown', function(){
+    _par_pagu_riset.on('keyup', function(){
         let result = money.format(_par_pagu_riset.val());
         _par_pagu_riset.val(result);
     })
