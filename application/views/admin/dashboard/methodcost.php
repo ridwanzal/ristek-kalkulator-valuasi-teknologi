@@ -28,7 +28,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">3</span>&nbsp;Unit Kerja Penghasil/ Pemilik Invensi <i style="color: red">*</i> </label>
-                                            <input type="text" class="form-control form-control-sm" id="par_cb_unit_kerja" placeholder="">
+                                            <input type="text" class="form-control form-control-sm" id="par_cb_unit_kerja" placeholder="" value="">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">4</span>&nbsp;Judul Penelitian <i style="color: red">*</i> </label>
@@ -159,7 +159,6 @@
                                                     <label class="captions">Judul Invensi <i style="color: red">*</i></label>
                                                     <input type="text" class="form-control form-control-sm" id="par_cb_jd_invensi_1" placeholder="">
                                                 </div>
-                                                
 
                                                 <div class="form-row form-group">
                                                     <div class="col">
@@ -168,13 +167,14 @@
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input par_cb_jenis_paten_1" type="radio" name="jpt_1"  value="paten_granted">
-                                                                <label class="form-check-label" for="inlineRadio1">Paten Granted </label>
+                                                                <label class="form-check-label" for="inlineRadio1">Paten</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input par_cb_jenis_paten_1" type="radio" name="jpt_1"  value="paten_sederhana">
                                                                 <label class="form-check-label" for="inlineRadio2">Paten Sederhana </label>
                                                             </div>
                                                     </div>
+                                                    
                                                     <div class="col-lg-6">
                                                         <div class="form-group">
                                                             <label class="captions">Status Peromohonan <i style="color: red">*</i></label>
@@ -208,7 +208,7 @@
                                                         <input type="text" class="form-control form-control-sm" id="par_cb_nodaftar_1" placeholder="">
                                                     </div>
                                                     <div class="col-lg-6">
-                                                        <label class="captions">Nomor Sertifikat Paten/Paten Sederhana <i style="color: red">*</i></label>
+                                                        <label class="captions">Nomor Sertifikat Paten/Paten Sederhana </label>
                                                         <input type="text" class="form-control form-control-sm" id="par_cb_sertifikat_paten_1" placeholder="">
                                                         <small> (jika sudah granted)</small>
                                                     </div>
@@ -224,12 +224,18 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-lg-6">
-                                                        <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung <i style="color: red">*</i></label>
+                                                        <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung</label>
                                                         <div class="custom-file">
                                                             <input disabled="disabled" type="file" class="form-control" multiple style="height:45px;" id="par_cb_file2">
                                                             <small>berupa Formulir (Bukti) pendaftaran dan/atau
                                                         Sertifikat Paten/Paten Sederhana (Unggah file dlm format PDF, MS Word, PPT)</small>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row form-group">
+                                                    <div class="col-lg-6">
+                                                        <label class="captions">Biaya Proses Lainnya</label>
+                                                        <input type="text" class="form-control form-control-sm" id="par_biaya_proses_1" placeholder="" value="0">
                                                     </div>
                                                 </div>
                                             </div>
@@ -243,7 +249,7 @@
                 </div>
                 <br/>
                 <br/>
-                <div class="container_all_output" style="display:none;">
+                <div class="container_all_output" style="display:block;">
                     <!-- POIN B -->
                     <div class="row">
                         <div class="col-lg-9 col-md-9">
@@ -393,19 +399,23 @@
                                     </tr>
                                 </thead>
                                 <tbody id="nilai_luaran_paten_list">
-                                    <tr>
-                                    <td>1.</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
+                                </tbody>
+                                <tbody>
+                                    <tr style="background : #f1f1f1 !important;">
+                                        <td></td>
+                                        <td><b>Jumlah (Rp.)</b></td>
+                                        <td id="total_biaya_pendaftaran_seluruh">0</td>
+                                        <td id="total_biaya_substantif_seluruh">0</td>
+                                        <td id="total_biaya_percepatan_seluruh">0</td>
+                                        <td id="">0</td>
+                                        <td id="total_biaya_permohonan_seluruh">0</td>
                                     </tr>
                                 </tbody>
                             </table>
                             <small id="emailHelp" class="form-text text-muted">Biaya pendaftaran, pemeriksaan substantif, dan percepatan publikasi, sesuai dengan tarif
                                                                             PNBP yang berlaku di DJKI.</small>
+                            <br/>                                                                            
+                            <div>Total Nilai perolehan Paten (Pi = &Sigma;A+&Sigma;B+&Sigma;C+&Sigma;D) = Rp. <span id="out_pi">0</span></div>
                         </div>
                     </div>
 
@@ -417,14 +427,16 @@
                         </div>
                     </div> -->
                     <br/>
+                    <br/>
+                    <br/>
                     <div class="row">
                         <div class="col-lg-9 col-md-9">
                             <p>D. Nilai Aset Tak Berwujud berupa Paten/ATB-P (Vi)</p>   
                             <p>1. Nilai ATB-P masing-masing paten:</p>   
-                            <p>2. Total Nilai ATB-P :</p>   
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" id="formGroupExampleInput2" placeholder="">
-                            </div>
+                            <ul id="out_atbp_list">
+                            </ul>
+                            <p style="font-weight:bold;font-size:18px;">2. Total Nilai ATB-P : Rp. <span id="out_atbp_total">0</span></p>   
+                            
                         </div>
                     </div>
                 </div>

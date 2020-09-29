@@ -15,6 +15,8 @@
     
     loader.hide();
     el_click_login.on('click', function(){
+        localStorage.clear();
+        sessionStorage.clear();
         el_click_login.prop('disabled', true)
         const _el_uname = $('#p_username');
         const el_pass = $('#p_password');
