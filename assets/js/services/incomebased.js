@@ -30,6 +30,20 @@ $('#biaya_warehouse').mask("#.##0,00", {reverse: true});
 $('#biaya_depresiasi').mask("#.##0,00", {reverse: true});
 
 $(function(){
+    //fungsi untuk memanggil sweetalert
+    function notifikasi(message, type) {
+		var mixin = Swal.mixin({
+			toast : true,
+			position : 'top-end',
+			showCloseButton : true,
+			showConfirmButton : false,
+			timer : 3000
+		});
+		mixin.fire({
+			type : type,
+			title : message
+		});
+	}
     //fungsi untuk menampilkan angka dengan pemisah ribuan (.) dan desimal dengan (,)
     //fungsi ini akan mengembalikan nilai sebanyak 2 digit di belakang koma
     function formatNumber(num) {
@@ -71,6 +85,7 @@ $(function(){
         var marketsize = $('#marketsize').val();
         var marketshare = $("#marketshare option:selected").attr("value");
         var qty = $('#qty').val();
+        
         //masukkan variabel ke dalam session storage
         sessionStorage.setItem("inventor", inventor);
         sessionStorage.setItem("periode", periode);

@@ -61,6 +61,7 @@
 <script src="<?php echo base_url();?>/assets/frontview/js/jquery.nice-select.min.js"></script>
 <script src="<?php echo base_url();?>/assets/frontview/js/jquery.slicknav.js"></script>
 <script src="<?php echo base_url();?>/assets/frontview/js/owl.carousel.min.js"></script>
+<script src="<?php echo base_url();?>/assets/js/libs/dialog/sweetalert2.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
 <script src="<?php echo base_url();?>/assets/js/services/global.js"></script>
 <script src="<?php echo base_url();?>/assets/js/services/logout.js"></script>

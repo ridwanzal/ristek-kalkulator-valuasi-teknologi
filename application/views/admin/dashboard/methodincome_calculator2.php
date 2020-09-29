@@ -31,7 +31,7 @@
                     Halaman 2. Proyeksi Penjualan
                 </div>
                 <div class="card-body">
-                <form>
+                <form method="POST" name="frmhalaman2" id="frmhalaman2" action="<?=base_url() ?>manage/add/incomebased_calculator3">
                     <div class="form-group row">                        
                         <label for="target" class="col-sm-6 col-form-label text-right">Target Produksi &nbsp;<span class="badge badge-pill  badge-warning">2.1</span> &nbsp;<a data-toggle="popover" title="Target Produksi" data-content="Isi jumlah unit produksi, untuk tahun pertama." class="badge badge-info text-white">Info</a></label>
                         <div class="col-sm-6">
@@ -70,17 +70,17 @@
                     <div class="form-group row">                        
                         <label for="harga_tahun2" class="col-sm-6 col-form-label text-right">Harga Jual Produk mulai Tahun ke - 2 (Prosentase) &nbsp;<span class="badge badge-pill  badge-warning">2.6</span> &nbsp;<a data-toggle="popover" title="Proyeksi Harga Jual" data-content="Harga Jual Produk mulai Tahun ke - 2 (Prosentase), Harga jual produk pada tahun ke - 2 dan seterusnya." class="badge badge-info text-white">Info</a></label>
                         <div class="col-sm-6">
-                            <input type="text" value="<?= $harga_tahun2; ?>" class="form-control  form-control-sm col-sm-2" id="harga_tahun2" name="harga_tahun2" placeholder="##0,00%" aria-describedby="harga_tahun2Desc">
+                            <input type="text" value="<?= $harga_tahun2; ?>" class="form-control  form-control-sm col-sm-2" id="harga_tahun2" name="harga_tahun2" placeholder="##0,00%" aria-describedby="harga_tahun2Desc" required>
                             <small id="harga_tahun2Desc" class="form-text text-muted text-left">Harga jual produk pada tahun ke - 2 dan seterusnya</small>
                         </div>
                     </div>
                     <!-- untuk tombol previous next -->
                     <div class="form-group row">                    
                         <div class="col-md-6 text-right">
-                        <a href="<?=base_url() ?>manage/add/incomebased_calculator1/<?php echo $this->session->userdata('sesi_hki'); ?>" id="tombol21" name="tombol21" class="btn btn-warning btn-sm">Kembali Ke Halaman 1</a>
+                            <a href="<?=base_url() ?>manage/add/incomebased_calculator1/<?php echo $this->session->userdata('sesi_hki'); ?>" id="tombol21" name="tombol21" class="btn btn-warning btn-sm">Kembali Ke Halaman 1</a>
                         </div>
                         <div class="col-md-6 text-left">
-                        <a href="<?=base_url() ?>manage/add/incomebased_calculator3" id="tombol23" name="tombol23" class="btn btn-success btn-sm">Lanjut Ke Halaman 3</a>
+                            <input type="submit" class="btn btn-success btn-sm" id="tombol23" name="tombol23" value="Lanjut Ke Halaman 3">
                         </div>
                     </div>
                 </form> <!-- Form Halaman 1 END -->
