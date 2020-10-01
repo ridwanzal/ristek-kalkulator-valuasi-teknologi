@@ -43,7 +43,7 @@ foreach ($sikav_hki as $rshki) {
                     Halaman 1. Identitas Invensi dan Parameter Proyeksi
                 </div>
                 <div class="card-body">
-                <form> 
+                <form method="POST" name="frmhalaman1" id="frmhalaman1" action="<?=base_url() ?>manage/add/incomebased_calculator2"> 
                     <div class="form-group row">                        
                         <label for="inventor" class="col-sm-4 col-form-label text-right">Nama Inventor &nbsp;<span class="badge badge-pill  badge-warning">1.1</span> &nbsp;<a data-toggle="popover" title="Nama Inventor" data-content="Diisi dengan nama Inventor. Jika nama inventor lebih dari 1 orang, silahkan pisahkan dengan tanda koma di antara nama inventor." class="badge badge-info text-white">Info</a> </label>
                         <div class="col-sm-8">
@@ -104,7 +104,7 @@ foreach ($sikav_hki as $rshki) {
                     <div class="form-group row">                    
                         <label for="qty" class="col-sm-4 col-form-label text-right">Pagu maksimal jumlah produksi &nbsp;<span class="badge badge-pill  badge-warning">1.8</span> &nbsp;<a data-toggle="popover" title="Jumlah Produksi" data-content="Proyeksi jumlah maksimal produksi dari unit produk yang dihasilkan dari invensi. Jumlah ini merupakan pagu maksimal yang nantinya digunakan pada halaman ke - 2. Nilai ini diperoleh dari hasil perkalian antara 1.6 Market Size dan 1.7 Prosentase Market Share." class="badge badge-info text-white">Info</a></label>
                         <div class="col-md-8 text-left">
-                            <input type="text" value="<?= $qty; ?>" class="form-control  form-control-sm col-sm-3" id="qty" name="qty" aria-describedby="qtyDesc" readonly require>
+                            <input type="text" value="<?= $qty; ?>" class="form-control  form-control-sm col-sm-3" id="qty" name="qty" aria-describedby="qtyDesc" readonly required>
                             <small id="qtyDesc" class="form-text text-muted">Hasil perkalian market size dan market share</small>
                         </div>
                     </div>
@@ -113,7 +113,7 @@ foreach ($sikav_hki as $rshki) {
                             <a href="<?=base_url() ?>manage/add/incomebased" id="kembali" name="kembali" class="btn btn-warning btn-sm">Kembali</a>
                         </div>
                         <div class="col-md-8 text-left">
-                            <a href="<?=base_url() ?>manage/add/incomebased_calculator2" id="tombol1" class="btn btn-success btn-sm">Lanjut Halaman 2</a>
+                            <input type="submit" class="btn btn-success btn-sm" id="tombol1" name="tombol1" value="Lanjut Halaman 2">
                         </div>
                     </div>
                 </form>  <!-- Form Halaman 1 END -->

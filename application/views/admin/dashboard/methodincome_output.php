@@ -46,7 +46,7 @@ $biaya_perawatan = get_numeric($biaya_perawatan);
 $biaya_warehouse = get_numeric($biaya_warehouse);
 $biaya_depresiasi = get_numeric($biaya_depresiasi);
 
-
+//echo "<script>alert(".$harga_tahun2.")</script>";
 //fungsi untuk menampilkan angka dalam rupiah
 function rupiah($angka){
 	$hasil_rupiah = number_format($angka,2,',','.');

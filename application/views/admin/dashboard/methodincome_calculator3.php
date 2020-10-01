@@ -43,7 +43,7 @@
                     Halaman 3. Proyeksi Biaya Operasional (Operating Expense)
                 </div>
                 <div class="card-body">
-                <form>
+                <form method="POST" name="frmhalaman3" id="frmhalaman3" action="<?=base_url() ?>manage/add/incomebased_output">
                     <div class="form-group row">                        
                         <label for="biaya_investasi" class="col-sm-6 col-form-label text-right">Biaya Investasi Mesin, Kendaraan, dan Peralatan &nbsp;<span class="badge badge-pill  badge-warning">3.1</span> &nbsp;<a data-toggle="popover" title="Biaya Investasi" data-content="Komponen untuk memasukkan biaya investasi. Biaya Investasi Mesin, Kendaraan, dan Peralatan." class="badge badge-info text-white">Info</a></label>
                         <div class="col-sm-6">
@@ -82,28 +82,28 @@
                     <div class="form-group row">                        
                         <label for="biaya_tetap" class="col-sm-6 col-form-label text-right">Biaya Operasional Tetap (Fixed Cost) &nbsp;<span class="badge badge-pill  badge-warning">3.6</span> &nbsp;<a data-toggle="popover" title="Biaya Tetap" data-content="Biaya Operasional Tetap (Fixed Cost) untuk pengeluaran setiap bulan." class="badge badge-info text-white">Info</a></label>
                         <div class="col-sm-6">
-                            <input type="text" value="<?= $biaya_tetap; ?>" class="form-control  form-control-sm col-sm-5" id="biaya_tetap" name="biaya_tetap" placeholder="#.##0,00" aria-describedby="biaya_tetapDesc">
+                            <input type="text" value="<?= $biaya_tetap; ?>" class="form-control  form-control-sm col-sm-5" id="biaya_tetap" name="biaya_tetap" placeholder="#.##0,00" aria-describedby="biaya_tetapDesc" required>
                             <small id="biaya_tetapDesc" class="form-text text-muted text-left">Biaya tetap</small>
                         </div>
                     </div>
                     <div class="form-group row">                        
                         <label for="biaya_marketing" class="col-sm-6 col-form-label text-right">Biaya Marketing (Prosentase) &nbsp;<span class="badge badge-pill  badge-warning">3.7</span> &nbsp;<a data-toggle="popover" title="Biaya Marketing" data-content="Biaya Marketing (Prosentase)" class="badge badge-info text-white">Info</a></label>
                         <div class="col-sm-6">
-                            <input type="text" value="<?= $biaya_marketing; ?>" class="form-control  form-control-sm col-sm-3" id="biaya_marketing" name="biaya_marketing" aria-describedby="biaya_marketingDesc" placeholder="##0,00%">
+                            <input type="text" value="<?= $biaya_marketing; ?>" class="form-control  form-control-sm col-sm-3" id="biaya_marketing" name="biaya_marketing" aria-describedby="biaya_marketingDesc" placeholder="##0,00%" required>
                             <small id="biaya_marketingDesc" class="form-text text-muted text-left">Prosentase Komponen Biaya Marketing</small>
                         </div>
                     </div>
                     <div class="form-group row">                        
                         <label for="biaya_perawatan" class="col-sm-6 col-form-label text-right">Biaya Maintenance (Perawatan) &nbsp;<span class="badge badge-pill  badge-warning">3.8</span> &nbsp;<a data-toggle="popover" title="Biaya Perawatan" data-content="Biaya Maintenance (Perawatan)" class="badge badge-info text-white">Info</a></label>
                         <div class="col-sm-6">
-                            <input type="text" value="<?= $biaya_perawatan; ?>" class="form-control  form-control-sm col-sm-5" id="biaya_perawatan" name="biaya_perawatan" placeholder="#.##0,00" aria-describedby="biaya_perawatanDesc">
+                            <input type="text" value="<?= $biaya_perawatan; ?>" class="form-control  form-control-sm col-sm-5" id="biaya_perawatan" name="biaya_perawatan" placeholder="#.##0,00" aria-describedby="biaya_perawatanDesc" required>
                             <small id="biaya_perawatanDesc" class="form-text text-muted text-left">Komponen Biaya Perawatan</small>
                         </div>
                     </div>
                     <div class="form-group row">                        
                         <label for="biaya_warehouse" class="col-sm-6 col-form-label text-right">Biaya Warehouse &nbsp;<span class="badge badge-pill  badge-warning">3.9</span> &nbsp;<a data-toggle="popover" title="Biaya Warehouse" data-content="Biaya Warehouse" class="badge badge-info text-white">Info</a></label>
                         <div class="col-sm-6">
-                            <input type="text" value="<?= $biaya_warehouse; ?>" class="form-control  form-control-sm col-sm-5" id="biaya_warehouse" name="biaya_warehouse" placeholder="#.##0,00" aria-describedby="biaya_warehouseDesc">
+                            <input type="text" value="<?= $biaya_warehouse; ?>" class="form-control  form-control-sm col-sm-5" id="biaya_warehouse" name="biaya_warehouse" placeholder="#.##0,00" aria-describedby="biaya_warehouseDesc" required>
                             <small id="biaya_warehouseDesc" class="form-text text-muted text-left">Komponen Biaya Warehouse</small>
                         </div>
                     </div>
@@ -117,10 +117,10 @@
                     <!-- untuk tombol previous next -->
                     <div class="form-group row">                    
                         <div class="col-md-6 text-right">
-                        <a href="<?=base_url() ?>manage/add/incomebased_calculator2" id="tombol32" name="tombol32" class="btn btn-warning btn-sm">Kembali Halaman 2</a>
+                            <a href="<?=base_url() ?>manage/add/incomebased_calculator2" id="tombol32" name="tombol32" class="btn btn-warning btn-sm">Kembali Halaman 2</a>
                         </div>
-                        <div class="col-md-6 text-left">
-                        <a href="<?=base_url() ?>manage/add/incomebased_output" id="tombol33" name="tombol33" class="btn btn-success btn-sm">Hitung Valuasi</a>
+                        <div class="col-md-6 text-left">                            
+                            <input type="submit" class="btn btn-success btn-sm" id="tombol33" name="tombol33" value="Hitung Valuasi">
                         </div>
                     </div>
                 </form> <!-- Form Halaman 1 END -->
