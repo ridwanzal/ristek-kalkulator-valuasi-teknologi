@@ -7,7 +7,7 @@
     <div class="form-element-area">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <p class="font-weight-bold">Field Input Data</p>
                         <p>A. Identitas Penelitian dan Invensi</p>
                         <div class="card">
@@ -15,12 +15,12 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions" for="formGroupExampleInput"><span class="badge badge-pill  badge-warning">1</span>&nbsp;Nama Inventor <i style="color: red">*</i> </label>
-                                            <input value="<?= $userdetails['name'];?>" type="text" class="form-control form-control-sm" id="par_cb_nama_inventor" placeholder="">
+                                            <input  type="text" class="form-control form-control-sm" id="par_cb_nama_inventor" placeholder="">
                                             <small>Jika Inventor yang terlibat lebih dari 1, pisahkan dengan koma</small>
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">2</span>&nbsp;Institusi Penghasil/ Pemilik Invensi <i style="color: red">*</i> </label>
-                                            <input value="<?= $userdetails['afiliasi']['name']; ?>" type="text" class="form-control form-control-sm" id="par_cb_nama_institusi" placeholder="">
+                                            <input  type="text" class="form-control form-control-sm" id="par_cb_nama_institusi" placeholder="">
                                             <small>Jika Institusi yang terlibat lebih dari 1, pisahkan dengan koma</small>
                                         </div>
                                     </div>
@@ -75,7 +75,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Publikasi pada jurnal internasional </label>
-                                            <input id="par_cb_pub_internasional" type="number" class="form-control" placeholder="" value="0">
+                                            <input id="par_cb_pub_internasional" type="number" class="form-control" placeholder="" value="0" min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
@@ -86,7 +86,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Publikasi pada jurnal nasional </label>
-                                            <input id="par_cb_pub_nasional" type="number" class="form-control" placeholder="" value="0">
+                                            <input id="par_cb_pub_nasional" type="number" class="form-control" placeholder="" value="0" min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
@@ -97,7 +97,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Buku Internasional </label>
-                                            <input id="par_cb_buku_internasional" type="number" class="form-control" placeholder="" value="0">
+                                            <input id="par_cb_buku_internasional" type="number" class="form-control" placeholder="" value="0" min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
@@ -108,7 +108,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Buku Nasional </label>
-                                            <input id="par_cb_buku_nasional" type="number" class="form-control" placeholder="" value="0">
+                                            <input id="par_cb_buku_nasional" type="number" class="form-control" placeholder="" value="0" min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
@@ -119,7 +119,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Publikasi pada prosiding internasional </label>
-                                            <input id="par_cb_pros_internasional" type="number" class="form-control" placeholder="" value="0">
+                                            <input id="par_cb_pros_internasional" type="number" class="form-control" placeholder="" value="0" min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
@@ -130,11 +130,11 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Publikasi pada prosiding nasional </label>
-                                            <input id="par_cb_pros_nasional"  type="number" class="form-control" placeholder="" value="0">
+                                            <input id="par_cb_pros_nasional"  type="number" class="form-control" placeholder="" value="0" min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
-                                            <input disabled type="number" class="form-control" placeholder="1" value="10">
+                                            <input disabled type="number" class="form-control" placeholder="1" value="10" min="0">
                                         </div>
                                     </div>
                                 </div>
@@ -157,7 +157,7 @@
                                             <div class="card-body">
                                                 <div class="form-group">
                                                     <label class="captions">Judul Invensi <i style="color: red">*</i></label>
-                                                    <input type="text" class="form-control form-control-sm" id="par_cb_jd_invensi_1" placeholder="">
+                                                    <input type="text" class="form-control form-control-sm par_cb_daftar_invensi" id="par_cb_jd_invensi_1" onchange="data_luaran_paten(1)" placeholder="">
                                                 </div>
 
                                                 <div class="form-row form-group">
@@ -252,7 +252,7 @@
                 <div class="container_all_output" style="display:block;">
                     <!-- POIN B -->
                     <div class="row">
-                        <div class="col-lg-9 col-md-9">
+                        <div class="col-lg-12 col-md-12 col-xs-12">
                             <p>B. Nilai Keluaran Penelitian Berupa Paten (Ki)</p>
                             <table class="table table-sm table-bordered">
                                 <thead>
@@ -319,7 +319,7 @@
                                         <td><b>Total bobot keluaran penelitian non paten (&Sigma;Qi)</b></td>
                                         <td></td>
                                         <td></td>
-                                        <td id="np_total_bobot">0</td>
+                                        <td style="font-weight:bold;" id="np_total_bobot">0</td>
                                     </tr>
                                     <tr class="luaran_penelitan_title">
                                         <td>B.</td>
@@ -350,7 +350,7 @@
                                         <td><b>Total bobot keluaran penelitian non paten (&Sigma;Ti)</b></td>
                                         <td></td>
                                         <td></td>
-                                        <td id="p_total_bobot">0</td>
+                                        <td style="font-weight:bold;" id="p_total_bobot">0</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -369,7 +369,7 @@
                     <br/>
                     <!-- POIN C -->
                     <div class="row">
-                        <div class="col-lg-9 col-md-9">
+                        <div class="col-lg-12 col-md-12 col-xs-12">
                             <p>C. Nilai Perolehan Paten (Pi)</p>   
                             <table class="table table-sm table-bordered">
                                 <thead>
@@ -436,7 +436,12 @@
                             <ul id="out_atbp_list">
                             </ul>
                             <p style="font-weight:bold;font-size:18px;">2. Total Nilai ATB-P : Rp. <span id="out_atbp_total">0</span></p>   
-                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <button id="topdf" class="btn btn-success btn-sm">Simpan</button> 
+                            <button id="topdf" class="btn btn-primary btn-sm">Export PDF</button> 
                         </div>
                     </div>
                 </div>
