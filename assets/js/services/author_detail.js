@@ -5,7 +5,32 @@ $(function(){
     get_googlescholar_image();
     get_author_details();
     get_books();
+    get_research();
 });
+
+
+/**
+ * get research author
+ */
+function get_research(){
+    let check_sess_storage = sessionStorage.hasOwnProperty('get_research');
+    if(check_sess_storage){
+        // jika sudah terisi do nothing
+    }else{
+        let api_endpoint = base_url_api + '/author/detail/research/' + userdetails.sinta_id;
+        $.ajax({
+            url : api_endpoint,
+            type : 'GET',
+            cache : true,
+            success : function(res){
+                console.log(res);
+                let results = res.author;
+                sessionStorage.setItem('get_research', JSON.stringify(results));
+            }
+        })
+    }
+}
+
 
 /**
  * get user image from google cloud
@@ -22,7 +47,7 @@ function get_googlescholar_image(){
 function get_author_details(){
     let check_sess_storage = sessionStorage.hasOwnProperty('get_author_overview');
     if(check_sess_storage){
-        // jika sudah terisi simpan
+        // jika sudah terisi do nothing
     }else{
         let api_endpoint = base_url_api + '/author/detail/overview/' + userdetails.sinta_id;
         $.ajax({
