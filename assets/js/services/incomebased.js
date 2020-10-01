@@ -30,6 +30,7 @@ $('#biaya_warehouse').mask("#.##0,00", {reverse: true});
 $('#biaya_depresiasi').mask("#.##0,00", {reverse: true});
 
 $(function(){
+    
     //fungsi untuk memanggil sweetalert
     function notifikasi(message, type) {
 		var mixin = Swal.mixin({
@@ -53,6 +54,20 @@ $(function(){
     } 
 
     //untuk market share ketika diklik/change untuk prosentase
+    $("#marketsize").keyup(function() {
+        var m_pilihan = $(this).find(":selected").val();
+        var m_size = parseFloat($('#marketsize').val().replace(/[^\d,]/g,'').replace(',','.')); 
+        var m_produk = 0;            
+        if(m_pilihan=='persen1'){                
+            m_produk = m_size * 0.25;
+        }else if(m_pilihan=='persen2'){
+            m_produk = m_size * 0.15;
+        }else if(m_pilihan=='persen3'){
+            m_produk = m_size * 0.10;
+        }            
+        $('#qty').val(formatNumber(m_produk));
+    });
+
     $('#marketshare').on('change', function() {
         var m_pilihan = $(this).find(":selected").val();
         var m_size = parseFloat($('#marketsize').val().replace(/[^\d,]/g,'').replace(',','.')); 
@@ -77,82 +92,171 @@ $(function(){
     
     //ketika tombol dari halaman 1 ke halaman 2 diklik
     tombol1_kehalaman2.on('click', function(){
-        //inisilasiasi variabel
-        var inventor = $('#inventor').val();
-        var periode = $("#periode option:selected").attr("value");
-        var modal = $('#modal').val();
-        var sukubunga = $('#sukubunga').val();
-        var marketsize = $('#marketsize').val();
-        var marketshare = $("#marketshare option:selected").attr("value");
-        var qty = $('#qty').val();
-        
-        //masukkan variabel ke dalam session storage
-        sessionStorage.setItem("inventor", inventor);
-        sessionStorage.setItem("periode", periode);
-        sessionStorage.setItem("modal", modal);
-        sessionStorage.setItem("sukubunga", sukubunga);
-        sessionStorage.setItem("marketsize", marketsize);
-        sessionStorage.setItem("marketshare", marketshare);
-        sessionStorage.setItem("qty", qty);
-        //siapkan data untuk dikirim ke AJAX
-        let session_data = {
-            'inventor' : inventor,
-            'periode' : periode,
-            'modal' : modal,
-            'sukubunga' : sukubunga,
-            'marketsize' : marketsize,
-            'marketshare' : marketshare,
-            'qty' : qty
-        }
-        $.ajax({
-            url : web_url + '/incomebased/data_halaman1',
-            type : 'POST',
-            cache : true,
-            data : session_data,
-            success : function(respon){
-                console.log(respon);
+
+        //validasi form supaya terisi
+        $('#modal').attr('required', true);
+        $('#sukubunga').attr('required', true);
+        $('#marketsize').attr('required', true);
+        $('#qty').attr('required', true);
+        //validasi cek isi
+        const _modal = $('#modal');
+        const _sukubunga = $('#sukubunga');
+        const _marketsize = $('#marketsize');
+        const _qty = $('#qty');
+        //
+        let v_modal = checkEmpty(_modal);
+        let v_sukubunga = checkEmpty(_sukubunga);
+        let v_marketsize = checkEmpty(_marketsize);
+        let v_qty = checkEmpty(_qty);
+        if(!v_modal && !v_sukubunga && !v_marketsize && !v_qty){
+            var inventor = $('#inventor').val();
+            var periode = $("#periode option:selected").attr("value");
+            var modal = $('#modal').val();
+            var sukubunga = $('#sukubunga').val();
+            var marketsize = $('#marketsize').val();
+            var marketshare = $("#marketshare option:selected").attr("value");
+            var qty = $('#qty').val();
+            
+            //masukkan variabel ke dalam session storage
+            sessionStorage.setItem("inventor", inventor);
+            sessionStorage.setItem("periode", periode);
+            sessionStorage.setItem("modal", modal);
+            sessionStorage.setItem("sukubunga", sukubunga);
+            sessionStorage.setItem("marketsize", marketsize);
+            sessionStorage.setItem("marketshare", marketshare);
+            sessionStorage.setItem("qty", qty);
+            //siapkan data untuk dikirim ke AJAX
+            let session_data = {
+                'inventor' : inventor,
+                'periode' : periode,
+                'modal' : modal,
+                'sukubunga' : sukubunga,
+                'marketsize' : marketsize,
+                'marketshare' : marketshare,
+                'qty' : qty
             }
-        });        
+            loader.show();
+            $.ajax({
+                url : web_url + '/incomebased/data_halaman1',
+                type : 'POST',
+                cache : true,
+                data : session_data,
+                success : function(respon){
+                    console.log(respon);
+                    loader.hide();
+                    window.location.replace(web_url + '/manage/add/incomebased_calculator2');
+                }
+            });        
+        }else{
+            alert('Please check input field');
+        }
     })
 
     //ketika tombol dari halaman 2 ke halaman 3 diklik
     tombol2_kehalaman3.on('click', function(){ 
-        //inisilasiasi variabel
-        var target = $('#target').val();
-        var marketshare_persen = $("#marketshare_persen").val();
-        var qty_tahun1 = $('#qty_tahun1').val();
-        var marketshare_tahun2 = $('#marketshare_tahun2').val();
-        var harga_tahun1 = $('#harga_tahun1').val();
-        var harga_tahun2 = $("#harga_tahun2").val();
-        //masukkan variabel ke dalam session storage
-        sessionStorage.setItem("target", target);
-        sessionStorage.setItem("marketshare_persen", marketshare_persen);
-        sessionStorage.setItem("qty_tahun1", qty_tahun1);
-        sessionStorage.setItem("marketshare_tahun2", marketshare_tahun2);
-        sessionStorage.setItem("harga_tahun1", harga_tahun1);
-        sessionStorage.setItem("harga_tahun2", harga_tahun2);
-        //siapkan data untuk dikirim ke AJAX
-        let session_data = {
-            'target' : target,
-            'marketshare_persen' : marketshare_persen,
-            'qty_tahun1' : qty_tahun1,
-            'marketshare_tahun2' : marketshare_tahun2,
-            'harga_tahun1' : harga_tahun1,
-            'harga_tahun2' : harga_tahun2
-        }
-        $.ajax({
-            url : web_url + '/incomebased/data_halaman2',
-            type : 'POST',
-            cache : true,
-            data : session_data,
-            success : function(respon){
-                console.log(respon);
+        //validasi form supaya terisi
+        $('#target').attr('required', true);
+        $('#marketshare_persen').attr('required', true);
+        $('#qty_tahun1').attr('required', true);
+        $('#marketshare_tahun2').attr('required', true);
+        $('#harga_tahun1').attr('required', true);
+        $('#harga_tahun2').attr('required', true);
+
+        //validasi cek isi
+        const _target = $('#target');
+        const _marketshare_persen = $('#marketshare_persen');
+        const _qty_tahun1 = $('#qty_tahun1');
+        const _marketshare_tahun2 = $('#marketshare_tahun2');
+        const _harga_tahun1 = $('#harga_tahun1');
+        const _harga_tahun2 = $('#harga_tahun2');
+
+        //
+        let v_target = checkEmpty(_target);
+        let v_marketshare_persen = checkEmpty(_marketshare_persen);
+        let v_qty_tahun1 = checkEmpty(_qty_tahun1);
+        let v_marketshare_tahun2 = checkEmpty(_marketshare_tahun2);
+        let v_harga_tahun1 = checkEmpty(_harga_tahun1);
+        let v_harga_tahun2 = checkEmpty(_harga_tahun2);
+
+        if(!v_target && !v_marketshare_persen && !v_qty_tahun1 && !v_marketshare_tahun2 && !v_harga_tahun1 && !v_harga_tahun2){     
+            //inisilasiasi variabel
+            var target = $('#target').val();
+            var marketshare_persen = $("#marketshare_persen").val();
+            var qty_tahun1 = $('#qty_tahun1').val();
+            var marketshare_tahun2 = $('#marketshare_tahun2').val();
+            var harga_tahun1 = $('#harga_tahun1').val();
+            var harga_tahun2 = $("#harga_tahun2").val();
+            //masukkan variabel ke dalam session storage
+            sessionStorage.setItem("target", target);
+            sessionStorage.setItem("marketshare_persen", marketshare_persen);
+            sessionStorage.setItem("qty_tahun1", qty_tahun1);
+            sessionStorage.setItem("marketshare_tahun2", marketshare_tahun2);
+            sessionStorage.setItem("harga_tahun1", harga_tahun1);
+            sessionStorage.setItem("harga_tahun2", harga_tahun2);
+            //siapkan data untuk dikirim ke AJAX
+            let session_data = {
+                'target' : target,
+                'marketshare_persen' : marketshare_persen,
+                'qty_tahun1' : qty_tahun1,
+                'marketshare_tahun2' : marketshare_tahun2,
+                'harga_tahun1' : harga_tahun1,
+                'harga_tahun2' : harga_tahun2
             }
-        });        
+            loader.show();
+            $.ajax({
+                url : web_url + '/incomebased/data_halaman2',
+                type : 'POST',
+                cache : true,
+                data : session_data,
+                success : function(respon){
+                    console.log(respon);
+                    loader.hide();
+                    window.location.replace(web_url + '/manage/add/incomebased_calculator3');
+                }
+            }); 
+        }else{
+            alert('Please check input field');
+        }       
     })
 
     //ketika tombol dari halaman 3 diklik
     tombol3_kehalaman3.on('click', function(){ 
+        $('#biaya_investasi').attr('required', true);
+        $('#biaya_riset').attr('required', true);
+        $('#biaya_lisensi').attr('required', true);
+        $('#persen_lisensi').attr('required', true);
+        $('#biaya_cogs').attr('required', true);
+        $('#biaya_tetap').attr('required', true);
+        $('#biaya_marketing').attr('required', true);
+        $('#biaya_perawatan').attr('required', true);
+        $('#biaya_warehouse').attr('required', true);
+        $('#biaya_depresiasi').attr('required', true);
+
+        //validasi cek isi
+        const _biaya_investasi = $('#biaya_investasi');
+        const _biaya_riset = $('#biaya_riset');
+        const _biaya_lisensi = $('#biaya_lisensi');
+        const _persen_lisensi = $('#persen_lisensi');
+        const _biaya_cogs = $('#biaya_cogs');
+        const _biaya_tetap = $('#biaya_tetap');
+        const _biaya_marketing = $('#biaya_marketing');
+        const _biaya_perawatan = $('#biaya_perawatan');
+        const _biaya_warehouse = $('#biaya_warehouse');
+        const _biaya_depresiasi = $('#biaya_depresiasi');
+
+        //
+        let v_biaya_investasi = checkEmpty(_biaya_investasi);
+        let v_biaya_riset = checkEmpty(_biaya_riset);
+        let v_biaya_lisensi = checkEmpty(_biaya_lisensi);
+        let v_persen_lisensi = checkEmpty(_persen_lisensi);
+        let v_biaya_cogs = checkEmpty(_biaya_cogs);
+        let v_biaya_tetap = checkEmpty(_biaya_tetap);
+        let v_biaya_marketing = checkEmpty(_biaya_marketing);
+        let v_biaya_perawatan = checkEmpty(_biaya_perawatan);
+        let v_biaya_warehouse = checkEmpty(_biaya_warehouse);
+        let v_biaya_depresiasi = checkEmpty(_biaya_depresiasi);
+
+    if(!v_biaya_investasi && !v_biaya_riset && !v_biaya_lisensi && !v_persen_lisensi && !v_biaya_cogs && !v_biaya_tetap && !v_biaya_marketing && !v_biaya_perawatan && !v_biaya_warehouse && !v_biaya_depresiasi){
         //inisilasiasi variabel
         var biaya_investasi = $('#biaya_investasi').val();
         var biaya_riset = $("#biaya_riset").val();
@@ -188,6 +292,7 @@ $(function(){
             'biaya_warehouse' : biaya_warehouse,
             'biaya_depresiasi' : biaya_depresiasi
         }
+        loader.show();
         $.ajax({
             url : web_url + '/incomebased/data_halaman3',
             type : 'POST',
@@ -195,8 +300,13 @@ $(function(){
             data : session_data,
             success : function(respon){
                 console.log(respon);
+                loader.hide();
+                window.location.replace(web_url + '/manage/add/incomebased_output');
             }
         });        
+        }else{
+            alert('Please check input field');
+        }
     })
     
 });

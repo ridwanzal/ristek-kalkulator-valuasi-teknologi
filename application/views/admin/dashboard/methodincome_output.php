@@ -376,7 +376,7 @@ for($i=1;$i<=$indeks;$i++){
                     <!-- untuk tombol previous next -->
                     <div class="form-group row">                    
                         <div class="col-md-3 text-right">
-                        <a href="<?=base_url() ?>manage/add/incomebased_calculator3" id="tombol32" name="tombol32" class="btn btn-warning btn-sm">Kembali Input Parameter Kalkulasi</a>
+                        <a href="<?=base_url() ?>manage/add/incomebased_calculator3" id="tombol32" name="tombol32" class="btn btn-xs btn-outline-danger btn-block">Kembali Input Parameter Kalkulasi</a>
                         </div>
                     </div>
                 </div>
