@@ -1,12 +1,10 @@
 *{
-    font-family: 'Lato', sans-serif !important;
-    letter-spacing: 0.3px
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 .main_font {
-    font-family: 'Lato', sans-serif  !important;
+    font-family: 'Montserrat', sans-serif  !important;
     font-weight: bold;
-    letter-spacing: 0.3px;
 }
 
 .imgslider{
@@ -19,8 +17,7 @@
 body{
     overflow-x: hidden;
     min-height: 600px;
-    font-family: 'Lato', sans-serif !important;
-    letter-spacing: 0.1px
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 p, label, li, li > a, h6, h5{
@@ -34,7 +31,7 @@ td,th {
 .section_footer{
     padding-top:70px;
     padding-bottom:50px;
-    background:#f9f9f9;
+    background:#f1f1f1;
     border-top:1px solid #f2f2f2;
     border-bottom:1px solid #f2f2f2;
 }
@@ -50,7 +47,7 @@ td,th {
     padding-left: 0;
     padding-right: 0;
     padding-bottom:5px;
-    background :  #164796 !important;
+    background :  #3176DC !important;
 }
 
 .infobar {
@@ -67,7 +64,7 @@ td,th {
 }
 
 .nav_container{
-    background :  #164796 !important;
+    background :  #3176DC !important;
 }
 
 .navmain > li{
@@ -488,7 +485,9 @@ katsinov
 .main_section{
     height : 700px;
     min-height: 600px;
-    background : url('../img/background.svg');
+    background : #3176DC;
+    color : #fff;
+    /* background : url('../img/background.svg'); */
     background-size: cover;
     padding-top:200px;
     padding-bottom: 200px;   

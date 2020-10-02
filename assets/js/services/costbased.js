@@ -535,11 +535,12 @@ function data_luaran_paten(index){
     val = $('#par_cb_jd_invensi_' + index).val();
     let data = author_ipr;
     let i = 0;
-    console.log(val);
-    console.log(data[i].title);
     for(i; i < data.length; i++){
-        if(data[i].title === val){
-            $('#par_cb_nodaftar_'+index).val(data[i].no_registrasi);
+        if(data[i].hasOwnProperty('title')){
+            console.log(data[i].hasOwnProperty('title'))
+            if(data[i].title === val){
+                $('#par_cb_nodaftar_'+index).val(data[i].no_registrasi);
+            }
         }
     }
 }

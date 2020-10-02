@@ -1,6 +1,6 @@
 <body>
     <section class="nav_container" style="padding-left:10px; padding-right:10px;">
-        <container>
+        <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light navbar_custom">
               <a href="<?php echo base_url();?>"><span id="logo_mobile">KALSINOV</span></a>
               <button class="navbar-toggler btn-sm" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,9 +22,6 @@
                     <a class="nav-link" href="<?php echo base_url();?>faq" title="FAQ">FAQ <span class="sr-only"></span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url();?>kegiatan" title="Kegiatan">Kegiatan <span class="sr-only"></span></a>
-                  </li>
-                  <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url();?>tentang" title="Kegiatan">Tentang<span class="sr-only"></span></a>
                   </li>
                   <li class="nav-item">
@@ -38,5 +35,5 @@
                 </form>
               </div>
             </nav>
-        </container>
+        </div>
     </section>

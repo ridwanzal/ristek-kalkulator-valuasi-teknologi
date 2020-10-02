@@ -363,7 +363,6 @@
                             <div>Total Nilai Keluaran Penelitian Berupa Paten (Ki = Ti / (&Sigma;Ti+&Sigma;Qi)× R) = Rp. <span id="out_ki">0</span></div>
                         </div>
                     </div>
-
                     <br/>
                     <br/>
                     <br/>

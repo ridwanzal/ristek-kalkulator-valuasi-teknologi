@@ -10,6 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SIKAV - <?php echo $title_bar; ?> | Kalkulator Inovasi</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/flaticon.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/linearicons.css" type="text/css">

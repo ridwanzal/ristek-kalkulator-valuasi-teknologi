@@ -1,6 +1,6 @@
 <section class="section_second_wrapper">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-md-center">
             <div class="col-lg-5 col-md-5 col-xs-5"> 
             <center><img width="200" style="margin-bottom:20px;" src="<?php echo base_url();?>assets/frontview/img/logo2.svg"></center>
             <div class="loader"></div>
@@ -27,12 +27,6 @@
             </div>
             <br/>
             <center><span>Belum punya akun ? <a href="<?php echo base_url();?>register">Daftar</a></span></center>
-            </div>
-            <div class="col-lg-1 col-md-! col-xs-1">
-
-            </div>
-            <div class="col-lg-6 col-md-6 col-xs-6"> 
-                <img id="image_banners" height="550px" style="position:relative;top:-70px;" src="<?php echo base_url();?>/assets/frontview/img/research.svg">
             </div>
         </div>
     </div>

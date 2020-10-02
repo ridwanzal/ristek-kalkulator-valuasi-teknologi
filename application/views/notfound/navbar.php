@@ -21,9 +21,6 @@
                   <a class="nav-link" href="<?php echo base_url();?>faq" title="FAQ">FAQ <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url();?>kegiatan" title="Kegiatan">Kegiatan <span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link" href="<?php echo base_url();?>kontak" title="Kontak">Hubungi Kami <span class="sr-only"></span></a>
                 </li>
                 </ul>

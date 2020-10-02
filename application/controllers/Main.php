@@ -27,7 +27,7 @@ class Main extends CI_Controller {
 			$this->load->view('frontview/header', $data);
 			$this->load->view('frontview/navbar', $data);
 			$this->load->view('frontview/index', $data);
-			$this->load->view('frontview/page/method', $data);
+			$this->load->view('frontview/page/hki', $data);
 			$this->load->view('frontview/footer', $data);
 		}
 	}
