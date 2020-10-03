@@ -147,7 +147,9 @@ $(function () {
     _par_pagu_riset.on('keyup', function(){
         let result = money.format(_par_pagu_riset.val());
         _par_pagu_riset.val(result);
-    })
+    });
+
+
 
     _par_cb_judul_riset.on('change', function(){
         let val = _par_cb_judul_riset.val();
@@ -380,7 +382,7 @@ function luaran_paten(){
                         par_cb_status_paten : '' + _par_cb_status_paten,
                         par_cb_nodaftar : '' + _par_cb_nodaftar,
                         par_cb_sertifikat_paten : ''  + _par_cb_sertifikat_paten,
-                        par_biaya_proses : '' + _par_biaya_proses,
+                        par_biaya_proses : '' + money.reverse(_par_biaya_proses),
                         biaya_pendaftaran : '' + biaya_pendaftaran,
                         biaya_substantif : '' + biaya_substantif,
                         biaya_percepatan : '' + biaya_percepatan,
@@ -546,6 +548,15 @@ function data_luaran_paten(index){
 }
 
 
+/**
+ * @function biaya_proses_lainnya
+ */
+function biaya_proses_lainnya(index){
+    val = $('#par_biaya_proses_' + index).val();
+    $('#par_biaya_proses_' + index).val(money.format(val));
+}
+
+
 
 /**
  * @function add_luaran_paten
@@ -638,7 +649,7 @@ function add_luaran_paten(){
                                     <div class="form-row form-group">
                                         <div class="col-lg-6">
                                             <label class="captions">Biaya Proses Lainnya</label>
-                                            <input type="text" class="form-control form-control-sm" id="par_biaya_proses_`+index+`" placeholder="" value="0">
+                                            <input type="text" class="form-control form-control-sm" id="par_biaya_proses_`+index+`" onkeyup="biaya_proses_lainnya(`+index+`)" placeholder="" value="0">
                                         </div>
                                     </div>
                             </div>

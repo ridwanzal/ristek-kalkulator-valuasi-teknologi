@@ -5,7 +5,7 @@
             <center><img width="200" style="margin-bottom:20px;" src="<?php echo base_url();?>assets/frontview/img/logo2.svg"></center>
             <div class="loader"></div>
             <br/>
-            <div class="card">
+            <div class="card" style="padding:20px;">
                     <div class="card-body">
                         <h1 class="h3 mb-3 font-weight-bold">Masuk</h1>
                         <label for="inputEmail" class="sr-only">Email address</label>
