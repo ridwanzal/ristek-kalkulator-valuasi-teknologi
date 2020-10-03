@@ -47,7 +47,7 @@ td,th {
     padding-left: 0;
     padding-right: 0;
     padding-bottom:5px;
-    background :  #3176DC !important;
+    background :  #563d7c !important;
 }
 
 .infobar {
@@ -64,7 +64,7 @@ td,th {
 }
 
 .nav_container{
-    background :  #3176DC !important;
+    background :  #563d7c !important;
 }
 
 .navmain > li{
@@ -491,11 +491,11 @@ katsinov
 .main_section{
     height : 700px;
     min-height: 550px;
-    background : #3176DC;
+    background : #563d7c;
     color : #fff;
     /* background : url('../img/background.svg'); */
     background-size: cover;
-    padding-top:200px;
+    padding-top:100px;
     padding-bottom: 200px;   
 }
 
