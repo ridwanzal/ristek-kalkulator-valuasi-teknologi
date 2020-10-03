@@ -429,8 +429,8 @@ td,th {
 }
 
 .listfooters >  li {
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 #wa_navbar{
     background:#03a84e;
@@ -489,8 +489,8 @@ ul > li {
 katsinov
 */
 .main_section{
-    height : 700px;
-    min-height: 600px;
+    height : 900px;
+    min-height: 700px;
     background : #3176DC;
     color : #fff;
     /* background : url('../img/background.svg'); */
