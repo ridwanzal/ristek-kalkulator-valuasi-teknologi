@@ -1,5 +1,8 @@
 <body>
-    <section class="nav_container" style="padding-left:10px; padding-right:10px;">
+    <section class="nav_container" style="
+    padding-top: 30px;
+    padding-bottom: 30px;
+">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light navbar_custom">
               <a href="<?php echo base_url();?>"><span id="logo_mobile">KALSINOV</span></a>
@@ -10,7 +13,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto navmain">
                   <li class="nav-item active" style="margin-right:30px;">
-                    <a class="nav-link" href="<?php echo base_url();?>"><img height="24" src="<?php echo base_url();?>assets/frontview/img/logo.svg"></a>    
+                    <a class="nav-link" href="<?php echo base_url();?>"><img style="position:relative;left:-10px;" height="24" src="<?php echo base_url();?>assets/frontview/img/logo.svg"></a>    
                   </li>
                   <li class="nav-item active">
                     <a class="nav-link" href="<?php echo base_url();?>" title="Home">Home <span class="sr-only">(current)</span></a>    

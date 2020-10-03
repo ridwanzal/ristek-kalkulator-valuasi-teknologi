@@ -16,7 +16,6 @@
                 <br/>
                 <div class="card" style="padding:30px;">
                     <div class="card-body">
-                        <p class="card-text">
                         Penilaian suatu perusahaan untuk keperluan merger, akuisisi, usaha patungan atau kebangkrutan.
                         Negosiasi untuk menjual atau melisensikan HKI.
                         Dukungan dalam situasi terjadi pelanggaran atau konflik terkait HKI
@@ -39,8 +38,6 @@
                                 </li>
                             </ul>
                         Laporan keuangan, perpajakan, dan asuransi KI
-                        
-                        </p>
                     </div>
                 </div>
             </div>
@@ -48,6 +45,12 @@
     </div>
     <br/>
     <div class="container" style="">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-xs-12">
+                <h6 style="font-weight:bold;">Metode Valuasi KI</h6>
+                <br/>
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-4">
                 <div class="card" style="padding:30px;">

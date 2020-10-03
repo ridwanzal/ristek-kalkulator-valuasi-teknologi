@@ -14,7 +14,7 @@
                 </a>
             </div>
             <div class="col-lg-5 col-md-5 col-xs-5"> 
-                <img id="image_banners" height="500px" style="position:relative;top:-70px;" src="<?php echo base_url();?>/assets/frontview/img/research.svg">
+                <img id="image_banners" height="500px" style="position:relative;top:-70px;left:72px;" src="<?php echo base_url();?>/assets/frontview/img/research.svg">
             </div>
         </div>
     </div>
