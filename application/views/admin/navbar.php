@@ -9,7 +9,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto navmain">
                     <li class="nav-item active" style="margin-right:30px;">
-                      <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>manage"><img height="24" src="<?php echo base_url();?>assets/frontview/img/logo.svg"></a>    
+                      <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>manage"><img height="18" src="<?php echo base_url();?>assets/frontview/img/logo.svg"></a>    
                     </li>
                     <li class="nav-item active">
                       <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>" title="How to">How to<span class="sr-only">(current)</span></a>    

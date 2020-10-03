@@ -2,12 +2,11 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-lg-5 col-md-5 col-xs-5"> 
-            <center><img width="200" style="margin-bottom:20px;" src="<?php echo base_url();?>assets/frontview/img/logo2.svg"></center>
+            <!-- <center><img width="200" style="margin-bottom:20px;" src="<?php echo base_url();?>assets/frontview/img/logo2.svg"></center> -->
             <div class="loader"></div>
             <br/>
-            <div class="card" style="padding:20px;">
+            <div class="card" style="padding:20px;20px;0px;20px">
                     <div class="card-body">
-                        <h1 class="h3 mb-3 font-weight-bold">Masuk</h1>
                         <label for="inputEmail" class="sr-only">Email address</label>
                         <input type="email" id="p_username" class="form-control" placeholder="Email address" required value="anism@unissula.ac.id" autofocus>
                         <br/>   
@@ -26,7 +25,7 @@
                     </div>
             </div>
             <br/>
-            <center><span>Belum punya akun ? <a href="<?php echo base_url();?>register">Daftar</a></span></center>
+            <center><span class="text_white">Belum punya akun ? <a href="<?php echo base_url();?>register">Daftar</a></span></center>
             </div>
         </div>
     </div>
