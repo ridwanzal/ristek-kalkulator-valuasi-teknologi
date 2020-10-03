@@ -83,7 +83,7 @@
                     </div>
                     <div class="col-lg-2 col-md-2">
                     <div class="btn-group">
-                        <button style="float:right;position:relative;right:-17px;" type="button" class="btn btn-danger btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button style="float:right;position:relative;right:0px;" type="button" class="btn btn-danger btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Tambah Kalkulasi
                         </button>
                         <div class="dropdown-menu">
