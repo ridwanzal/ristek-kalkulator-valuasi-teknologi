@@ -489,14 +489,14 @@ ul > li {
 katsinov
 */
 .main_section{
-    height : 700px;
-    min-height: 550px;
-    background : #563d7c;
+    height : 780px;
+    min-height: 600px;
+    /* background : #563d7c; */
     color : #fff;
-    /* background : url('../img/background.svg'); */
+    background : url('../img/background_line.svg');
     background-size: cover;
-    padding-top:100px;
-    padding-bottom: 200px;   
+    padding-top:170px;
+    padding-bottom: 250px;   
 }
 
 
