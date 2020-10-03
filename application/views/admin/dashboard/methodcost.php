@@ -235,7 +235,7 @@
                                                 <div class="form-row form-group">
                                                     <div class="col-lg-6">
                                                         <label class="captions">Biaya Proses Lainnya</label>
-                                                        <input type="text" class="form-control form-control-sm" id="par_biaya_proses_1" onkeyup="biaya_proses_lainnya(1)" placeholder="" value="0">
+                                                        <input type="text" class="form-control form-control-sm" id="par_biaya_proses_1" onkeyup="biaya_proses_lainnya(1)" placeholder="" >
                                                     </div>
                                                 </div>
                                             </div>
