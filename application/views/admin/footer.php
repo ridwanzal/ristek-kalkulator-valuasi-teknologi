@@ -37,7 +37,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8 col-xs-12">
-                <span class="text-muted"> <img height="20" src="https://frp.comnets.id//images/ristek-brin.png">&nbsp;&nbsp;Copyright KALSINOV © 2020. All Right Reserved. Affiliation with <a style="" href='https://www.ristekbrin.go.id/'>Kementerian Ristek / BRIN</a>
+                <span class="text-muted"> <img height="20" src="https://frp.comnets.id//images/ristek-brin.png">&nbsp;&nbsp;Copyright SIKAV © 2020. All Right Reserved. Affiliation with <a style="" href='https://www.ristekbrin.go.id/'>Kementerian Ristek / BRIN</a>
             </div>
             <div class="col-lg-4 col-md-4 col-xs-12">
                 <div style="display:flex;float:right;" id="footer_rights">
