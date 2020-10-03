@@ -489,8 +489,8 @@ ul > li {
 katsinov
 */
 .main_section{
-    height : 900px;
-    min-height: 700px;
+    height : 700px;
+    min-height: 550px;
     background : #3176DC;
     color : #fff;
     /* background : url('../img/background.svg'); */
