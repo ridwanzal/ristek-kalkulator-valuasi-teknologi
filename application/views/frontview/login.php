@@ -2,13 +2,13 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-lg-5 col-md-5 col-xs-5"> 
-            <!-- <center><img width="200" style="margin-bottom:20px;" src="<?php echo base_url();?>assets/frontview/img/logo2.svg"></center> -->
+            <center><h5 class="text-white" style="font-size:20px;">Masuk</h5></center>
             <div class="loader"></div>
             <br/>
-            <div class="card" style="padding:20px;20px;0px;20px">
+            <div class="card" style="padding:20px 20px 0px 20px;">
                     <div class="card-body">
                         <label for="inputEmail" class="sr-only">Email address</label>
-                        <input type="email" id="p_username" class="form-control" placeholder="Email address" required value="anism@unissula.ac.id" autofocus>
+                        <input type="email" id="p_username" class="form-control" placeholder="Email address" required value="haris.wahyudi@mercubuana.ac.id" autofocus>
                         <br/>   
                         <label for="inputPassword" class="sr-only">Password</label>
                         <input type="password" id="p_password" class="form-control password-field" placeholder="Password" value="123456" required>
@@ -18,9 +18,7 @@
                         <button href="<?php echo base_url(); ?>manage" id="submit_login" class="btn btn-xs btn-outline-primary btn-block"><img height="20" src="http://sinta.ristekbrin.go.id/assets/img/sinta_logo.png">&nbsp;&nbsp;&nbsp;Masuk dengan Sinta</button>
                         <!-- <button href="<?php echo base_url(); ?>manage" id="submit_login" class="btn btn-xs btn-success btn-block">Masuk</button> -->
                         <br/>
-                        <div class="form-group">
-                            <p class="small text-center">Dengan menekan tombol Masuk, Anda setuju pada <br><a href="<?php echo base_url();?>syaratketentuan"  title="Buka Syarat & Ketentuan.">Syarat &amp; Ketentuan</a>, serta <a href="<?php echo base_url();?>privacypolicy" title="Buka Kebijakan Pribadi.">Kebijakan Privasi</a> yang kami tentukan.</p>
-                        </div>
+                        <div class="small text-center">Dengan menekan tombol Masuk, Anda setuju pada <br><a href="<?php echo base_url();?>syaratketentuan"  title="Buka Syarat & Ketentuan.">Syarat &amp; Ketentuan</a>, serta <a href="<?php echo base_url();?>privacypolicy" title="Buka Kebijakan Pribadi.">Kebijakan Privasi</a> yang kami tentukan.</div>
                         <br/>
                     </div>
             </div>

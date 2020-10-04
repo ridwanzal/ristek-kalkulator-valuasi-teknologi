@@ -109,11 +109,17 @@ const author_research = JSON.parse(sessionStorage.getItem('get_research'));
 const author_ipr = JSON.parse(sessionStorage.getItem('get_ipr'));
 
     
-
+/**
+ * on ready state
+ */
 $(function () {
     // get_daftar_publikasi();
     get_daftar_penelitian();
     get_daftar_ipr();
+    init();
+});
+
+function init(){
     $('#topdf').on('click', function(){
         var doc = new jsPDF();
         doc.setFontSize(16);
@@ -128,9 +134,9 @@ $(function () {
             'elementHandlers': specialElementHandlers
         });
     
-        // Save the PDF
         doc.save('sample-document.pdf');
     });
+
     _par_cb_unit_kerja.val(author_overview.prodi.nama);
     _par_cb_nama_inventor.val(author_overview.name);
     _par_cb_nama_institusi.val(author_overview.afiliation.name);
@@ -149,8 +155,6 @@ $(function () {
         _par_pagu_riset.val(result);
     });
 
-
-
     _par_cb_judul_riset.on('change', function(){
         let val = _par_cb_judul_riset.val();
         let i = 0;
@@ -167,7 +171,6 @@ $(function () {
         }
     });
 
-    // on change input
     _par_cb_pub_internasional.on('change', function(){
         let total_bobot = _par_cb_pub_internasional.val() * pub_int;
         _pub_np_int.text(_par_cb_pub_internasional.val());
@@ -192,7 +195,6 @@ $(function () {
         _buk_np_ns_total.text(total_bobot);
     });
     
-    
     _par_cb_pros_internasional.on('change', function(){
         let total_bobot = _par_cb_pros_internasional.val() * pub_pros_int;
         _pub_prod_np_int.text(_par_cb_pros_internasional.val());
@@ -204,8 +206,6 @@ $(function () {
         _pub_prod_np_ns.text(_par_cb_pros_nasional.val());
         _pub_prod_np_ns_total.text(total_bobot);
     });
-
-    
     
     _proc_data.on('click', function(){
         let check = validate_input_identitas(); // isi terlebih dulu form indentitas
@@ -215,9 +215,7 @@ $(function () {
             _out_container_parent.show();
         }
     });
-});
-
-
+}
 
 function luaran_nonpaten(){
     total_np = 
@@ -264,6 +262,7 @@ function luaran_nonpaten(){
 
 
 function luaran_paten(){
+            obj_model_cb.obj_paten.data = []; // empty the data if trigger clicked
             let container_luaran_paten = $('.luaran_paten_wrapper');
             if(container_luaran_paten.length > 0){
                 let i  = 1;
@@ -417,9 +416,9 @@ function luaran_paten(){
 
                 obj_model_cb.total_atbp = total_atbp;
                 console.log(obj_model_cb);
-                
             }
 }
+
 
 
 function validate_input_identitas(){
@@ -437,6 +436,7 @@ function validate_input_identitas(){
         return false;
     }
 }
+
 
 
 /**

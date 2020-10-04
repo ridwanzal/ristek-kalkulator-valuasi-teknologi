@@ -70,9 +70,11 @@ $route['manage/add/incomebased_output'] = 'manage/add_incomebased_output';
 
 // front section
 $route['login'] = 'login';
+$route['auth/login'] = 'login';
+$route['logout'] = 'login/logout';
+$route['auth/logout'] = 'login/logout';
 $route['register'] = 'register';
 $route['process_login'] = 'login/process_login';
-$route['logout'] = 'login/logout';
 $route['profile'] = 'profile';
 $route['prosedur'] = 'frontview/prosedur';
 $route['faq'] = 'frontview/faq';
