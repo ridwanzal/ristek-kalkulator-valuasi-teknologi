@@ -1,6 +1,9 @@
 const base_url_access = 'http://api.sinta.ristekdikti.go.id/fusio/public/consumer/login';
 const base_url_login = 'http://api.sinta.ristekdikti.go.id/v2/author/login';
 const base_url_api = 'http://api.sinta.ristekdikti.go.id/v2';
+const author_overview = JSON.parse(sessionStorage.getItem('get_author_overview'));
+const author_research = JSON.parse(sessionStorage.getItem('get_research'));
+const author_ipr = JSON.parse(sessionStorage.getItem('get_ipr'));
 
 /**
  * environment checking

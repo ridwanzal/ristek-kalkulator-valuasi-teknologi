@@ -103,11 +103,6 @@ let obj_model_cb = {
      total_atbp : 0
 };
 
-
-const author_overview = JSON.parse(sessionStorage.getItem('get_author_overview'));
-const author_research = JSON.parse(sessionStorage.getItem('get_research'));
-const author_ipr = JSON.parse(sessionStorage.getItem('get_ipr'));
-
     
 /**
  * on ready state
