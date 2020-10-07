@@ -44,7 +44,7 @@
                 </div>
             </form>
             <div style="margin-top:25px;">
-                <p style="color:#fff;">Sudah punya akun terdaftar ? </p>&nbsp;&nbsp;<a href="<?php echo base_url()?>login">Login</a>
+                <p style="color:#fff;">Sudah punya akun terdaftar ? </p>&nbsp;&nbsp;<a href="<?php echo base_url()?>auth/login">Login</a>
             </div>
         </div>
     </div>
