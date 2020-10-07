@@ -2,9 +2,9 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Costbased_model extends CI_Model {
+class Costbasedpaten_model extends CI_Model {
 
-    private $table = "sikav_cost";
+    private $table = "sikav_cost_paten";
     public $sinta_id;
     public $id;
     
