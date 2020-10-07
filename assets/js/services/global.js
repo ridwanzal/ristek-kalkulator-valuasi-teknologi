@@ -79,3 +79,13 @@ const money = {
         return clean
     }
 }
+
+
+const dates = {
+    today : function(){
+        let d_names = new Array("Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu");
+        let m_names = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+            
+        
+    }
+}

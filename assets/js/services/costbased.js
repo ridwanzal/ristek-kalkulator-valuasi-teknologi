@@ -109,9 +109,9 @@ let obj_model_cb = {
  */
 $(function () {
     // get_daftar_publikasi();
+    init();
     get_daftar_penelitian();
     get_daftar_ipr();
-    init();
 });
 
 function init(){
