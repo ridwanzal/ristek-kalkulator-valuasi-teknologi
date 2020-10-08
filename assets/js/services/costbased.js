@@ -124,6 +124,7 @@ $(function () {
 });
 
 function init(){
+    // Swal.fire('Any fool can use a computer')
     $('#topdf').on('click', function(){
         var doc = new jsPDF();
         doc.setFontSize(16);

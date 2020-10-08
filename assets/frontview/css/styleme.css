@@ -577,3 +577,7 @@ loader
   .text_white{
       color : #fff;
   }
+
+  .swal2-container {
+    z-index: 5000;
+  }
