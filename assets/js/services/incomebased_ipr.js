@@ -46,18 +46,29 @@ function sinkronisasi_ipr(){
                 });
             }       
             //alert("Sinkronisasi Data SINTA Berhasil");  
-            Swal.fire('Sinkronisasi Data SINTA Berhasil');   
-            //const Toast = Swal.mixin({
-            //    toast: true,
-            //    position: 'top-end',
-            //    showConfirmButton: false,
-            //    timer: 3000
-            //});
-
-            //Toast.fire({
-            //    type: 'error',
-            //    title: 'Signed in successfully'
-            //})
+            //Swal.fire('Sinkronisasi Data SINTA Berhasil');         
+            let timerInterval
+				Swal.fire({
+				  title: 'SINKRONISASI SINTA!',
+				  html: 'I will close in <strong></strong> seconds.',
+				  timer: 2000,
+				  onBeforeOpen: () => {
+				    Swal.showLoading()
+				    timerInterval = setInterval(() => {
+				      Swal.getContent().querySelector('strong')
+				        .textContent = Swal.getTimerLeft()
+				    }, 100)
+				  },
+				  onClose: () => {
+				    clearInterval(timerInterval)
+				  }
+				}).then((result) => {
+				  if (
+				    result.dismiss === Swal.DismissReason.timer
+				  ) {
+				    console.log('I was closed by the timer')
+				  }
+				})   
             loader.hide();
         }else{
             let adapter = `<tr class="alert alert-secondary" role="alert">
@@ -109,7 +120,29 @@ function sinkronisasi_ipr(){
                         });
                     }
                     //alert("Sinkronisasi Data SINTA Berhasil");
-                    Swal.fire('Sinkronisasi Data SINTA Berhasil');
+                    //Swal.fire('Sinkronisasi Data SINTA Berhasil');
+                    let timerInterval
+                        Swal.fire({
+                        title: 'SINKRONISASI SINTA!',
+                        html: 'I will close in <strong></strong> seconds.',
+                        timer: 2000,
+                        onBeforeOpen: () => {
+                            Swal.showLoading()
+                            timerInterval = setInterval(() => {
+                            Swal.getContent().querySelector('strong')
+                                .textContent = Swal.getTimerLeft()
+                            }, 100)
+                        },
+                        onClose: () => {
+                            clearInterval(timerInterval)
+                        }
+                        }).then((result) => {
+                        if (
+                            result.dismiss === Swal.DismissReason.timer
+                        ) {
+                            console.log('I was closed by the timer')
+                        }
+                        })
                     loader.hide();
                 }else{
                     let empty_arr = [];

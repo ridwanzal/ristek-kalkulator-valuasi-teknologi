@@ -148,7 +148,18 @@ $(function(){
                 }
             });        
         }else{
-            alert('Please check input field');
+            //alert('Please check input field');
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+
+            Toast.fire({
+                type: 'error',
+                title: 'Periksa Kembali Parameter Input Data'
+            })
         }
     })
 
@@ -215,7 +226,18 @@ $(function(){
                 }
             }); 
         }else{
-            alert('Please check input field');
+            //alert('Please check input field');
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+
+            Toast.fire({
+                type: 'error',
+                title: 'Periksa Kembali Parameter Input Data'
+            })
         }       
     })
 
@@ -305,7 +327,18 @@ $(function(){
             }
         });        
         }else{
-            alert('Please check input field');
+            //alert('Please check input field');
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+
+            Toast.fire({
+                type: 'error',
+                title: 'Periksa Kembali Parameter Input Data'
+            })
         }
     })
     
