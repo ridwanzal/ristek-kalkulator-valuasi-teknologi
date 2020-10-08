@@ -4,7 +4,7 @@
         <form method="post">
             <center><h5 class="text-white" style="font-size:20px;">Daftar</h5></center>
             <br/>
-            <div class="card">
+            <div class="card" style="padding:20px;">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-xs-12"> 

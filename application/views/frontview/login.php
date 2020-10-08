@@ -5,7 +5,7 @@
             <center><h5 class="text-white" style="font-size:20px;">Masuk</h5></center>
             <div class="loader"></div>
             <br/>
-            <div class="card" style="padding:20px 20px 0px 20px;">
+            <div class="card" style="padding:20px 20px 20px 20px;">
                     <div class="card-body">
                         <label for="inputEmail" class="sr-only">Email address</label>
                         <input type="email" id="p_username" class="form-control" placeholder="Email address" required value="haris.wahyudi@mercubuana.ac.id" autofocus>
