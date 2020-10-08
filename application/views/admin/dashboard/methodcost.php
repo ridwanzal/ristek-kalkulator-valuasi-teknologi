@@ -438,8 +438,8 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-12">
-                            <button id="topdf" class="btn btn-success btn-sm">Simpan</button> 
+                        <div class="col-lg-12" id="container_simpan_export" style="display:none;">
+                            <button id="tosave" class="btn btn-success btn-sm">Simpan</button> 
                             <button id="topdf" class="btn btn-primary btn-sm">Export PDF</button> 
                         </div>
                     </div>

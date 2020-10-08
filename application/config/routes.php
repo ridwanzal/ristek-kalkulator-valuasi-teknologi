@@ -74,6 +74,7 @@ $route['login'] = 'login';
 $route['auth/login'] = 'login';
 $route['logout'] = 'login/logout';
 $route['auth/logout'] = 'login/logout';
+$route['auth/register'] = 'register';
 $route['register'] = 'register';
 $route['process_login'] = 'login/process_login';
 $route['profile'] = 'profile';

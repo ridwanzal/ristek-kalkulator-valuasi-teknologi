@@ -58,6 +58,11 @@ const _out_ki_list = $('#out_ki_list'); // daftar nilai luaran penelitian berupa
 const _out_atbp_total = $('#out_atbp_total');
 const _out_atbp_list = $('#out_atbp_list');
 
+const _container_simpan_export = $("#container_simpan_export");
+
+const _tosave = $('#tosave');
+const _topdf = $('#topdf');
+
 // non paten button process
 const _proc_data = $('#proc_data');
 
@@ -93,6 +98,10 @@ const sederhana_terdaftar = 9 ;
  
 // form data to serialization
 let obj_model_cb = {
+     obj_id_sinta : '' + userdetails.sinta_id,
+     obj_id_google : '' + userdetails.google_id, 
+     obj_email : '' + userdetails.email,
+     obj_id_afiliasi : '' + userdetails.afiliasi.id,
      obj_identitas_pi : '', // identitas penelitian dan invensi
      obj_non_paten : '', // object terkait luaran non paten
      obj_paten : {
@@ -103,18 +112,19 @@ let obj_model_cb = {
      total_atbp : 0
 };
 
-    
+         
 /**
  * on ready state
  */
 $(function () {
     // get_daftar_publikasi();
+    init();
     get_daftar_penelitian();
     get_daftar_ipr();
-    init();
 });
 
 function init(){
+    // Swal.fire('Any fool can use a computer')
     $('#topdf').on('click', function(){
         var doc = new jsPDF();
         doc.setFontSize(16);
@@ -202,13 +212,48 @@ function init(){
         _pub_prod_np_ns_total.text(total_bobot);
     });
     
+    /** onclick submit to process data */
     _proc_data.on('click', function(){
         let check = validate_input_identitas(); // isi terlebih dulu form indentitas
         if(check){
             luaran_nonpaten();
             luaran_paten();
             _out_container_parent.show();
+            _container_simpan_export.show();
         }
+    });
+
+    // save data to databases;
+    _tosave.on('click', function(){
+        bootbox.dialog({
+            message: '<p class="text-center mb-0"><i class="fa fa-spin fa-cog"></i> Mohon tunggu, data sedang disimpan ... </p>',
+            closeButton: false
+        });
+
+        $.ajax({
+            url : web_url + '/costbased/add',
+            type : 'POST',
+            crossDomain: true,
+            dataType: "json",
+            data : {
+                'datas' : JSON.stringify(obj_model_cb)
+            },
+            error : function(res){
+
+            },
+            success : function(res){
+                console.log('berhasil')
+                console.log(res);
+                if(res == 'success'){
+                    setTimeout(function() {
+                        // that's enough of that
+                        bootbox.hideAll();
+                        _tosave.attr('disabled', 'disabled');
+                        _tosave.text('Tersimpan')
+                    }, 5000);
+                }
+            }
+        })
     });
 }
 
@@ -280,6 +325,7 @@ function luaran_paten(){
                     let _par_cb_nodaftar= $('#par_cb_nodaftar_' + i).val();
                     let _par_biaya_proses = $('#par_biaya_proses_' + i).val();
                     let _par_cb_sertifikat_paten = $('#par_cb_sertifikat_paten_' + i).val();
+                    let _par_cb_asalbiayadaftar_1 = $('#par_cb_asalbiayadaftar_' + i).val();
 
                     let _par_cb_file2 = $('#par_cb_file2');
         
@@ -376,6 +422,7 @@ function luaran_paten(){
                         par_cb_status_paten : '' + _par_cb_status_paten,
                         par_cb_nodaftar : '' + _par_cb_nodaftar,
                         par_cb_sertifikat_paten : ''  + _par_cb_sertifikat_paten,
+                        par_cb_asal_biaya_permohonan : '' + _par_cb_asalbiayadaftar_1,
                         par_biaya_proses : '' + money.reverse(_par_biaya_proses),
                         biaya_pendaftaran : '' + biaya_pendaftaran,
                         biaya_substantif : '' + biaya_substantif,
@@ -524,6 +571,23 @@ function get_daftar_ipr(){
     });
 }
 
+function get_daftar_iprs(dom){
+    let arr_temp = [];
+    let get_ipr = JSON.parse(sessionStorage.getItem('get_ipr'));
+    for(let i=0; i < get_ipr.length; i++){
+        let obj_temp = {
+            'label' : '' + get_ipr[i].title,
+            'value' : '' + get_ipr[i].title
+        }
+    
+        arr_temp.push(obj_temp);
+    }
+
+    dom.autocomplete({
+        source : arr_temp
+    });
+}
+
 
 /**
  * @function data_luaran_paten(index)
@@ -566,7 +630,7 @@ function add_luaran_paten(){
                             <div class="card-body">
                                 <div class="form-group">
                                     <label class="captions">Judul Invensi <i style="color: red">*</i></label>
-                                    <input type="text" class="form-control form-control-sm par_cb_daftar_invensi" id="par_cb_jd_invensi_`+index+`" placeholder="">
+                                    <input type="text" onchange="data_luaran_paten(`+index+`)" class="form-control form-control-sm par_cb_daftar_invensi" id="par_cb_jd_invensi_`+index+`" placeholder="">
                                 </div>
                                 
 
@@ -650,5 +714,10 @@ function add_luaran_paten(){
                             </div>
                         </div>`;
         $('.container_luaran_paten').append(adapter);
+        /**
+         * invoke autocomplete to render daftar ipr in new dom
+         */
+        get_daftar_iprs($('#par_cb_jd_invensi_' + index));
+        
 }
 
