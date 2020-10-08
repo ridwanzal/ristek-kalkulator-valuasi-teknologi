@@ -45,7 +45,8 @@ function sinkronisasi_ipr(){
                     }
                 });
             }       
-            alert("Sinkronisasi Data SINTA Berhasil");     
+            //alert("Sinkronisasi Data SINTA Berhasil");  
+            Swal.fire('Sinkronisasi Data SINTA Berhasil');   
             loader.hide();
         }else{
             let adapter = `<tr class="alert alert-secondary" role="alert">
@@ -96,7 +97,8 @@ function sinkronisasi_ipr(){
                             }
                         });
                     }
-                    alert("Sinkronisasi Data SINTA Berhasil");
+                    //alert("Sinkronisasi Data SINTA Berhasil");
+                    Swal.fire('Sinkronisasi Data SINTA Berhasil');
                     loader.hide();
                 }else{
                     let empty_arr = [];
