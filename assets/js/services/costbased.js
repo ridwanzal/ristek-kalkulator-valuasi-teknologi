@@ -225,7 +225,11 @@ function init(){
 
     // save data to databases;
     _tosave.on('click', function(){
-        console.log(obj_model_cb);
+        bootbox.dialog({
+            message: '<p class="text-center mb-0"><i class="fa fa-spin fa-cog"></i> Mohon tunggu, data sedang disimpan ... </p>',
+            closeButton: false
+        });
+
         $.ajax({
             url : web_url + '/costbased/add',
             type : 'POST',
@@ -234,8 +238,20 @@ function init(){
             data : {
                 'datas' : JSON.stringify(obj_model_cb)
             },
+            error : function(res){
+
+            },
             success : function(res){
-                console.log(res)
+                console.log('berhasil')
+                console.log(res);
+                if(res == 'success'){
+                    setTimeout(function() {
+                        // that's enough of that
+                        bootbox.hideAll();
+                        _tosave.attr('disabled', 'disabled');
+                        _tosave.text('Tersimpan')
+                    }, 5000);
+                }
             }
         })
     });

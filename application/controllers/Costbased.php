@@ -132,8 +132,8 @@ class Costbased extends CI_Controller {
             'total_biaya' => ''.$decode->obj_identitas_pi->par_pagu_riset,
             'asal_biaya' => '' .$decode->obj_identitas_pi->par_cb_asal_biaya,
             'lampiran' => 'kosong',
-            'ki' => ''.$decode->obj_non_paten->total_bobot_seluruh
-            'pi' => ''.$decode->obj_paten->total_bobot_seluruh
+            'ki' => ''.$decode->obj_non_paten->total_bobot_seluruh,
+            'pi' => ''.$decode->obj_paten->total_bobot_seluruh,
             'atbp' => '' .$decode->total_atbp,
             'tanggal' => '2020-07-12'
         );
@@ -151,7 +151,6 @@ class Costbased extends CI_Controller {
                 'buku_nasional' => ''.$decode->obj_non_paten->buk_np_ns,
                 'pub_prod_internasional' => ''.$decode->obj_non_paten->pub_prod_np_int,
                 'pub_prod_nasional' => ''.$decode->obj_non_paten->pub_prod_np_ns,
-                'ki' => ''.$decode->obj_non_paten->total_bobot_seluruh
             );
             $this->costbasednonpaten_model->insert($data2);
             $check2 = $this->db->affected_rows() > 0;
@@ -170,10 +169,11 @@ class Costbased extends CI_Controller {
                         'asal_biaya_pendaftaran' => ''.$item->par_cb_jenis_paten,
                         'lampiran' => ''.$item->par_cb_jenis_paten,
                         'biaya_proses_lain' => ''.$item->par_biaya_proses,
-                        'pi' => ''
                     );
                     $this->costbasedpaten_model->insert($data3);
                 }
+
+                echo json_encode('success');
 
             }
 
