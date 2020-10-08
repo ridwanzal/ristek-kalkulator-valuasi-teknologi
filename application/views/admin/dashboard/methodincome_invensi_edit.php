@@ -31,7 +31,7 @@ $userdetails = $this->session->userdata('userdetails');
                     Update Data Invensi                    
                 </div>
                 <div class="card-body">                    
-                    <div class="card-title text-right">
+                    <div class="card-title text-right">                        
                         <?php if (validation_errors()): ?>
                             <div class="alert alert-danger alert-dismissible fade show">
                                 <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -54,68 +54,97 @@ $userdetails = $this->session->userdata('userdetails');
                                     $hki_id = $rshki->hki_id;
                                     $sinta_id = $rshki->sinta_id;
                                     $email = $rshki->email;
+                                    $id = $rshki->id;
+                                    $kategori = $rshki->kategori;
+                                    $nomor_permohonan = $rshki->nomor_permohonan;
+                                    $title = $rshki->title;
+                                    $tahun_permohonan = $rshki->tahun_permohonan;
+                                    $pemegang_paten = $rshki->pemegang_paten;
                                     $inventor = $rshki->inventor;
-                                    $judul = $rshki->judul;
-                                    $jenis = $rshki->jenis;
-                                    $tahun = $rshki->tahun;
-                                    $no_daftar = $rshki->no_daftar;
                                     $status = $rshki->status;
-                                    $no_hki = $rshki->no_hki;
-                                    $url_hki = $rshki->url_hki;
-                                    $berkas = $rshki->berkas;
+                                    $no_publikasi = $rshki->no_publikasi;
+                                    $tgl_publikasi = $rshki->tgl_publikasi;
+                                    $no_registrasi = $rshki->no_registrasi;
+                                    $tgl_registrasi = $rshki->tgl_registrasi;
                                 }
                             }
                             ?>
+                                <?php if(isset($hki_id)){ ?>
+                                    <input type="hidden" name="hki_id" value="<?php echo $hki_id; ?>" />
+                                <?php } ?>
+                                <div class="col-md-3 text-right">
+                                    <label>No. Permohonan <i style="color: red">*</i></label>
+                                </div>
+                                <div class="col-md-9" style="padding-bottom: 5px;">
+                                    <input type="text" id="nomor_permohonan" name="nomor_permohonan" class="form-control form-control-sm" placeholder="Masukkan Nomor Permohonan" value="<?php if(isset($nomor_permohonan)){echo $nomor_permohonan;}else{echo $this->input->post('nomor_permohonan');} ?>"> 
+                                </div>
+                                <div class="col-md-3 text-right">
+                                    <label>No. Publikasi</i></label>
+                                </div>
+                                <div class="col-md-9" style="padding-bottom: 5px;">
+                                    <input type="text" id="no_publikasi" name="no_publikasi" class="form-control form-control-sm" placeholder="Masukkan Nomor Publikasi" value="<?php if(isset($no_publikasi)){echo $no_publikasi;}else{echo $this->input->post('no_publikasi');} ?>"> 
+                                </div>
+                                <div class="col-md-3 text-right">
+                                    <label>Tgl. Publikasi</i></label>
+                                </div>
+                                <div class="col-md-9" style="padding-bottom: 5px;">                                    
+                                    <input type="text" id="tgl_publikasi" name="tgl_publikasi" class="form-control datepicker form-control-sm" placeholder="0000-00-00" value="<?php if(isset($tgl_publikasi)){echo $tgl_publikasi;}else{echo $this->input->post('tgl_publikasi');} ?>">                                     
+                                </div>
+                                <div class="col-md-3 text-right">
+                                    <label>Title <i style="color: red">*</i></label>
+                                </div>
+                                <div class="col-md-9" style="padding-bottom: 5px;">
+                                    <textarea id="title" name="title" rows="2" class="form-control form-control-sm" placeholder="Masukkan Judul Invensi"><?php if(isset($title)){echo $title;}else{echo $this->input->post('title');} ?></textarea> 
+                                </div>
+                                <div class="col-md-3 text-right">
+                                    <label>Kategori <i style="color: red">*</i></label>
+                                </div>
+                                <div class="col-md-9" style="padding-bottom: 5px;">
+                                    <select id="kategori" name="kategori" class="form-control form-control-sm">
+                                        <option value="Paten" <?php if($kategori=='Paten'){echo "selected=\"selected\"";} ?>>Paten</option>
+                                        <option value="Paten Sederhana" <?php if($kategori=='Paten Sederhana'){echo "selected=\"selected\"";} ?>>Paten Sederhana</option>                                        
+                                        <option value="Merk Dagang" <?php if($kategori=='Merk Dagang'){echo "selected=\"selected\"";} ?>>Merk Dagang</option>
+                                        <option value="Rahasia Dagang" <?php if($kategori=='Rahasia Dagang'){echo "selected=\"selected\"";} ?>>Rahasia Dagang</option>
+                                        <option value="Desain Produk Industri" <?php if($kategori=='Desain Produk Industri'){echo "selected=\"selected\"";} ?>>Desain Produk Industri</option>
+                                        <option value="Indikasi Geografis" <?php if($kategori=='Indikasi Geografis'){echo "selected=\"selected\"";} ?>>Indikasi Geografis</option>
+                                        <option value="Perlindungan Varietas Tanaman" <?php if($kategori=='Perlindungan Varietas Tanaman'){echo "selected=\"selected\"";} ?>>Perlindungan Varietas Tanaman</option>
+                                        <option value="Perlindungan Topografi Sirkuit Terpadu" <?php if($kategori=='Perlindungan Topografi Sirkuit Terpadu'){echo "selected=\"selected\"";} ?>>Perlindungan Topografi Sirkuit Terpadu</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 text-right">
+                                    <label>Tahun Permohonan</label>
+                                </div>
+                                <div class="col-md-9" style="padding-bottom: 5px;">
+                                    <input type="text" id="tahun_permohonan" name="tahun_permohonan" class="form-control form-control-sm" placeholder="0000" value="<?php if(isset($tahun_permohonan)){echo $tahun_permohonan;}else{echo $this->input->post('tahun_permohonan');} ?>"> 
+                                </div>
+                                <div class="col-md-3 text-right">
+                                    <label>Pemegang Paten <i style="color: red">*</i></label>
+                                </div>
+                                <div class="col-md-9" style="padding-bottom: 5px;">
+                                    <textarea id="pemegang_paten" name="pemegang_paten" rows="2" class="form-control form-control-sm" placeholder="Masukkan Pemegang Paten"><?php if(isset($pemegang_paten)){echo $pemegang_paten;}else{echo $this->input->post('pemegang_paten');} ?></textarea> 
+                                </div>
                                 <div class="col-md-3 text-right">
                                     <label>Inventor <i style="color: red">*</i></label>
-                                    <?php if(isset($hki_id)){ ?>
-                                        <input type="hidden" name="hki_id" value="<?php echo $hki_id; ?>" />
-                                    <?php } ?>
                                 </div>
                                 <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <input type="text" id="inventor" name="inventor" class="form-control form-control-sm" placeholder="Pisahkan tanda titik koma, jika inventor lebih dari satu." value="<?php if(isset($inventor)){echo $inventor;}else{echo $this->input->post('inventor');} ?>"> 
-                                </div>
+                                    <textarea id="inventor" name="inventor" rows="2" class="form-control form-control-sm" placeholder="Masukkan Inventor"><?php if(isset($inventor)){echo $inventor;}else{echo $this->input->post('inventor');} ?></textarea> 
+                                </div>  
                                 <div class="col-md-3 text-right">
-                                    <label>Judul <i style="color: red">*</i></label>
+                                    <label>No. Registrasi</label>
                                 </div>
                                 <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <textarea id="judul" name="judul" rows="4" class="form-control form-control-sm" placeholder="Masukkan Judul Penelitian/Judul Invensi"><?php if(isset($judul)){echo $judul;}else{echo $this->input->post('judul');} ?></textarea> 
-                                </div>
+                                    <input type="text" id="no_registrasi" name="no_registrasi" class="form-control form-control-sm" placeholder="Nomor Registrasi" value="<?php if(isset($no_registrasi)){echo $no_registrasi;}else{echo $this->input->post('no_registrasi');} ?>">
+                                </div>    
                                 <div class="col-md-3 text-right">
-                                    <label>Jenis HKI <i style="color: red">*</i></label>
+                                    <label>Tgl. Registrasi</i></label>
                                 </div>
-                                <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <select id="jenis" name="jenis" class="form-control form-control-sm">
-                                        <option value="Paten" <?php if($jenis=='Paten'){echo "selected=\"selected\"";} ?>>Paten</option>
-                                        <option value="Paten Sederhana" <?php if($jenis=='Paten Sederhana'){echo "selected=\"selected\"";} ?>>Paten Sederhana</option>                                        
-                                        <option value="Merk Dagang" <?php if($jenis=='Merk Dagang'){echo "selected=\"selected\"";} ?>>Merk Dagang</option>
-                                        <option value="Rahasia Dagang" <?php if($jenis=='Rahasia Dagang'){echo "selected=\"selected\"";} ?>>Rahasia Dagang</option>
-                                        <option value="Desain Produk Industri" <?php if($jenis=='Desain Produk Industri'){echo "selected=\"selected\"";} ?>>Desain Produk Industri</option>
-                                        <option value="Indikasi Geografis" <?php if($jenis=='Indikasi Geografis'){echo "selected=\"selected\"";} ?>>Indikasi Geografis</option>
-                                        <option value="Perlindungan Varietas Tanaman" <?php if($jenis=='Perlindungan Varietas Tanaman'){echo "selected=\"selected\"";} ?>>Perlindungan Varietas Tanaman</option>
-                                        <option value="Perlindungan Topografi Sirkuit Terpadu" <?php if($jenis=='Perlindungan Topografi Sirkuit Terpadu'){echo "selected=\"selected\"";} ?>>Perlindungan Topografi Sirkuit Terpadu</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3 text-right">
-                                    <label>Tahun Pelaksanaan <i style="color: red">*</i></label>
-                                </div>
-                                <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <select class="form-control form-control-sm" id="tahun" name="tahun">
-                                        <?php for($i=(date('Y')-15);$i<=date('Y');$i++){ ?>
-                                        <option value="<?php echo $i; ?>" <?php if($tahun==$i){echo "selected=\"selected\"";} ?>><?= $i ?></option>
-                                        <?php } ?>
-                                    </select>
-                                </div>
-                                <div class="col-md-3 text-right">
-                                    <label>No. Pendaftaran <i style="color: red">*</i></label>
-                                </div>
-                                <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <input type="text" id="no_daftar" name="no_daftar" class="form-control form-control-sm" placeholder="Nomor Pendaftaran Paten" value="<?php if(isset($no_daftar)){echo $no_daftar;}else{echo $this->input->post('no_daftar');} ?>">
-                                </div>
+                                <div class="col-md-9" style="padding-bottom: 5px;">                                    
+                                    <input type="text" id="tgl_registrasi" name="tgl_registrasi" class="form-control datepicker form-control-sm" placeholder="0000-00-00" value="<?php if(isset($tgl_registrasi)){echo $tgl_registrasi;}else{echo $this->input->post('tgl_registrasi');} ?>">                                     
+                                </div>                          
                                 <div class="col-md-3 text-right">
                                     <label>Status <i style="color: red">*</i></label>
                                 </div>
-                                <div class="col-md-9" style="padding-bottom: 5px;">
+                                <div class="col-md-9 text-left" style="padding-bottom: 5px;">
                                     <div class="form-check-inline text-left">
                                         <input type="radio" name="status" value="terdaftar" <?php if($status=="terdaftar"){ echo "checked";}?> class="form-check-input form-control-sm" />
                                         <label>Terdaftar</label>
@@ -126,23 +155,10 @@ $userdetails = $this->session->userdata('userdetails');
                                     </div>
                                 </div>
                                 <div class="col-md-3 text-right">
-                                    <label>Nomor HKI <i style="color: red">*</i></label>
+                                    <label>&nbsp;</label>
                                 </div>
-                                <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <input type="text" id="no_hki" name="no_hki" class="form-control form-control-sm" placeholder="Nomor HKI" value="<?php if(isset($no_hki)){echo $no_hki;}else{echo $this->input->post('no_hki');} ?>">
-                                </div>
-                                <div class="col-md-3 text-right">
-                                    <label>URL HKI <i style="color: red">*</i></label>
-                                </div>
-                                <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <input type="text" id="url_hki" name="url_hki" class="form-control form-control-sm" placeholder="URL HKI" value="<?php if(isset($url_hki)){echo $url_hki;}else{echo $this->input->post('url_hki');} ?>">
-                                </div>
-                                <div class="col-md-3 text-right">
-                                    <label>Upload Dokumen Pendukung <i style="color: red">*</i></label>
-                                </div>
-                                <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <input type="file" id="dokumen_hki" name="dokumen_hki" class="form-control-file form-control-sm">
-                                    <div class="text-left"><small><i style="color: red">Upload File dengan ukuran maksimal 1 MB</i></small></div>
+                                <div class="col-md-9" style="padding-bottom: 5px;">                                    
+                                    <div class="text-left"><small><i style="color: red">* required</i></small></div>
                                 </div>
                                 <div class="col-md-12">
                                     <hr />

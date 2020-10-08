@@ -48,22 +48,34 @@ $userdetails = $this->session->userdata('userdetails');
                     <form action="<?= base_url('incomebased/add') ?>" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-3 text-right">
-                                    <label>Inventor <i style="color: red">*</i></label>
+                                    <label>No. Permohonan <i style="color: red">*</i></label>
                                 </div>
                                 <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <input type="text" id="inventor" name="inventor" class="form-control form-control-sm" placeholder="Pisahkan tanda titik koma, jika inventor lebih dari satu." value="<?php echo $this->input->post('inventor'); ?>"> 
+                                    <input type="text" id="nomor_permohonan" name="nomor_permohonan" class="form-control form-control-sm" placeholder="Masukkan Nomor Permohonan" value="<?php echo $this->input->post('nomor_permohonan'); ?>"> 
                                 </div>
                                 <div class="col-md-3 text-right">
-                                    <label>Judul <i style="color: red">*</i></label>
+                                    <label>No. Publikasi</i></label>
                                 </div>
                                 <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <textarea id="judul" name="judul" rows="4" class="form-control form-control-sm" placeholder="Masukkan Judul Penelitian/Judul Invensi"><?php echo $this->input->post('judul'); ?></textarea> 
+                                    <input type="text" id="no_publikasi" name="no_publikasi" class="form-control form-control-sm" placeholder="Masukkan Nomor Publikasi" value="<?php echo $this->input->post('no_publikasi'); ?>"> 
                                 </div>
                                 <div class="col-md-3 text-right">
-                                    <label>Jenis HKI <i style="color: red">*</i></label>
+                                    <label>Tgl. Publikasi</i></label>
+                                </div>
+                                <div class="col-md-9" style="padding-bottom: 5px;">                                    
+                                    <input type="text" id="tgl_publikasi" name="tgl_publikasi" class="form-control datepicker form-control-sm" placeholder="0000-00-00" value="<?php echo $this->input->post('tgl_publikasi'); ?>">                                     
+                                </div>
+                                <div class="col-md-3 text-right">
+                                    <label>Title <i style="color: red">*</i></label>
                                 </div>
                                 <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <select id="jenis" name="jenis" class="form-control form-control-sm">
+                                    <textarea id="title" name="title" rows="2" class="form-control form-control-sm" placeholder="Masukkan Judul Invensi"><?php echo $this->input->post('title'); ?></textarea> 
+                                </div>
+                                <div class="col-md-3 text-right">
+                                    <label>Kategori <i style="color: red">*</i></label>
+                                </div>
+                                <div class="col-md-9" style="padding-bottom: 5px;">
+                                    <select id="kategori" name="kategori" class="form-control form-control-sm">
                                         <option value="Paten" <?php if($this->input->post('jenis')=='Paten'){echo "selected=\"selected\"";} ?>>Paten</option>
                                         <option value="Paten Sederhana" <?php if($this->input->post('jenis')=='Paten Sederhana'){echo "selected=\"selected\"";} ?>>Paten Sederhana</option>                                        
                                         <option value="Merk Dagang" <?php if($this->input->post('jenis')=='Merk Dagang'){echo "selected=\"selected\"";} ?>>Merk Dagang</option>
@@ -75,25 +87,39 @@ $userdetails = $this->session->userdata('userdetails');
                                     </select>
                                 </div>
                                 <div class="col-md-3 text-right">
-                                    <label>Tahun Pelaksanaan <i style="color: red">*</i></label>
+                                    <label>Tahun Permohonan</label>
                                 </div>
                                 <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <select class="form-control form-control-sm" id="tahun" name="tahun">
-                                        <?php for($i=(date('Y')-15);$i<=date('Y');$i++){ ?>
-                                        <option value="<?php echo $i; ?>" <?php if($this->input->post('tahun')==$i){echo "selected=\"selected\"";} ?>><?= $i ?></option>
-                                        <?php } ?>
-                                    </select>
+                                    <input type="text" id="tahun_permohonan" name="tahun_permohonan" class="form-control form-control-sm" placeholder="0000" value="<?php echo $this->input->post('tahun_permohonan'); ?>"> 
                                 </div>
                                 <div class="col-md-3 text-right">
-                                    <label>No. Pendaftaran <i style="color: red">*</i></label>
+                                    <label>Pemegang Paten <i style="color: red">*</i></label>
                                 </div>
                                 <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <input type="text" id="no_daftar" name="no_daftar" class="form-control form-control-sm" placeholder="Nomor Pendaftaran Paten" value="<?php echo $this->input->post('no_daftar'); ?>">
+                                    <textarea id="pemegang_paten" name="pemegang_paten" rows="1" class="form-control form-control-sm" placeholder="Masukkan Pemegang Paten"><?php echo $this->input->post('pemegang_paten'); ?></textarea> 
+                                </div>    
+                                <div class="col-md-3 text-right">
+                                    <label>Inventor <i style="color: red">*</i></label>
                                 </div>
+                                <div class="col-md-9" style="padding-bottom: 5px;">
+                                    <textarea id="inventor" name="inventor" rows="1" class="form-control form-control-sm" placeholder="Masukkan Inventor"><?php echo $this->input->post('inventor'); ?></textarea> 
+                                </div>                                              
+                                <div class="col-md-3 text-right">
+                                    <label>No. Registrasi</label>
+                                </div>
+                                <div class="col-md-9" style="padding-bottom: 5px;">
+                                    <input type="text" id="no_registrasi" name="no_registrasi" class="form-control form-control-sm" placeholder="Nomor Registrasi" value="<?php echo $this->input->post('no_registrasi'); ?>">
+                                </div>         
+                                <div class="col-md-3 text-right">
+                                    <label>Tgl. Registrasi</i></label>
+                                </div>
+                                <div class="col-md-9" style="padding-bottom: 5px;">                                    
+                                    <input type="text" id="tgl_registrasi" name="tgl_registrasi" class="form-control datepicker form-control-sm" placeholder="0000-00-00" value="<?php echo $this->input->post('tgl_registrasi'); ?>">                                     
+                                </div>                       
                                 <div class="col-md-3 text-right">
                                     <label>Status <i style="color: red">*</i></label>
                                 </div>
-                                <div class="col-md-9" style="padding-bottom: 5px;">
+                                <div class="col-md-9 text-left" style="padding-bottom: 5px;">
                                     <div class="form-check-inline text-left">
                                         <input type="radio" name="status" value="terdaftar" <?php if($this->input->post('status')=="terdaftar"){ echo "checked";}?> class="form-check-input form-control-sm" />
                                         <label>Terdaftar</label>
@@ -102,25 +128,12 @@ $userdetails = $this->session->userdata('userdetails');
                                         <input type="radio" name="status" value="granted" <?php if($this->input->post('status')=="granted"){ echo "checked";}?> class="form-check-input form-control-sm" />
                                         <label>Granted</label>
                                     </div>
-                                </div>
+                                </div>                                
                                 <div class="col-md-3 text-right">
-                                    <label>Nomor HKI <i style="color: red">*</i></label>
+                                    <label>&nbsp;</label>
                                 </div>
-                                <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <input type="text" id="no_hki" name="no_hki" class="form-control form-control-sm" placeholder="Nomor HKI" value="<?php echo $this->input->post('no_hki'); ?>">
-                                </div>
-                                <div class="col-md-3 text-right">
-                                    <label>URL HKI <i style="color: red">*</i></label>
-                                </div>
-                                <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <input type="text" id="url_hki" name="url_hki" class="form-control form-control-sm" placeholder="URL HKI" value="<?php echo $this->input->post('url_hki'); ?>">
-                                </div>
-                                <div class="col-md-3 text-right">
-                                    <label>Upload Dokumen Pendukung <i style="color: red">*</i></label>
-                                </div>
-                                <div class="col-md-9" style="padding-bottom: 5px;">
-                                    <input type="file" id="dokumen_hki" name="dokumen_hki" class="form-control-file form-control-sm">
-                                    <div class="text-left"><small><i style="color: red">Upload File dengan ukuran maksimal 1 MB</i></small></div>
+                                <div class="col-md-9" style="padding-bottom: 5px;">                                    
+                                    <div class="text-left"><small><i style="color: red">* required</i></small></div>
                                 </div>
                                 <div class="col-md-12">
                                     <hr />

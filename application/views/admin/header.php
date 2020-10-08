@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/dialog/sweetalert2.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/datapicker/datepicker3.css" type="text/css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
         crossorigin=""/>

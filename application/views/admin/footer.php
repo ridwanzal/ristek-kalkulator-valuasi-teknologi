@@ -62,6 +62,7 @@
 <script src="<?php echo base_url();?>/assets/frontview/js/jquery.slicknav.js"></script>
 <script src="<?php echo base_url();?>/assets/frontview/js/owl.carousel.min.js"></script>
 <script src="<?php echo base_url();?>/assets/js/libs/dialog/sweetalert2.min.js"></script>
+<script src="<?php echo base_url();?>/assets/js/libs/datapicker/bootstrap-datepicker.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/jspdf@2.1.1/dist/jspdf.es.min.js"></script> -->
@@ -71,6 +72,8 @@
 <script src="<?php echo base_url();?>/assets/js/services/costbased.js"></script>
 <script src="<?php echo base_url();?>/assets/js/services/info.js"></script>
 <script src="<?php echo base_url();?>/assets/js/services/incomebased.js"></script>
+<script src="<?php echo base_url();?>/assets/js/services/incomebased_ipr.js"></script>
+<script src="<?php echo base_url();?>/assets/js/services/tanggal.js"></script>
 </body>
 
 </html> 

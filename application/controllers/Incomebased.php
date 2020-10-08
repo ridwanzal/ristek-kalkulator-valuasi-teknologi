@@ -19,15 +19,17 @@ class Incomebased extends CI_Controller {
     }
     public function add(){
         // Fungsi rules atau aturan untuk pengisian pada form (create/input dan update)
+        $this->form_validation->set_rules('nomor_permohonan', 'No. Permohonan', 'trim|required');
+        $this->form_validation->set_rules('no_publikasi', 'No. Publikasi', 'trim|required');
+        $this->form_validation->set_rules('tgl_publikasi', 'Tgl. Publikasi', 'trim|required');
+        $this->form_validation->set_rules('title', 'Title', 'trim|required');
+        $this->form_validation->set_rules('kategori', 'Kategori', 'trim|required');        
+        $this->form_validation->set_rules('tahun_permohonan', 'Tahun Permohonan', 'trim|required'); 
+        $this->form_validation->set_rules('pemegang_paten', 'Pemegang Paten', 'trim|required');
         $this->form_validation->set_rules('inventor', 'Inventor', 'trim|required');
-        $this->form_validation->set_rules('judul', 'Judul', 'trim|required');
-        $this->form_validation->set_rules('jenis', 'Jenis HKI', 'trim|required');
-        $this->form_validation->set_rules('tahun', 'Tahun Pelaksanaan', 'trim|required'); 
-        $this->form_validation->set_rules('no_daftar', 'No. Pendaftaran', 'trim|required');
+        $this->form_validation->set_rules('no_registrasi', 'No. Registrasi', 'trim|required');   
+        $this->form_validation->set_rules('tgl_registrasi', 'Tgl. Registrasi', 'trim|required');    
         $this->form_validation->set_rules('status', 'Status', 'trim|required');
-        $this->form_validation->set_rules('no_hki', 'Nomor HKI', 'trim|required');
-        $this->form_validation->set_rules('url_hki', 'URL HKI', 'trim|required');
-        //$this->form_validation->set_rules('dokumen_hki', 'Upload Dokumen Pendukung', 'trim|required');
         
         //ambil sinta_id dari session user yang aktif
 		$userdetails = $this->session->userdata('userdetails');
@@ -36,15 +38,17 @@ class Incomebased extends CI_Controller {
         if ($this->form_validation->run() == TRUE) {
             $data= array(
                 'sinta_id' => $sinta_id,
+                'nomor_permohonan' => $this->input->post('nomor_permohonan', TRUE),
+                'no_publikasi' => $this->input->post('no_publikasi', TRUE),
+                'tgl_publikasi' => $this->input->post('tgl_publikasi', TRUE),
+                'title' => $this->input->post('title', TRUE),
+                'kategori' => $this->input->post('kategori', TRUE),
+                'tahun_permohonan' => $this->input->post('tahun_permohonan', TRUE),
+                'pemegang_paten' => $this->input->post('pemegang_paten', TRUE),
                 'inventor' => $this->input->post('inventor', TRUE),
-                'judul' => $this->input->post('judul', TRUE),
-                'jenis' => $this->input->post('jenis', TRUE),
-                'tahun' => $this->input->post('tahun', TRUE),
-                'no_daftar' => $this->input->post('no_daftar', TRUE),
-                'status' => $this->input->post('status', TRUE),
-                'no_hki' => $this->input->post('no_hki', TRUE),
-                'url_hki' => $this->input->post('url_hki', TRUE)
-                //'dokumen_hki' => $this->input->post('dokumen_hki', TRUE)
+                'no_registrasi' => $this->input->post('no_registrasi', TRUE),
+                'tgl_registrasi' => $this->input->post('tgl_registrasi', TRUE),
+                'status' => $this->input->post('status', TRUE)
             );
             $this->incomebased_model->insert($data);
             $this->session->set_flashdata('pesan','Input Data Berhasil');
@@ -62,17 +66,20 @@ class Incomebased extends CI_Controller {
             $this->load->view('admin/footer', $data);
         }
     }
+
     public function edit($hki_id = null){
         // Fungsi rules atau aturan untuk pengisian pada form (create/input dan update)
+        $this->form_validation->set_rules('nomor_permohonan', 'No. Permohonan', 'trim|required');
+        $this->form_validation->set_rules('no_publikasi', 'No. Publikasi', 'trim|required');
+        $this->form_validation->set_rules('tgl_publikasi', 'Tgl. Publikasi', 'trim|required');
+        $this->form_validation->set_rules('title', 'Title', 'trim|required');
+        $this->form_validation->set_rules('kategori', 'Kategori', 'trim|required');        
+        $this->form_validation->set_rules('tahun_permohonan', 'Tahun Permohonan', 'trim|required'); 
+        $this->form_validation->set_rules('pemegang_paten', 'Pemegang Paten', 'trim|required');
         $this->form_validation->set_rules('inventor', 'Inventor', 'trim|required');
-        $this->form_validation->set_rules('judul', 'Judul', 'trim|required');
-        $this->form_validation->set_rules('jenis', 'Jenis HKI', 'trim|required');
-        $this->form_validation->set_rules('tahun', 'Tahun Pelaksanaan', 'trim|required'); 
-        $this->form_validation->set_rules('no_daftar', 'No. Pendaftaran', 'trim|required');
+        $this->form_validation->set_rules('no_registrasi', 'No. Registrasi', 'trim|required');   
+        $this->form_validation->set_rules('tgl_registrasi', 'Tgl. Registrasi', 'trim|required');    
         $this->form_validation->set_rules('status', 'Status', 'trim|required');
-        $this->form_validation->set_rules('no_hki', 'Nomor HKI', 'trim|required');
-        $this->form_validation->set_rules('url_hki', 'URL HKI', 'trim|required');
-        //$this->form_validation->set_rules('dokumen_hki', 'Upload Dokumen Pendukung', 'trim|required');
         
         //ambil sinta_id dari session user yang aktif
 		$userdetails = $this->session->userdata('userdetails');
@@ -83,15 +90,17 @@ class Incomebased extends CI_Controller {
             $data= array(
                 'sinta_id' => $sinta_id,
                 'hki_id' => $this->input->post('hki_id', TRUE),
+                'nomor_permohonan' => $this->input->post('nomor_permohonan', TRUE),
+                'no_publikasi' => $this->input->post('no_publikasi', TRUE),
+                'tgl_publikasi' => $this->input->post('tgl_publikasi', TRUE),
+                'title' => $this->input->post('title', TRUE),
+                'kategori' => $this->input->post('kategori', TRUE),
+                'tahun_permohonan' => $this->input->post('tahun_permohonan', TRUE),
+                'pemegang_paten' => $this->input->post('pemegang_paten', TRUE),
                 'inventor' => $this->input->post('inventor', TRUE),
-                'judul' => $this->input->post('judul', TRUE),
-                'jenis' => $this->input->post('jenis', TRUE),
-                'tahun' => $this->input->post('tahun', TRUE),
-                'no_daftar' => $this->input->post('no_daftar', TRUE),
-                'status' => $this->input->post('status', TRUE),
-                'no_hki' => $this->input->post('no_hki', TRUE),
-                'url_hki' => $this->input->post('url_hki', TRUE)
-                //'dokumen_hki' => $this->input->post('dokumen_hki', TRUE)
+                'no_registrasi' => $this->input->post('no_registrasi', TRUE),
+                'tgl_registrasi' => $this->input->post('tgl_registrasi', TRUE),
+                'status' => $this->input->post('status', TRUE)
             );
             $this->incomebased_model->update($hki_id, $data);
             $this->session->set_flashdata('pesan','Update Data Berhasil');
@@ -119,6 +128,48 @@ class Incomebased extends CI_Controller {
 			$this->session->set_flashdata('pesan', 'Data Gagal Dihapus');
 		}
 		redirect('manage/add/incomebased');
+    }
+
+    public function sinkronisasi_ipr(){
+        //ambil sinta_id dari session user yang aktif
+		$userdetails = $this->session->userdata('userdetails');
+        $sinta_id = $userdetails['sinta_id'];
+        //
+        $id = $this->input->post('id', TRUE);
+        $kategori = $this->input->post('kategori', TRUE);
+        $nomor_permohonan = $this->input->post('nomor_permohonan', TRUE);
+        $title = $this->input->post('title', TRUE);
+        $tahun_permohonan = $this->input->post('tahun_permohonan', TRUE);
+        $pemegang_paten = $this->input->post('pemegang_paten', TRUE);
+        $inventor = $this->input->post('inventor', TRUE);
+        $status = $this->input->post('status', TRUE);
+        $no_publikasi = $this->input->post('no_publikasi', TRUE);
+        $tgl_publikasi = $this->input->post('tgl_publikasi', TRUE);
+        $no_registrasi = $this->input->post('no_registrasi', TRUE);
+        $tgl_registrasi = $this->input->post('tgl_registrasi', TRUE);
+
+		$data_ipr = array(
+            'sinta_id' => $sinta_id,
+            'id' => $id,
+            'kategori' => $kategori,
+            'nomor_permohonan' => $nomor_permohonan,
+            'title' => $title,
+            'tahun_permohonan' => $tahun_permohonan,
+            'pemegang_paten' => $pemegang_paten,
+            'inventor' => $inventor,
+            'status' => $status,
+            'no_publikasi' => $no_publikasi,
+            'tgl_publikasi' => $tgl_publikasi,
+            'no_registrasi' => $no_registrasi,
+            'tgl_registrasi' => $tgl_registrasi
+        );
+        //tambahkan pengecekan primary key untuk ID IPR        
+        $cek_pk = $this->incomebased_model->getById($id);
+        if ($cek_pk<1){
+            $this->incomebased_model->insert($data_ipr);
+        }		
+        $this->session->set_flashdata('pesan','Sinkronisasi Data Berhasil');
+        redirect('manage/add/incomebased');
     }
 
     public function data_halaman1(){

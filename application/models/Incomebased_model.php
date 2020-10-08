@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Incomebased_model extends CI_Model {
 
-    private $table = "sikav_hki";
+    private $table = "sikav_income_hki";
     public $sinta_id;
     public $hki_id;
     
@@ -18,6 +18,11 @@ class Incomebased_model extends CI_Model {
     public function get_hki_id($hki_id)
     {
         return $this->db->get_where($this->table, ["hki_id" => $hki_id])->result();
+    }
+
+    // mencari item IPR berdasarkan ID
+    function getById($id){
+        return $this->db->get_where($this->table, ["id" => $id])->row();
     }
 
     // insert data

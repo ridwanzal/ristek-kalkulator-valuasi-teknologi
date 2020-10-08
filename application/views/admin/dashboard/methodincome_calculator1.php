@@ -24,14 +24,15 @@
 //    $marketshare = null;
 //    $qty = null;
 //}
-    
+
+//jika data diambil dari data non SINTA
 foreach ($sikav_hki as $rshki) {   
     $hki_id = $rshki->hki_id;
     $inventor = $rshki->inventor;
-    $judul = $rshki->judul;
+    $title = $rshki->title;
     $this->session->set_userdata('sesi_hki', $hki_id);
     $this->session->set_userdata('sesi_inventor', $inventor);
-    $this->session->set_userdata('sesi_judul', $judul);
+    $this->session->set_userdata('sesi_judul', $title);
 }  
 
 ?>
@@ -47,15 +48,15 @@ foreach ($sikav_hki as $rshki) {
                     <div class="form-group row">                        
                         <label for="inventor" class="col-sm-4 col-form-label text-right">Nama Inventor &nbsp;<span class="badge badge-pill  badge-warning">1.1</span> &nbsp;<a data-toggle="popover" title="Nama Inventor" data-content="Diisi dengan nama Inventor. Jika nama inventor lebih dari 1 orang, silahkan pisahkan dengan tanda koma di antara nama inventor." class="badge badge-info text-white">Info</a> </label>
                         <div class="col-sm-8">
-                            <input type="text" value="<?=$this->session->userdata('sesi_inventor'); ?>" class="form-control  form-control-sm col-sm-12" id="inventor" name="inventor" aria-describedby="inventorDesc" readonly>
-                            <small id="inventorDesc" class="form-text text-muted text-left">Nama Pemilik Invensi</small>
+                            <textarea  class="form-control  form-control-sm col-sm-12" id="inventor" name="inventor" aria-describedby="inventorDesc" readonly><?=$this->session->userdata('sesi_inventor'); ?></textarea>
+                            <small id="inventorDesc" class="form-text text-muted text-left">Nama Inventor</small>
                         </div>
                     </div>                    
                     <div class="form-group row">                        
-                        <label for="judul" class="col-sm-4 col-form-label text-right">Judul Penelitian/Invensi &nbsp;<span class="badge badge-pill  badge-warning">1.2</span> &nbsp;<a data-toggle="popover" title="Judul Penelitian/Invensi" data-content="Silahkan diisi dengan nama invensi yang telah dihasilkan." class="badge badge-info text-white">Info</a> </label>
+                        <label for="judul" class="col-sm-4 col-form-label text-right">Judul Invensi &nbsp;<span class="badge badge-pill  badge-warning">1.2</span> &nbsp;<a data-toggle="popover" title="Judul Invensi" data-content="Silahkan diisi dengan nama invensi yang telah dihasilkan." class="badge badge-info text-white">Info</a> </label>
                         <div class="col-sm-8">
                             <textarea  class="form-control  form-control-sm col-sm-12" id="judul" name="judul" aria-describedby="judulDesc" readonly><?=$this->session->userdata('sesi_judul'); ?></textarea>
-                            <small id="judulDesc" class="form-text text-muted text-left">Judul Penelitian/Invensi</small>
+                            <small id="judulDesc" class="form-text text-muted text-left">Judul Invensi</small>
                         </div>
                     </div>
                     <div class="form-group row">                        
