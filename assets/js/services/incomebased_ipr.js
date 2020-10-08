@@ -47,6 +47,17 @@ function sinkronisasi_ipr(){
             }       
             //alert("Sinkronisasi Data SINTA Berhasil");  
             Swal.fire('Sinkronisasi Data SINTA Berhasil');   
+            //const Toast = Swal.mixin({
+            //    toast: true,
+            //    position: 'top-end',
+            //    showConfirmButton: false,
+            //    timer: 3000
+            //});
+
+            //Toast.fire({
+            //    type: 'error',
+            //    title: 'Signed in successfully'
+            //})
             loader.hide();
         }else{
             let adapter = `<tr class="alert alert-secondary" role="alert">
