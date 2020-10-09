@@ -100,6 +100,7 @@ class Manage extends CI_Controller {
         $data['header_page'] = "Tambah Kalkulasi baru - Income Based";
 		$data['breadcrumbs'] = 'Tambah Kalkulasi baru - Income Based';
 		$data['sikav_hki'] = $this->incomebased_model->get_hki_id($hki_id);
+		$data["sikav_discount_factor"] = $this->incomebased_model->get_discount_factor();
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/navbar', $data);
 		$this->load->view('admin/components/breadcrumbs', $data);
@@ -130,9 +131,11 @@ class Manage extends CI_Controller {
 	  }
 
 	  public function add_incomebased_output(){
+		($this->session->userdata('discount_factor')!==null) ? $discount_factor = $this->session->userdata('discount_factor'): $discount_factor=0.00;
 		$data['title_bar'] = "Income Based";
         $data['header_page'] = "Output - Income Based";
-        $data['breadcrumbs'] = 'Output - Income Based';
+		$data['breadcrumbs'] = 'Output - Income Based';
+		$data["sikav_discount_factor"] = $this->incomebased_model->get_discount_factor_item($discount_factor);
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/navbar', $data);
 		$this->load->view('admin/components/breadcrumbs', $data);

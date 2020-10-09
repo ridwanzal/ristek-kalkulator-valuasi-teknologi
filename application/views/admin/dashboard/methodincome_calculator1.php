@@ -7,23 +7,7 @@
 ($this->session->userdata('marketsize')!=null) ? $marketsize = $this->session->userdata('marketsize'): $marketsize=null;
 ($this->session->userdata('marketshare')!=null) ? $marketshare = $this->session->userdata('marketshare'): $marketshare=null;
 ($this->session->userdata('qty')!=null) ? $qty = $this->session->userdata('qty'): $qty=null;
-//if($this->session->userdata('inventor')){
-//    $inventor = $this->session->userdata('inventor');
-//    $periode = $this->session->userdata('periode');
-//    $modal = $this->session->userdata('modal');
-//    $sukubunga = $this->session->userdata('sukubunga');
-//    $marketsize = $this->session->userdata('marketsize');
-//    $marketshare = $this->session->userdata('marketshare');
-//    $qty = $this->session->userdata('qty');
-//}else{
-//    $inventor = null;
-//    $periode = null;
-//    $modal = null;
-//    $sukubunga = null;
-//    $marketsize = null;
-//    $marketshare = null;
-//    $qty = null;
-//}
+($this->session->userdata('discount_factor')!=null) ? $discount_factor = $this->session->userdata('discount_factor'): $discount_factor=null;
 
 //jika data diambil dari data non SINTA
 foreach ($sikav_hki as $rshki) {   
@@ -110,6 +94,13 @@ foreach ($sikav_hki as $rshki) {
                         </div>
                     </div>
                     <div class="form-group row">                    
+                        <label for="qty" class="col-sm-4 col-form-label text-right">Discount Factor &nbsp;<span class="badge badge-pill  badge-warning">1.9</span> &nbsp;<a data-toggle="popover" title="Tabel Discount Factor" data-content="Digunakan sebagai Discount Factor untuk menentukan Prosentase Discount, untuk mendapatkan nilai Discounted FCF." class="badge badge-info text-white">Info</a></label>
+                        <div class="col-md-8 text-left">
+                            <input type="text" value="<?= $discount_factor; ?>" class="form-control form-control-sm col-sm-8 pencarian" id="discount_factor" name="discount_factor" aria-describedby="discount_factorDesc" required>
+                            <small id="discount_factorDesc" class="form-text text-muted">Tabel rujukan Discount Factor</small>
+                        </div>
+                    </div>
+                    <div class="form-group row">                    
                         <div class="col-md-4 text-right">
                             <a href="<?=base_url() ?>manage/add/incomebased" id="kembali" name="kembali" class="btn btn-xs btn-outline-danger btn-block">Kembali</a>
                             <!-- <button href="<?php echo base_url(); ?>manage/add/incomebased" id="kembali" name="kembali" class="btn btn-xs btn-outline-danger btn-block">Kembali</button> -->
@@ -126,5 +117,89 @@ foreach ($sikav_hki as $rshki) {
                 </div>
             </div>
         </div>
-    </div>    
+    </div> 
+
+    <!-- Modal Discount Factor -->
+    <div class="modal fade" data-backdrop="static" id="myModal" role="dialog">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">                        
+                    <h5 class="modal-title" id="exampleModalLabel">Tabel Discount Factor</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table id="example" class="table table-bordered table-responsive table-hover table-sm">
+                        <thead>
+                            <tr>
+                                <th class="bg-primary text-white">Periode</th>
+                                <th><a id="data" onClick="masuk(this,'4%')" href="javascript:void(0)">4%</a></th>
+                                <th><a id="data" onClick="masuk(this,'5%')" href="javascript:void(0)">5%</a></th>
+                                <th><a id="data" onClick="masuk(this,'6%')" href="javascript:void(0)">6%</a></th>
+                                <th><a id="data" onClick="masuk(this,'7%')" href="javascript:void(0)">7%</a></th>
+                                <th><a id="data" onClick="masuk(this,'8%')" href="javascript:void(0)">8%</a></th>
+                                <th><a id="data" onClick="masuk(this,'9%')" href="javascript:void(0)">9%</a></th>
+                                <th><a id="data" onClick="masuk(this,'10%')" href="javascript:void(0)">10%</a></th>
+                                <th><a id="data" onClick="masuk(this,'11%')" href="javascript:void(0)">11%</a></th>
+                                <th><a id="data" onClick="masuk(this,'12%')" href="javascript:void(0)">12%</a></th>
+                                <th><a id="data" onClick="masuk(this,'13%')" href="javascript:void(0)">13%</a></th>
+                                <th><a id="data" onClick="masuk(this,'14%')" href="javascript:void(0)">14%</a></th>
+                                <th><a id="data" onClick="masuk(this,'15%')" href="javascript:void(0)">15%</a></th>
+                                <th><a id="data" onClick="masuk(this,'20%')" href="javascript:void(0)">20%</a></th>
+                                <th><a id="data" onClick="masuk(this,'25%')" href="javascript:void(0)">25%</a></th>
+                                <th><a id="data" onClick="masuk(this,'30%')" href="javascript:void(0)">30%</a></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                                $nomor = 1;
+                                foreach ($sikav_discount_factor as $rsdiscount) { 
+                                    $d_4 = $rsdiscount->d_4;
+                                    $d_5 = $rsdiscount->d_5;
+                                    $d_6 = $rsdiscount->d_6;
+                                    $d_7 = $rsdiscount->d_7;
+                                    $d_8 = $rsdiscount->d_8;
+                                    $d_9 = $rsdiscount->d_9;
+                                    $d_10 = $rsdiscount->d_10;
+                                    $d_11 = $rsdiscount->d_11;
+                                    $d_12 = $rsdiscount->d_12;
+                                    $d_13 = $rsdiscount->d_13;
+                                    $d_14 = $rsdiscount->d_14;
+                                    $d_15 = $rsdiscount->d_15;
+                                    $d_20 = $rsdiscount->d_20;
+                                    $d_25 = $rsdiscount->d_25;
+                                    $d_30 = $rsdiscount->d_30;
+                            ?>
+                            <tr>
+                                <td class="bg-primary text-white"><?php echo $nomor; ?></td>
+                                <td><?php echo $d_4; ?></td>
+                                <td><?php echo $d_5; ?></td>
+                                <td><?php echo $d_6; ?></td>
+                                <td><?php echo $d_7; ?></td>
+                                <td><?php echo $d_8; ?></td>
+                                <td><?php echo $d_9; ?></td>
+                                <td><?php echo $d_10; ?></td>
+                                <td><?php echo $d_11; ?></td>
+                                <td><?php echo $d_12; ?></td>
+                                <td><?php echo $d_13; ?></td>
+                                <td><?php echo $d_14; ?></td>
+                                <td><?php echo $d_15; ?></td>
+                                <td><?php echo $d_20; ?></td>
+                                <td><?php echo $d_25; ?></td>
+                                <td><?php echo $d_30; ?></td>
+
+                            </tr>                        
+                            <?php $nomor++; } ?>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div> 
+        </div>
+    </div> 
+    <!-- Modal Discount Factor END -->
 </div>

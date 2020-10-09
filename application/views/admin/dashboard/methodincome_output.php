@@ -1,9 +1,11 @@
 <?php
+//echo print_r($sikav_discount_factor);
 //ambil beberapa session yang telah didefinisikan sebelumnya pada input parameter halaman 1,2, dan 3
 //untuk dilakukan proses perhitungan menggunakan metode incomebased
 ($this->session->userdata('periode')!==null) ? $periode = $this->session->userdata('periode'): $periode=0.00;
 ($this->session->userdata('modal')!==null) ? $modal = $this->session->userdata('modal'): $modal=0.00;
 ($this->session->userdata('sukubunga')!==null) ? $sukubunga = $this->session->userdata('sukubunga'): $sukubunga=0.00;
+($this->session->userdata('discount_factor')!==null) ? $discount_factor = $this->session->userdata('discount_factor'): $discount_factor=0.00;
 
 //variabel dari halaman 2
 ($this->session->userdata('target')!==null) ? $target = $this->session->userdata('target'): $target=0.00;
@@ -308,33 +310,16 @@ for($i=1;$i<=$indeks;$i++){
     $fcf[$i] = $eat[$i]+$depresiasi[$i]-$capital_expenditure[$i];
 }
 
-//variabel dummy profit_loss.discount (Discount Factor 10%)
+//variabel dummy profit_loss.discount (Tabel Discount Factor)
 $discount = array();
-$discount[1] = 0.909;
-$discount[2] = 0.826;
-$discount[3] = 0.751;
-$discount[4] = 0.683;
-$discount[5] = 0.621;
-$discount[6] = 0.564;
-$discount[7] = 0.513;
-$discount[8] = 0.467;
-$discount[9] = 0.424;
-$discount[10] = 0.386;
-$discount[11] = 0.350;
-$discount[12] = 0.319;
-$discount[13] = 0.290;
-$discount[14] = 0.263;
-$discount[15] = 0.239;
-$discount[16] = 0.219;
-$discount[17] = 0.198;
-$discount[18] = 0.180;
-$discount[19] = 0.164;
-$discount[20] = 0.149;
-
+foreach ($sikav_discount_factor as $object) {
+    $discount[] = $object->df;
+}
+//echo print_r($discount);
 //variabel dummy profit_loss.discount_fcf
 $discount_fcf = array();
 for($i=1;$i<=$indeks;$i++){
-    $discount_fcf[$i] = $fcf[$i]*$discount[$i];
+    $discount_fcf[$i] = $fcf[$i]*$discount[$i-1];
 }
 
 //jumlahkan isi array discount_fcf untuk memperoleh profit_loss.npv
@@ -929,10 +914,10 @@ for($i=1;$i<=$indeks;$i++){
                                     ?>
                                 </tr>
                                 <tr class="bg-light">
-                                    <td class="text-left">Discount Factor at interest rate 10%</td>
+                                    <td class="text-left">Discount Factor at interest <?=$discount_factor ?></td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
-                                        echo "<td>".$discount[$i]."</td>";
+                                        echo "<td>".$discount[$i-1]."</td>";
                                     }
                                     ?>
                                 </tr>
