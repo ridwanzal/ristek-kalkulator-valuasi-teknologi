@@ -57,10 +57,10 @@
                         </div>
                     </div>
                     <div class="form-group row">                        
-                        <label for="biaya_tetap" class="col-sm-6 col-form-label text-right">Biaya Operasional Tetap (Fixed Cost) &nbsp;<span class="badge badge-pill  badge-warning">3.6</span> &nbsp;<a data-toggle="popover" title="Biaya Tetap" data-content="Biaya Operasional Tetap (Fixed Cost) untuk pengeluaran setiap bulan." class="badge badge-info text-white">Info</a></label>
+                        <label for="biaya_tetap" class="col-sm-6 col-form-label text-right">Biaya Operasional Tetap (Fixed Cost) per bulan&nbsp;<span class="badge badge-pill  badge-warning">3.6</span> &nbsp;<a data-toggle="popover" title="Biaya Tetap" data-content="Biaya Operasional Tetap (Fixed Cost) untuk pengeluaran setiap bulan." class="badge badge-info text-white">Info</a></label>
                         <div class="col-sm-6">
                             <input type="text" value="<?= $biaya_tetap; ?>" class="form-control  form-control-sm col-sm-8" id="biaya_tetap" name="biaya_tetap" placeholder="#.##0,00" aria-describedby="biaya_tetapDesc" required>
-                            <small id="biaya_tetapDesc" class="form-text text-muted text-left">Biaya tetap</small>
+                            <small id="biaya_tetapDesc" class="form-text text-muted text-left">Biaya tetap per Bulan</small>
                         </div>
                     </div>
                     <div class="form-group row">                        
