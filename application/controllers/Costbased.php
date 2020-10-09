@@ -119,7 +119,6 @@ class Costbased extends CI_Controller {
     public function add(){
         $datas = $this->input->post('datas');
         $decode = json_decode($datas);
-
         $data= array(
             'id_sinta' => '' .$decode->obj_id_sinta,
             'id_google' => '' .$decode->obj_id_google,
@@ -173,14 +172,16 @@ class Costbased extends CI_Controller {
                     $this->costbasedpaten_model->insert($data3);
                 }
 
-                echo json_encode('success');
-
+                // jika sukses send json info ke frontend utk proses lanjutan ->uploading
+                $obj = new \stdClass();
+                $obj->status = "success";
+                $obj->insert_id = $insert_id;
+                $response = json_encode($obj);
+                echo $response;
             }
 
 
         }
-
-
 
         // echo '<pre>';
         // var_dump($decode);die;

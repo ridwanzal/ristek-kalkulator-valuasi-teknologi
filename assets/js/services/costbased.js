@@ -230,6 +230,7 @@ function init(){
             closeButton: false
         });
 
+        // upload dokumen identitas pendukung
         $.ajax({
             url : web_url + '/costbased/add',
             type : 'POST',
@@ -239,22 +240,46 @@ function init(){
                 'datas' : JSON.stringify(obj_model_cb)
             },
             error : function(res){
-
+                alert('Data tidak tersimpan');
             },
             success : function(res){
                 console.log('berhasil')
                 console.log(res);
-                if(res == 'success'){
-                    setTimeout(function() {
-                        // that's enough of that
-                        bootbox.hideAll();
-                        _tosave.attr('disabled', 'disabled');
-                        _tosave.text('Tersimpan')
-                    }, 5000);
+                if(res.status == 'success'){
+                    
+                    // upload dokumen pendukung
+                    var form_data = new FormData();
+                    var totalfiles = document.getElementById('par_cb_file').files.length;
+                    for (var index = 0; index < totalfiles; index++) {
+                        form_data.append("berkas[]", document.getElementById('par_cb_file').files[index]);
+                    }
+                 
+                    $.ajax({
+                      url: web_url + '/uploads/multiple/costbased/'+res.insert_id+'',
+                      type: 'post',
+                      data: form_data,
+                      dataType: 'json',
+                      contentType: false,
+                      processData: false,
+                      success: function (response) {
+                          console.log(res);
+                          if(response.status == 'success'){
+                                setTimeout(function() {
+                                    bootbox.hideAll();
+                                    _tosave.attr('disabled', 'disabled');
+                                    _tosave.text('Tersimpan')
+                                }, 5000);
+                          }
+                      }
+                    });
                 }
             }
-        })
+        });
+
+
+
     });
+
 }
 
 function luaran_nonpaten(){

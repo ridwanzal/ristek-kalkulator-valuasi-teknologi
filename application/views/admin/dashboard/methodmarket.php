@@ -168,7 +168,7 @@ Sertifikat Paten/Paten Sederhana :</label>
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="customFile">
                                         <label class="custom-file-label" for="customFile">Choose file</label>
-                                        <small id="emailHelp" class="form-text text-muted">Unggah file dlm format PDF, MS Word, PPT</small>
+                                        <small id="emailHelp" class="form-text text-muted">Unggah file dlm format PDF, MS Word, PPT, Images*</small>
                                     </div>
                             </div>
                             <br/>

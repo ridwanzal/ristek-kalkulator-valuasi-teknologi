@@ -56,10 +56,11 @@
                                     <div class="form-group">
                                         <label class="captions" for="formGroupExampleInput2">Upload dokumen pendukung </label>
                                             <div class="custom-file">
-                                                <input id="par_cb_file1" type="file" class="form-control" multiple style="height:45px;">
-                                                <small>Unggah file dlm format PDF, MS Word, PPT</small>
+                                                <input id="par_cb_file" type="file" class="form-control" name="berkas[]" multiple style="height:45px;">
+                                                <small>Unggah file dlm format PDF, MS Word, PPT, Images*</small>
                                             </div>
                                     </div>
+                                    <!-- <button id="testupload">Test upload</button> -->
                                 </div>
                         </div>
                             <br/>
@@ -253,7 +254,7 @@
                     <!-- POIN B -->
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-xs-12">
-                            <p>B. Nilai Keluaran Penelitian Berupa Paten (Ki)</p>
+                            <p class="font-weight-bold">B. Nilai Keluaran Penelitian Berupa Paten (Ki)</p>
                             <table class="table table-sm table-bordered">
                                 <thead>
                                     <tr>
@@ -369,7 +370,7 @@
                     <!-- POIN C -->
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-xs-12">
-                            <p>C. Nilai Perolehan Paten (Pi)</p>   
+                            <p class="font-weight-bold">C. Nilai Perolehan Paten (Pi)</p>   
                             <table class="table table-sm table-bordered">
                                 <thead>
                                     <tr>
@@ -430,7 +431,7 @@
                     <br/>
                     <div class="row">
                         <div class="col-lg-9 col-md-9">
-                            <p>D. Nilai Aset Tak Berwujud berupa Paten/ATB-P (Vi)</p>   
+                            <p class="font-weight-bold">D. Nilai Aset Tak Berwujud berupa Paten/ATB-P (Vi)</p>   
                             <p>1. Nilai ATB-P masing-masing paten:</p>   
                             <ul id="out_atbp_list">
                             </ul>
