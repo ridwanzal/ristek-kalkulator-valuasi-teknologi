@@ -8,6 +8,7 @@ const tombol3_kehalaman3 = $('#tombol33');
 $('#modal').mask("#.##0,00", {reverse: true});
 $('#sukubunga').mask('##0,00%', {reverse: true});
 $('#marketsize').mask("#.##0,00", {reverse: true});
+$('#discount_factor').mask('##0,00%', {reverse: true});
 
 //masking input data halaman 2
 $('#target').mask("#.##0,00", {reverse: true});
@@ -98,17 +99,21 @@ $(function(){
         $('#sukubunga').attr('required', true);
         $('#marketsize').attr('required', true);
         $('#qty').attr('required', true);
+        $('#discount_factor').attr('required', true);
+
         //validasi cek isi
         const _modal = $('#modal');
         const _sukubunga = $('#sukubunga');
         const _marketsize = $('#marketsize');
         const _qty = $('#qty');
+        const _discount_factor = $('#discount_factor');
         //
         let v_modal = checkEmpty(_modal);
         let v_sukubunga = checkEmpty(_sukubunga);
         let v_marketsize = checkEmpty(_marketsize);
         let v_qty = checkEmpty(_qty);
-        if(!v_modal && !v_sukubunga && !v_marketsize && !v_qty){
+        let v_discount_factor = checkEmpty(_discount_factor);
+        if(!v_modal && !v_sukubunga && !v_marketsize && !v_qty && !v_discount_factor){
             var inventor = $('#inventor').val();
             var periode = $("#periode option:selected").attr("value");
             var modal = $('#modal').val();
@@ -116,6 +121,7 @@ $(function(){
             var marketsize = $('#marketsize').val();
             var marketshare = $("#marketshare option:selected").attr("value");
             var qty = $('#qty').val();
+            var discount_factor = $('#discount_factor').val();
             
             //masukkan variabel ke dalam session storage
             sessionStorage.setItem("inventor", inventor);
@@ -125,6 +131,7 @@ $(function(){
             sessionStorage.setItem("marketsize", marketsize);
             sessionStorage.setItem("marketshare", marketshare);
             sessionStorage.setItem("qty", qty);
+            sessionStorage.setItem("discount_factor", discount_factor);
             //siapkan data untuk dikirim ke AJAX
             let session_data = {
                 'inventor' : inventor,
@@ -133,7 +140,8 @@ $(function(){
                 'sukubunga' : sukubunga,
                 'marketsize' : marketsize,
                 'marketshare' : marketshare,
-                'qty' : qty
+                'qty' : qty,
+                'discount_factor' : discount_factor
             }
             loader.show();
             $.ajax({
@@ -342,4 +350,16 @@ $(function(){
         }
     })
     
+    //untuk LOOKUP tabel Discount Factor
+    $(".pencarian").focusin(function() {
+        $("#myModal").modal('show'); // ini fungsi untuk menampilkan modal
+     });
+    //$('#example').DataTable(); // fungsi ini untuk memanggil datatable
+    //END untuk LOOKUP tabel Discount Factor
 });
+
+// function in berfungsi untuk memindahkan data kolom yang di klik menuju text box
+function masuk(txt, data) {
+    document.getElementById('discount_factor').value = data; // ini berfungsi mengisi value  yang ber id textbox
+    $("#myModal").modal('hide'); // ini berfungsi untuk menyembunyikan modal
+}

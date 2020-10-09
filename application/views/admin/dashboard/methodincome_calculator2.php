@@ -7,21 +7,6 @@
 ($this->session->userdata('harga_tahun1')!=null) ? $harga_tahun1 = $this->session->userdata('harga_tahun1'): $harga_tahun1=null;
 ($this->session->userdata('harga_tahun2')!=null) ? $harga_tahun2 = $this->session->userdata('harga_tahun2'): $harga_tahun2=null;
 
-//if($this->session->userdata('target')){
-//    $target = $this->session->userdata('target');
-//    $marketshare_persen = $this->session->userdata('marketshare_persen');
-//    $qty_tahun1 = $this->session->userdata('qty_tahun1');
-//    $marketshare_tahun2 = $this->session->userdata('marketshare_tahun2');
-//    $harga_tahun1 = $this->session->userdata('harga_tahun1');
-//    $harga_tahun2 = $this->session->userdata('harga_tahun2');
-//}else{
-//    $target = null;
-//    $marketshare_persen = null;
-//    $qty_tahun1 = null;
-//    $marketshare_tahun2 = null;
-//    $harga_tahun1 = null;
-//    $harga_tahun2 = null;
-//}
 ?>
 <div class="container mt-3 mb-3">
     <div class="row mb-3">

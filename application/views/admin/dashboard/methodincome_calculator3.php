@@ -11,29 +11,6 @@
 ($this->session->userdata('biaya_warehouse')!=null) ? $biaya_warehouse = $this->session->userdata('biaya_warehouse'): $biaya_warehouse=null;
 ($this->session->userdata('biaya_depresiasi')!=null) ? $biaya_depresiasi = $this->session->userdata('biaya_depresiasi'): $biaya_depresiasi=null;
 
-//if($this->session->userdata('biaya_investasi')){
-//    $biaya_investasi = $this->session->userdata('biaya_investasi');
-//    $biaya_riset = $this->session->userdata('biaya_riset');
-//    $biaya_lisensi = $this->session->userdata('biaya_lisensi');
-//    $persen_lisensi = $this->session->userdata('persen_lisensi');
-//    $biaya_cogs = $this->session->userdata('biaya_cogs');
-//    $biaya_tetap = $this->session->userdata('biaya_tetap');
-//    $biaya_marketing = $this->session->userdata('biaya_marketing');
-//    $biaya_perawatan = $this->session->userdata('biaya_perawatan');
-//    $biaya_warehouse = $this->session->userdata('biaya_warehouse');
-//    $biaya_depresiasi = $this->session->userdata('biaya_depresiasi');
-//}else{
-//    $biaya_investasi = null;
-//    $biaya_riset = null;
-//    $biaya_lisensi = null;
-//    $persen_lisensi = null;
-//    $biaya_cogs = null;
-//    $biaya_tetap = null;
-//    $biaya_marketing = null;
-//    $biaya_perawatan = null;
-//    $biaya_warehouse = null;
-//    $biaya_depresiasi = null;
-//}
 ?>
 <div class="container mt-3 mb-3">
     <div class="row mb-3">
@@ -59,14 +36,14 @@
                         </div>
                     </div>
                     <div class="form-group row">                        
-                        <label for="biaya_lisensi" class="col-sm-6 col-form-label text-right">Biaya License + ISO9001 (Tahun Pertama) &nbsp;<span class="badge badge-pill  badge-warning">3.3</span> &nbsp;<a data-toggle="popover" title="Biaya License" data-content="Biaya License + ISO9001 (Tahun Pertama), Komponen untuk memasukkan biaya lisensi." class="badge badge-info text-white">Info</a></label>
+                        <label for="biaya_lisensi" class="col-sm-6 col-form-label text-right">Biaya Perizinan dan Legalitas (Tahun Pertama) &nbsp;<span class="badge badge-pill  badge-warning">3.3</span> &nbsp;<a data-toggle="popover" title="Biaya License" data-content="Biaya License + ISO9001 (Tahun Pertama), Komponen untuk memasukkan biaya lisensi." class="badge badge-info text-white">Info</a></label>
                         <div class="col-md-6 text-left">
                         <input type="text" value="<?= $biaya_lisensi; ?>" class="form-control  form-control-sm col-sm-8" id="biaya_lisensi" name="biaya_lisensi" aria-describedby="biaya_lisensiDesc" placeholder="#.##0,00" required>
                             <small id="biaya_lisensiDesc" class="form-text text-muted">Komponen untuk memasukkan biaya lisensi</small>
                         </div>
                     </div>                    
                     <div class="form-group row">                        
-                        <label for="persen_lisensi" class="col-sm-6 col-form-label text-right">Biaya License + ISO9002 mulai tahun ke-2 (Prosentase) &nbsp;<span class="badge badge-pill  badge-warning">3.4</span> &nbsp;<a data-toggle="popover" title="Prosentase Biaya License" data-content="Biaya License + ISO9002 mulai tahun ke-2 (Prosentase), Prosentase biaya lisensi untuk tahun ke - 2 dan seterusnya." class="badge badge-info text-white">Info</a></label>
+                        <label for="persen_lisensi" class="col-sm-6 col-form-label text-right">Biaya Perizinan dan Legalitas mulai tahun ke-2 (Prosentase) &nbsp;<span class="badge badge-pill  badge-warning">3.4</span> &nbsp;<a data-toggle="popover" title="Prosentase Biaya License" data-content="Biaya License + ISO9002 mulai tahun ke-2 (Prosentase), Prosentase biaya lisensi untuk tahun ke - 2 dan seterusnya." class="badge badge-info text-white">Info</a></label>
                         <div class="col-sm-6">
                             <input type="text" value="<?= $persen_lisensi; ?>" class="form-control  form-control-sm col-sm-8" id="persen_lisensi" name="persen_lisensi" aria-describedby="persen_lisensiDesc" placeholder="##0,00%" required>
                             <small id="persen_lisensiDesc" class="form-text text-muted text-left">Prosentase biaya lisensi untuk tahun ke - 2 dan seterusnya</small>

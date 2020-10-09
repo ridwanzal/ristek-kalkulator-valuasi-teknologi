@@ -180,6 +180,7 @@ class Incomebased extends CI_Controller {
         $marketsize = $this->input->post('marketsize', TRUE);
         $marketshare = $this->input->post('marketshare', TRUE);
         $qty = $this->input->post('qty', TRUE);
+        $discount_factor = $this->input->post('discount_factor', TRUE);
 		$data_session = array(
             'inventor' => $inventor,
             'periode' => $periode,
@@ -187,7 +188,8 @@ class Incomebased extends CI_Controller {
             'sukubunga' => $sukubunga,
             'marketsize' => $marketsize,
             'marketshare' => $marketshare,
-            'qty' => $qty
+            'qty' => $qty,
+            'discount_factor' => $discount_factor
 		);
 		$this->session->set_userdata($data_session);
 		echo json_encode($data_session);
