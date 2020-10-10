@@ -407,7 +407,7 @@
                                         <td id="total_biaya_pendaftaran_seluruh">0</td>
                                         <td id="total_biaya_substantif_seluruh">0</td>
                                         <td id="total_biaya_percepatan_seluruh">0</td>
-                                        <td id="">0</td>
+                                        <td id="total_biaya_proses_lainnya">0</td>
                                         <td id="total_biaya_permohonan_seluruh">0</td>
                                     </tr>
                                 </tbody>

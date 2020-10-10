@@ -45,6 +45,7 @@ const _total_biaya_pendaftaran_seluruh = $('#total_biaya_pendaftaran_seluruh');
 const _total_biaya_substantif_seluruh = $("#total_biaya_substantif_seluruh");
 const _total_biaya_percepatan_seluruh = $('#total_biaya_percepatan_seluruh');
 const _total_biaya_permohonan_seluruh = $('#total_biaya_permohonan_seluruh');
+const _total_biaya_proses_lainnya = $('#total_biaya_proses_lainnya');
 
 // daftar view output luaran
 const _out_container_parent = $('.container_all_output');
@@ -336,6 +337,7 @@ function luaran_paten(){
                 let total_biaya_pendaftaran_seluruh = 0;
                 let total_biaya_substantif_seluruh = 0;
                 let total_biaya_percepatan_seluruh = 0;
+                let total_biaya_proses_lainnya = 0;
 
                 let total_luaran_penelitian_paten = 0; // ki
                 let total_atbp = 0;
@@ -348,12 +350,10 @@ function luaran_paten(){
                     let _par_cb_jenis_paten = $('input[name="jpt_'+i+'"]:checked').val();
                     let _par_cb_status_paten = $('input[name="stp_'+i+'"]:checked').val();
                     let _par_cb_nodaftar= $('#par_cb_nodaftar_' + i).val();
-                    let _par_biaya_proses = $('#par_biaya_proses_' + i).val();
+                    let _par_biaya_proses = money.reverse($('#par_biaya_proses_' + i).val());
                     let _par_cb_sertifikat_paten = $('#par_cb_sertifikat_paten_' + i).val();
                     let _par_cb_asalbiayadaftar_1 = $('#par_cb_asalbiayadaftar_' + i).val();
 
-                    let _par_cb_file2 = $('#par_cb_file2');
-        
                     var bobot = 0;
                     let jumlah = 1;
                     let biaya_pendaftaran;
@@ -390,6 +390,7 @@ function luaran_paten(){
                     total_biaya_substantif_seluruh = parseInt(total_biaya_substantif_seluruh) + parseInt(biaya_substantif);
                     total_biaya_percepatan_seluruh = parseInt(total_biaya_percepatan_seluruh) + parseInt(biaya_percepatan);
                     total_biaya_permohonan_seluruh = parseInt(total_biaya_permohonan_seluruh) + parseInt(total_biaya_permohonan);
+                    total_biaya_proses_lainnya = parseInt(total_biaya_proses_lainnya) + parseInt(_par_biaya_proses);
 
                     total_bobot_per_row = parseInt(jumlah) * parseInt(bobot);
                     total_bobot_seluruh = total_bobot_seluruh + total_bobot_per_row;
@@ -410,17 +411,20 @@ function luaran_paten(){
                             <td>`+biaya_pendaftaran+`</td>
                             <td>`+biaya_substantif+`</td>
                             <td>`+biaya_percepatan+`</td>
-                            <td>0</td>
+                            <td>`+_par_biaya_proses+`</td>
                             <td>`+total_biaya_permohonan+`</td>
                             </tr>
                             `;
                     _nilai_luaran_paten_list.append(list_adapter_nilai);
-                
                     _p_total_bobot.text(total_bobot_seluruh);
+
+
                     // print output
                     _out_pagu.text(_par_pagu_riset.val())
                     _out_paten.text(total_bobot_seluruh)
                     _out_nonpaten.text(_np_total_bobot.text());
+
+
 
                     // ki = (Ki = Ti / (Total(Ti)+Total(Qi))× R)
 
@@ -435,6 +439,8 @@ function luaran_paten(){
                     let ki_list = y * parseInt(money.reverse(_par_pagu_riset.val()));
                     let adapter_out_ki_list = `<li id="list_`+i+`">`+_par_cb_jenis_paten+` `+_par_cb_status_paten+` = Rp.`+ki_list+`</li>`;
                     _out_ki_list.append(adapter_out_ki_list);
+
+
 
                     // atbp masing-masing luaran
                     let atbp_list = ki_list + total_biaya_permohonan;
@@ -464,6 +470,9 @@ function luaran_paten(){
                 _total_biaya_pendaftaran_seluruh.text(total_biaya_pendaftaran_seluruh);
                 _total_biaya_substantif_seluruh.text(total_biaya_substantif_seluruh);
                 _total_biaya_percepatan_seluruh.text(total_biaya_percepatan_seluruh);
+                _total_biaya_proses_lainnya.text(total_biaya_proses_lainnya);
+                
+
 
                 /**
                  * pi = total a + total b + total c + total d ;
@@ -471,8 +480,9 @@ function luaran_paten(){
                  */
                 
                 _total_biaya_permohonan_seluruh.text(total_biaya_permohonan_seluruh);
-
                 _out_pi.text(total_biaya_permohonan_seluruh);
+
+                
 
                  /**
                  * atbp (Vi) = total Ki + total Pi;
