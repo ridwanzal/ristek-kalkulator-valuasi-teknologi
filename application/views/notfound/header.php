@@ -8,6 +8,7 @@
     <meta name="author" content="M. Ridwan Zalbina">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo $title_bar; ?> - Kalkulator Inovasi</title>
+    <link rel="icon" href="<?php echo base_url();?>/assets/frontview/img/favicon.svg" sizes="16x16" type="image/svg">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/font-awesome.min.css" type="text/css">

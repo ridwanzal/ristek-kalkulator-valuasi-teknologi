@@ -501,18 +501,17 @@ katsinov
 
 
 .section_main_wrapper{
-    height : 820px;
+    min-height: 700px;
     min-height: 600px;
     margin-top: 40px;
     margin-bottom: 60px;
 }
 
 .section_second_wrapper{
-    height : 820px;
-    min-height: 580px;
+    min-height: 700px;
     background : url('../img/background_line.svg');
     padding-top: 120px;
-    padding-bottom: 140px;
+    padding-bottom: 240px;
 }
 
 hr.dashed {
