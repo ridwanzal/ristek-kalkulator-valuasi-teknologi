@@ -625,7 +625,19 @@ function data_luaran_paten(index){
         if(data[i].hasOwnProperty('title')){
             console.log(data[i].hasOwnProperty('title'))
             if(data[i].title === val){
-                $('#par_cb_nodaftar_'+index).val(data[i].no_registrasi);
+                $('#par_cb_nodaftar_'+index).val(data[i].nomor_permohonan);
+                $('#par_cb_sertifikat_paten_'+index).val(data[i].no_registrasi);
+
+                if(data[i].kategori== 'paten'){
+                    $("input[name='jpt_"+index+"'][value='paten_granted']").attr('checked', 'checked');
+                }else{
+                    $("input[name='jpt_"+index+"'][value='paten_sederhana']").attr('checked', 'checked');
+                }
+                if(data[i].no_registrasi !== ''){
+                    $("input[name='stp_"+index+"'][value='tersertifikasi']").attr('checked', 'checked');
+                }else{
+                    $("input[name='stp_"+index+"'][value='terdaftar']").attr('checked', 'checked');
+                }
             }
         }
     }

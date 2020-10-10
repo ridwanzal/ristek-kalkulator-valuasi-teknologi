@@ -181,7 +181,7 @@
                                                             <label class="captions">Status Peromohonan <i style="color: red">*</i></label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input par_cb_status_paten_1" type="radio" name="stp_1"  value="tedaftar">
+                                                            <input class="form-check-input par_cb_status_paten_1" type="radio" name="stp_1"  value="terdaftar">
                                                             <label class="form-check-label" for="inlineRadio1">Terdaftar</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
