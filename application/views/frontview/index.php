@@ -1,7 +1,7 @@
 <section class="main_section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-7 col-md-7 col-xs-7"> 
+            <div class="col-lg-6 col-md-6 col-xs-6"> 
                 <h6 class="" style="">Selamat Datang di</h6>
                 <span style="font-size:100px;
                           font-weight:700;
@@ -22,8 +22,8 @@
                     Pelajari Lebih Lanjut
                 </a>
             </div>
-            <div class="col-lg-5 col-md-5 col-xs-5"> 
-                <img id="image_banners" height="400px" style="position:relative;top:0px;left:150px;" src="<?php echo base_url();?>/assets/frontview/img/research.svg">
+            <div class="col-lg-6 col-md-6 col-xs-6"> 
+                <img id="image_banners" width="100%" style="position:relative;top:-50px;left:150px;" src="<?php echo base_url();?>/assets/frontview/img/research2.svg">
             </div>
         </div>
     </div>
