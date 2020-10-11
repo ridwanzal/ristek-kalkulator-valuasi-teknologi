@@ -2,7 +2,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 mx-auto">
-                    <center><img width="100" src="<?php base_url();?>assets/frontview/img/ristek_logo.png"></center>
+                    <center><img width="100" src="<?php echo base_url();?>assets/frontview/img/ristek_logo.png"></center>
                     <br/>
                     <br/>
                     <br/>

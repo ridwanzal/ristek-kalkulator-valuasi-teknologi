@@ -26,7 +26,7 @@
                 </ul>
                 <form method="GET" action="<?php echo base_url(); ?>/blog/blog_content_list_search">
                   <div style:display:flex; class="searchings">
-                    <a class="nav-link btn-xs btn-success" style="border-radius:4px;" href="<?php base_url();?>auth/login" title="Kontak">Login <span class="sr-only"></span></a>
+                    <a class="nav-link btn-xs btn-success" style="border-radius:4px;" href="<?php echo base_url();?>auth/login" title="Kontak">Login <span class="sr-only"></span></a>
                   </div>
               </form>
             </div>

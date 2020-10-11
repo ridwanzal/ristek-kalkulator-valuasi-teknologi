@@ -15,10 +15,10 @@
                     Cost, Income dan Market.
                 </p>
                 <br/>
-                <a href="<?php echo base_url();?>auth/login" class="btn btn-success">
+                <a href="<?php echo base_url();?>auth/login" class="btn btn-outline-light">
                     Uji Coba kalkulasi
                 </a>&nbsp;
-                <a href="<?php echo base_url();?>auth/login" class="btn btn-warning">
+                <a href="<?php echo base_url();?>auth/login" class="btn btn-outline-warning">
                     Pelajari Lebih Lanjut
                 </a>
             </div>

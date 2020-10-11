@@ -15,7 +15,7 @@
                         <span title="Show Password" toggle=".password-field" class="toggle-password" style="cursor:pointer;top:-31px;position:relative;float:right;margin-right:10px;z-index:100;"><img class="image_replacer" width="22" src="https://www.flaticon.com/svg/static/icons/svg/709/709612.svg"/></span>
                         <br/>
                         <!-- <a href="<?php echo base_url(); ?>manage" class="btn btn-xs btn-outline-primary btn-block"><img height="20" src="http://sinta.ristekbrin.go.id/assets/img/sinta_logo.png">&nbsp;&nbsp;&nbsp;Sign in dengan Sinta</a> -->
-                        <button href="<?php echo base_url(); ?>manage" id="submit_login" class="btn btn-xs btn-outline-primary btn-block"><img height="20" src="http://sinta.ristekbrin.go.id/assets/img/sinta_logo.png">&nbsp;&nbsp;&nbsp;Masuk dengan Sinta</button>
+                        <button href="<?php echo base_url(); ?>manage" id="submit_login" class="btn btn-xs btn-success btn-block"><img height="20" src="http://sinta.ristekbrin.go.id/assets/img/sinta_logo.png">&nbsp;&nbsp;&nbsp;Masuk dengan Sinta</button>
                         <!-- <button href="<?php echo base_url(); ?>manage" id="submit_login" class="btn btn-xs btn-success btn-block">Masuk</button> -->
                         <br/>
                         <div class="small text-center">Dengan menekan tombol Masuk, Anda setuju pada <br><a href="<?php echo base_url();?>syaratketentuan"  title="Buka Syarat & Ketentuan.">Syarat &amp; Ketentuan</a>, serta <a href="<?php echo base_url();?>privacypolicy" title="Buka Kebijakan Pribadi.">Kebijakan Privasi</a> yang kami tentukan.</div>
