@@ -15,7 +15,7 @@
                       <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>manage" title="Dashboard">Dashboard<span class="sr-only">(current)</span></a>    
                     </li>
                     <li class="nav-item active">
-                      <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>" title="Riwayat">Riwayat<span class="sr-only">(current)</span></a>    
+                      <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>manage/riwayat" title="Riwayat">Riwayat<span class="sr-only">(current)</span></a>    
                     </li>
                 </ul>
                 <form method="GET" action="<?php echo base_url(); ?>/blog/blog_content_list_search">

@@ -32,6 +32,17 @@ class Manage extends CI_Controller {
 		$this->load->view('admin/dashboard/index', $data);
 		$this->load->view('admin/footer', $data);
 	  }
+
+	  public function riwayat(){
+		$data['title_bar'] = "Kalkulator Valuasi Teknologi";
+		$data['header_page'] = "Manage";
+		$data['breadcrumbs'] = 'Manage';
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/navbar', $data);
+		$this->load->view('admin/components/breadcrumbs_parent', $data);
+		$this->load->view('admin/dashboard/riwayat', $data);
+		$this->load->view('admin/footer', $data);
+	  }
 	  
 	  public function add_costbased(){
 		$data['title_bar'] = "Cost Based";

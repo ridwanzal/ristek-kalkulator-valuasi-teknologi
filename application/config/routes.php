@@ -68,6 +68,7 @@ $route['manage/add/incomebased_calculator1/(:num)'] = 'manage/add_incomebased_ca
 $route['manage/add/incomebased_calculator2'] = 'manage/add_incomebased_calculator2';
 $route['manage/add/incomebased_calculator3'] = 'manage/add_incomebased_calculator3';
 $route['manage/add/incomebased_output'] = 'manage/add_incomebased_output';
+$route['manage/riwayat'] = 'manage/riwayat';
 
 // front section
 $route['login'] = 'login';
