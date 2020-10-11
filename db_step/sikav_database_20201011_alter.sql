@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 11, 2020 at 03:25 AM
+-- Generation Time: Oct 11, 2020 at 04:23 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -46,6 +46,13 @@ CREATE TABLE `sikav_cost` (
   `tanggal` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `sikav_cost`
+--
+
+INSERT INTO `sikav_cost` (`id`, `id_sinta`, `id_google`, `id_afiliasi`, `nama_inventor`, `email_inventor`, `institusi`, `unit_kerja`, `judul_penelitian`, `total_biaya`, `asal_biaya`, `lampiran`, `ki`, `pi`, `atbp`, `tanggal`) VALUES
+(35, 112910, 0, 1066, 'HARIS WAHYUDI', 'haris.wahyudi@mercubuana.ac.id', 'Universitas Mercu Buana', 'Teknik Mesin', 'PENGEMBANGAN PADUAN LOGAM NANO Fe-Mn UNTUK APLIKASI BIODEGRADABLE STENT', 50000000, 0, '[{\"image_name\":\"harikesaktian.png\"}]', 320, 48, 10271739, '2020-07-12 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -64,6 +71,13 @@ CREATE TABLE `sikav_cost_nonpaten` (
   `pub_prod_nasional` int(11) NOT NULL,
   `ki` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sikav_cost_nonpaten`
+--
+
+INSERT INTO `sikav_cost_nonpaten` (`id`, `id_cost`, `id_sinta`, `pub_internasional`, `pub_nasional`, `buku_internasional`, `buku_nasional`, `pub_prod_internasional`, `pub_prod_nasional`, `ki`) VALUES
+(34, 35, 112910, 8, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -84,6 +98,13 @@ CREATE TABLE `sikav_cost_paten` (
   `biaya_proses_lain` double NOT NULL,
   `pi` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sikav_cost_paten`
+--
+
+INSERT INTO `sikav_cost_paten` (`id`, `id_cost`, `id_sinta`, `jenis_paten`, `status_permohonan`, `no_pendaftaran`, `sertifikat`, `asal_biaya_pendaftaran`, `lampiran`, `biaya_proses_lain`, `pi`) VALUES
+(31, 35, 112910, 'paten_granted', 'tersertifikasi', 'S00201803592', 'IDS000002940', 'paten_granted', 'paten_granted', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -247,13 +268,15 @@ ALTER TABLE `sikav_cost`
 -- Indexes for table `sikav_cost_nonpaten`
 --
 ALTER TABLE `sikav_cost_nonpaten`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cost_nonpaten` (`id_cost`);
 
 --
 -- Indexes for table `sikav_cost_paten`
 --
 ALTER TABLE `sikav_cost_paten`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cost_paten` (`id_cost`);
 
 --
 -- Indexes for table `sikav_hki`
@@ -275,19 +298,19 @@ ALTER TABLE `sikav_income_hki`
 -- AUTO_INCREMENT for table `sikav_cost`
 --
 ALTER TABLE `sikav_cost`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `sikav_cost_nonpaten`
 --
 ALTER TABLE `sikav_cost_nonpaten`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `sikav_cost_paten`
 --
 ALTER TABLE `sikav_cost_paten`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `sikav_hki`
@@ -300,6 +323,22 @@ ALTER TABLE `sikav_hki`
 --
 ALTER TABLE `sikav_income_hki`
   MODIFY `hki_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `sikav_cost_nonpaten`
+--
+ALTER TABLE `sikav_cost_nonpaten`
+  ADD CONSTRAINT `cost_nonpaten` FOREIGN KEY (`id_cost`) REFERENCES `sikav_cost` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `sikav_cost_paten`
+--
+ALTER TABLE `sikav_cost_paten`
+  ADD CONSTRAINT `cost_paten` FOREIGN KEY (`id_cost`) REFERENCES `sikav_cost` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
