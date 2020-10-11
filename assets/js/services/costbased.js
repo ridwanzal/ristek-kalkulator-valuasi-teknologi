@@ -14,6 +14,8 @@ const _par_cb_nama_institusi = $('#par_cb_nama_institusi');
 const _par_cb_unit_kerja = $('#par_cb_unit_kerja');
 const _par_cb_judul_riset = $('#par_cb_judul_riset');
 const _par_pagu_riset = $('#par_pagu_riset');
+const _par_cb_file = $('#par_cb_file');
+
 const _par_cb_asal_biaya = $('#par_cb_asal_biaya');
 const _par_cb_pub_internasional = $('#par_cb_pub_internasional');
 const _par_cb_pub_nasional = $('#par_cb_pub_nasional');
@@ -467,13 +469,29 @@ function luaran_paten(){
                     obj_model_cb.obj_paten.data.push(obj_paten);
                     obj_model_cb.obj_paten.total_bobot_seluruh = total_bobot_seluruh;
                 } 
+                
+                if(total_biaya_pendaftaran_seluruh == '' || total_biaya_pendaftaran_seluruh == NaN){
+                    total_biaya_pendaftaran_seluruh = 0;
+                }
+                
+                if(total_biaya_substantif_seluruh == '' || total_biaya_substantif_seluruh == NaN){
+                    total_biaya_substantif_seluruh = 0;
+                }
+
+                if(total_biaya_percepatan_seluruh == '' || total_biaya_percepatan_seluruh == NaN){
+                    total_biaya_percepatan_seluruh = 0;
+                }
+                
+                if(total_biaya_proses_lainnya == '' || total_biaya_proses_lainnya == NaN){
+                    total_biaya_proses_lainnya = 0;
+                }
+
                 _total_biaya_pendaftaran_seluruh.text(total_biaya_pendaftaran_seluruh);
                 _total_biaya_substantif_seluruh.text(total_biaya_substantif_seluruh);
                 _total_biaya_percepatan_seluruh.text(total_biaya_percepatan_seluruh);
                 _total_biaya_proses_lainnya.text(total_biaya_proses_lainnya);
                 
-
-
+                
                 /**
                  * pi = total a + total b + total c + total d ;
                  * pi = total_biaya_pendaftaran_seluruh
@@ -482,7 +500,6 @@ function luaran_paten(){
                 _total_biaya_permohonan_seluruh.text(total_biaya_permohonan_seluruh);
                 _out_pi.text(total_biaya_permohonan_seluruh);
 
-                
 
                  /**
                  * atbp (Vi) = total Ki + total Pi;
@@ -506,7 +523,8 @@ function validate_input_identitas(){
     let d = validate_input(_par_cb_judul_riset)  == true ? check = true : false;
     let e = validate_input(_par_pagu_riset)  == true ? check = true : false;
     let f = validate_input(_par_cb_asal_biaya)  == true ? check = true : false;
-    if(a && b && c && d && e && f) {
+    let g = validate_input(_par_cb_file) == true ? check = true : false;
+    if(a && b && c && d && e && f && g) {
         return true;
     }else{
         $("html, body").animate({ scrollTop: 0 }, "slow");
@@ -746,7 +764,7 @@ function add_luaran_paten(){
                                     <div class="col-lg-6">
                                         <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung</label>
                                         <div class="custom-file">
-                                            <input disabled="disabled" type="file" class="form-control" multiple style="height:45px;" id="par_cb_file2">
+                                            <input disabled="disabled" type="file" class="form-control" multiple style="height:45px;" id="par_cb_file_lp_`+index+`">
                                             <small>berupa Formulir (Bukti) pendaftaran dan/atau
                                         Sertifikat Paten/Paten Sederhana (Unggah file dlm format PDF, MS Word, PPT)</small>
                                         </div>
