@@ -11,33 +11,43 @@
         </div>
         <br/><br/>
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-lg-12 col-md-12 col-sm-12">
                 <h6 style="font-weight:bold;">Tujuan Valuasi KI</h6>
-                <br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card" style="padding:30px;">
                     <div class="card-body">
-                        Penilaian suatu perusahaan untuk keperluan merger, akuisisi, usaha patungan atau kebangkrutan.
-                        Negosiasi untuk menjual atau melisensikan HKI.
-                        Dukungan dalam situasi terjadi pelanggaran atau konflik terkait HKI
-                            <ul>    
-                                <li>
-                                dasar penghitungan ganti rugi
-                                </li>
-                            </ul>
-                        Penggalangan dana melalui pinjaman bank atau modal ventura
-                            <ul>    
-                                <li>
-                                jaminan fidusia
-                                </li>
-                            </ul>
-                        Membantu pengambilan keputusan internal
-                            <ul>    
-                                <li>
-                                penganggaran dan alokasi sumber daya, misal untuk pemeliharaan paten
-                                mempertahankan aset KI, melisensikannya, menjualnya, atau membiarkan aset KI hilang
-                                </li>
-                            </ul>
-                        Laporan keuangan, perpajakan, dan asuransi KI
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <img width="85%" src="<?php echo base_url();?>assets/frontview/img/tujuan.svg">
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9">
+                                Penilaian suatu perusahaan untuk keperluan merger, akuisisi, usaha patungan atau kebangkrutan.
+                                Negosiasi untuk menjual atau melisensikan HKI.
+                                Dukungan dalam situasi terjadi pelanggaran atau konflik terkait HKI
+                                    <ul>    
+                                        <li>
+                                        dasar penghitungan ganti rugi
+                                        </li>
+                                    </ul>
+                                Penggalangan dana melalui pinjaman bank atau modal ventura
+                                    <ul>    
+                                        <li>
+                                        jaminan fidusia
+                                        </li>
+                                    </ul>
+                                Membantu pengambilan keputusan internal
+                                    <ul>    
+                                        <li>
+                                        penganggaran dan alokasi sumber daya, misal untuk pemeliharaan paten
+                                        mempertahankan aset KI, melisensikannya, menjualnya, atau membiarkan aset KI hilang
+                                        </li>
+                                    </ul>
+                                Laporan keuangan, perpajakan, dan asuransi KI
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -85,7 +95,7 @@
                     </center>
                     <br/>
                     <h5 class="card-title bolds">Market Based</h5>
-                    <p class="card-text">Penilian dalam ranah internal, untuk transaksi KI, dan cocok pada situasi litigasi</p>
+                    <p class="card-text">Penilaian dengan tujuan jaminan atas pinjaman perbankan, karena tujuan bank atas jaminan yaitu jika kredit macet jaminan bisa dijual secepatnya sesuai/sedikit dibawah harga market</p>
                 </div>
                 </div>
             </div>
