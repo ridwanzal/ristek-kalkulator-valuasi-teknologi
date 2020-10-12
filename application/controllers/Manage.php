@@ -14,8 +14,18 @@ class Manage extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
+
+		/**
+		 * model costbased
+		 */
+		$this->load->model('costbased_model'); 
+        $this->load->model('costbasednonpaten_model'); 
+        $this->load->model('costbasedpaten_model'); 
 		date_default_timezone_set('Asia/Jakarta'); // default time zone indonesia
 		$login_status = $this->session->userdata('token');
+		$haha = 10;
+		$user_details = $this->session->userdata('userdetails');
+		// $sinta_id = $user_details['sinta_id'];
         if($login_status == NULL || $login_status == ''){
               redirect(base_url('login'));
 		}
@@ -37,6 +47,11 @@ class Manage extends CI_Controller {
 		$data['title_bar'] = "Riwayat";
 		$data['header_page'] = "Riwayat";
 		$data['breadcrumbs'] = 'Riwayat';
+		$userdetails = $this->session->userdata('userdetails');
+		$sinta_id = $userdetails['sinta_id'];
+		$costbased = $this->costbased_model->get_sinta($sinta_id);
+		// var_dump($costbased); die;
+		$data['costbased'] = $costbased;
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/navbar', $data);
 		$this->load->view('admin/components/breadcrumbs', $data);

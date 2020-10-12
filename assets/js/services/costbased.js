@@ -127,7 +127,6 @@ $(function () {
 });
 
 function init(){
-    // Swal.fire('Any fool can use a computer')
     $('#topdf').on('click', function(){
         var doc = new jsPDF();
         doc.setFontSize(16);
@@ -644,6 +643,7 @@ function get_daftar_iprs(dom){
 
 /**
  * @function data_luaran_paten(index)
+ * @param index // index reference of the list
  */
 function data_luaran_paten(index){
     val = $('#par_cb_jd_invensi_' + index).val();
@@ -674,6 +674,7 @@ function data_luaran_paten(index){
 
 /**
  * @function biaya_proses_lainnya
+ * @param index // index reference of the list
  */
 function biaya_proses_lainnya(index){
     val = $('#par_biaya_proses_' + index).val();

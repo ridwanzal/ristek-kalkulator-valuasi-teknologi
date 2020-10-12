@@ -586,3 +586,13 @@ loader
   .swal2-container {
     z-index: 5000;
   }
+  
+  table, th, td {
+      /*
+      do something here
+      */
+  }
+  
+  th, td {
+    padding: 10px !important;
+  }

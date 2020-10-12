@@ -32,7 +32,41 @@
                     </ul>
                     <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <br/>
                         <!--cost based here-->
+                        <table class="table table-sm table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Penelitian</th>
+                                        <th scope="col">Inventor</th>
+                                        <th scope="col">Ki</th>
+                                        <th scope="col">Pi</th>
+                                        <th scope="col">ATBP</th>
+                                        <th scope="col">Action</th>
+                                        <T
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        foreach($costbased as $item){
+                                            $i = 1;
+                                            ?>
+                                                <tr>
+                                                    <td><?= $i;?></td>
+                                                    <td><?= $item->judul_penelitian; ?></td>
+                                                    <td><?= $item->nama_inventor;?></td>
+                                                    <td><?= $item->ki;?></td>
+                                                    <td><?= $item->pi;?></td>
+                                                    <td><?= $item->atbp;?></td>
+                                                    <td><a href="#">Lihat Detail</a></td>
+                                                </tr>
+                                            <?php
+                                            $i++;
+                                        }
+                                    ?>
+                                </tbody>
+                            </table>
                     </div>
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <!--income based here-->
