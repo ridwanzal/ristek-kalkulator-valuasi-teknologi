@@ -2,6 +2,10 @@
     font-family: 'Inter', sans-serif !important;
 }
 
+.navbar-light .navbar-nav .nav-link {
+    font-weight: bold !important;
+}
+
 .main_font {
     font-family: 'Inter', sans-serif  !important;
     font-weight: bold;

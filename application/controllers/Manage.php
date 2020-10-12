@@ -23,7 +23,7 @@ class Manage extends CI_Controller {
       }
       
       public function index(){
-		$data['title_bar'] = "Kalkulator Valuasi Teknologi";
+		$data['title_bar'] = "Manage";
 		$data['header_page'] = "Manage";
 		$data['breadcrumbs'] = 'Manage';
 		$this->load->view('admin/header', $data);
@@ -34,12 +34,12 @@ class Manage extends CI_Controller {
 	  }
 
 	  public function riwayat(){
-		$data['title_bar'] = "Kalkulator Valuasi Teknologi";
-		$data['header_page'] = "Manage";
-		$data['breadcrumbs'] = 'Manage';
+		$data['title_bar'] = "Riwayat";
+		$data['header_page'] = "Riwayat";
+		$data['breadcrumbs'] = 'Riwayat';
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/navbar', $data);
-		$this->load->view('admin/components/breadcrumbs_parent', $data);
+		$this->load->view('admin/components/breadcrumbs', $data);
 		$this->load->view('admin/dashboard/riwayat', $data);
 		$this->load->view('admin/footer', $data);
 	  }
