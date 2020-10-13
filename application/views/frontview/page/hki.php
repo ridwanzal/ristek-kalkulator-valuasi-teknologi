@@ -1,4 +1,4 @@
-<section style="background:#fafafa;padding-top:80px;padding-bottom:80px;border-top:1px solid #eee;">
+<section class="second_section">
     <div class="container" style="">
         <div class="row">
             <div class="col-sm-12">

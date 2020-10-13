@@ -23,7 +23,7 @@
                 </a>
             </div>
             <div class="col-lg-6 col-md-6 col-xs-6"> 
-                <img id="image_banners" width="100%" style="position:relative;top:-50px;left:150px;" src="<?php echo base_url();?>/assets/frontview/img/research2.svg">
+                <img id="image_banners" width="100%" class="image_hero" src="<?php echo base_url();?>/assets/frontview/img/research2.svg">
             </div>
         </div>
     </div>

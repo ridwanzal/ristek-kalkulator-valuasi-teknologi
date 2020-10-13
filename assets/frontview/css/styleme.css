@@ -243,10 +243,63 @@ td,th {
     left: -57px;
 }
 
+.image_hero{
+    position:relative;
+    top:-50px;
+    left:150px;
+}
+
+.nav_container_styles{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.nav-logo{
+    position:relative;left:-10px;
+}
+
   @media (min-width: 320px) and (max-width: 480px) {
-      #image_banners{
+    #footer_rights{
+        display : none !important;
+    }
+
+    .nav-logo{
+        position:relative;left:0px !important;
+    }
+
+    .section_second_wrapper{
+        padding:20px 20px 60px 20px !important;
+    }
+
+    .section_footer, .footer_last{
+        padding : 30px !important; 
+    }
+
+    #image_banners{
           width:100% !important;
-      }
+    }
+
+    .nav_container_styles{
+       padding:10px 30px 10px 30px;
+    }
+
+    .main_section{
+        padding-top: 100px !important;
+        padding-bottom: 100px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        height: 700px !important;
+    }
+
+    .card{
+        margin-top:5px !important;
+        margin-bottom: 5px !important;  
+    }
+
+    .image_hero{
+       display: none;
+    }
+    
    
     .upload_component{
         padding-top: 30px !important;
@@ -294,7 +347,7 @@ td,th {
     }
 
     .navbar-light .navbar-toggler-icon{
-        background-image : url('https://image.flaticon.com/icons/svg/847/847734.svg') !important;
+        /* background-image : url('') !important; */
     }
 
     .searchings{
@@ -504,6 +557,17 @@ katsinov
 }
 
 
+.second_section { 
+    background:#fafafa;
+    padding-top:80px;
+    padding-bottom:80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-top:1px solid #eee;
+
+}
+
+
 .section_main_wrapper{
     min-height: 700px;
     min-height: 600px;
@@ -512,7 +576,6 @@ katsinov
 }
 
 .section_second_wrapper{
-    min-height: 700px;
     background : url('../img/background_line.svg');
     padding-top: 120px;
     padding-bottom: 240px;

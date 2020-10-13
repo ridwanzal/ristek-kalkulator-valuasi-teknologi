@@ -59,7 +59,7 @@
                                                     <td><?= $item->ki;?></td>
                                                     <td><?= $item->pi;?></td>
                                                     <td><?= $item->atbp;?></td>
-                                                    <td><a href="#">Lihat Detail</a></td>
+                                                    <td><a href="#">Detail</a> | <a href="#">Hapus</a></td>
                                                 </tr>
                                             <?php
                                             $i++;

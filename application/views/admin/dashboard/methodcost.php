@@ -14,12 +14,19 @@
                                 <div class="card-body">
                                     <div class="form-row form-group">
                                         <div class="col">
-                                            <label class="captions" for="formGroupExampleInput"><span class="badge badge-pill  badge-warning">1</span>&nbsp;Nama Inventor <i style="color: red">*</i> </label>
+                                            <label class="captions" for="formGroupExampleInput"><span class="badge badge-pill  badge-warning">1</span>&nbsp;Nama Inventor 
+                                            <i style="color: red">*</i> 
+                                            &nbsp;
+                                            <a data-toggle="popover" title="Nama Inventor" data-content="Diisi dengan nama Inventor. Jika nama inventor lebih dari 1 orang, silahkan pisahkan dengan tanda koma di antara nama inventor." class="badge badge-info text-white">Info</a>
+                                            </label>
                                             <input  type="text" class="form-control form-control-sm" id="par_cb_nama_inventor" placeholder="">
                                             <small>Jika Inventor yang terlibat lebih dari 1, pisahkan dengan koma</small>
                                         </div>
                                         <div class="col-lg-6">
-                                            <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">2</span>&nbsp;Institusi Penghasil/ Pemilik Invensi <i style="color: red">*</i> </label>
+                                            <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">2</span>&nbsp;Institusi Penghasil/ Pemilik Invensi <i style="color: red">*</i> 
+                                            &nbsp;
+                                            <a data-toggle="popover" title="Institusi Penghasil/ Pemilik Invensi " data-content="Diisi dengan nama institusi penghasil invensi/ pemilik invensi seperti nama universitas, politeknik, sekolah tinggi dan semacamnya." class="badge badge-info text-white">Info</a>
+                                            </label>
                                             <input  type="text" class="form-control form-control-sm" id="par_cb_nama_institusi" placeholder="">
                                             <small>Jika Institusi yang terlibat lebih dari 1, pisahkan dengan koma</small>
                                         </div>
@@ -27,11 +34,17 @@
 
                                     <div class="form-row form-group">
                                         <div class="col">
-                                            <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">3</span>&nbsp;Unit Kerja Penghasil/ Pemilik Invensi <i style="color: red">*</i> </label>
+                                            <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">3</span>&nbsp;Unit Kerja Penghasil/ Pemilik Invensi <i style="color: red">*</i> 
+                                            &nbsp;
+                                            <a data-toggle="popover" title="Unit Kerja Penghasil/ Pemilik Invensi " data-content="Diisi dengan nama unit kerja penghasil invensi/ pemilik invensi." class="badge badge-info text-white">Info</a>
+                                            </label>
                                             <input type="text" class="form-control form-control-sm" id="par_cb_unit_kerja" placeholder="" value="">
                                         </div>
                                         <div class="col-lg-6">
-                                            <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">4</span>&nbsp;Judul Penelitian <i style="color: red">*</i> </label>
+                                            <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">4</span>&nbsp;Judul Penelitian <i style="color: red">*</i>
+                                            &nbsp;
+                                            <a data-toggle="popover" title="Judul Penelitian" data-content="Diisi dengan judul penelitian terkait. (autocomplete)" class="badge badge-info text-white">Info</a>
+                                            </label>
                                             <input type="text" class="form-control form-control-sm" id="par_cb_judul_riset" placeholder="">
                                             <small>Autocomplete text</small>
                                         </div>
@@ -39,7 +52,10 @@
 
                                     <div class="form-row form-group">
                                         <div class="col">
-                                            <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">5</span>&nbsp;Total Biaya Masukan/Realisasi Pagu Penelitian (R) <i style="color: red">*</i></label>
+                                            <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">5</span>&nbsp;Total Biaya Masukan/Realisasi Pagu Penelitian (R) <i style="color: red">*</i>
+                                            &nbsp;
+                                            <a data-toggle="popover" title="Unit Kerja Penghasil/ Pemilik Invensi " data-content="Diisi dengan total biaya masukan / realisasi pagu penelitian. " class="badge badge-info text-white">Info</a>
+                                            </label>
                                             <input type="text" class="form-control form-control-sm" id="par_pagu_riset" placeholder="">
                                         </div>
                                         <div class="col-lg-6">
