@@ -56,7 +56,7 @@
                                             &nbsp;
                                             <a data-toggle="popover" title="Unit Kerja Penghasil/ Pemilik Invensi " data-content="Diisi dengan total biaya masukan / realisasi pagu penelitian. " class="badge badge-info text-white">Info</a>
                                             </label>
-                                            <input type="text" class="form-control form-control-sm" id="par_pagu_riset" placeholder="">
+                                            <input type="text" class="form-control form-control-sm" id="par_pagu_riset" placeholder=""> 
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">6</span>&nbsp;Asal Biaya Masukan Masukan/Realisasi Pagu Penelitian <i style="color: red">*</i> 

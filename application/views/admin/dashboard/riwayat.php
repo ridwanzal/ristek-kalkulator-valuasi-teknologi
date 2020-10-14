@@ -26,9 +26,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Income based</a>
                             </li>
-                            <!-- <li class="nav-item">
-                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
-                            </li> -->
                     </ul>
                     <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -49,8 +46,8 @@
                                 </thead>
                                 <tbody>
                                     <?php
+                                        $i = 1;
                                         foreach($costbased as $item){
-                                            $i = 1;
                                             ?>
                                                 <tr>
                                                     <td><?= $i;?></td>
@@ -59,10 +56,10 @@
                                                     <td><?= $item->ki;?></td>
                                                     <td><?= $item->pi;?></td>
                                                     <td><?= $item->atbp;?></td>
-                                                    <td><a href="#">Detail</a> | <a href="#">Hapus</a></td>
+                                                    <td><a href="#"><span class="badge badge-primary">Detail</span></a>&nbsp;<a href="#"><span class="badge badge-danger">Hapus</span></a></td>
                                                 </tr>
                                             <?php
-                                            $i++;
+                                              $i = $i + 1;
                                         }
                                     ?>
                                 </tbody>
