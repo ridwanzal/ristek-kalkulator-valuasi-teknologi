@@ -24,28 +24,28 @@
                                 <img width="85%" src="<?php echo base_url();?>assets/frontview/img/tujuan.svg">
                             </div>
                             <div class="col-lg-9 col-md-9 col-sm-9">
-                                Penilaian suatu perusahaan untuk keperluan merger, akuisisi, usaha patungan atau kebangkrutan.
+                                <p>Penilaian suatu perusahaan untuk keperluan merger, akuisisi, usaha patungan atau kebangkrutan.
                                 Negosiasi untuk menjual atau melisensikan HKI.
-                                Dukungan dalam situasi terjadi pelanggaran atau konflik terkait HKI
+                                Dukungan dalam situasi terjadi pelanggaran atau konflik terkait HKI</p>
                                     <ul>    
                                         <li>
                                         dasar penghitungan ganti rugi
                                         </li>
                                     </ul>
-                                Penggalangan dana melalui pinjaman bank atau modal ventura
+                                    <p>Penggalangan dana melalui pinjaman bank atau modal ventura</p>
                                     <ul>    
                                         <li>
                                         jaminan fidusia
                                         </li>
                                     </ul>
-                                Membantu pengambilan keputusan internal
+                                    <p>Membantu pengambilan keputusan internal</p>
                                     <ul>    
                                         <li>
                                         penganggaran dan alokasi sumber daya, misal untuk pemeliharaan paten
                                         mempertahankan aset KI, melisensikannya, menjualnya, atau membiarkan aset KI hilang
                                         </li>
                                     </ul>
-                                Laporan keuangan, perpajakan, dan asuransi KI
+                                    <p>Laporan keuangan, perpajakan, dan asuransi KI</p>
                             </div>
                         </div>
                     </div>
