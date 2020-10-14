@@ -70,6 +70,18 @@ class Manage extends CI_Controller {
         $this->load->view('admin/footer', $data); 
 	  }
 
+	  public function detail_costbased($id){
+		$query = "" ;
+		$data['title_bar'] = "Detail Cost Based";
+        $data['header_page'] = "Detail - Cost Based";
+        $data['breadcrumbs'] = 'Detail - Cost Based';
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/navbar', $data);
+		$this->load->view('admin/components/breadcrumbs', $data);
+		$this->load->view('admin/dashboard/methodcost_detail', $data);
+        $this->load->view('admin/footer', $data); 
+	  }
+
 	  public function add_incomebased(){
 		//ambil sinta_id dari session user yang aktif
 		$userdetails = $this->session->userdata('userdetails');
