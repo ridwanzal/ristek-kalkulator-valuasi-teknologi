@@ -64,7 +64,7 @@
         </div>
         <div class="row">
             <div class="col-sm-4">
-                <div class="card" style="padding:30px;">
+                <div class="card card_metode" style="padding:30px;">
                 <div class="card-body">
                     <center>
                         <img style="width:30%;" src="<?php echo base_url();?>assets/frontview/img/cost.svg"/>
@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="col-sm-4">
-                <div class="card" style="padding:30px;">
+                <div class="card card_metode" style="padding:30px;">
                 <div class="card-body">
                     <center>
                         <img style="width:30%;" src="<?php echo base_url();?>assets/frontview/img/process.svg"/>
@@ -88,7 +88,7 @@
                 </div>
             </div>
             <div class="col-sm-4">
-                <div class="card" style="padding:30px;">
+                <div class="card card_metode" style="padding:30px;">
                 <div class="card-body">
                     <center>
                         <img style="width:30%;" src="<?php echo base_url();?>assets/frontview/img/focus.svg"/>

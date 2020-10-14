@@ -659,3 +659,7 @@ loader
   th, td {
     padding: 10px !important;
   }
+
+  .card_metode{
+      height : 350px !important;
+  }
