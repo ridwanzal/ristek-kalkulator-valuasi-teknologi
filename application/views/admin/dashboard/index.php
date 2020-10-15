@@ -83,8 +83,8 @@
                     </div>
                     <div class="col-lg-2 col-md-2">
                     <div class="btn-group">
-                        <button style="float:right;position:relative;right:0px;" type="button" class="btn btn-danger btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Tambah Kalkulasi
+                        <button style="float:right;position:relative;right:10px;width:170px;" type="button" class="btn btn-danger btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Tambah Kalkulasi +
                         </button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="<?php echo base_url();?>manage/add/costbased">Cost Based</a>

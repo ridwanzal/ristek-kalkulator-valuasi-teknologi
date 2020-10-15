@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  -->
-    <meta name="description" content="Kalsinov - Kementerian Riset dan Teknologi / Badan Riset dan Inovasi">
-    <meta name="keywords" content="Kalsinov - Kementerian Riset dan Teknologi / Badan Riset dan Inovasis">
+    <meta name="description" content="SIKAV - Kementerian Riset dan Teknologi / Badan Riset dan Inovasi">
+    <meta name="keywords" content="SIKAV - Kementerian Riset dan Teknologi / Badan Riset dan Inovasis">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="M. Ridwan Zalbina">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,6 +12,7 @@
     <!-- <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet"> -->
+    <link rel="icon" href="<?php echo base_url();?>/assets/frontview/img/favicon.svg" sizes="16x16" type="image/svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/flaticon.css" type="text/css">

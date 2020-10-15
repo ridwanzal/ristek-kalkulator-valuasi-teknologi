@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Kalsinov - Kementerian Riset dan Teknologi / Badan Riset dan Inovasi">
-    <meta name="keywords" content="Kalsinov - Kementerian Riset dan Teknologi / Badan Riset dan Inovasis">
+    <meta name="description" content="SIKAV - Kementerian Riset dan Teknologi / Badan Riset dan Inovasi">
+    <meta name="keywords" content="SIKAV - Kementerian Riset dan Teknologi / Badan Riset dan Inovasis">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="M. Ridwan Zalbina">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo $title_bar; ?> - Kalkulator Inovasi</title>
+    <link rel="icon" href="<?php echo base_url();?>/assets/frontview/img/favicon.svg" sizes="16x16" type="image/svg">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/font-awesome.min.css" type="text/css">

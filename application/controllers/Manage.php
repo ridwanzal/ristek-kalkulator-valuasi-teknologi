@@ -14,8 +14,18 @@ class Manage extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
+
+		/**
+		 * model costbased
+		 */
+		$this->load->model('costbased_model'); 
+        $this->load->model('costbasednonpaten_model'); 
+        $this->load->model('costbasedpaten_model'); 
 		date_default_timezone_set('Asia/Jakarta'); // default time zone indonesia
 		$login_status = $this->session->userdata('token');
+		$haha = 10;
+		$user_details = $this->session->userdata('userdetails');
+		// $sinta_id = $user_details['sinta_id'];
         if($login_status == NULL || $login_status == ''){
               redirect(base_url('login'));
 		}
@@ -23,13 +33,29 @@ class Manage extends CI_Controller {
       }
       
       public function index(){
-		$data['title_bar'] = "Kalkulator Valuasi Teknologi";
+		$data['title_bar'] = "Manage";
 		$data['header_page'] = "Manage";
 		$data['breadcrumbs'] = 'Manage';
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/navbar', $data);
 		$this->load->view('admin/components/breadcrumbs_parent', $data);
 		$this->load->view('admin/dashboard/index', $data);
+		$this->load->view('admin/footer', $data);
+	  }
+
+	  public function riwayat(){
+		$data['title_bar'] = "Riwayat";
+		$data['header_page'] = "Riwayat";
+		$data['breadcrumbs'] = 'Riwayat';
+		$userdetails = $this->session->userdata('userdetails');
+		$sinta_id = $userdetails['sinta_id'];
+		$costbased = $this->costbased_model->get_sinta($sinta_id);
+		// var_dump($costbased); die;
+		$data['costbased'] = $costbased;
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/navbar', $data);
+		$this->load->view('admin/components/breadcrumbs', $data);
+		$this->load->view('admin/dashboard/riwayat', $data);
 		$this->load->view('admin/footer', $data);
 	  }
 	  
@@ -41,6 +67,21 @@ class Manage extends CI_Controller {
 		$this->load->view('admin/navbar', $data);
 		$this->load->view('admin/components/breadcrumbs', $data);
 		$this->load->view('admin/dashboard/methodcost', $data);
+        $this->load->view('admin/footer', $data); 
+	  }
+
+	  public function detail_costbased($id, $judul_penelitian){
+		$query = "" ;
+		$data['title_bar'] = "Detail Cost Based";
+        $data['header_page'] = "Detail - Cost Based";
+		$data['breadcrumbs'] = 'Riwayat';
+		// $data['breadcrumbs_detail'] = 'Detail Cost Based - ' .$id ;
+		$data['breadcrumbs_detail'] = 'Detail';
+		$data['judul_penelitian'] = $judul_penelitian;
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/navbar', $data);
+		$this->load->view('admin/components/breadcrumbs_detail', $data);
+		$this->load->view('admin/dashboard/methodcost_detail', $data);
         $this->load->view('admin/footer', $data); 
 	  }
 

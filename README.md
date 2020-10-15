@@ -21,5 +21,9 @@ Contributor
 ## Deployment Manual
 - CodeIgniter standard deployment
   - Place project directory inside active vhost e.g: /var/www/html/public/ristek-kalkulator-valuasi-teknologi
-  - Setting DB using correct configuration
+  - Setting DB using correct configuration in /application/config/database.php
+
+## Extra Configuration step
+- Change permission tu uploads directory in /assets/uploads/* to allow writing data to directory
+  - type $ chmod 777 -Rfv *
 

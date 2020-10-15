@@ -56,13 +56,10 @@
                                             &nbsp;
                                             <a data-toggle="popover" title="Unit Kerja Penghasil/ Pemilik Invensi " data-content="Diisi dengan total biaya masukan / realisasi pagu penelitian. " class="badge badge-info text-white">Info</a>
                                             </label>
-                                            <input type="text" class="form-control form-control-sm" id="par_pagu_riset" placeholder=""> 
+                                            <input type="text" class="form-control form-control-sm" id="par_pagu_riset" placeholder="">
                                         </div>
                                         <div class="col-lg-6">
-                                            <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">6</span>&nbsp;Asal Biaya Masukan Masukan/Realisasi Pagu Penelitian <i style="color: red">*</i> 
-                                            &nbsp;
-                                            <a data-toggle="popover" title="Asal Biaya Masukan Masukan/Realisasi Pagu Penelitian" data-content="Diisi dengan asal biaya masukan / realisasi pagu penelitian. " class="badge badge-info text-white">Info</a>
-                                            </label>
+                                            <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">6</span>&nbsp;Asal Biaya Masukan Masukan/Realisasi Pagu Penelitian <i style="color: red">*</i> </label>
                                             <select id="par_cb_asal_biaya" class="custom-select custom-select-sm">
                                                 <option value="">-- Silahkan pilih</option>
                                                 <option value="Hibah Ristek">Hibah Ristek</option>
@@ -73,10 +70,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="captions" for="formGroupExampleInput2">Upload dokumen pendukung <i style="color: red">*</i>
-                                        &nbsp;
-                                        <a data-toggle="popover" title="Upload dokumen pendukung" data-content="Upload dokumen pendukung (format file) " class="badge badge-info text-white">Info</a>
-                                        </label>
+                                        <label class="captions" for="formGroupExampleInput2">Upload dokumen pendukung <i style="color: red">*</i></label>
                                             <div class="custom-file">
                                                 <input id="par_cb_file" type="file" class="form-control" name="berkas[]" multiple style="height:45px;">
                                                 <small>Unggah file dlm format PDF, MS Word, PPT, Images*</small>
@@ -264,7 +258,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button style="margin-top:10px;" class="btn btn-sm btn-success btn-block" id="proc_data">Proses data</button>
+                                    <!-- <button style="margin-top:10px;" class="btn btn-sm btn-success btn-block" id="proc_data">Proses data</button> -->
                                 </div>
                             </div>
                             <br/>
