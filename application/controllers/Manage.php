@@ -70,14 +70,17 @@ class Manage extends CI_Controller {
         $this->load->view('admin/footer', $data); 
 	  }
 
-	  public function detail_costbased($id){
+	  public function detail_costbased($id, $judul_penelitian){
 		$query = "" ;
 		$data['title_bar'] = "Detail Cost Based";
         $data['header_page'] = "Detail - Cost Based";
-        $data['breadcrumbs'] = 'Detail - Cost Based';
+		$data['breadcrumbs'] = 'Riwayat';
+		// $data['breadcrumbs_detail'] = 'Detail Cost Based - ' .$id ;
+		$data['breadcrumbs_detail'] = 'Detail';
+		$data['judul_penelitian'] = $judul_penelitian;
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/navbar', $data);
-		$this->load->view('admin/components/breadcrumbs', $data);
+		$this->load->view('admin/components/breadcrumbs_detail', $data);
 		$this->load->view('admin/dashboard/methodcost_detail', $data);
         $this->load->view('admin/footer', $data); 
 	  }

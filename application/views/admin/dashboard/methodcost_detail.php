@@ -258,7 +258,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button style="margin-top:10px;" class="btn btn-sm btn-success btn-block" id="proc_data">Proses data</button>
+                                    <!-- <button style="margin-top:10px;" class="btn btn-sm btn-success btn-block" id="proc_data">Proses data</button> -->
                                 </div>
                             </div>
                             <br/>
