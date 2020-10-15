@@ -181,7 +181,7 @@
                                     </div>
                                     <div class="col-sm-1">
                                         <label for="cogs_ok" class="col-sm-12 col-form-label text-right">&nbsp;&nbsp;</label>
-                                        <button id="cogs_ok" name="cogs_ok" class="btn btn-xs btn-outline-primary btn-block">&#187;</button>
+                                        <button id="cogs_ok" name="cogs_ok" class="btn btn-xs btn-outline-primary btn-block">&#43;</button>
                                     </div>
                                 </div>
                     </div>
@@ -268,7 +268,7 @@
                                     </div>
                                     <div class="col-sm-1">
                                         <label for="fcost_ok" class="col-sm-12 col-form-label text-right">&nbsp;&nbsp;</label>
-                                        <button id="fcost_ok" name="fcost_ok" class="btn btn-xs btn-outline-success btn-block">&#187;</button>
+                                        <button id="fcost_ok" name="fcost_ok" class="btn btn-xs btn-outline-success btn-block">&#43;</button>
                                     </div>
                                 </div>
                     </div>
@@ -318,7 +318,7 @@
                 <div class="modal-body">
                         <div class="form-group">
                                 <div class="form-group">
-                                    <label for="inv_komponen" class="col-sm-12 col-form-label text-right">Item Komponen Investasi &nbsp;&nbsp;<a data-toggle="popover" title="Item Investasi" data-content="Mencakup biaya investasi mesin, kendaraan, peralatan, dan investasi lainnya. " class="badge badge-info text-white">Info</a></label>
+                                    <label for="inv_komponen" class="col-sm-12 col-form-label text-right">Item Komponen Investasi &nbsp;&nbsp;<a data-toggle="popover" title="Item Investasi" data-content="Mencakup biaya investasi mesin, kendaraan, peralatan, dan investasi lainnya. " class="badge badge-warning text-white">Info</a></label>
                                     <div class="col-sm-12">
                                         <input type="text" class="form-control col-sm-12" id="inv_komponen" name="inv_komponen" placeholder="Item Komponen" aria-describedby="inv_komponenDesc">
                                         <small id="inv_komponenDesc" class="form-text text-muted text-left">Item Komponen</small>
@@ -326,33 +326,33 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-2">
-                                        <label for="inv_qty" class="col-sm-12 col-form-label text-right">Qty &nbsp;&nbsp;<a data-toggle="popover" title="Jumlah/Qty" data-content="Banyaknya Item" class="badge badge-info text-white">Info</a></label>
+                                        <label for="inv_qty" class="col-sm-12 col-form-label text-right">Qty &nbsp;&nbsp;<a data-toggle="popover" title="Jumlah/Qty" data-content="Banyaknya Item" class="badge badge-warning text-white">Info</a></label>
                                         <input type="text" class="form-control col-sm-12" id="inv_qty" name="inv_qty" placeholder="Qty" aria-describedby="inv_qtyDesc">
                                         <small id="inv_qtyDesc" class="form-text text-muted text-left">Kuantitas</small>
                                     </div>
                                     <div class="col-sm-2">
-                                        <label for="inv_unit" class="col-sm-12 col-form-label text-right">Satuan &nbsp;&nbsp;<a data-toggle="popover" title="Satuan" data-content="Satuan/Unit Item" class="badge badge-info text-white">Info</a></label>
+                                        <label for="inv_unit" class="col-sm-12 col-form-label text-right">Satuan &nbsp;&nbsp;<a data-toggle="popover" title="Satuan" data-content="Satuan/Unit Item" class="badge badge-warning text-white">Info</a></label>
                                         <input type="text" class="form-control col-sm-12" id="inv_unit" name="inv_unit" placeholder="Unit" aria>
                                         <small id="inv_unitDesc" class="form-text text-muted text-left">Satuan/Unit</small>
                                     </div>
                                     <div class="col-sm-2">
-                                        <label for="inv_unit_rp" class="col-sm-12 col-form-label text-right">Harga &nbsp;&nbsp;<a data-toggle="popover" title="Harga Satuan" data-content="Harga Satuan Item (Rp.)" class="badge badge-info text-white">Info</a></label>
+                                        <label for="inv_unit_rp" class="col-sm-12 col-form-label text-right">Harga &nbsp;&nbsp;<a data-toggle="popover" title="Harga Satuan" data-content="Harga Satuan Item (Rp.)" class="badge badge-warning text-white">Info</a></label>
                                         <input type="text" class="form-control" id="inv_unit_rp" name="inv_unit_rp" placeholder="Price /Unit (Rp.)">
                                         <small id="" class="form-text text-muted text-left">Harga Satuan/Unit (Rp.)</small>
                                     </div>
                                     <div class="col-sm-3">
-                                        <label for="inv_total_rp" class="col-sm-12 col-form-label text-right">Total Harga &nbsp;&nbsp;<a data-toggle="popover" title="Total Harga" data-content="Total Harga Item (Rp.)" class="badge badge-info text-white">Info</a></label>
+                                        <label for="inv_total_rp" class="col-sm-12 col-form-label text-right">Total Harga &nbsp;&nbsp;<a data-toggle="popover" title="Total Harga" data-content="Total Harga Item (Rp.)" class="badge badge-warning text-white">Info</a></label>
                                         <input type="text" class="form-control" id="inv_total_rp" name="inv_total_rp" placeholder="Total Cost (Rp.)" readonly>
                                         <small id="" class="form-text text-muted text-left">Total Harga (Rp.)</small>
                                     </div>
                                     <div class="col-sm-2">
-                                        <label for="inv_depresiasi" class="col-sm-12 col-form-label text-right">Depresiasi &nbsp;&nbsp;<a data-toggle="popover" title="Harga Satuan" data-content="Harga Satuan Item (Rp.)" class="badge badge-info text-white">Info</a></label>
+                                        <label for="inv_depresiasi" class="col-sm-12 col-form-label text-right">Depresiasi &nbsp;&nbsp;<a data-toggle="popover" title="Harga Satuan" data-content="Harga Satuan Item (Rp.)" class="badge badge-warning text-white">Info</a></label>
                                         <input type="text" class="form-control" id="inv_depresiasi" name="inv_depresiasi" placeholder="Umur Ekonomis">
                                         <small id="" class="form-text text-muted text-left">Umur Ekonomis (Tahun)</small>
                                     </div>
                                     <div class="col-sm-1">
                                         <label for="inv_ok" class="col-sm-12 col-form-label text-right">&nbsp;&nbsp;</label>
-                                        <button id="inv_ok" name="inv_ok" class="btn btn-xs btn-outline-primary btn-block">&#187;</button>
+                                        <button id="inv_ok" name="inv_ok" class="btn btn-xs btn-outline-warning btn-block">&#43;</button>
                                     </div>
                                 </div>
                     </div>
@@ -360,7 +360,7 @@
                     <!-- table -->
                     <table id="example" class="table table-bordered thead-dark table-responsive-sm table-striped">
                         <thead>
-                        <tr class="bg-primary">
+                        <tr class="bg-warning">
                             <th>#</th>
                             <th>Komponen</th>
                             <th>Qty</th>

@@ -25,7 +25,7 @@
                         </div>
                     </div>                    
                     <div class="form-group row">                        
-                        <label for="marketshare_persen" class="col-sm-6 col-form-label text-right">Proyeksi Market Share di Tahun Pertama (Prosentase) &nbsp;<span class="badge badge-pill  badge-warning">2.2</span> &nbsp;<a data-toggle="popover" title="Prosentase Market Share" data-content="Proyeksi Market Share di Tahun Pertama (Prosentase). Isi dengan nilai besarnya prosentase dari Target produksi yang telah dicanangkan sebelumnya!" class="badge badge-info text-white">Info</a></label>
+                        <label for="marketshare_persen" class="col-sm-6 col-form-label text-right">Proyeksi Market Share di Tahun Pertama (%) &nbsp;<span class="badge badge-pill  badge-warning">2.2</span> &nbsp;<a data-toggle="popover" title="Prosentase Market Share" data-content="Proyeksi Market Share di Tahun Pertama (%). Isi dengan nilai besarnya prosentase dari Target produksi yang telah dicanangkan sebelumnya!" class="badge badge-info text-white">Info</a></label>
                         <div class="col-sm-6">
                             <input type="text" value="<?= $marketshare_persen; ?>" class="form-control  form-control-sm col-sm-8" id="marketshare_persen" name="marketshare_persen" aria-describedby="marketshare_persenDesc" placeholder="##0,00%" required>
                             <small id="marketshare_persenDesc" class="form-text text-muted text-left">Isi dengan nilai besarnya prosentase dari Target produksi yang telah dicanangkan sebelumnya!</small>
@@ -39,7 +39,7 @@
                         </div>
                     </div>                    
                     <div class="form-group row">                        
-                        <label for="marketshare_tahun2" class="col-sm-6 col-form-label text-right">Proyeksi Market Share mulai Tahun Ke -2 (Prosentase) &nbsp;<span class="badge badge-pill  badge-warning">2.4</span> &nbsp;<a data-toggle="popover" title="Proyeksi Market Share" data-content="Proyeksi Market Share mulai Tahun Ke -2 (Prosentase), Proyeksi market share tahun ke - 2 dan seterusnya." class="badge badge-info text-white">Info</a></label>
+                        <label for="marketshare_tahun2" class="col-sm-6 col-form-label text-right">Proyeksi Market Share mulai Tahun Ke -2 (%) &nbsp;<span class="badge badge-pill  badge-warning">2.4</span> &nbsp;<a data-toggle="popover" title="Proyeksi Market Share" data-content="Proyeksi Market Share mulai Tahun Ke -2 (%), Proyeksi market share tahun ke - 2 dan seterusnya." class="badge badge-info text-white">Info</a></label>
                         <div class="col-sm-6">
                             <input type="text" value="<?= $marketshare_tahun2; ?>" class="form-control  form-control-sm col-sm-8" id="marketshare_tahun2" name="marketshare_tahun2" aria-describedby="targetDesc" placeholder="##0,00%" required>
                             <small id="judulDesc" class="form-text text-muted text-left">Proyeksi market share tahun ke - 2 dan seterusnya</small>
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <div class="form-group row">                        
-                        <label for="harga_tahun2" class="col-sm-6 col-form-label text-right">Harga Jual Produk mulai Tahun ke - 2 (Prosentase) &nbsp;<span class="badge badge-pill  badge-warning">2.6</span> &nbsp;<a data-toggle="popover" title="Proyeksi Harga Jual" data-content="Harga Jual Produk mulai Tahun ke - 2 (Prosentase), Harga jual produk pada tahun ke - 2 dan seterusnya." class="badge badge-info text-white">Info</a></label>
+                        <label for="harga_tahun2" class="col-sm-6 col-form-label text-right">Harga Jual Produk mulai Tahun ke - 2 (%) &nbsp;<span class="badge badge-pill  badge-warning">2.6</span> &nbsp;<a data-toggle="popover" title="Proyeksi Harga Jual" data-content="Harga Jual Produk mulai Tahun ke - 2 (%), Harga jual produk pada tahun ke - 2 dan seterusnya." class="badge badge-info text-white">Info</a></label>
                         <div class="col-sm-6">
                             <input type="text" value="<?= $harga_tahun2; ?>" class="form-control  form-control-sm col-sm-8" id="harga_tahun2" name="harga_tahun2" placeholder="##0,00%" aria-describedby="harga_tahun2Desc" required>
                             <small id="harga_tahun2Desc" class="form-text text-muted text-left">Harga jual produk pada tahun ke - 2 dan seterusnya</small>
