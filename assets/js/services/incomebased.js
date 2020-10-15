@@ -348,18 +348,5 @@ $(function(){
                 title: 'Periksa Kembali Parameter Input Data'
             })
         }
-    })
-    
-    //untuk LOOKUP tabel Discount Factor
-    $(".pencarian").focusin(function() {
-        $("#myModal").modal('show'); // ini fungsi untuk menampilkan modal
-     });
-    //$('#example').DataTable(); // fungsi ini untuk memanggil datatable
-    //END untuk LOOKUP tabel Discount Factor
+    })    
 });
-
-// function in berfungsi untuk memindahkan data kolom yang di klik menuju text box
-function masuk(txt, data) {
-    document.getElementById('discount_factor').value = data; // ini berfungsi mengisi value  yang ber id textbox
-    $("#myModal").modal('hide'); // ini berfungsi untuk menyembunyikan modal
-}
