@@ -144,7 +144,7 @@
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body modal-dialog-scrollable">
                         <div class="form-group">
                                 <div class="form-group">
                                     <label for="inv_komponen" class="col-sm-12 col-form-label text-right">Item Product &nbsp;&nbsp;<a data-toggle="popover" title="Item Product" data-content="Mencakup biaya komponen product/barang yang digunakan dalam proses produksi." class="badge badge-info text-white">Info</a></label>
