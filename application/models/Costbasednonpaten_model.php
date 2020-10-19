@@ -13,9 +13,13 @@ class Costbasednonpaten_model extends CI_Model {
         return $this->db->get_where($this->table, ["sinta_id" => $sinta_id])->result();
     }
 
+    public function get_cost_id($cost_id){
+        return $this->db->get_where($this->table, ["id_cost" => $cost_id])->result();
+    }
+
     public function get_id($id)
     {
-        return $this->db->get_where($this->table, ["id" => $sinta_id])->result();
+        return $this->db->get_where($this->table, ["id" => $id])->result();
     }
 
     // insert data

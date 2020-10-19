@@ -76,24 +76,32 @@
                     </div>
                 </div>
                 <br/>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-xs-12">
+                <div class="col-lg-12 col-md-12 col-xs-12">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Google Scholar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Scopus</a>
+                            </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <br/>
                         <h5 class="bolds"><img width="16" style="border-radius:50%;" src="<?php echo base_url()?>assets/img/gscholar.png">&nbsp;&nbsp;
                         Google Scholar</h5>
                         <div class="loader"></div>
                         <div class="container_gschoolar">
                         </div>
                     </div>
-                </div>
-                <br/>
-                <br/>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <br/>
                         <h5 class="bolds"><img width="16" style="border-radius:50%;" src="<?php echo base_url()?>assets/img/scopus.png">&nbsp;&nbsp;
                         Scopus</h5>
                         <div class="loader"></div>
                         <div class="container_scopus">
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

@@ -15,7 +15,7 @@ class Costbased_model extends CI_Model {
 
     public function get_id($id)
     {
-        return $this->db->get_where($this->table, ["id" => $sinta_id])->result();
+        return $this->db->get_where($this->table, ["id" => $id])->result();
     }
 
     // insert data

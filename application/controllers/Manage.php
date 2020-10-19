@@ -71,13 +71,20 @@ class Manage extends CI_Controller {
 	  }
 
 	  public function detail_costbased($id, $judul_penelitian){
-		$query = "" ;
+		$costbased_identity = $this->costbased_model->get_id($id);
+		$costbased_nonpaten = $this->costbasednonpaten_model->get_cost_id($id);
+		$costbased_paten = $this->costbasedpaten_model->get_cost_id($id);
+
+		$data['costbased_identity'] = $costbased_identity;
+		$data['costbased_nonpaten'] = $costbased_nonpaten;
+		$data['costbased_paten'] = $costbased_paten;
+  		  
 		$data['title_bar'] = "Detail Cost Based";
-        $data['header_page'] = "Detail - Cost Based";
+		$data['header_page'] = "Detail - Cost Based";
 		$data['breadcrumbs'] = 'Riwayat';
-		// $data['breadcrumbs_detail'] = 'Detail Cost Based - ' .$id ;
 		$data['breadcrumbs_detail'] = 'Detail';
 		$data['judul_penelitian'] = $judul_penelitian;
+		
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/navbar', $data);
 		$this->load->view('admin/components/breadcrumbs_detail', $data);

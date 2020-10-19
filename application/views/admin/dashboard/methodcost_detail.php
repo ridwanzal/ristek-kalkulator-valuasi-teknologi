@@ -1,6 +1,13 @@
 <?php 
     // get session userdata
     $userdetails = $this->session->userdata('userdetails'); 
+    $costbased_identity = $costbased_identity[0];
+    $costbased_nonpaten = $costbased_nonpaten[0];
+    $costbased_paten = $costbased_paten[0];
+
+    echo '<pre>';
+    // var_dump($costbased_identity);die;
+    echo '</pre>';
 ?>
 
 <section class="section_main_wrapper">
@@ -19,7 +26,7 @@
                                             &nbsp;
                                             <a data-toggle="popover" title="Nama Inventor" data-content="Diisi dengan nama Inventor. Jika nama inventor lebih dari 1 orang, silahkan pisahkan dengan tanda koma di antara nama inventor." class="badge badge-info text-white">Info</a>
                                             </label>
-                                            <input  type="text" class="form-control form-control-sm" id="par_cb_nama_inventor" placeholder="">
+                                            <input  type="text" class="form-control form-control-sm" id="par_cb_nama_inventor" placeholder="" value="">
                                             <small>Jika Inventor yang terlibat lebih dari 1, pisahkan dengan koma</small>
                                         </div>
                                         <div class="col-lg-6">
@@ -45,7 +52,7 @@
                                             &nbsp;
                                             <a data-toggle="popover" title="Judul Penelitian" data-content="Diisi dengan judul penelitian terkait. (autocomplete)" class="badge badge-info text-white">Info</a>
                                             </label>
-                                            <input type="text" class="form-control form-control-sm" id="par_cb_judul_riset" placeholder="">
+                                            <input type="text" class="form-control form-control-sm" id="par_cb_judul_riset" value="<?= $costbased_identity->judul_penelitian; ?>" placeholder="">
                                             <small>Autocomplete text</small>
                                         </div>
                                     </div>
@@ -56,12 +63,11 @@
                                             &nbsp;
                                             <a data-toggle="popover" title="Unit Kerja Penghasil/ Pemilik Invensi " data-content="Diisi dengan total biaya masukan / realisasi pagu penelitian. " class="badge badge-info text-white">Info</a>
                                             </label>
-                                            <input type="text" class="form-control form-control-sm" id="par_pagu_riset" placeholder="">
+                                            <input value="<?= $costbased_identity->total_biaya; ?>" type="text" class="form-control form-control-sm" id="par_pagu_riset" placeholder="">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">6</span>&nbsp;Asal Biaya Masukan Masukan/Realisasi Pagu Penelitian <i style="color: red">*</i> </label>
-                                            <select id="par_cb_asal_biaya" class="custom-select custom-select-sm">
-                                                <option value="">-- Silahkan pilih</option>
+                                            <select value="<?= $costbased_identity->asal_biaya; ?>" id="par_cb_asal_biaya" class="custom-select custom-select-sm">
                                                 <option value="Hibah Ristek">Hibah Ristek</option>
                                                 <option value="Dikti Kemendikbud">Dikti Kemendikbud</option>
                                                 <option value="LPDP">LPDP</option>
@@ -92,7 +98,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Publikasi pada jurnal internasional </label>
-                                            <input id="par_cb_pub_internasional" type="number" class="form-control" placeholder="" value="0" min="0">
+                                            <input class="form-control" value="<?= $costbased_nonpaten->pub_internasional; ?>" min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
@@ -103,7 +109,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Publikasi pada jurnal nasional </label>
-                                            <input id="par_cb_pub_nasional" type="number" class="form-control" placeholder="" value="0" min="0">
+                                            <input type="number" class="form-control" placeholder="" value="<?= $costbased_nonpaten->pub_nasional; ?>" min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
@@ -114,7 +120,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Buku Internasional </label>
-                                            <input id="par_cb_buku_internasional" type="number" class="form-control" placeholder="" value="0" min="0">
+                                            <input id="par_cb_buku_internasional" type="number" class="form-control" placeholder="" value="<?= $costbased_nonpaten->buku_internasional; ?>"  min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
@@ -125,7 +131,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Buku Nasional </label>
-                                            <input id="par_cb_buku_nasional" type="number" class="form-control" placeholder="" value="0" min="0">
+                                            <input id="par_cb_buku_nasional" type="number" class="form-control" placeholder="" value="<?= $costbased_nonpaten->buku_nasional; ?>"  min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
@@ -136,7 +142,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Publikasi pada prosiding internasional </label>
-                                            <input id="par_cb_pros_internasional" type="number" class="form-control" placeholder="" value="0" min="0">
+                                            <input id="par_cb_pros_internasional" type="number" class="form-control" placeholder="" value="<?= $costbased_nonpaten->pub_prod_internasional; ?>" min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
@@ -147,7 +153,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Publikasi pada prosiding nasional </label>
-                                            <input id="par_cb_pros_nasional"  type="number" class="form-control" placeholder="" value="0" min="0">
+                                            <input id="par_cb_pros_nasional"  type="number" class="form-control" placeholder="" value="<?= $costbased_nonpaten->pub_prod_nasional; ?>" min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
@@ -207,7 +213,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="card">
+                                                <!-- <div class="card">
                                                     <div class="card-body" style="padding:10px;">
                                                         <div style="margin-left:24px;">Keterangan</div>
                                                         <ul>
@@ -217,7 +223,7 @@
                                                             <li>Bobot Paten sederhana terdaftar = 9</li>
                                                         </ul>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <br/>
                                                 <div class="form-row form-group">
                                                     <div class="col">
@@ -292,42 +298,42 @@
                                     <tr>
                                         <td>1.</td>
                                         <td>Publikasi pada jurnal internasional</td>
-                                        <td id="pub_np_int">0</td>
+                                        <td id="pub_np_int"><?= $costbased_nonpaten->pub_international; ?></td>
                                         <td>40</td>
                                         <td id="pub_np_int_total">0</td>
                                     </tr>
                                     <tr>
                                         <td>2.</td>
                                         <td>Publikasi pada jurnal nasional</td>
-                                        <td id="pub_np_ns">0</td>
+                                        <td id="pub_np_ns"><?= $costbased_nonpaten->pub_nasional; ?></td>
                                         <td>25</td>
                                         <td id="pub_np_ns_total">0</td>
                                     </tr>
                                     <tr>
                                         <td>3.</td>
                                         <td>Buku Internasional</td>
-                                        <td id="buk_np_int">0</td>
+                                        <td id="buk_np_int"><?= $costbased_nonpaten->buku_internasional; ?></td>
                                         <td>40</td>
                                         <td id="buk_np_int_total">0</td>
                                     </tr>
                                     <tr>
                                         <td>4.</td>
                                         <td>Buku Nasional</td>
-                                        <td id="buk_np_ns">0</td>
+                                        <td id="buk_np_ns"><?= $costbased_nonpaten->buku_nasional; ?></td>
                                         <td>30</td>
                                         <td id="buk_np_ns_total">0</td>
                                     </tr>
                                     <tr>
                                         <td>5.</td>
                                         <td>Publikasi pada prosiding internasional</td>
-                                        <td id="pub_prod_np_int">0</td>
+                                        <td id="pub_prod_np_int"><?= $costbased_nonpaten->pub_prod_internasional; ?></td>
                                         <td>25</td>
                                         <td id="pub_prod_np_int_total">0</td>
                                     </tr>
                                     <tr>
                                         <td>6.</td>
                                         <td>Publikasi pada prosiding nasional</td>
-                                        <td id="pub_prod_np_ns">0</td>
+                                        <td id="pub_prod_np_ns"><?= $costbased_nonpaten->pub_prod_nasional; ?></td>
                                         <td>10</td>
                                         <td id="pub_prod_np_ns_total">0</td>
                                     </tr>
