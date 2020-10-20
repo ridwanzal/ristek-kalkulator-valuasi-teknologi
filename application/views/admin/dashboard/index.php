@@ -16,7 +16,7 @@
 
 <section class="section_main_wrapper">
     <div class="form-element-area">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
@@ -81,9 +81,9 @@
                         <h5 class="bolds"><img width="16" style="border-radius:50%;" src="<?php echo base_url()?>assets/img/copyrights.png">&nbsp;&nbsp;
                         IPR (Intellectual Property Rights)</h5>
                     </div>
-                    <div class="col-lg-2 col-md-2">
+                    <div class="col-lg-2 col-md-2 justify-content-end">
                     <div class="btn-group">
-                        <button style="float:right;position:relative;right:10px;width:170px;" type="button" class="btn btn-danger btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button style="width:287px;" type="button" class="btn btn-danger btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Tambah Kalkulasi +
                         </button>
                         <div class="dropdown-menu">
@@ -91,7 +91,7 @@
                             <a class="dropdown-item" href="<?php echo base_url();?>manage/add/incomebased">Income Based</a>
                             <a class="dropdown-item" href="#">Market Based</a>
                         </div>
-                        </div>
+                    </div>
                     </div>
                 </div>
                 <div class="row">

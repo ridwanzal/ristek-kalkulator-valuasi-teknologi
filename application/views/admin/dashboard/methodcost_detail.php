@@ -300,49 +300,49 @@
                                         <td>Publikasi pada jurnal internasional</td>
                                         <td id="pub_np_int"><?= $costbased_nonpaten->pub_international; ?></td>
                                         <td>40</td>
-                                        <td id="pub_np_int_total">0</td>
+                                        <td id="pub_np_int_total"><?php echo '' .intval($costbased_nonpaten->pub_international) * 40;?></td>
                                     </tr>
                                     <tr>
                                         <td>2.</td>
                                         <td>Publikasi pada jurnal nasional</td>
                                         <td id="pub_np_ns"><?= $costbased_nonpaten->pub_nasional; ?></td>
                                         <td>25</td>
-                                        <td id="pub_np_ns_total">0</td>
+                                        <td id="pub_np_ns_total"><?php echo '' .intval($costbased_nonpaten->pub_nasional) * 25;?></td>
                                     </tr>
                                     <tr>
                                         <td>3.</td>
                                         <td>Buku Internasional</td>
                                         <td id="buk_np_int"><?= $costbased_nonpaten->buku_internasional; ?></td>
                                         <td>40</td>
-                                        <td id="buk_np_int_total">0</td>
+                                        <td id="buk_np_int_total"><?php echo '' .intval($costbased_nonpaten->pub_nasional) * 40;?></td>
                                     </tr>
                                     <tr>
                                         <td>4.</td>
                                         <td>Buku Nasional</td>
                                         <td id="buk_np_ns"><?= $costbased_nonpaten->buku_nasional; ?></td>
                                         <td>30</td>
-                                        <td id="buk_np_ns_total">0</td>
+                                        <td id="buk_np_ns_total"><?php echo '' .intval($costbased_nonpaten->pub_nasional) * 30;?></td>
                                     </tr>
                                     <tr>
                                         <td>5.</td>
                                         <td>Publikasi pada prosiding internasional</td>
                                         <td id="pub_prod_np_int"><?= $costbased_nonpaten->pub_prod_internasional; ?></td>
                                         <td>25</td>
-                                        <td id="pub_prod_np_int_total">0</td>
+                                        <td id="pub_prod_np_int_total"><?php echo '' .intval($costbased_nonpaten->pub_prod_internasional) * 25;?></td>
                                     </tr>
                                     <tr>
                                         <td>6.</td>
                                         <td>Publikasi pada prosiding nasional</td>
                                         <td id="pub_prod_np_ns"><?= $costbased_nonpaten->pub_prod_nasional; ?></td>
                                         <td>10</td>
-                                        <td id="pub_prod_np_ns_total">0</td>
+                                        <td id="pub_prod_np_ns_total"><?php echo '' .intval($costbased_nonpaten->pub_prod_nasional) * 10;?></td>
                                     </tr>
                                     <tr style="background : #f1f1f1 !important;">
                                         <td></td>
                                         <td><b>Total bobot keluaran penelitian non paten (&Sigma;Qi)</b></td>
                                         <td></td>
                                         <td></td>
-                                        <td style="font-weight:bold;" id="np_total_bobot">0</td>
+                                        <td style="font-weight:bold;" id="np_total_bobot"><?php echo '' .intval($costbased_nonpaten->pub_prod_nasional);?></td>
                                     </tr>
                                     <tr class="luaran_penelitan_title">
                                         <td>B.</td>

@@ -109,10 +109,13 @@ let obj_model_cb = {
      obj_non_paten : '', // object terkait luaran non paten
      obj_paten : {
          data : [],
-         total_bobot_seluruh : 0
-     },
-     tanggal : '',
-     total_atbp : 0
+         total_bobot_seluruh : 0,
+        },
+    ti : 0,
+    tanggal : '',
+    pi : 0,
+    ki : 0,
+    total_atbp : 0
 };
 
          
@@ -227,59 +230,69 @@ function init(){
 
     // save data to databases;
     _tosave.on('click', function(){
-        bootbox.dialog({
-            message: '<p class="text-center mb-0"><i class="fa fa-spin fa-cog"></i> Mohon tunggu, data sedang disimpan ... </p>',
-            closeButton: false
-        });
+        // bootbox.dialog({
+        //     message: '<p class="text-center mb-0"><i class="fa fa-spin fa-cog"></i> Mohon tunggu, data sedang disimpan ... </p>',
+        //     closeButton: false
+        // });
 
         // upload dokumen identitas pendukung
         $.ajax({
             url : web_url + '/costbased/add',
             type : 'POST',
-            crossDomain: true,
-            beforeSend: function(request) {
-                request.setRequestHeader("Authorization", 'Bearer ' + access_token_saved);
-            },
             data : {
                 'datas' : JSON.stringify(obj_model_cb)
             },
-            error : function(res){
+            error : function(e){
                 alert('Data tidak tersimpan');
             },
             success : function(res){
                 console.log('berhasil')
                 console.log(res);
+                res = JSON.parse(res);
+                console.log(res);
                 if(res.status == 'success'){
-                    
+                    console.log('upload dokumen pendukung');
                     // upload dokumen pendukung
                     var form_data = new FormData();
                     var totalfiles = document.getElementById('par_cb_file').files.length;
                     for (var index = 0; index < totalfiles; index++) {
                         form_data.append("berkas[]", document.getElementById('par_cb_file').files[index]);
                     }
-                 
+                    console.log(form_data);
+                    console.log(res.insert_id);
+                    console.log(web_url + '/uploads/multiple/costbased/'+res.insert_id+'');
+
                     $.ajax({
-                      url: web_url + '/uploads/multiple/costbased/'+res.insert_id+'',
-                      type: 'post',
-                      data: form_data,
-                      dataType: 'json',
-                      contentType: false,
-                      processData: false,
-                      cache : true,
-                      crossDomain : true,
-                      beforeSend: function(request) {
-                        request.setRequestHeader("Authorization", 'Bearer ' + access_token_saved);
-                      },
-                      success: function (response) {
-                          console.log(res);
-                          if(response.status == 'success'){
-                                setTimeout(function() {
-                                    bootbox.hideAll();
-                                    _tosave.attr('disabled', 'disabled');
-                                    _tosave.text('Tersimpan')
-                                }, 5000);
-                          }
-                      }
+                        url: web_url + '/uploads/multiple/costbased/'+res.insert_id+'',
+                        type: 'post',
+                        data: form_data,
+                        dataType: 'json',
+                        contentType: false,
+                        processData: false,
+                        success: function (response) {
+                            if(response.status == 'success'){
+                                _tosave.attr('disabled', 'disabled');
+                                _tosave.text('Tersimpan');
+                                // bootbox.hideAll();
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'Data berhasil di submit',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            }
+                        },
+                        done : function(){
+                            // bootbox.hideAll();
+                            _tosave.attr('disabled', 'disabled');
+                            _tosave.text('Tersimpan');
+                        },failed : function(e){
+                            console.log(e)
+                        }, error : function(e){
+                            console.log('error');
+                            console.log(e);
+                        }
                     });
                 }
             }
@@ -316,7 +329,8 @@ function luaran_nonpaten(){
         pub_prod_np_int_total : '' + _pub_prod_np_int_total.text() ,
         pub_prod_np_ns_total : '' + _pub_prod_np_ns_total.text(),
         np_total_bobot : ''  + _np_total_bobot.html(),
-        total_bobot_seluruh : '' + _np_total_bobot.html()
+        total_bobot_seluruh : '' + _np_total_bobot.html(),
+        qi : '' + _np_total_bobot.html()
         };
 
         let obj_identitas_pi = {
@@ -514,6 +528,9 @@ function luaran_paten(){
                 total_atbp = total_luaran_penelitian_paten + total_biaya_permohonan_seluruh;
                 _out_atbp_total.text(total_atbp);
 
+                obj_model_cb.ti = total_bobot_seluruh;
+                obj_model_cb.ki = total_luaran_penelitian_paten
+                obj_model_cb.pi = total_biaya_permohonan_seluruh;
                 obj_model_cb.total_atbp = total_atbp;
                 console.log(obj_model_cb);
             }

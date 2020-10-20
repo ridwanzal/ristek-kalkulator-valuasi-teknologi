@@ -1,5 +1,5 @@
 <section class="breadcrumbs_custom">
-    <div class="container">
+    <div class="container-fluid">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?php echo base_url();?>">Home</a></li>

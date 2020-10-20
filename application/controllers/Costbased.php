@@ -131,11 +131,16 @@ class Costbased extends CI_Controller {
             'total_biaya' => ''.$decode->obj_identitas_pi->par_pagu_riset,
             'asal_biaya' => '' .$decode->obj_identitas_pi->par_cb_asal_biaya,
             'lampiran' => 'kosong',
-            'ki' => ''.$decode->obj_non_paten->total_bobot_seluruh,
-            'pi' => ''.$decode->obj_paten->total_bobot_seluruh,
+            'qi' => ''.$decode->obj_non_paten->qi,
+            'ti' => ''.$decode->ti,
+            'pi' => ''.$decode->pi,
+            'ki' => ''.$decode->ki,
             'atbp' => '' .$decode->total_atbp,
             'tanggal' => '2020-07-12'
         );
+        // var_dump($data);
+        // die;
+
         $this->costbased_model->insert($data);
         $check1 = $this->db->affected_rows() > 0;
         if($check1){
