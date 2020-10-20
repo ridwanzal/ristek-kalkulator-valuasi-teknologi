@@ -22,6 +22,10 @@ function get_research(){
             url : api_endpoint,
             type : 'GET',
             cache : true,
+            crossDomain : true,
+            beforeSend: function(request) {
+                request.setRequestHeader("Authorization", 'Bearer ' + access_token_saved);
+            },
             success : function(res){
                 console.log(res);
                 let results = res.author;
@@ -54,6 +58,10 @@ function get_author_details(){
             url : api_endpoint,
             type : 'GET',
             cache : true,
+            crossDomain : true,
+            beforeSend: function(request) {
+                request.setRequestHeader("Authorization", 'Bearer ' + access_token_saved);
+            },
             success : function(res){
                 console.log(res);
                 let results = res.author;
@@ -90,6 +98,10 @@ function get_google(){
             url : api_endpoint,
             type : 'GET',
             cache : true,
+            crossDomain : true,
+            beforeSend: function(request) {
+                request.setRequestHeader("Authorization", 'Bearer ' + access_token_saved);
+            },
             success : function(res){
                 console.log(res);
                 let results = res.author.g_scholar.results;
@@ -138,6 +150,10 @@ function get_scopus(){
            url : api_endpoint,
            type : 'GET',
            cache : true,
+           crossDomain : true,
+           beforeSend: function(request) {
+                request.setRequestHeader("Authorization", 'Bearer ' + access_token_saved);
+           },
            success : function(res){
                 console.log(res);
                 let results = res.author.scopus.results;
@@ -176,6 +192,10 @@ function get_books(){
            url : api_endpoint,
            type : 'GET',
            cache : true,
+           crossDomain: true,
+           beforeSend: function(request) {
+            request.setRequestHeader("Authorization", 'Bearer ' + access_token_saved);
+           },
            success : function(res){
                 console.log(res);
                 let results = res.author.books.total;
@@ -223,6 +243,10 @@ function get_ipr(){
             url : api_endpoint,
             type : 'GET',
             cache : true,
+            crossDomain: true,
+            beforeSend: function(request) {
+                request.setRequestHeader("Authorization", 'Bearer ' + access_token_saved);
+            },
             success : function(res){
                 console.log(res);
                 let results = res.author.hki.results;

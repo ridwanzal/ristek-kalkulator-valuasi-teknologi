@@ -153,7 +153,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Publikasi pada prosiding nasional </label>
-                                            <input id="par_cb_pros_nasional"  type="number" class="form-control" placeholder="" value="<?= $costbased_nonpaten->pub_prod_nasional; ?>" min="0">
+                                            <input id="par_cb_pros_nasional"  type="number" class="form-control" placeholder="" value="<?= $costbased_nonpaten->pub_prod_nasional   ; ?>" min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>

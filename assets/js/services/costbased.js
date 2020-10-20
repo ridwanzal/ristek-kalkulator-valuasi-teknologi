@@ -237,7 +237,9 @@ function init(){
             url : web_url + '/costbased/add',
             type : 'POST',
             crossDomain: true,
-            dataType: "json",
+            beforeSend: function(request) {
+                request.setRequestHeader("Authorization", 'Bearer ' + access_token_saved);
+            },
             data : {
                 'datas' : JSON.stringify(obj_model_cb)
             },
@@ -263,6 +265,11 @@ function init(){
                       dataType: 'json',
                       contentType: false,
                       processData: false,
+                      cache : true,
+                      crossDomain : true,
+                      beforeSend: function(request) {
+                        request.setRequestHeader("Authorization", 'Bearer ' + access_token_saved);
+                      },
                       success: function (response) {
                           console.log(res);
                           if(response.status == 'success'){
