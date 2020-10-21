@@ -166,13 +166,19 @@ class Costbased extends CI_Controller {
                     $data3 = array(
                         'id_cost' => ''.$insert_id,
                         'id_sinta' => ''.$decode->obj_id_sinta,
+                        'judul_invensi' => ''.$item->par_cb_jd_invensi,
                         'jenis_paten' => ''.$item->par_cb_jenis_paten,
                         'status_permohonan' => ''.$item->par_cb_status_paten,
                         'no_pendaftaran' => ''.$item->par_cb_nodaftar,
                         'sertifikat' => ''.$item->par_cb_sertifikat_paten,
-                        'asal_biaya_pendaftaran' => ''.$item->par_cb_jenis_paten,
+                        'asal_biaya_pendaftaran' => ''.$item->par_cb_asal_biaya_permohonan,
                         'lampiran' => ''.$item->par_cb_jenis_paten,
                         'biaya_proses_lain' => ''.$item->par_biaya_proses,
+                        'bobot' => ''.$item->bobot,
+                        'biaya_pendaftaran' => ''.$item->biaya_pendaftaran,
+                        'biaya_percepatan' => ''.$item->biaya_percepatan,
+                        'biaya_substantif' => ''.$item->biaya_substantif,
+                        'total_bobot' => ''.$item->total_bobot_per_row
                     );
                     $this->costbasedpaten_model->insert($data3);
                 }

@@ -374,7 +374,7 @@ function luaran_paten(){
                     let _par_cb_nodaftar= $('#par_cb_nodaftar_' + i).val();
                     let _par_biaya_proses = money.reverse($('#par_biaya_proses_' + i).val());
                     let _par_cb_sertifikat_paten = $('#par_cb_sertifikat_paten_' + i).val();
-                    let _par_cb_asalbiayadaftar_1 = $('#par_cb_asalbiayadaftar_' + i).val();
+                    let _par_cb_asalbiayadaftar = $('#par_cb_asalbiayadaftar_' + i).val();
 
                     var bobot = 0;
                     let jumlah = 1;
@@ -406,7 +406,7 @@ function luaran_paten(){
                         biaya_percepatan = 0;
                     }
 
-                    total_biaya_permohonan = parseInt(biaya_pendaftaran) + parseInt(biaya_substantif) + parseInt(biaya_percepatan)
+                    total_biaya_permohonan = parseInt(biaya_pendaftaran) + parseInt(biaya_substantif) + parseInt(biaya_percepatan) + parseInt(_par_biaya_proses)
                     
                     total_biaya_pendaftaran_seluruh = parseInt(total_biaya_pendaftaran_seluruh) + parseInt(biaya_pendaftaran);
                     total_biaya_substantif_seluruh = parseInt(total_biaya_substantif_seluruh) + parseInt(biaya_substantif);
@@ -475,7 +475,7 @@ function luaran_paten(){
                         par_cb_status_paten : '' + _par_cb_status_paten,
                         par_cb_nodaftar : '' + _par_cb_nodaftar,
                         par_cb_sertifikat_paten : ''  + _par_cb_sertifikat_paten,
-                        par_cb_asal_biaya_permohonan : '' + _par_cb_asalbiayadaftar_1,
+                        par_cb_asal_biaya_permohonan : '' + _par_cb_asalbiayadaftar,
                         par_biaya_proses : '' + money.reverse(_par_biaya_proses),
                         biaya_pendaftaran : '' + biaya_pendaftaran,
                         biaya_substantif : '' + biaya_substantif,
@@ -757,7 +757,7 @@ function add_luaran_paten(){
                                     <div class="card-body" style="padding:10px;">
                                         <div style="margin-left:24px;">Keterangan</div>
                                         <ul>
-                                            <li>Bobot Paten granted (tersertifikasi) = 48</li>
+                                            <li>Bobot Paten (tersertifikasi) = 48</li>
                                             <li>Bobot Paten terdaftar = 14</li>
                                             <li>Bobot Paten sederhana granted (tersertifikasi)= 33</li>
                                             <li>Bobot Paten sederhana terdaftar = 9</li>
@@ -781,9 +781,9 @@ function add_luaran_paten(){
                                         <label class="captions">Asal Biaya Pendaftaran (Permohonan) Paten<i style="color: red">*</i></label>
                                         <select class="custom-select custom-select-sm" id="par_cb_asalbiayadaftar_`+index+`"> 
                                                 <option value="">-- Silahkan pilih</option>
-                                                <option value="1">Raih KI</option>
-                                                <option value="2">Institusi Penghasil/Pemilik Invensi</option>
-                                                <option value="3">Lainnya</option>
+                                                <option value="Raih KI">Raih KI</option>
+                                                <option value="Institusi Penghasil/Pemilik Invensi">Institusi Penghasil/Pemilik Invensi</option>
+                                                <option value="Lainnya">Lainnya</option>
                                         </select>
                                     </div>
                                     <div class="col-lg-6">

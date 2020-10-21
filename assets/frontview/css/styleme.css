@@ -663,3 +663,22 @@ loader
   .card_metode{
       height : 350px !important;
   }
+
+  .add_buttons{
+    float:right;
+    cursor:pointer;
+    border:1px solid #999;
+    border-radius:50px;
+    padding:1px 10px 1px 10px;
+    font-size:14px;     
+  }
+
+  .add_buttons:hover { 
+      background : #eee;
+  }
+
+  .image_lists{
+      width:25%;
+      background-size: contain;
+      border-radius: 8px;;
+  }

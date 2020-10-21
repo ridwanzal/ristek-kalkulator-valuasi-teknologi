@@ -77,21 +77,19 @@
                 </div>
                 <br/>
                 <div class="row">
-                    <div class="col-lg-10 col-md-10 col-xs-10">
+                    <div class="col-lg-12 col-md-12 col-xs-12 >
                         <h5 class="bolds"><img width="16" style="border-radius:50%;" src="<?php echo base_url()?>assets/img/copyrights.png">&nbsp;&nbsp;
-                        IPR (Intellectual Property Rights)</h5>
-                    </div>
-                    <div class="col-lg-2 col-md-2 justify-content-end">
-                    <div class="btn-group">
-                        <button style="width:287px;" type="button" class="btn btn-danger btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Tambah Kalkulasi +
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="<?php echo base_url();?>manage/add/costbased">Cost Based</a>
-                            <a class="dropdown-item" href="<?php echo base_url();?>manage/add/incomebased">Income Based</a>
-                            <a class="dropdown-item" href="#">Market Based</a>
+                        IPR (Intellectual Property Rights)</h5>&nbsp;
+                        <div class="btn-group add_buttons">
+                            <div style="" type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Tambah Kalkulasi +
+                            </div>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="<?php echo base_url();?>manage/add/costbased">Cost Based</a>
+                                <a class="dropdown-item" href="<?php echo base_url();?>manage/add/incomebased">Income Based</a>
+                                <a class="dropdown-item" href="#">Market Based</a>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
                 <div class="row">

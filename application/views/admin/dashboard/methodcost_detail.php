@@ -2,10 +2,19 @@
     // get session userdata
     $userdetails = $this->session->userdata('userdetails'); 
     $costbased_identity = $costbased_identity[0];
+    $costbased_identity_lampiran =  json_decode($costbased_identity->lampiran, true);
+    // var_dump($costbased_identity_lampiran);die;
     $costbased_nonpaten = $costbased_nonpaten[0];
-    $costbased_paten = $costbased_paten[0];
+    $costbased_paten = $costbased_paten;
+    
+    // var_dump($costbased_paten);
 
-    echo '<pre>';
+    $total_biaya_daftar = 0;
+    $total_biaya_substantif = 0;
+    $total_biaya_percepatan = 0;
+    $total_biaya_proses_lain = 0;
+    $hasil = 0;
+    echo '<pre>';   
     // var_dump($costbased_identity);die;
     echo '</pre>';
 ?>
@@ -15,7 +24,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <p class="font-weight-bold">Field Input Data</p>
+                        <p class="font-weight-bold" style="font-size:22px;color:#444;"><?= $costbased_identity->judul_penelitian; ?></p>
                         <p>A. Identitas Penelitian dan Invensi</p>
                         <div class="card">
                                 <div class="card-body">
@@ -23,18 +32,14 @@
                                         <div class="col">
                                             <label class="captions" for="formGroupExampleInput"><span class="badge badge-pill  badge-warning">1</span>&nbsp;Nama Inventor 
                                             <i style="color: red">*</i> 
-                                            &nbsp;
-                                            <a data-toggle="popover" title="Nama Inventor" data-content="Diisi dengan nama Inventor. Jika nama inventor lebih dari 1 orang, silahkan pisahkan dengan tanda koma di antara nama inventor." class="badge badge-info text-white">Info</a>
                                             </label>
-                                            <input  type="text" class="form-control form-control-sm" id="par_cb_nama_inventor" placeholder="" value="">
+                                            <input  disabled type="text" class="form-control form-control-sm" id="par_cb_nama_inventor" placeholder="" value="">
                                             <small>Jika Inventor yang terlibat lebih dari 1, pisahkan dengan koma</small>
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">2</span>&nbsp;Institusi Penghasil/ Pemilik Invensi <i style="color: red">*</i> 
-                                            &nbsp;
-                                            <a data-toggle="popover" title="Institusi Penghasil/ Pemilik Invensi " data-content="Diisi dengan nama institusi penghasil invensi/ pemilik invensi seperti nama universitas, politeknik, sekolah tinggi dan semacamnya." class="badge badge-info text-white">Info</a>
                                             </label>
-                                            <input  type="text" class="form-control form-control-sm" id="par_cb_nama_institusi" placeholder="">
+                                            <input disabled type="text" class="form-control form-control-sm" id="par_cb_nama_institusi" placeholder="">
                                             <small>Jika Institusi yang terlibat lebih dari 1, pisahkan dengan koma</small>
                                         </div>
                                     </div>
@@ -42,17 +47,13 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">3</span>&nbsp;Unit Kerja Penghasil/ Pemilik Invensi <i style="color: red">*</i> 
-                                            &nbsp;
-                                            <a data-toggle="popover" title="Unit Kerja Penghasil/ Pemilik Invensi " data-content="Diisi dengan nama unit kerja penghasil invensi/ pemilik invensi." class="badge badge-info text-white">Info</a>
                                             </label>
-                                            <input type="text" class="form-control form-control-sm" id="par_cb_unit_kerja" placeholder="" value="">
+                                            <input disabled type="text" class="form-control form-control-sm" id="par_cb_unit_kerja" placeholder="" value="">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">4</span>&nbsp;Judul Penelitian <i style="color: red">*</i>
-                                            &nbsp;
-                                            <a data-toggle="popover" title="Judul Penelitian" data-content="Diisi dengan judul penelitian terkait. (autocomplete)" class="badge badge-info text-white">Info</a>
                                             </label>
-                                            <input type="text" class="form-control form-control-sm" id="par_cb_judul_riset" value="<?= $costbased_identity->judul_penelitian; ?>" placeholder="">
+                                            <input disabled type="text" class="form-control form-control-sm" id="par_cb_judul_riset" value="<?= $costbased_identity->judul_penelitian; ?>" placeholder="">
                                             <small>Autocomplete text</small>
                                         </div>
                                     </div>
@@ -60,27 +61,37 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">5</span>&nbsp;Total Biaya Masukan/Realisasi Pagu Penelitian (R) <i style="color: red">*</i>
-                                            &nbsp;
-                                            <a data-toggle="popover" title="Unit Kerja Penghasil/ Pemilik Invensi " data-content="Diisi dengan total biaya masukan / realisasi pagu penelitian. " class="badge badge-info text-white">Info</a>
                                             </label>
-                                            <input value="<?= $costbased_identity->total_biaya; ?>" type="text" class="form-control form-control-sm" id="par_pagu_riset" placeholder="">
+                                            <input disabled value="<?= $costbased_identity->total_biaya; ?>" type="text" class="form-control form-control-sm" id="par_pagu_riset" placeholder="">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">6</span>&nbsp;Asal Biaya Masukan Masukan/Realisasi Pagu Penelitian <i style="color: red">*</i> </label>
-                                            <select value="<?= $costbased_identity->asal_biaya; ?>" id="par_cb_asal_biaya" class="custom-select custom-select-sm">
+                                            <!-- <select value="<?= $costbased_identity->asal_biaya; ?>" id="par_cb_asal_biaya" class="custom-select custom-select-sm">
                                                 <option value="Hibah Ristek">Hibah Ristek</option>
                                                 <option value="Dikti Kemendikbud">Dikti Kemendikbud</option>
                                                 <option value="LPDP">LPDP</option>
                                                 <option value="Lainnya">Lainnya</option>
-                                            </select>
+                                            </select> -->
+                                            <input disabled type="text" class="form-control form-control-sm" id="par_cb_unit_kerja" placeholder="" value="<?= $costbased_identity->asal_biaya; ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="captions" for="formGroupExampleInput2">Upload dokumen pendukung <i style="color: red">*</i></label>
-                                            <div class="custom-file">
-                                                <input id="par_cb_file" type="file" class="form-control" name="berkas[]" multiple style="height:45px;">
-                                                <small>Unggah file dlm format PDF, MS Word, PPT, Images*</small>
-                                            </div>
+                                        <?php 
+                                            if($costbased_identity_lampiran != 'kosong'){
+                                                foreach($costbased_identity_lampiran as $items){
+                                                    ?>
+                                                        <div>
+                                                            <img class='image_lists' src="<?php echo base_url();?>assets/uploads/costbased/<?php echo $items['image_name'];?>">
+                                                        </div>
+                                                    <?php
+                                                }
+                                            }
+                                        ?>
+                                        <!-- <div class="custom-file">
+                                            <input id="par_cb_file" type="file" class="form-control" name="berkas[]" multiple style="height:45px;">
+                                            <small>Unggah file dlm format PDF, MS Word, PPT, Images*</small>
+                                        </div> -->
                                     </div>
                                     <!-- <button id="testupload">Test upload</button> -->
                                 </div>
@@ -98,7 +109,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Publikasi pada jurnal internasional </label>
-                                            <input class="form-control" value="<?= $costbased_nonpaten->pub_internasional; ?>" min="0">
+                                            <input disabled class="form-control" value="<?= $costbased_nonpaten->pub_internasional; ?>" min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
@@ -109,7 +120,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Publikasi pada jurnal nasional </label>
-                                            <input type="number" class="form-control" placeholder="" value="<?= $costbased_nonpaten->pub_nasional; ?>" min="0">
+                                            <input disabled type="number" class="form-control" placeholder="" value="<?= $costbased_nonpaten->pub_nasional; ?>" min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
@@ -120,7 +131,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Buku Internasional </label>
-                                            <input id="par_cb_buku_internasional" type="number" class="form-control" placeholder="" value="<?= $costbased_nonpaten->buku_internasional; ?>"  min="0">
+                                            <input disabled id="par_cb_buku_internasional" type="number" class="form-control" placeholder="" value="<?= $costbased_nonpaten->buku_internasional; ?>"  min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
@@ -131,7 +142,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Buku Nasional </label>
-                                            <input id="par_cb_buku_nasional" type="number" class="form-control" placeholder="" value="<?= $costbased_nonpaten->buku_nasional; ?>"  min="0">
+                                            <input disabled id="par_cb_buku_nasional" type="number" class="form-control" placeholder="" value="<?= $costbased_nonpaten->buku_nasional; ?>"  min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
@@ -142,7 +153,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Publikasi pada prosiding internasional </label>
-                                            <input id="par_cb_pros_internasional" type="number" class="form-control" placeholder="" value="<?= $costbased_nonpaten->pub_prod_internasional; ?>" min="0">
+                                            <input disabled id="par_cb_pros_internasional" type="number" class="form-control" placeholder="" value="<?= $costbased_nonpaten->pub_prod_internasional; ?>" min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
@@ -153,7 +164,7 @@
                                     <div class="form-row form-group">
                                         <div class="col">
                                             <label class="captions">Publikasi pada prosiding nasional </label>
-                                            <input id="par_cb_pros_nasional"  type="number" class="form-control" placeholder="" value="<?= $costbased_nonpaten->pub_prod_nasional   ; ?>" min="0">
+                                            <input  disabled id="par_cb_pros_nasional"  type="number" class="form-control" placeholder="" value="<?= $costbased_nonpaten->pub_prod_nasional   ; ?>" min="0">
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="captions">Bobot</label>
@@ -167,106 +178,104 @@
 
                             <!-- separator =============================== -->
 
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="alert alert-secondary" role="alert">
-                                        Luaran penelitian berupa paten
-                                        <div style="float:right;position:relative;top:-4px;right:-10px;">
-                                            <button class="btn btn-sm btn-primary" onclick="add_luaran_paten()"> Tambah Luaran Paten + </button>
-                                        </div>
-                                    </div>
-                                    <div class="container_luaran_paten">
-                                        <div class="card luaran_paten_wrapper">
-                                            <div class="card-body">
-                                                <div class="form-group">
-                                                    <label class="captions">Judul Invensi <i style="color: red">*</i></label>
-                                                    <input type="text" class="form-control form-control-sm par_cb_daftar_invensi" id="par_cb_jd_invensi_1" onchange="data_luaran_paten(1)" placeholder="">
-                                                </div>
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="alert alert-secondary" role="alert">
+                                                            Luaran penelitian berupa paten
+                                                        </div>
+                                            <?php
+                                                    $i = 0;
+                                                    foreach($costbased_paten as $item){
+                                                        $i = $i + 1;
+                                                            // var_dump($item->judul_invensi);die
+                                                        ?>
+                                                        <div class="container_luaran_paten">
+                                                            <div class="card luaran_paten_wrapper">
+                                                                <div class="card-body">
+                                                                    <div class="form-group">
+                                                                        <label class="captions">Judul Invensi <i style="color: red">*</i></label>
+                                                                        <input disabled type="text" class="form-control form-control-sm par_cb_daftar_invensi" id="par_cb_jd_invensi_edit_<?php echo $i;?>" value="<?php echo $item->judul_invensi;?>">
+                                                                    </div>
 
-                                                <div class="form-row form-group">
-                                                    <div class="col">
-                                                            <div class="form-group">
-                                                                <label class="captions">Jenis Paten <i style="color: red">*</i> </label>
+                                                                    <div class="form-row form-group">
+                                                                        <div class="col">
+                                                                                <div class="form-group">
+                                                                                    <label class="captions">Jenis Paten <i style="color: red">*</i> </label>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <?php
+                                                                                        if($item->jenis_paten == 'paten_granted'){
+                                                                                            ?>
+                                                                                                <input disabled type="text" class="form-control form-control-sm" id="par_cb_jenis_paten_edit_<?php echo $i;?>" value="Paten">
+                                                                                            <?php
+                                                                                        }else{
+                                                                                            ?>
+                                                                                                <input disabled type="text" class="form-control form-control-sm" id="par_cb_jenis_paten_edit_<?php echo $i;?>" value="Paten Sederhana">
+                                                                                            <?php
+                                                                                        }
+                                                                                    ?>
+                                                                                </div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="col-lg-6">
+                                                                            <div class="form-group">
+                                                                                <label class="captions">Status Peromohonan <i style="color: red">*</i></label>
+                                                                            </div>
+                                                                            <?php
+                                                                                        if($item->status_permohonan == 'tersertifikasi'){
+                                                                                            ?>
+                                                                                                <input disabled type="text" class="form-control form-control-sm" id="par_cb_jenis_paten_edit_<?php echo $i;?>" value="Tersertifikasi">
+                                                                                            <?php
+                                                                                        }else{
+                                                                                            ?>
+                                                                                                <input disabled type="text" class="form-control form-control-sm" id="par_cb_jenis_paten_edit_<?php echo $i;?>" value="Terdaftar">
+                                                                                            <?php
+                                                                                        }
+                                                                            ?>
+                                                                        </div>
+                                                                    </div>
+                                                                    <br/>
+                                                                    <div class="form-row form-group">
+                                                                        <div class="col">
+                                                                            <label class="captions">Nomor pendaftaran (Pemohon) <i style="color: red">*</i></label>
+                                                                            <input disabled type="text" class="form-control form-control-sm" id="par_cb_nodaftar_edit_<?php echo $i;?>" value="<?php echo $item->no_pendaftaran;?>">
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                            <label class="captions">Nomor Sertifikat Paten/Paten Sederhana </label>
+                                                                            <?php
+                                                                                if($item->sertifikat != ''){
+                                                                                    ?>
+                                                                                        <input disabled type="text" class="form-control form-control-sm" id="par_cb_sertifikat_paten_1" placeholder="" value="<?php echo $item->sertifikat; ?>">
+                                                                                    <?php
+                                                                                }else{
+                                                                                    ?>
+                                                                                        <input type="text" class="form-control form-control-sm" id="par_cb_sertifikat_paten_1" placeholder="" value='-'>
+                                                                                    <?php
+                                                                                }
+                                                                            ?>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-row form-group">
+                                                                        <div class="col">
+                                                                            <label class="captions">Asal Biaya Pendaftaran (Permohonan) Paten<i style="color: red">*</i></label>
+                                                                            <input disabled type="text" class="form-control form-control-sm" id="par_cb_asalbiayadaftar_edit_<?php echo $i;?>" placeholder="" value='<?php echo $item->asal_biaya_pendaftaran;?>'>
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                            <label class="captions">Biaya Proses Lainnya</label>
+                                                                            <input disabled type="text" class="form-control form-control-sm" id="par_biaya_proses_edit_<?php echo $i;?>" onkeyup="biaya_proses_lainnya(1)" placeholder="" value="<?php echo $item->biaya_proses_lain;?>" >
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-row form-group">
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                            <div class="form-check form-check-inline">
-                                                                <input class="form-check-input par_cb_jenis_paten_1" type="radio" name="jpt_1"  value="paten_granted">
-                                                                <label class="form-check-label" for="inlineRadio1">Paten</label>
-                                                            </div>
-                                                            <div class="form-check form-check-inline">
-                                                                <input class="form-check-input par_cb_jenis_paten_1" type="radio" name="jpt_1"  value="paten_sederhana">
-                                                                <label class="form-check-label" for="inlineRadio2">Paten Sederhana </label>
-                                                            </div>
-                                                    </div>
-                                                    
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <label class="captions">Status Peromohonan <i style="color: red">*</i></label>
                                                         </div>
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input par_cb_status_paten_1" type="radio" name="stp_1"  value="terdaftar">
-                                                            <label class="form-check-label" for="inlineRadio1">Terdaftar</label>
-                                                        </div>
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input par_cb_status_paten_1" type="radio" name="stp_1" value="tersertifikasi">
-                                                            <label class="form-check-label" for="inlineRadio2">Tersertifikasi</label>
-                                                        </div>
+                                                        <br/>
+                                                                <?php
+                                                            }
+                                                    ?>
                                                     </div>
                                                 </div>
-
-                                                <!-- <div class="card">
-                                                    <div class="card-body" style="padding:10px;">
-                                                        <div style="margin-left:24px;">Keterangan</div>
-                                                        <ul>
-                                                            <li>Bobot Paten granted (tersertifikasi) = 48</li>
-                                                            <li>Bobot Paten terdaftar = 14</li>
-                                                            <li>Bobot Paten sederhana granted (tersertifikasi)= 33</li>
-                                                            <li>Bobot Paten sederhana terdaftar = 9</li>
-                                                        </ul>
-                                                    </div>
-                                                </div> -->
-                                                <br/>
-                                                <div class="form-row form-group">
-                                                    <div class="col">
-                                                        <label class="captions">Nomor pendaftaran (Pemohon) <i style="color: red">*</i></label>
-                                                        <input type="text" class="form-control form-control-sm" id="par_cb_nodaftar_1" placeholder="">
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <label class="captions">Nomor Sertifikat Paten/Paten Sederhana </label>
-                                                        <input type="text" class="form-control form-control-sm" id="par_cb_sertifikat_paten_1" placeholder="">
-                                                        <small> (jika sudah granted)</small>
-                                                    </div>
-                                                </div>
-                                                <div class="form-row form-group">
-                                                    <div class="col">
-                                                        <label class="captions">Asal Biaya Pendaftaran (Permohonan) Paten<i style="color: red">*</i></label>
-                                                        <select class="custom-select custom-select-sm" id="par_cb_asalbiayadaftar_1"> 
-                                                                <option value="">-- Silahkan pilih</option>
-                                                                <option value="1">Raih KI</option>
-                                                                <option value="2">Institusi Penghasil/Pemilik Invensi</option>
-                                                                <option value="3">Lainnya</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung</label>
-                                                        <div class="custom-file">
-                                                            <input type="file" class="form-control" multiple style="height:45px;" id="par_cb_file2">
-                                                            <small>berupa Formulir (Bukti) pendaftaran dan/atau
-                                                        Sertifikat Paten/Paten Sederhana (Unggah file dlm format PDF, MS Word, PPT)</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-row form-group">
-                                                    <div class="col-lg-6">
-                                                        <label class="captions">Biaya Proses Lainnya</label>
-                                                        <input type="text" class="form-control form-control-sm" id="par_biaya_proses_1" onkeyup="biaya_proses_lainnya(1)" placeholder="" value="0" >
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- <button style="margin-top:10px;" class="btn btn-sm btn-success btn-block" id="proc_data">Proses data</button> -->
-                                </div>
-                            </div>
                             <br/>
                     </div>
                 </div>
@@ -298,9 +307,9 @@
                                     <tr>
                                         <td>1.</td>
                                         <td>Publikasi pada jurnal internasional</td>
-                                        <td id="pub_np_int"><?= $costbased_nonpaten->pub_international; ?></td>
+                                        <td id="pub_np_int"><?= $costbased_nonpaten->pub_internasional; ?></td>
                                         <td>40</td>
-                                        <td id="pub_np_int_total"><?php echo '' .intval($costbased_nonpaten->pub_international) * 40;?></td>
+                                        <td id="pub_np_int_total"><?php echo '' .intval($costbased_nonpaten->pub_internasional) * 40;?></td>
                                     </tr>
                                     <tr>
                                         <td>2.</td>
@@ -342,7 +351,7 @@
                                         <td><b>Total bobot keluaran penelitian non paten (&Sigma;Qi)</b></td>
                                         <td></td>
                                         <td></td>
-                                        <td style="font-weight:bold;" id="np_total_bobot"><?php echo '' .intval($costbased_nonpaten->pub_prod_nasional);?></td>
+                                        <td style="font-weight:bold;" id="np_total_bobot"><?php echo '' .intval($costbased_identity->qi);?></td>
                                     </tr>
                                     <tr class="luaran_penelitan_title">
                                         <td>B.</td>
@@ -368,22 +377,46 @@
                                         <td>40</td>
                                         <td>40</td>
                                     </tr> -->
+                                    <?php
+                                        $x = 0;
+                                        foreach($costbased_paten as $item){
+                                            $x = $x + 1;
+                                            ?>
+                                                <tr>
+                                                    <td><?php echo $x; ?></td>
+                                                    <td><?php echo $item->judul_invensi;?></td>
+                                                    <td><?php echo '1';?></td>
+                                                    <td><?php echo $item->bobot;?></td>
+                                                    <td><?php echo $item->total_bobot;?></td>
+                                                </tr>
+                                            <?php
+                                        }
+                                    ?>
                                     <tr style="background : #f1f1f1 !important;">
                                         <td></td>
                                         <td><b>Total bobot keluaran penelitian non paten (&Sigma;Ti)</b></td>
                                         <td></td>
                                         <td></td>
-                                        <td style="font-weight:bold;" id="p_total_bobot">0</td>
+                                        <td style="font-weight:bold;" id="p_total_bobot"><?php echo '' .intval($costbased_identity->ti);?></td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <div>Nilai total bobot keluaran penelitian berupa paten (&Sigma;Ti) = <span id="out_paten">0</span></div>
-                            <div>Nilai total bobot keluaran penelitian non paten (&Sigma;Qi) = <span id="out_nonpaten">0</span></div>
-                            <div>Nilai realisasi pagu (R) = Rp. <span id="out_pagu">0</span></div>
+                            <div>Nilai total bobot keluaran penelitian berupa paten (&Sigma;Ti) = <span id="out_paten"><?php echo '' .intval($costbased_identity->ti);?></span></div>
+                            <div>Nilai total bobot keluaran penelitian non paten (&Sigma;Qi) = <span id="out_nonpaten"><?php echo '' .intval($costbased_identity->qi);?></span></div>
+                            <div>Nilai realisasi pagu (R) = Rp. <span id="out_pagu"><?php echo '' .intval($costbased_identity->total_biaya);?></span></div>
                             <div>Nilai keluaran untuk masing-masin Paten : </div>
                             <ul id="out_ki_list">
+                                <?php
+                                    foreach($costbased_paten as $itemx){
+                                        $y = intval($itemx->total_bobot) / (intval($costbased_identity->qi + intval($costbased_identity->ti)));
+                                        $ki_list = $y * $costbased_identity->total_biaya;
+                                        ?>
+                                            <li><?php echo $itemx->jenis_paten .' '. $item->status_permohonan; ?> : Rp.<?php echo $ki_list;?></li>
+                                        <?php
+                                    }
+                                ?>
                             </ul>
-                            <div>Total Nilai Keluaran Penelitian Berupa Paten (Ki = Ti / (&Sigma;Ti+&Sigma;Qi)× R) = Rp. <span id="out_ki">0</span></div>
+                            <div>Total Nilai Keluaran Penelitian Berupa Paten (Ki = Ti / (&Sigma;Ti+&Sigma;Qi)× R) = Rp. <span id="out_ki"><?php echo '' .$costbased_identity->ki;?></span></div>
                         </div>
                     </div>
                     <br/>
@@ -421,34 +454,54 @@
                                     </tr>
                                 </thead>
                                 <tbody id="nilai_luaran_paten_list">
+                                        <?php 
+                                                $y = 0;
+                                                
+                                                foreach($costbased_paten as $item){
+                                                    $y = $y  + 1;
+                                                    $total_biaya_daftar = $total_biaya_daftar + $item->biaya_pendaftaran;
+                                                    $total_biaya_substantif = $total_biaya_substantif + $item->biaya_substantif;
+                                                    $total_biaya_percepatan = $total_biaya_percepatan + $item->biaya_percepatan;
+                                                    $total_biaya_proses_lain = $total_biaya_proses_lain + $item->biaya_proses_lain;
+                                                    ?>
+                                                        <tr>
+                                                            <td><?php echo $y;?></td>
+                                                            <td><?php echo $item->no_pendaftaran;?></td>
+                                                            <td><?php echo $item->biaya_pendaftaran;?></td>
+                                                            <td><?php echo $item->biaya_substantif;?></td>
+                                                            <td><?php echo $item->biaya_percepatan;?></td>
+                                                            <td><?php echo $item->biaya_proses_lain;?></td>
+                                                            <td>
+                                                                <?php 
+                                                                    $hasilku = intval($item->biaya_pendaftaran) + intval($item->biaya_substantif) + intval($item->biaya_percepatan)  +intval($item->biaya_proses_lain) ;
+                                                                    echo ''.$hasilku; 
+                                                                ?>
+                                                            </td>
+                                                        </tr>
+                                                    <?php
+                                                    $hasil = $hasil + $hasilku;
+                                                }
+                                        ?>
                                 </tbody>
                                 <tbody>
                                     <tr style="background : #f1f1f1 !important;">
                                         <td></td>
                                         <td><b>Jumlah (Rp.)</b></td>
-                                        <td id="total_biaya_pendaftaran_seluruh">0</td>
-                                        <td id="total_biaya_substantif_seluruh">0</td>
-                                        <td id="total_biaya_percepatan_seluruh">0</td>
-                                        <td id="total_biaya_proses_lainnya">0</td>
-                                        <td id="total_biaya_permohonan_seluruh">0</td>
+                                     
+                                        <td id=""><?php echo $total_biaya_daftar; ?></td>
+                                        <td id=""><?php echo $total_biaya_substantif; ?></td>
+                                        <td id=""><?php echo $total_biaya_percepatan; ?></td>
+                                        <td id=""><?php echo $total_biaya_proses_lain; ?></td>
+                                        <td id=""><?php echo $hasil; ?></td>
                                     </tr>
                                 </tbody>
                             </table>
                             <small id="emailHelp" class="form-text text-muted">Biaya pendaftaran, pemeriksaan substantif, dan percepatan publikasi, sesuai dengan tarif
                                                                             PNBP yang berlaku di DJKI.</small>
                             <br/>                                                                            
-                            <div>Total Nilai perolehan Paten (Pi = &Sigma;A+&Sigma;B+&Sigma;C+&Sigma;D) = Rp. <span id="out_pi">0</span></div>
+                            <div>Total Nilai perolehan Paten (Pi = &Sigma;A+&Sigma;B+&Sigma;C+&Sigma;D) = Rp. <span id="out_pi"><?php echo '' .$costbased_identity->pi;?></span></div>
                         </div>
                     </div>
-
-                    <!-- <br/>
-                    <div class="row">
-                        <div class="col-lg-9 col-md-9">
-                            <button class="btn btn-primary btn-sm">Hitung</button>
-                            <button class="btn btn-success btn-sm" disabled>Simpan</button>
-                        </div>
-                    </div> -->
-                    <br/>
                     <br/>
                     <br/>
                     <div class="row">
@@ -456,8 +509,19 @@
                             <p class="font-weight-bold">D. Nilai Aset Tak Berwujud berupa Paten/ATB-P (Vi)</p>   
                             <p>1. Nilai ATB-P masing-masing paten:</p>   
                             <ul id="out_atbp_list">
+                                <?php
+                                    foreach($costbased_paten as $itemx){
+                                        $y2 = doubleval($itemx->total_bobot) / (doubleval($costbased_identity->qi) + doubleval($costbased_identity->ti));
+                                        $ki_list2 = doubleval($y2) * doubleval($costbased_identity->total_biaya);
+                                        $total_biaya_permohonan = intval($itemx->biaya_pendaftaran) + intval($itemx->biaya_substantif) + intval($itemx->biaya_percepatan)  +intval($itemx->biaya_proses_lain) ;
+                                        $atbp_lists = doubleval($ki_list2) + doubleval($total_biaya_permohonan);
+                                        ?>
+                                            <li><?php echo $itemx->jenis_paten .' '. $itemx->status_permohonan; ?> : Rp.<?php echo $atbp_lists;?></li>
+                                        <?php
+                                    }
+                                ?>
                             </ul>
-                            <p style="font-weight:bold;font-size:18px;">2. Total Nilai ATB-P : Rp. <span id="out_atbp_total">0</span></p>   
+                            <p style="font-weight:bold;font-size:18px;">2. Total Nilai ATB-P : Rp. <span id="out_atbp_total"><?php echo '' .$costbased_identity->atbp;?></span></p>   
                         </div>
                     </div>
                     <div class="row">

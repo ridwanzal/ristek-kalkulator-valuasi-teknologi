@@ -217,7 +217,7 @@
                                                     <div class="card-body" style="padding:10px;">
                                                         <div style="margin-left:24px;">Keterangan</div>
                                                         <ul>
-                                                            <li>Bobot Paten granted (tersertifikasi) = 48</li>
+                                                            <li>Bobot Paten (tersertifikasi) = 48</li>
                                                             <li>Bobot Paten terdaftar = 14</li>
                                                             <li>Bobot Paten sederhana granted (tersertifikasi)= 33</li>
                                                             <li>Bobot Paten sederhana terdaftar = 9</li>
@@ -241,9 +241,9 @@
                                                         <label class="captions">Asal Biaya Pendaftaran (Permohonan) Paten<i style="color: red">*</i></label>
                                                         <select class="custom-select custom-select-sm" id="par_cb_asalbiayadaftar_1"> 
                                                                 <option value="">-- Silahkan pilih</option>
-                                                                <option value="1">Raih KI</option>
-                                                                <option value="2">Institusi Penghasil/Pemilik Invensi</option>
-                                                                <option value="3">Lainnya</option>
+                                                                <option value="Raih KI">Raih KI</option>
+                                                                <option value="Institusi Penghasil/Pemilik Invensi">Institusi Penghasil/Pemilik Invensi</option>
+                                                                <option value="Lainnya">Lainnya</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-lg-6">

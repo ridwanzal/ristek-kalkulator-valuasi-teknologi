@@ -15,6 +15,7 @@
                 <h6 style="font-weight:bold;">Tujuan Valuasi KI</h6>
             </div>
         </div>
+        <br/>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card" style="padding:30px;">

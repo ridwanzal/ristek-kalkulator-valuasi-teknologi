@@ -46,20 +46,28 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                        $i = 1;
-                                        foreach($costbased as $item){
+                                        if(sizeof($costbased) < 1){
                                             ?>
                                                 <tr>
-                                                    <td><?= $i;?></td>
-                                                    <td><?= $item->judul_penelitian; ?></td>
-                                                    <td><?= $item->nama_inventor;?></td>
-                                                    <td><?= $item->ki;?></td>
-                                                    <td><?= $item->pi;?></td>
-                                                    <td><?= $item->atbp;?></td>
-                                                    <td><a href="<?php echo base_url();?>manage/riwayat/detail/cost-<?php echo $item->id;?>/<?php echo $item->judul_penelitian;?>"><span class="badge badge-primary">Detail</span></a>&nbsp;<a href="#"><span class="badge badge-danger">Hapus</span></a></td>
+                                                    <td colspan="7"><center>Belum ada data</center></td>
                                                 </tr>
                                             <?php
-                                              $i = $i + 1;
+                                        }else{
+                                            $i = 1;
+                                            foreach($costbased as $item){
+                                                ?>
+                                                    <tr>
+                                                        <td><?= $i;?></td>
+                                                        <td><?= $item->judul_penelitian; ?></td>
+                                                        <td><?= $item->nama_inventor;?></td>
+                                                        <td><?= $item->ki;?></td>
+                                                        <td><?= $item->pi;?></td>
+                                                        <td><?= $item->atbp;?></td>
+                                                        <td><a href="<?php echo base_url();?>manage/riwayat/detail/cost-<?php echo $item->id;?>/<?php echo $item->judul_penelitian;?>"><span class="badge badge-primary">Detail</span></a>&nbsp;<a href="#"><span class="badge badge-danger">Hapus</span></a></td>
+                                                    </tr>
+                                                <?php
+                                                  $i = $i + 1;
+                                            }
                                         }
                                     ?>
                                 </tbody>
