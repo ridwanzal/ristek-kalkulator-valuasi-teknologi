@@ -205,8 +205,8 @@
                         <tbody id="data_harga">
                             <tr>
                                 <td>1.</td>
-                                <td colspan="3">Cost of Goods Manufactured</td>
-                                <td><input type="text" class="form-control" id="harga_cogs" name="harga_cogs" placeholder="Nilai COGS/HPP" value="35547200" readonly></td>
+                                <td colspan="3">Cost of Goods Manufactured (COGs)</td>
+                                <td><input type="text" class="form-control" id="harga_cogs" name="harga_cogs" placeholder="Nilai COGS/HPP" readonly></td>
                             </tr>
                             <tr>
                                 <td>2.</td>

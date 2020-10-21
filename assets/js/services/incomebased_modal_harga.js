@@ -118,6 +118,8 @@ function update_harga(){
            obj_harga_profit_value : '' + money.reverse(document.getElementById("harga_profit_value").value),
            obj_harga_hargajual : '' + document.getElementById("harga_hargajual").value
        };
+    model_harga.obj_harga.data.pop();
+    model_harga.obj_harga.data.push(item_harga);
     sessionStorage.setItem("arr_obj_harga",JSON.stringify(model_harga.obj_harga.data));        
 }
 
@@ -262,9 +264,19 @@ tombol_btn_harga_jual.on('click', function(){
         if (model_harga.obj_harga.data.length>0){
             update_harga();
             display_harga();
+            Swal.fire(
+                'Sukses',
+                'Simpan Harga Jual',
+                'success'
+            )
         }else{
             add_harga();
             display_harga();
+            Swal.fire(
+                'Sukses',
+                'Simpan Harga Jual',
+                'success'
+            )
         }    
     }else{
         //alert('Please check input field');

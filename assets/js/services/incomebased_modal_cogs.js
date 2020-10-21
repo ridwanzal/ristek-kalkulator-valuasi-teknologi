@@ -81,11 +81,15 @@ function display_cogs(){
                  $('#total_cogs').empty();
                  $('#total_cogs').append(money.format(String(v_total)));      
                  document.getElementById('biaya_cogs').value = money.format(String(v_total));
+                 //tambahan untuk modal harga_jual
+                 document.getElementById('harga_cogs').value = money.format(String(v_total));
              }
          }else{
              $('#data_cogs').empty();
              $('#total_cogs').empty();
              document.getElementById('biaya_cogs').value = 0.00;
+             //tambahan untuk modal harga_jual
+             document.getElementById('harga_cogs').value = 0.00;
          }	        	    
      }
      
