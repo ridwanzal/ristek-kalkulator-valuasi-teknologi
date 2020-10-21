@@ -15,6 +15,7 @@ $('#target').mask("#.##0,00", {reverse: true});
 $('#marketshare_persen').mask('##0,00%', {reverse: true});
 $('#qty_tahun1').mask("#.##0,00", {reverse: true});
 $('#marketshare_tahun2').mask("##0,00%", {reverse: true});
+$('#biaya_cogs').mask("#.##0,00", {reverse: true});
 $('#harga_tahun1').mask("#.##0,00", {reverse: true});
 $('#harga_tahun2').mask("##0,00%", {reverse: true});
 
@@ -23,7 +24,6 @@ $('#biaya_investasi').mask("#.##0,00", {reverse: true});
 $('#biaya_riset').mask("#.##0,00", {reverse: true});
 $('#biaya_lisensi').mask("#.##0,00", {reverse: true});
 $('#persen_lisensi').mask("##0,00%", {reverse: true});
-$('#biaya_cogs').mask("#.##0,00", {reverse: true});
 $('#biaya_tetap').mask("#.##0,00", {reverse: true});
 $('#biaya_marketing').mask("##0,00%", {reverse: true});
 $('#biaya_perawatan').mask("#.##0,00", {reverse: true});
@@ -178,6 +178,7 @@ $(function(){
         $('#marketshare_persen').attr('required', true);
         $('#qty_tahun1').attr('required', true);
         $('#marketshare_tahun2').attr('required', true);
+        $('#biaya_cogs').attr('required', true);
         $('#harga_tahun1').attr('required', true);
         $('#harga_tahun2').attr('required', true);
 
@@ -186,6 +187,7 @@ $(function(){
         const _marketshare_persen = $('#marketshare_persen');
         const _qty_tahun1 = $('#qty_tahun1');
         const _marketshare_tahun2 = $('#marketshare_tahun2');
+        const _biaya_cogs = $('#biaya_cogs');
         const _harga_tahun1 = $('#harga_tahun1');
         const _harga_tahun2 = $('#harga_tahun2');
 
@@ -194,15 +196,17 @@ $(function(){
         let v_marketshare_persen = checkEmpty(_marketshare_persen);
         let v_qty_tahun1 = checkEmpty(_qty_tahun1);
         let v_marketshare_tahun2 = checkEmpty(_marketshare_tahun2);
+        let v_biaya_cogs = checkEmpty(_biaya_cogs);
         let v_harga_tahun1 = checkEmpty(_harga_tahun1);
         let v_harga_tahun2 = checkEmpty(_harga_tahun2);
 
-        if(!v_target && !v_marketshare_persen && !v_qty_tahun1 && !v_marketshare_tahun2 && !v_harga_tahun1 && !v_harga_tahun2){     
+        if(!v_target && !v_marketshare_persen && !v_qty_tahun1 && !v_marketshare_tahun2 && !v_biaya_cogs && !v_harga_tahun1 && !v_harga_tahun2){     
             //inisilasiasi variabel
             var target = $('#target').val();
             var marketshare_persen = $("#marketshare_persen").val();
             var qty_tahun1 = $('#qty_tahun1').val();
             var marketshare_tahun2 = $('#marketshare_tahun2').val();
+            var biaya_cogs = $('#biaya_cogs').val();
             var harga_tahun1 = $('#harga_tahun1').val();
             var harga_tahun2 = $("#harga_tahun2").val();
             //masukkan variabel ke dalam session storage
@@ -210,6 +214,7 @@ $(function(){
             sessionStorage.setItem("marketshare_persen", marketshare_persen);
             sessionStorage.setItem("qty_tahun1", qty_tahun1);
             sessionStorage.setItem("marketshare_tahun2", marketshare_tahun2);
+            sessionStorage.setItem("biaya_cogs", biaya_cogs);
             sessionStorage.setItem("harga_tahun1", harga_tahun1);
             sessionStorage.setItem("harga_tahun2", harga_tahun2);
             //siapkan data untuk dikirim ke AJAX
@@ -218,6 +223,7 @@ $(function(){
                 'marketshare_persen' : marketshare_persen,
                 'qty_tahun1' : qty_tahun1,
                 'marketshare_tahun2' : marketshare_tahun2,
+                'biaya_cogs' : biaya_cogs,
                 'harga_tahun1' : harga_tahun1,
                 'harga_tahun2' : harga_tahun2
             }
@@ -254,8 +260,7 @@ $(function(){
         $('#biaya_investasi').attr('required', true);
         $('#biaya_riset').attr('required', true);
         $('#biaya_lisensi').attr('required', true);
-        $('#persen_lisensi').attr('required', true);
-        $('#biaya_cogs').attr('required', true);
+        $('#persen_lisensi').attr('required', true);        
         $('#biaya_tetap').attr('required', true);
         $('#biaya_marketing').attr('required', true);
         $('#biaya_perawatan').attr('required', true);
@@ -266,8 +271,7 @@ $(function(){
         const _biaya_investasi = $('#biaya_investasi');
         const _biaya_riset = $('#biaya_riset');
         const _biaya_lisensi = $('#biaya_lisensi');
-        const _persen_lisensi = $('#persen_lisensi');
-        const _biaya_cogs = $('#biaya_cogs');
+        const _persen_lisensi = $('#persen_lisensi');        
         const _biaya_tetap = $('#biaya_tetap');
         const _biaya_marketing = $('#biaya_marketing');
         const _biaya_perawatan = $('#biaya_perawatan');
@@ -278,62 +282,58 @@ $(function(){
         let v_biaya_investasi = checkEmpty(_biaya_investasi);
         let v_biaya_riset = checkEmpty(_biaya_riset);
         let v_biaya_lisensi = checkEmpty(_biaya_lisensi);
-        let v_persen_lisensi = checkEmpty(_persen_lisensi);
-        let v_biaya_cogs = checkEmpty(_biaya_cogs);
+        let v_persen_lisensi = checkEmpty(_persen_lisensi);        
         let v_biaya_tetap = checkEmpty(_biaya_tetap);
         let v_biaya_marketing = checkEmpty(_biaya_marketing);
         let v_biaya_perawatan = checkEmpty(_biaya_perawatan);
         let v_biaya_warehouse = checkEmpty(_biaya_warehouse);
         let v_biaya_depresiasi = checkEmpty(_biaya_depresiasi);
 
-    if(!v_biaya_investasi && !v_biaya_riset && !v_biaya_lisensi && !v_persen_lisensi && !v_biaya_cogs && !v_biaya_tetap && !v_biaya_marketing && !v_biaya_perawatan && !v_biaya_warehouse && !v_biaya_depresiasi){
-        //inisilasiasi variabel
-        var biaya_investasi = $('#biaya_investasi').val();
-        var biaya_riset = $("#biaya_riset").val();
-        var biaya_lisensi = $('#biaya_lisensi').val();
-        var persen_lisensi = $('#persen_lisensi').val();
-        var biaya_cogs = $('#biaya_cogs').val();
-        var biaya_tetap = $("#biaya_tetap").val();
-        var biaya_marketing = $("#biaya_marketing").val();
-        var biaya_perawatan = $("#biaya_perawatan").val();
-        var biaya_warehouse = $("#biaya_warehouse").val();
-        var biaya_depresiasi = $("#biaya_depresiasi").val();
-        //masukkan variabel ke dalam session storage
-        sessionStorage.setItem("biaya_investasi", biaya_investasi);
-        sessionStorage.setItem("biaya_riset", biaya_riset);
-        sessionStorage.setItem("biaya_lisensi", biaya_lisensi);
-        sessionStorage.setItem("persen_lisensi", persen_lisensi);
-        sessionStorage.setItem("biaya_cogs", biaya_cogs);
-        sessionStorage.setItem("biaya_tetap", biaya_tetap);
-        sessionStorage.setItem("biaya_marketing", biaya_marketing);
-        sessionStorage.setItem("biaya_perawatan", biaya_perawatan);
-        sessionStorage.setItem("biaya_warehouse", biaya_warehouse);
-        sessionStorage.setItem("biaya_depresiasi", biaya_depresiasi);
-        //siapkan data untuk dikirim ke AJAX
-        let session_data = {
-            'biaya_investasi' : biaya_investasi,
-            'biaya_riset' : biaya_riset,
-            'biaya_lisensi' : biaya_lisensi,
-            'persen_lisensi' : persen_lisensi,
-            'biaya_cogs' : biaya_cogs,
-            'biaya_tetap' : biaya_tetap,
-            'biaya_marketing' : biaya_marketing,
-            'biaya_perawatan' : biaya_perawatan,
-            'biaya_warehouse' : biaya_warehouse,
-            'biaya_depresiasi' : biaya_depresiasi
-        }
-        loader.show();
-        $.ajax({
-            url : web_url + '/incomebased/data_halaman3',
-            type : 'POST',
-            cache : true,
-            data : session_data,
-            success : function(respon){
-                console.log(respon);
-                loader.hide();
-                window.location.replace(web_url + '/manage/add/incomebased_output');
+        if(!v_biaya_tetap && !v_biaya_investasi && !v_biaya_depresiasi && !v_biaya_riset && !v_biaya_lisensi && !v_persen_lisensi && !v_biaya_marketing && !v_biaya_perawatan && !v_biaya_warehouse){
+            //inisilasiasi variabel
+            var biaya_investasi = $('#biaya_investasi').val();
+            var biaya_riset = $("#biaya_riset").val();
+            var biaya_lisensi = $('#biaya_lisensi').val();
+            var persen_lisensi = $('#persen_lisensi').val();        
+            var biaya_tetap = $("#biaya_tetap").val();
+            var biaya_marketing = $("#biaya_marketing").val();
+            var biaya_perawatan = $("#biaya_perawatan").val();
+            var biaya_warehouse = $("#biaya_warehouse").val();
+            var biaya_depresiasi = $("#biaya_depresiasi").val();
+            //masukkan variabel ke dalam session storage
+            sessionStorage.setItem("biaya_investasi", biaya_investasi);
+            sessionStorage.setItem("biaya_riset", biaya_riset);
+            sessionStorage.setItem("biaya_lisensi", biaya_lisensi);
+            sessionStorage.setItem("persen_lisensi", persen_lisensi);        
+            sessionStorage.setItem("biaya_tetap", biaya_tetap);
+            sessionStorage.setItem("biaya_marketing", biaya_marketing);
+            sessionStorage.setItem("biaya_perawatan", biaya_perawatan);
+            sessionStorage.setItem("biaya_warehouse", biaya_warehouse);
+            sessionStorage.setItem("biaya_depresiasi", biaya_depresiasi);
+            //siapkan data untuk dikirim ke AJAX
+            let session_data = {
+                'biaya_investasi' : biaya_investasi,
+                'biaya_riset' : biaya_riset,
+                'biaya_lisensi' : biaya_lisensi,
+                'persen_lisensi' : persen_lisensi,            
+                'biaya_tetap' : biaya_tetap,
+                'biaya_marketing' : biaya_marketing,
+                'biaya_perawatan' : biaya_perawatan,
+                'biaya_warehouse' : biaya_warehouse,
+                'biaya_depresiasi' : biaya_depresiasi
             }
-        });        
+            loader.show();
+            $.ajax({
+                url : web_url + '/incomebased/data_halaman3',
+                type : 'POST',
+                cache : true,
+                data : session_data,
+                success : function(respon){
+                    console.log(respon);
+                    loader.hide();
+                    window.location.replace(web_url + '/manage/add/incomebased_output');
+                }
+            });        
         }else{
             //alert('Please check input field');
             const Toast = Swal.mixin({
