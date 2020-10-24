@@ -17,6 +17,9 @@
                     <li class="nav-item active">
                       <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>manage/riwayat" title="Riwayat">Riwayat<span class="sr-only">(current)</span></a>    
                     </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" data-toggle="modal" data-target="#tambahkalkulasi" href="<?php echo base_url();?>manage/riwayat" title="Tambah Kalkulasi">Tambah Kalkulasi<span class="sr-only">(current)</span></a>    
+                    </li>
                 </ul>
                 <form method="GET" action="<?php echo base_url(); ?>/blog/blog_content_list_search">
                   <div style="display:flex"; class="searchings">
@@ -38,6 +41,30 @@
                     </div>
                   </div>
               </form>
+
+                <!-- Modal -->
+              <div class="modal fade" id="tambahkalkulasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Tambah Kalkulasi Baru</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <a class="btn btn-primary btn-block" href="<?php echo base_url();?>manage/add/costbased">Kalkulasi dengan metode Cost Based</a>
+                      <hr/>
+                      <a class="btn btn-success btn-block" href="<?php echo base_url();?>manage/add/incomebased">Kalkulasi dengan metode Income Based</a>
+                      <!-- <a disabled class="btn btn-warning btn-block" href="#">Kalkulasi dengan metode Income Based</a> -->
+                      <!-- <button type="button" class="btn btn-primary btn-block">Kalkukasi dengan Metode Cost</button>
+                      <button type="button" class="btn btn-success btn-block">Kalkukasi dengan Metode Income</button> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
             </div>
           </nav>
   </section>
