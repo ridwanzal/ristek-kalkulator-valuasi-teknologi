@@ -72,7 +72,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label class="captions" for="formGroupExampleInput2">Upload dokumen pendukung <i style="color: red">*</i>
                                         &nbsp;
                                         <a data-toggle="popover" title="Upload dokumen pendukung" data-content="Upload dokumen pendukung (format file) " class="badge badge-info text-white">Info</a>
@@ -81,7 +81,7 @@
                                                 <input id="par_cb_file" type="file" class="form-control" name="berkas[]" multiple style="height:45px;">
                                                 <small>Unggah file dlm format PDF, MS Word, PPT, Images*</small>
                                             </div>
-                                    </div>
+                                    </div> -->
                                     <!-- <button id="testupload">Test upload</button> -->
                                 </div>
                         </div>
@@ -246,16 +246,14 @@
                                                                 <option value="Lainnya">Lainnya</option>
                                                         </select>
                                                     </div>
-                                                    <div class="col-lg-6">
+                                                    <!-- <div class="col-lg-6">
                                                         <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung</label>
                                                         <div class="custom-file">
                                                             <input type="file" class="form-control" multiple style="height:45px;" id="par_cb_file2">
                                                             <small>berupa Formulir (Bukti) pendaftaran dan/atau
                                                         Sertifikat Paten/Paten Sederhana (Unggah file dlm format PDF, MS Word, PPT)</small>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-row form-group">
+                                                    </div> -->
                                                     <div class="col-lg-6">
                                                         <label class="captions">Biaya Proses Lainnya</label>
                                                         <input type="text" class="form-control form-control-sm" id="par_biaya_proses_1" onkeyup="biaya_proses_lainnya(1)" placeholder="" value="0" >

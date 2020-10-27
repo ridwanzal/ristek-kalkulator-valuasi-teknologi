@@ -35,7 +35,7 @@ td,th {
 .section_footer{
     padding-top:70px;
     padding-bottom:50px;
-    background:#f1f1f1;
+    background:#fafcff;
     border-top:1px solid #f2f2f2;
     border-bottom:1px solid #f2f2f2;
 }
@@ -83,7 +83,7 @@ td,th {
 }
 
 .footer_last{
-    background : #e8e8e8;
+    background : #fff;
     padding-top:25px;
     padding-bottom: 15px;
     border-top: 1px solid #eee;
@@ -538,6 +538,12 @@ td,th {
     /* box-shadow: 0px 1px 2px rgba(0, 23, 68, 0.09) !important; */
 }
 
+.accordion .card .card-header { 
+    background : #fff !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+
 ul > li {
     font-size: 14px;
 }
@@ -558,7 +564,7 @@ katsinov
 
 
 .second_section { 
-    background:#fafafa;
+    background:#F2F5F9;
     padding-top:80px;
     padding-bottom:80px;
     padding-left: 20px;
@@ -661,7 +667,10 @@ loader
   }
 
   .card_metode{
-      height : 350px !important;
+      height : 400px !important;
+      background: #FFFFFF;
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.03);
+      border-radius: 2px;
   }
 
   .add_buttons{
@@ -681,4 +690,31 @@ loader
       width:25%;
       background-size: contain;
       border-radius: 8px;;
+  }
+
+  .method_details{
+      cursor: pointer;
+      font-size : 14px;
+  }
+
+  .input_warning{
+      border : 1px solid red;
+  }
+
+  .input_normal {
+    border : 1px solid #ccc;
+  }
+
+  .btn, .btn-success{
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.13);
+    border-radius: 1px !important;
+  }
+
+  .form-control-sm, .form-control, .custom-select-sm, .custom-select, .alert{
+      border-radius: 1px !important;
+  }
+
+
+  .badge{
+      padding: 3px 3px 2px 3px;
   }

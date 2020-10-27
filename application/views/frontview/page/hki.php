@@ -71,8 +71,10 @@
                         <img style="width:30%;" src="<?php echo base_url();?>assets/frontview/img/cost.svg"/>
                     </center>
                     <br/>
+                    <br/>
                     <h5 class="card-title bolds">Cost Based</h5>
                     <p class="card-text">Penilaian aset pada tahap pengembangan, didasarkan laporan keuangan & pajak.</p>
+                    <a href="" class="method_details">Pelajari lebih lanjut</a>
                 </div>
                 </div>
             </div>
@@ -83,8 +85,10 @@
                         <img style="width:30%;" src="<?php echo base_url();?>assets/frontview/img/process.svg"/>
                     </center>
                     <br/>
+                    <br/>
                     <h5 class="card-title bolds">Income Based</h5>
                     <p class="card-text">Penilaian untuk transaksi KI Valuasi untuk penggalangan dana (fund raising)</p>
+                    <a href="" class="method_details">Pelajari lebih lanjut</a>
                 </div>
                 </div>
             </div>
@@ -95,8 +99,10 @@
                         <img style="width:30%;" src="<?php echo base_url();?>assets/frontview/img/focus.svg"/>
                     </center>
                     <br/>
+                    <br/>
                     <h5 class="card-title bolds">Market Based</h5>
                     <p class="card-text">Penilaian dengan tujuan jaminan atas pinjaman perbankan, karena tujuan bank atas jaminan yaitu jika kredit macet jaminan bisa dijual secepatnya sesuai/sedikit dibawah harga market</p>
+                    <a href="" class="method_details">Pelajari lebih lanjut</a>
                 </div>
                 </div>
             </div>

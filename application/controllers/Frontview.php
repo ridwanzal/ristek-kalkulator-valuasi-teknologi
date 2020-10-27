@@ -104,6 +104,33 @@ class Frontview extends CI_Controller {
         $this->load->view('frontview/page/privacy_policy', $data);
         $this->load->view('frontview/footer', $data);
     }
+
+
+    function costbased(){
+        $data['title_bar'] = "Cost Based";
+        $data['header_page'] = "Cost Based";
+        $data['breadcrumbs'] = 'Cost Based';
+        $this->load->view('frontview/header', $data);
+        $this->load->view('frontview/navbar', $data);
+        $this->load->view('frontview/components/breadcrumbs', $data);
+        $this->load->view('frontview/page/privacy_policy', $data);
+        $this->load->view('frontview/footer', $data);
+    }
+
+    function incomebased(){
+        $data['title_bar'] = "Income Based";
+        $data['header_page'] = "Income Based";
+        $data['breadcrumbs'] = 'Income Based';
+        $this->load->view('frontview/header', $data);
+        $this->load->view('frontview/navbar', $data);
+        $this->load->view('frontview/components/breadcrumbs', $data);
+        $this->load->view('frontview/page/privacy_policy', $data);
+        $this->load->view('frontview/footer', $data);
+    }
+
+    function marketbased(){
+
+    }
       
     
 }

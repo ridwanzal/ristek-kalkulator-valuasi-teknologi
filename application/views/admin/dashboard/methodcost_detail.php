@@ -75,7 +75,7 @@
                                             <input disabled type="text" class="form-control form-control-sm" id="par_cb_unit_kerja" placeholder="" value="<?= $costbased_identity->asal_biaya; ?>">
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label class="captions" for="formGroupExampleInput2">Upload dokumen pendukung <i style="color: red">*</i></label>
                                         <?php 
                                             if($costbased_identity_lampiran != 'kosong'){
@@ -88,11 +88,11 @@
                                                 }
                                             }
                                         ?>
-                                        <!-- <div class="custom-file">
+                                        <div class="custom-file">
                                             <input id="par_cb_file" type="file" class="form-control" name="berkas[]" multiple style="height:45px;">
                                             <small>Unggah file dlm format PDF, MS Word, PPT, Images*</small>
-                                        </div> -->
-                                    </div>
+                                        </div>
+                                    </div> -->
                                     <!-- <button id="testupload">Test upload</button> -->
                                 </div>
                         </div>

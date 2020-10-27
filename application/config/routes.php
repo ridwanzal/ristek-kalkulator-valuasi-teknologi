@@ -69,7 +69,7 @@ $route['manage/add/incomebased_calculator2'] = 'manage/add_incomebased_calculato
 $route['manage/add/incomebased_calculator3'] = 'manage/add_incomebased_calculator3';
 $route['manage/add/incomebased_output'] = 'manage/add_incomebased_output';
 $route['manage/riwayat'] = 'manage/riwayat';
-$route['manage/riwayat/detail/cost-(:any)/(:any)'] = 'manage/detail_costbased/$1/$2';
+$route['manage/riwayat/detail/cost-(:any)'] = 'manage/detail_costbased/$1/';
 
 // front section
 $route['login'] = 'login';
@@ -88,6 +88,15 @@ $route['tentang'] = 'frontview/tentang';
 $route['syaratketentuan'] = 'frontview/syaratketentuan';
 $route['privacypolicy'] = 'frontview/privacypolicy';
 
+$route['metode/cost-based'] = 'frontview/costbased';
+$route['metode/income-based'] = 'frontview/costbased';
+$route['metode/market-based'] = 'frontview/costbased';
+
+$route['metode/costbased'] = 'frontview/costbased';
+$route['metode/incomebased'] = 'frontview/costbased';
+$route['metode/marketbased'] = 'frontview/costbased';
+
+ 
 
 // error or not found page
 $route['404_override'] = 'notfound';

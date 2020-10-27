@@ -251,49 +251,56 @@ function init(){
                 res = JSON.parse(res);
                 console.log(res);
                 if(res.status == 'success'){
-                    console.log('upload dokumen pendukung');
-                    // upload dokumen pendukung
-                    var form_data = new FormData();
-                    var totalfiles = document.getElementById('par_cb_file').files.length;
-                    for (var index = 0; index < totalfiles; index++) {
-                        form_data.append("berkas[]", document.getElementById('par_cb_file').files[index]);
-                    }
-                    console.log(form_data);
-                    console.log(res.insert_id);
-                    console.log(web_url + '/uploads/multiple/costbased/'+res.insert_id+'');
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Data berhasil di submit',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    // console.log('upload dokumen pendukung');
+                    // // upload dokumen pendukung
+                    // var form_data = new FormData();
+                    // var totalfiles = document.getElementById('par_cb_file').files.length;
+                    // for (var index = 0; index < totalfiles; index++) {
+                    //     form_data.append("berkas[]", document.getElementById('par_cb_file').files[index]);
+                    // }
+                    // console.log(form_data);
+                    // console.log(res.insert_id);
+                    // console.log(web_url + '/uploads/multiple/costbased/'+res.insert_id+'');
 
-                    $.ajax({
-                        url: web_url + '/uploads/multiple/costbased/'+res.insert_id+'',
-                        type: 'post',
-                        data: form_data,
-                        dataType: 'json',
-                        contentType: false,
-                        processData: false,
-                        success: function (response) {
-                            if(response.status == 'success'){
-                                _tosave.attr('disabled', 'disabled');
-                                _tosave.text('Tersimpan');
-                                // bootbox.hideAll();
-                                Swal.fire({
-                                    position: 'top-end',
-                                    icon: 'success',
-                                    title: 'Data berhasil di submit',
-                                    showConfirmButton: false,
-                                    timer: 1500
-                                })
-                            }
-                        },
-                        done : function(){
-                            // bootbox.hideAll();
-                            _tosave.attr('disabled', 'disabled');
-                            _tosave.text('Tersimpan');
-                        },failed : function(e){
-                            console.log(e)
-                        }, error : function(e){
-                            console.log('error');
-                            console.log(e);
-                        }
-                    });
+                    // $.ajax({
+                    //     url: web_url + '/uploads/multiple/costbased/'+res.insert_id+'',
+                    //     type: 'post',
+                    //     data: form_data,
+                    //     dataType: 'json',
+                    //     contentType: false,
+                    //     processData: false,
+                    //     success: function (response) {
+                    //         if(response.status == 'success'){
+                    //             _tosave.attr('disabled', 'disabled');
+                    //             _tosave.text('Tersimpan');
+                    //             // bootbox.hideAll();
+                    //             Swal.fire({
+                    //                 position: 'top-end',
+                    //                 icon: 'success',
+                    //                 title: 'Data berhasil di submit',
+                    //                 showConfirmButton: false,
+                    //                 timer: 1500
+                    //             })
+                    //         }
+                    //     },
+                    //     done : function(){
+                    //         // bootbox.hideAll();
+                    //         _tosave.attr('disabled', 'disabled');
+                    //         _tosave.text('Tersimpan');
+                    //     },failed : function(e){
+                    //         console.log(e)
+                    //     }, error : function(e){
+                    //         console.log('error');
+                    //         console.log(e);
+                    //     }
+                    // });
                 }
             }
         });
@@ -546,8 +553,8 @@ function validate_input_identitas(){
     let d = validate_input(_par_cb_judul_riset)  == true ? check = true : false;
     let e = validate_input(_par_pagu_riset)  == true ? check = true : false;
     let f = validate_input(_par_cb_asal_biaya)  == true ? check = true : false;
-    let g = validate_input(_par_cb_file) == true ? check = true : false;
-    if(a && b && c && d && e && f && g) {
+    // let g = validate_input(_par_cb_file) == true ? check = true : false;
+    if(a && b && c && d && e && f) {
         return true;
     }else{
         $("html, body").animate({ scrollTop: 0 }, "slow");
@@ -787,20 +794,12 @@ function add_luaran_paten(){
                                         </select>
                                     </div>
                                     <div class="col-lg-6">
-                                        <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung</label>
-                                        <div class="custom-file">
-                                            <input disabled="disabled" type="file" class="form-control" multiple style="height:45px;" id="par_cb_file_lp_`+index+`">
-                                            <small>berupa Formulir (Bukti) pendaftaran dan/atau
-                                        Sertifikat Paten/Paten Sederhana (Unggah file dlm format PDF, MS Word, PPT)</small>
-                                        </div>
+                                        <label class="captions">Biaya Proses Lainnya</label>
+                                        <input type="text" class="form-control form-control-sm" id="par_biaya_proses_`+index+`" onkeyup="biaya_proses_lainnya(`+index+`)" placeholder="" value="0">
                                     </div>
-                                    </div>
-                                    <div class="form-row form-group">
-                                        <div class="col-lg-6">
-                                            <label class="captions">Biaya Proses Lainnya</label>
-                                            <input type="text" class="form-control form-control-sm" id="par_biaya_proses_`+index+`" onkeyup="biaya_proses_lainnya(`+index+`)" placeholder="" value="0">
-                                        </div>
-                                    </div>
+                                </div>
+                                <div class="form-row form-group">
+                                </div>
                             </div>
                         </div>`;
         $('.container_luaran_paten').append(adapter);

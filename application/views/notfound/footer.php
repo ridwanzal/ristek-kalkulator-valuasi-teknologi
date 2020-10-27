@@ -41,11 +41,11 @@
             </div>
             <div class="col-lg-4 col-md-4 col-xs-12">
                 <div style="display:flex;float:right;" id="footer_rights">
-                    <a href="<?php echo base_url();?>">Home</a>
-                    <a href="<?php echo base_url();?>galeri">Galeri</a>
-                    <a href="<?php echo base_url();?>karir">Karir</a>
-                    <a href="<?php echo base_url();?>kontak">Kontak</a>
-                    <a href="<?php echo base_url();?>profil/rekanan">Rekanan</a>
+                <a href="<?php echo base_url();?>">Home</a>
+                    <a href="<?php echo base_url();?>prosedur">Prosedur</a>
+                    <a href="<?php echo base_url();?>faq">FAQ</a>
+                    <a href="<?php echo base_url();?>tentang">Tentang</a>
+                    <a href="<?php echo base_url();?>kontak">Hubungi</a>
                 </div>
             </div>
         </div>
