@@ -92,7 +92,7 @@
                         </div>
                     </div>
                     <div class="form-group row">                        
-                        <label for="biaya_warehouse" class="col-sm-6 col-form-label text-right">Biaya Warehouse &nbsp;<span class="badge badge-pill  badge-warning">3.9</span> &nbsp;<a data-toggle="popover" title="Biaya Warehouse" data-content="Biaya Warehouse" class="badge badge-info text-white">Info</a></label>
+                        <label for="biaya_warehouse" class="col-sm-6 col-form-label text-right">Biaya sewa aset (warehouse) &nbsp;<span class="badge badge-pill  badge-warning">3.9</span> &nbsp;<a data-toggle="popover" title="Biaya Warehouse" data-content="Biaya Warehouse" class="badge badge-info text-white">Info</a></label>
                         <div class="col-sm-6">
                             <input type="text" value="<?= $biaya_warehouse; ?>" class="form-control  form-control-sm col-sm-8" id="biaya_warehouse" name="biaya_warehouse" placeholder="#.##0,00" aria-describedby="biaya_warehouseDesc" required>
                             <small id="biaya_warehouseDesc" class="form-text text-muted text-left">Komponen Biaya Warehouse</small>

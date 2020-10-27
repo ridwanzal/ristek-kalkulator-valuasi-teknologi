@@ -521,7 +521,7 @@ for($i=1;$i<=$indeks;$i++){
                                     ?>
                                 </tr>
                                 <tr>
-                                    <td class="text-left" style="text-indent: 30px;">License + ISO9001</td>
+                                    <td class="text-left" style="text-indent: 30px;">Biaya Perizinan dan Legalitas</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
                                         if($i==0){
@@ -589,7 +589,7 @@ for($i=1;$i<=$indeks;$i++){
                                     ?>
                                 </tr>
                                 <tr>
-                                    <td class="text-left" style="text-indent: 30px;">Warehouse</td>
+                                    <td class="text-left" style="text-indent: 30px;">Biaya sewa aset (warehouse)</td>
                                     <?php
                                     for($i=0;$i<=$periode;$i++){
                                         if($i==0){
@@ -806,7 +806,7 @@ for($i=1;$i<=$indeks;$i++){
                                     ?>
                                 </tr>    
                                 <tr>
-                                    <td class="text-left">Warehouse</td>
+                                    <td class="text-left">Biaya sewa aset (warehouse)</td>
                                     <?php
                                     for($i=1;$i<=$periode;$i++){
                                         echo "<td>".rupiah($warehouse[$i])."</td>";
