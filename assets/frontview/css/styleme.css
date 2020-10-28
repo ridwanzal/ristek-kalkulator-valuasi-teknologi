@@ -705,7 +705,7 @@ loader
     border : 1px solid #ccc;
   }
 
-  .btn, .btn-success{
+  .btn-success, btn-warning, btn-danger, btn-primary{
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.13);
     border-radius: 1px !important;
   }

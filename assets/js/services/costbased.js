@@ -396,7 +396,7 @@ function luaran_paten(){
                         biaya_pendaftaran = biaya_permohonan_paten;
                         biaya_substantif = biaya_substantif_paten;
                         biaya_percepatan = biaya_percepatan_pengumuman_publikasi;
-                    }else if(_par_cb_jenis_paten === "paten_granted" && _par_cb_status_paten === "tedaftar"){
+                    }else if(_par_cb_jenis_paten === "paten_granted" && _par_cb_status_paten === "terdaftar"){
                         bobot = granted_terdaftar;
                         biaya_pendaftaran = biaya_permohonan_paten;
                         biaya_substantif = biaya_substantif_paten;
@@ -406,7 +406,7 @@ function luaran_paten(){
                         biaya_pendaftaran = biaya_permohonan_paten_sederhana;
                         biaya_substantif = biaya_substantif_paten_sederhana;
                         biaya_percepatan = 0;
-                    }else if(_par_cb_jenis_paten === "paten_sederhana" && _par_cb_status_paten === "tedaftar"){
+                    }else if(_par_cb_jenis_paten === "paten_sederhana" && _par_cb_status_paten === "terdaftar"){
                         bobot = sederhana_terdaftar;
                         biaya_pendaftaran = biaya_permohonan_paten_sederhana;
                         biaya_substantif = biaya_substantif_paten_sederhana;
