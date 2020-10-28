@@ -18,9 +18,9 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <h5>Informasi</h5>
                 <ul class="list-unstyled text-small listfooters">
-                    <li><a class="text-muted" href="#">FAQ</a></li>
-                    <li><a class="text-muted" href="#">Kegiatan</a></li>
-                    <li><a class="text-muted" href="#">Regulasi</a></li>
+                    <li><a class="text-muted" href="<?php echo base_url();?>faq">FAQ</a></li>
+                    <li><a class="text-muted" href="<?php echo base_url();?>privacypolicy">Kebijakan Privasi</a></li>
+                    <li><a class="text-muted" href="<?php echo base_url();?>syaratketentuan">Syarat & Ketentuan</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
