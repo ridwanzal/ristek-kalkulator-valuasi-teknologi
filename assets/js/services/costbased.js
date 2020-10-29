@@ -437,11 +437,11 @@ function luaran_paten(){
                     let list_adapter_nilai = `<tr>
                     <td>`+i+`.</td>
                             <td>`+_par_cb_nodaftar+`</td>
-                            <td>`+biaya_pendaftaran+`</td>
-                            <td>`+biaya_substantif+`</td>
-                            <td>`+biaya_percepatan+`</td>
-                            <td>`+_par_biaya_proses+`</td>
-                            <td>`+total_biaya_permohonan+`</td>
+                            <td>`+money.init(biaya_pendaftaran)+`</td>
+                            <td>`+money.init(biaya_substantif)+`</td>
+                            <td>`+money.init(biaya_percepatan)+`</td>
+                            <td>`+money.init(_par_biaya_proses)+`</td>
+                            <td>`+money.init(total_biaya_permohonan)+`</td>
                             </tr>
                             `;
                     _nilai_luaran_paten_list.append(list_adapter_nilai);
@@ -461,7 +461,7 @@ function luaran_paten(){
                     let ki = x * parseInt(money.reverse(_par_pagu_riset.val()));
                     total_luaran_penelitian_paten = ki;
 
-                    _out_ki.text(ki);
+                    _out_ki.text(money.formatdec(ki));
 
                     console.log(total_bobot_per_row + '/' + total_bobot_seluruh + '+' + _np_total_bobot)
                     let y = total_bobot_per_row / (parseInt(total_bobot_seluruh) + parseInt(_np_total_bobot.text()) );
@@ -513,10 +513,10 @@ function luaran_paten(){
                     total_biaya_proses_lainnya = 0;
                 }
 
-                _total_biaya_pendaftaran_seluruh.text(total_biaya_pendaftaran_seluruh);
-                _total_biaya_substantif_seluruh.text(total_biaya_substantif_seluruh);
-                _total_biaya_percepatan_seluruh.text(total_biaya_percepatan_seluruh);
-                _total_biaya_proses_lainnya.text(total_biaya_proses_lainnya);
+                _total_biaya_pendaftaran_seluruh.text(money.format(total_biaya_pendaftaran_seluruh));
+                _total_biaya_substantif_seluruh.text(money.format(total_biaya_substantif_seluruh));
+                _total_biaya_percepatan_seluruh.text(money.format(total_biaya_percepatan_seluruh));
+                _total_biaya_proses_lainnya.text(money.format(total_biaya_proses_lainnya));
                 
                 
                 /**
@@ -524,8 +524,8 @@ function luaran_paten(){
                  * pi = total_biaya_pendaftaran_seluruh
                  */
                 
-                _total_biaya_permohonan_seluruh.text(total_biaya_permohonan_seluruh);
-                _out_pi.text(total_biaya_permohonan_seluruh);
+                _total_biaya_permohonan_seluruh.text(money.format(total_biaya_permohonan_seluruh));
+                _out_pi.text(money.init(total_biaya_permohonan_seluruh));
 
 
                  /**
@@ -750,7 +750,7 @@ function add_luaran_paten(){
                                             <label class="captions">Status Peromohonan <i style="color: red">*</i></label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input par_cb_status_paten_`+index+`" type="radio" name="stp_`+index+`"  value="tedaftar">
+                                            <input class="form-check-input par_cb_status_paten_`+index+`" type="radio" name="stp_`+index+`"  value="terdaftar">
                                             <label class="form-check-label" for="inlineRadio1">Terdaftar</label>
                                         </div>
                                         <div class="form-check form-check-inline">

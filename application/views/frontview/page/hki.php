@@ -74,7 +74,7 @@
                     <br/>
                     <h5 class="card-title bolds">Cost Based</h5>
                     <p class="card-text">Penilaian aset pada tahap pengembangan, didasarkan laporan keuangan & pajak.</p>
-                    <a href="" class="method_details">Pelajari lebih lanjut</a>
+                    <a href="<?php echo base_url();?>metode/costbased" class="method_details">Pelajari lebih lanjut</a>
                 </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@
                     <br/>
                     <h5 class="card-title bolds">Income Based</h5>
                     <p class="card-text">Penilaian untuk transaksi KI Valuasi untuk penggalangan dana (fund raising)</p>
-                    <a href="" class="method_details">Pelajari lebih lanjut</a>
+                    <a href="<?php echo base_url();?>metode/incomebased" class="method_details">Pelajari lebih lanjut</a>
                 </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@
                     <br/>
                     <h5 class="card-title bolds">Market Based</h5>
                     <p class="card-text">Penilaian dengan tujuan jaminan atas pinjaman perbankan, karena tujuan bank atas jaminan yaitu jika kredit macet jaminan bisa dijual secepatnya sesuai/sedikit dibawah harga market</p>
-                    <a href="" class="method_details">Pelajari lebih lanjut</a>
+                    <a href="<?php echo base_url();?>metode/marketbased" class="method_details">Pelajari lebih lanjut</a>
                 </div>
                 </div>
             </div>

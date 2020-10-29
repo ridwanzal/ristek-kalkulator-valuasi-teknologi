@@ -80,7 +80,7 @@
                     <div class="col-lg-12 col-md-12 col-xs-12 >
                         <h5 class="bolds"><img width="16" style="border-radius:50%;" src="<?php echo base_url()?>assets/img/copyrights.png">&nbsp;&nbsp;
                         IPR (Intellectual Property Rights)</h5>&nbsp;
-                        <!-- <div class="btn-group add_buttons">
+                        <!-- <div class="btn-group add_buttons">    
                             <div style="" type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Tambah Kalkulasi +
                             </div>

@@ -2,10 +2,14 @@
 <section class="section_footer">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <h6 style="line-height:29px;">Kementerian Riset dan Teknologi /
                     Badan Riset dan Inovasi Nasional
                     Republik Indonesia</h6>
+                    <p style="font-weight:100">
+                    Alamat: Gedung B.J. Habibie Lantai 15-24, Jl. M.H. Thamrin No. 8,
+                    Jakarta Pusat 10340
+                </p>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <h5>Panduan</h5>
@@ -23,11 +27,21 @@
                     <li><a class="text-muted" href="<?php echo base_url();?>syaratketentuan">Syarat & Ketentuan</a></li>
                 </ul>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
             <h5>Media Sosial</h5>
                 <div class="listfooters" style="display:flex;float:left;" id="footer_rights2">
-                        <a href="https://www.facebook.com/Rumah-Sakit-Islam-Ar-rasyid-114286013618366"><img src="https://image.flaticon.com/icons/svg/145/145802.svg" style="width:40px;"></a>
-                        <a href="https://instagram.com/rs_islam_arrasyid"><img src="https://image.flaticon.com/icons/svg/145/145805.svg" style="width:40px;"></a>
+                    <a href="#" target="_blank">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                        <a href="#" target="_blank">
+                            <ion-icon name="logo-instagram" ></ion-icon>
+                        </a>
+                        <a href="#" target="_blank">
+                            <ion-icon name="logo-twitter" ></ion-icon>
+                        </a>
+                        <a href="#" target="_blank">
+                            <ion-icon name="logo-youtube" ></ion-icon>
+                        </a>
                 </div>
             </div>
         </div>

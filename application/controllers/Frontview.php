@@ -113,7 +113,7 @@ class Frontview extends CI_Controller {
         $this->load->view('frontview/header', $data);
         $this->load->view('frontview/navbar', $data);
         $this->load->view('frontview/components/breadcrumbs', $data);
-        $this->load->view('frontview/page/privacy_policy', $data);
+        $this->load->view('frontview/page/metode/costbased', $data);
         $this->load->view('frontview/footer', $data);
     }
 
@@ -124,12 +124,19 @@ class Frontview extends CI_Controller {
         $this->load->view('frontview/header', $data);
         $this->load->view('frontview/navbar', $data);
         $this->load->view('frontview/components/breadcrumbs', $data);
-        $this->load->view('frontview/page/privacy_policy', $data);
+        $this->load->view('frontview/page/metode/incomebased', $data);
         $this->load->view('frontview/footer', $data);
     }
 
     function marketbased(){
-
+        $data['title_bar'] = "Income Based";
+        $data['header_page'] = "Income Based";
+        $data['breadcrumbs'] = 'Income Based';
+        $this->load->view('frontview/header', $data);
+        $this->load->view('frontview/navbar', $data);
+        $this->load->view('frontview/components/breadcrumbs', $data);
+        $this->load->view('frontview/page/metode/marketbased    ', $data);
+        $this->load->view('frontview/footer', $data);
     }
       
     

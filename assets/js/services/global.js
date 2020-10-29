@@ -55,10 +55,19 @@ function checkEmpty(el){
 }
 
 const money = {
+    init : function(str){
+        str = str.toString();
+        if(str.includes('.')){
+            return this.formatdec(str);
+        }else{
+            return  this.format(str);
+        }
+    },
     format : function(str){
         if(str == undefined || str == null  || str == ''){
             return 0;
         }else{
+            str = str.toString();
             let number_string = str.replace(/[^,\d]/g, '').toString(),
             split	= number_string.split(','),
             sisa 	= split[0].length % 3,
@@ -72,15 +81,22 @@ const money = {
             
             rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
             return rupiah;
+        }   
+    },
+    formatdec : function(str){
+        if(str !== undefined){
+            str.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+            return str;
         }
     },
-    formatdec : function(){
-
-    },
     reverse : function(str){
-        let rupiah = str;
-        let clean = rupiah.replace(/\D/g, '');
-        return clean
+        if(str == undefined || str == null  || str == ''){
+            return 0;
+        }else{
+            let rupiah = str;
+            let clean = rupiah.replace(/\D/g, '');
+            return clean
+        }
     }
 }
 

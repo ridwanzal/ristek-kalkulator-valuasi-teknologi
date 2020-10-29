@@ -1,5 +1,5 @@
 *{
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Fira Sans', sans-serif !important;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -7,7 +7,7 @@
 }
 
 .main_font {
-    font-family: 'Inter', sans-serif  !important;
+    font-family: 'Fira Sans', sans-serif  !important;
     font-weight: bold;
 }
 
@@ -21,7 +21,7 @@
 body{
     overflow-x: hidden;
     min-height: 600px;
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Fira Sans', sans-serif !important;
 }
 
 p, label, li, li > a, h6, h5{
@@ -148,7 +148,7 @@ td,th {
     background : #f8f8f8;
     padding-top: 18px;
     padding-bottom: 1px;
-    border-bottom : 1px solid #ddd;
+    border-bottom : 1px solid #eee;
     /* border-bottom:1px solid #eee; */
 }
 
@@ -705,9 +705,9 @@ loader
     border : 1px solid #ccc;
   }
 
-  .btn-success, btn-warning, btn-danger, btn-primary{
+  .btn-success, .btn-warning, .btn-danger, .btn-primary{
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.13);
-    border-radius: 1px !important;
+    border-radius: 2px !important;
   }
 
   .form-control-sm, .form-control, .custom-select-sm, .custom-select, .alert{
@@ -718,3 +718,7 @@ loader
   .badge{
       padding: 3px 3px 2px 3px;
   }
+  
+  /* ion-icon {
+    font-size: 24px;
+  } */
