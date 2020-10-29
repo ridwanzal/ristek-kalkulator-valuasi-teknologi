@@ -10,7 +10,7 @@
                 </span> -->
                 <p style="line-height:30px;">
                     SIKAV merupakan Sistem Informasi Kalkulator Valuasi Teknologi, yang didasarkan pada peraturan Menteri Riset, Teknologi dan Pendidikan Tinggi    
-                    Republik Indonesia Nomor 35 Tahun 2019. Metode kalkulasi yang ditetapkan dengan metode Cost, Income dan Market.
+                    Republik Indonesia Nomor 35 Tahun 2019. Dasar-dasar penghitungan menggunakan metode berbasis Cost, Income dan jg Market.
                 </p>
                 <br/>
                 <a href="<?php echo base_url();?>auth/login" class="btn btn-success">
