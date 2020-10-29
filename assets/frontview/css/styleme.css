@@ -259,6 +259,16 @@ td,th {
 }
 
   @media (min-width: 320px) and (max-width: 480px) {
+    .headlanding{
+        font-size: 24px;
+        line-height: 10px;
+    }
+
+    .btn_landing{
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
     #footer_rights{
         display : none !important;
     }
@@ -268,7 +278,7 @@ td,th {
     }
 
     .section_second_wrapper{
-        padding:20px 20px 60px 20px !important;
+        padding:10px 10px 50px 10px !important;
     }
 
     .section_footer, .footer_last{
@@ -284,11 +294,18 @@ td,th {
     }
 
     .main_section{
-        padding-top: 100px !important;
+        padding-top: 50px !important;
         padding-bottom: 100px !important;
         padding-left: 20px !important;
         padding-right: 20px !important;
-        height: 700px !important;
+        height: 800px !important;
+    }
+
+    .second_section{
+        padding-top: 50px !important;
+        padding-bottom: 100px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
     }
 
     .card{
