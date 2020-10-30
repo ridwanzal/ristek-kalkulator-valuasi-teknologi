@@ -29,7 +29,7 @@
                                         <label for="exampleInputEmail1" >Username  <i style="color: red">*</i> </label>
                                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username (hanya boleh huruf atau angka)" required>
                                         <small id="emailHelp" class="form-text text-muted">(hanya boleh huruf atau angka)</small>
-                               0     </div>
+                                    </div>
                         </div>                        <div class="col-lg-6 col-md-6 col-xs-12">
                             <div class="form-group">
                                 <label for="exampleInputEmail1" >Alamat Email  <i style="color: red">*</i> </label>

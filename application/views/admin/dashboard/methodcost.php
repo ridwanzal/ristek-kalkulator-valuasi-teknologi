@@ -262,9 +262,63 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button style="margin-top:10px;" class="btn btn-sm btn-success btn-block" id="proc_data">Proses data</button>
                                 </div>
                             </div>
+
+                            <!-- perhitungan inflasi -->
+                            <br/>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">8</span>&nbsp;Inflasi <i style="color: red">*</i>   </label>
+                                    </div>
+                                    <d  iv class="container_luaran_paten">
+                                        <div class="card luaran_paten_wrapper">
+                                            <div class="card-body">
+                                                <div class="form-row form-group">
+                                                    <div class="col-lg-3">
+                                                        <label class="captions">Tahun Permohona</label>
+                                                        <select class="form-control form-control-sm">
+                                                            <?php
+                                                                $current_year2 = date("Y");
+                                                                $years_back = $current_year2;
+                                                                for($j = 11; $j > 0; $j--){
+                                                                    ?>
+                                                                        <option value="<?= $years_back; ?>"><?= $years_back; ?></option>
+                                                                        <?php
+                                                                        $years_back = $years_back - 1;
+                                                                }
+                                                            ?>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <label class="captions">Tahun Berjalan </label>
+                                                        <select class="form-control form-control-sm">
+                                                            <?php
+                                                                $current_year = date("Y");
+                                                                $years_come = $current_year;
+                                                                for($i = 0 ; $i < 1; $i++){
+
+                                                                    ?>
+                                                                        <option value="<?= $years_come; ?>"><?= $years_come; ?></option>
+                                                                        <?php
+                                                                        $years_come = $years_come + 1;
+                                                                }
+                                                            ?>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label class="captions">Nilai Inflasi (%)</label>
+                                                        <input type="text" class="form-control form-control-sm" id="par_cb_sertifikat_paten_1" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </d>
+                                </div>
+                            </div>
+
+                            <button style="margin-top:10px;" class="btn btn-sm btn-success btn-block" id="proc_data">Proses data</button>
                             <br/>
                     </div>
                 </div>
