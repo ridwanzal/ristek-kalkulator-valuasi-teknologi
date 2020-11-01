@@ -77,6 +77,7 @@
 <script src="<?php echo base_url();?>/assets/js/services/incomebased_modal_cogs.js"></script>
 <script src="<?php echo base_url();?>/assets/js/services/incomebased_modal_investasi.js"></script>
 <script src="<?php echo base_url();?>/assets/js/services/incomebased_modal_fcost.js"></script>
+<script src="<?php echo base_url();?>/assets/js/services/incomebased_simpan_kalkulasi.js"></script>
 <script src="<?php echo base_url();?>/assets/js/services/tanggal.js"></script>
 </body>
 

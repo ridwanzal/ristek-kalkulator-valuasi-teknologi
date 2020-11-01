@@ -24,12 +24,12 @@
                         <label for="biaya_tetap" class="col-sm-6 col-form-label text-right">Biaya Operasional Tetap (Fixed Cost) per bulan&nbsp;<span class="badge badge-pill  badge-warning">3.1</span> &nbsp;<a data-toggle="popover" title="Biaya Tetap" data-content="Biaya Operasional Tetap (Fixed Cost) untuk pengeluaran setiap bulan." class="badge badge-info text-white">Info</a></label>
                         <div class="col-sm-6">
                             <div class="row">
-                                <div class="col-11">
+                                <div class="col-9">
                                     <input type="text" value="<?= $biaya_tetap; ?>" class="form-control  form-control-sm col-sm-8" id="biaya_tetap" name="biaya_tetap" placeholder="#.##0,00" aria-describedby="biaya_tetapDesc" required>
                                     <small id="biaya_tetapDesc" class="form-text text-muted text-left">Biaya tetap per Bulan</small>
                                 </div>
-                                <div class="col-1 text-left">
-                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalFCOST">&#187;</button>
+                                <div class="col-3 text-right">
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalFCOST">&#187; Input Item</button>
                                 </div>
                             </div>
                         </div>
@@ -38,13 +38,13 @@
                         <label for="biaya_investasi" class="col-sm-6 col-form-label text-right">Biaya Investasi &nbsp;<span class="badge badge-pill  badge-warning">3.2</span> &nbsp;<a data-toggle="popover" title="Biaya Investasi" data-content="Komponen untuk memasukkan biaya investasi. Biaya Investasi Mesin, Kendaraan, dan Peralatan." class="badge badge-info text-white">Info</a></label>
                         <div class="col-sm-6">
                             <div class="row">
-                                <div class="col-11">
+                                <div class="col-9">
                                     <input type="text" value="<?= $biaya_investasi; ?>" class="form-control form-control-sm col-sm-8" id="biaya_investasi" name="biaya_investasi" aria-describedby="biaya_investasiDesc" placeholder="#.##0,00" required>
                                     <small id="biaya_investasiDesc" class="form-text text-muted text-left">Komponen untuk memasukkan biaya investasi</small>
                                     <!-- <span class="badge badge-pill  badge-warning">&#187;</span> -->
                                 </div>
-                                <div class="col-1 text-left">
-                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalInvestasi">&#187;</button>
+                                <div class="col-3 text-right">
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalInvestasi">&#187; Input Item</button>
                                 </div>
                             </div>
                         </div>

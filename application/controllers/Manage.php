@@ -50,8 +50,10 @@ class Manage extends CI_Controller {
 		$userdetails = $this->session->userdata('userdetails');
 		$sinta_id = $userdetails['sinta_id'];
 		$costbased = $this->costbased_model->get_sinta($sinta_id);
+		$incomebased = $this->incomebased_model->get_kalkulasi_sinta_id($sinta_id);
 		// var_dump($costbased); die;
 		$data['costbased'] = $costbased;
+		$data['incomebased'] = $incomebased;
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/navbar', $data);
 		$this->load->view('admin/components/breadcrumbs', $data);

@@ -93,7 +93,7 @@ $userdetails = $this->session->userdata('userdetails');
                                     <input type="text" id="tahun_permohonan" name="tahun_permohonan" class="form-control form-control-sm" placeholder="0000" value="<?php echo $this->input->post('tahun_permohonan'); ?>"> 
                                 </div>
                                 <div class="col-md-3 text-right">
-                                    <label>Pemegang Paten <i style="color: red">*</i></label>
+                                    <label>Lembaga Pemegang Paten <i style="color: red">*</i></label>
                                 </div>
                                 <div class="col-md-9" style="padding-bottom: 5px;">
                                     <textarea id="pemegang_paten" name="pemegang_paten" rows="1" class="form-control form-control-sm" placeholder="Masukkan Pemegang Paten"><?php echo $this->input->post('pemegang_paten'); ?></textarea> 

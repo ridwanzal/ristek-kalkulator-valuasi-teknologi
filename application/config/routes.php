@@ -63,6 +63,7 @@ $route['incomebased/sinkronisasi_ipr'] = 'incomebased/sinkronisasi_ipr';
 $route['incomebased/data_halaman1'] = 'incomebased/data_halaman1';
 $route['incomebased/data_halaman2'] = 'incomebased/data_halaman2';
 $route['incomebased/data_halaman3'] = 'incomebased/data_halaman3';
+$route['incomebased/simpan_kalkulasi'] = 'incomebased/simpan_kalkulasi';
 $route['manage/add/incomebased_calculator'] = 'manage/add_incomebased_calculator';
 $route['manage/add/incomebased_calculator1/(:num)'] = 'manage/add_incomebased_calculator1/$1';
 $route['manage/add/incomebased_calculator2'] = 'manage/add_incomebased_calculator2';

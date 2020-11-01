@@ -12,6 +12,11 @@
         }
      */
     $userdetails = $this->session->userdata('userdetails');
+    //fungsi untuk menampilkan angka dalam rupiah
+    function rupiah($angka){
+        $hasil_rupiah = number_format($angka,2,',','.');
+        return $hasil_rupiah;
+    }
 ?>
 
 <section class="section_main_wrapper">
@@ -75,6 +80,43 @@
                     </div>
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <!--income based here-->
+                        <table class="table table-sm table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Judul Invensi</th>
+                                        <th scope="col">Nama Inventor</th>
+                                        <th scope="col">Nilai NPV</th>
+                                        <th scope="col">Action</th>
+                                        <T
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        if(sizeof($incomebased) < 1){
+                                            ?>
+                                                <tr>
+                                                    <td colspan="7"><center>Belum ada data</center></td>
+                                                </tr>
+                                            <?php
+                                        }else{
+                                            $i = 1;
+                                            foreach($incomebased as $item){
+                                                ?>
+                                                    <tr>
+                                                        <td><?= $i;?></td>
+                                                        <td><?= $item->hki_judul; ?></td>
+                                                        <td><?= $item->hki_inventor;?></td>
+                                                        <td><?= rupiah($item->nilai_npv);?></td>
+                                                        <td><a href="#"><span class="badge badge-primary">Detail</span></a>&nbsp;<a href="#"><span class="badge badge-danger">Hapus</span></a></td>
+                                                    </tr>
+                                                <?php
+                                                  $i = $i + 1;
+                                            }
+                                        }
+                                    ?>
+                                </tbody>
+                        </table>
                     </div>
                     <!-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"> -->
                         <!--market based here-->

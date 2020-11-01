@@ -6,7 +6,7 @@
 ($this->session->userdata('sukubunga')!=null) ? $sukubunga = $this->session->userdata('sukubunga'): $sukubunga=null;
 ($this->session->userdata('marketsize')!=null) ? $marketsize = $this->session->userdata('marketsize'): $marketsize=null;
 ($this->session->userdata('marketshare')!=null) ? $marketshare = $this->session->userdata('marketshare'): $marketshare=null;
-($this->session->userdata('qty')!=null) ? $qty = $this->session->userdata('qty'): $qty=null;
+($this->session->userdata('pagu_maksimal')!=null) ? $pagu_maksimal = $this->session->userdata('pagu_maksimal'): $pagu_maksimal=null;
 ($this->session->userdata('discount_factor')!=null) ? $discount_factor = $this->session->userdata('discount_factor'): $discount_factor=null;
 
 //jika data diambil dari data non SINTA
@@ -63,9 +63,23 @@ foreach ($sikav_hki as $rshki) {
                     </div>
                     <div class="form-group row">                        
                         <label for="sukubunga" class="col-sm-4 col-form-label text-right">Suku Bunga (Interest) Bank &nbsp;<span class="badge badge-pill  badge-warning">1.5</span> &nbsp;<a data-toggle="popover" title="Suku Bunga" data-content="Besaran suku bunga dari pinjaman yang diperoleh dari modal awal pinjaman Bank. Suku bunga tahunan dalam satuan persen (%)." class="badge badge-info text-white">Info</a> </label>
-                        <div class="col-md-8 text-left">
-                        <input type="text" value="<?= $sukubunga; ?>" class="form-control  form-control-sm col-sm-8" id="sukubunga" name="sukubunga" aria-describedby="sukubungaDesc" placeholder="##0,00%" required>                        
+                        <div class="col-md-5 text-left">
+                            <input type="text" value="<?= $sukubunga; ?>" class="form-control  form-control-sm col-sm-8" id="sukubunga" name="sukubunga" aria-describedby="sukubungaDesc" placeholder="##0,00%" required>                        
                             <small id="sukubungaDesc" class="form-text text-muted">Suku Bunga (Interest) Bank dalam satuan persen(%)</small>
+                        </div>
+                        <div class="col-md-3 text-right">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Referensi Suku Bunga
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" target="_blank" href="https://www.bca.co.id/individu/sarana/kurs-dan-suku-bunga/suku-bunga-dasar-kredit" >BANK BCA</a>
+                                    <a class="dropdown-item" target="_blank" href="https://bri.co.id/loan-interest-rates" >BANK BRI</a>
+                                    <a class="dropdown-item" target="_blank" href="https://www.bni.co.id/id-id/beranda/sukubungadasarkredit" >BANK BNI</a>
+                                    <a class="dropdown-item" target="_blank" href="https://www.bankmandiri.co.id/suku-bunga-dasar-kredit" >BANK MANDIRI</a>
+                                    <a class="dropdown-item" target="_blank" href="https://www.btn.co.id/id/Conventional/Product-Links/Produk-BTN/SBDK/SBDK/Suku-Bunga-Dasar-Kredit" >BANK BTN</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group row">                        
@@ -87,17 +101,24 @@ foreach ($sikav_hki as $rshki) {
                         </div>
                     </div>
                     <div class="form-group row">                    
-                        <label for="qty" class="col-sm-4 col-form-label text-right">Pagu maksimal jumlah produksi &nbsp;<span class="badge badge-pill  badge-warning">1.8</span> &nbsp;<a data-toggle="popover" title="Jumlah Produksi" data-content="Proyeksi jumlah maksimal produksi dari unit produk yang dihasilkan dari invensi. Jumlah ini merupakan pagu maksimal yang nantinya digunakan pada halaman ke - 2. Nilai ini diperoleh dari hasil perkalian antara 1.6 Market Size dan 1.7 Prosentase Market Share." class="badge badge-info text-white">Info</a></label>
+                        <label for="pagu_maksimal" class="col-sm-4 col-form-label text-right">Pagu maksimal jumlah produksi &nbsp;<span class="badge badge-pill  badge-warning">1.8</span> &nbsp;<a data-toggle="popover" title="Jumlah Produksi" data-content="Proyeksi jumlah maksimal produksi dari unit produk yang dihasilkan dari invensi. Jumlah ini merupakan pagu maksimal yang nantinya digunakan pada halaman ke - 2. Nilai ini diperoleh dari hasil perkalian antara 1.6 Market Size dan 1.7 Prosentase Market Share." class="badge badge-info text-white">Info</a></label>
                         <div class="col-md-8 text-left">
-                            <input type="text" value="<?= $qty; ?>" class="form-control  form-control-sm col-sm-8" id="qty" name="qty" aria-describedby="qtyDesc" readonly required>
-                            <small id="qtyDesc" class="form-text text-muted">Hasil perkalian market size dan market share</small>
+                            <input type="text" value="<?= $pagu_maksimal; ?>" class="form-control  form-control-sm col-sm-8" id="pagu_maksimal" name="pagu_maksimal" aria-describedby="paguDesc" readonly required>
+                            <small id="paguDesc" class="form-text text-muted">Hasil perkalian market size dan market share</small>
                         </div>
                     </div>
                     <div class="form-group row">                    
-                        <label for="qty" class="col-sm-4 col-form-label text-right">Discount Factor &nbsp;<span class="badge badge-pill  badge-warning">1.9</span> &nbsp;<a data-toggle="popover" title="Tabel Discount Factor" data-content="Digunakan sebagai Discount Factor untuk menentukan Prosentase Discount, untuk mendapatkan nilai Discounted FCF." class="badge badge-info text-white">Info</a></label>
+                        <label for="discount_factor" class="col-sm-4 col-form-label text-right">Discount Factor &nbsp;<span class="badge badge-pill  badge-warning">1.9</span> &nbsp;<a data-toggle="popover" title="Tabel Discount Factor" data-content="Digunakan sebagai Discount Factor untuk menentukan Prosentase Discount, untuk mendapatkan nilai Discounted FCF." class="badge badge-info text-white">Info</a></label>
                         <div class="col-md-8 text-left">
-                            <input type="text" value="<?= $discount_factor; ?>" class="form-control form-control-sm col-sm-8 pencarian" id="discount_factor" name="discount_factor" aria-describedby="discount_factorDesc" required>
-                            <small id="discount_factorDesc" class="form-text text-muted">Tabel rujukan Discount Factor</small>
+                            <div class="row">
+                                <div class="col-8">
+                                    <input type="text" value="<?= $discount_factor; ?>" class="form-control form-control-sm col-sm-8 pencarian" id="discount_factor" name="discount_factor" aria-describedby="discount_factorDesc" required>
+                                    <small id="discount_factorDesc" class="form-text text-muted">Tabel rujukan Discount Factor</small>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">&#187; Tabel Discount Factor</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group row">                    

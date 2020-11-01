@@ -6,6 +6,7 @@ class Incomebased_model extends CI_Model {
 
     private $table = "sikav_income_hki";
     private $table2 = "sikav_income_discount";
+    private $table3 = "sikav_income_kalkulasi";
     public $sinta_id;
     public $hki_id;
     
@@ -15,7 +16,13 @@ class Incomebased_model extends CI_Model {
         return $this->db->get_where($this->table, ["sinta_id" => $sinta_id])->result();
     }
 
-    // tampilkan hanya data berdasarkan Sinta ID
+    // tampilkan hanya data Kalkulasi berdasarkan Sinta ID
+    public function get_kalkulasi_sinta_id($sinta_id)
+    {
+        return $this->db->get_where($this->table3, ["sinta_id" => $sinta_id])->result();
+    }
+
+    // tampilkan hanya data berdasarkan HKI ID
     public function get_hki_id($hki_id)
     {
         return $this->db->get_where($this->table, ["hki_id" => $hki_id])->result();
@@ -26,17 +33,29 @@ class Incomebased_model extends CI_Model {
         return $this->db->get_where($this->table, ["id" => $id])->row();
     }
 
+    // mencari item IPR berdasarkan ID
+    function cek_hki_kalkulasi($hki_id){
+        return $this->db->get_where($this->table3, ["hki_id" => $hki_id])->row();
+    }
+
     // insert data
     function insert($data)
     {
         $this->db->insert($this->table, $data);
     }
 
-    // update data
+    // update data HKI
     public function update($hki_id, $data)
     {       
         $this->db->where('hki_id', $hki_id);
 		$this->db->update($this->table, $data);
+    }
+
+    // update data kalkulasi 
+    public function update_kalkulasi($hki_id, $data)
+    {       
+        $this->db->where('hki_id', $hki_id);
+		$this->db->update($this->table3, $data);
     }
 
     // delete data
@@ -86,6 +105,12 @@ class Incomebased_model extends CI_Model {
             $this->db->select('d_30 AS df');
         }
         return $this->db->get($this->table2)->result();        
+    }
+
+    // insert data hasil kalkulasi
+    function insert_kalkulasi($data)
+    {
+        $this->db->insert($this->table3, $data);
     }
 
 }

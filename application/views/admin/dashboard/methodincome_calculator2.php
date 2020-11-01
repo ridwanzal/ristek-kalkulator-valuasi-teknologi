@@ -50,12 +50,12 @@
                         <label for="biaya_cogs" class="col-sm-6 col-form-label text-right">Biaya Cost of Goods Sold (Biaya Investasi Produk) &nbsp;<span class="badge badge-pill  badge-warning">2.5</span> &nbsp;<a data-toggle="popover" title="Biaya COGs" data-content="Biaya Cost of Goods Sold (Biaya Investasi Produk)." class="badge badge-info text-white">Info</a></label>      
                         <div class="col-sm-6">
                             <div class="row">                  
-                                <div class="col-11">
+                                <div class="col-8">
                                     <input type="text" value="<?= $biaya_cogs; ?>" class="form-control form-control-sm col-sm-8" id="biaya_cogs" name="biaya_cogs" aria-describedby="biaya_cogsDesc" placeholder="#.##0,00" required>                        
                                     <small id="biaya_cogsDesc" class="form-text text-muted text-left">Biaya Investasi Produk</small>
                                 </div>
-                                <div class="col-1 text-left">
-                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalCOGS">&#187;</button>
+                                <div class="col-4 text-right">
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalCOGS">&#187; Input Item</button>
                                 </div>
                             </div>
                         </div>
@@ -63,15 +63,32 @@
                     <div class="form-group row">                        
                         <label for="harga_tahun1" class="col-sm-6 col-form-label text-right">Harga Jual Produk (Tahun Pertama) &nbsp;<span class="badge badge-pill  badge-warning">2.6</span> &nbsp;<a data-toggle="popover" title="Harga Jual Produk" data-content="Harga Jual Produk (Tahun Pertama), Harga jual produk pada tahun pertama." class="badge badge-info text-white">Info</a></label>
                         <div class="col-md-6 text-left">
-                        <input type="text" value="<?= $harga_tahun1; ?>" class="form-control  form-control-sm col-sm-8" id="harga_tahun1" name="harga_tahun1" aria-describedby="harga_tahun1Desc" placeholder="#.##0,00" required>                        
-                            <small id="harga_tahun1Desc" class="form-text text-muted">Harga jual produk pada tahun pertama</small>
+                            <div class="row">
+                                <div class="col-8">
+                                    <input type="text" value="<?= $harga_tahun1; ?>" class="form-control  form-control-sm col-sm-8" id="harga_tahun1" name="harga_tahun1" aria-describedby="harga_tahun1Desc" placeholder="#.##0,00" required>                        
+                                    <small id="harga_tahun1Desc" class="form-text text-muted">Harga jual produk pada tahun pertama</small>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalHarga">&#187; Proyeksi Harga</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group row">                        
                         <label for="harga_tahun2" class="col-sm-6 col-form-label text-right">Harga Jual Produk mulai Tahun ke - 2 (%) &nbsp;<span class="badge badge-pill  badge-warning">2.7</span> &nbsp;<a data-toggle="popover" title="Proyeksi Harga Jual" data-content="Harga Jual Produk mulai Tahun ke - 2 (%), Harga jual produk pada tahun ke - 2 dan seterusnya." class="badge badge-info text-white">Info</a></label>
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                             <input type="text" value="<?= $harga_tahun2; ?>" class="form-control  form-control-sm col-sm-8" id="harga_tahun2" name="harga_tahun2" placeholder="##0,00%" aria-describedby="harga_tahun2Desc" required>
                             <small id="harga_tahun2Desc" class="form-text text-muted text-left">Harga jual produk pada tahun ke - 2 dan seterusnya</small>
+                        </div>
+                        <div class="col-md-2 text-right">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Referensi Inflasi
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" target="_blank" href="https://www.bi.go.id/id/moneter/inflasi/data/Default.aspx" >BANK INDONESIA</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- untuk tombol previous next -->

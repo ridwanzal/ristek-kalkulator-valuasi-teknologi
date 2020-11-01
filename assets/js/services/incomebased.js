@@ -66,7 +66,7 @@ $(function(){
         }else if(m_pilihan=='persen3'){
             m_produk = m_size * 0.10;
         }            
-        $('#qty').val(formatNumber(m_produk));
+        $('#pagu_maksimal').val(formatNumber(m_produk));
     });
 
     $('#marketshare').on('change', function() {
@@ -80,7 +80,7 @@ $(function(){
         }else if(m_pilihan=='persen3'){
             m_produk = m_size * 0.10;
         }            
-        $('#qty').val(formatNumber(m_produk));
+        $('#pagu_maksimal').val(formatNumber(m_produk));
     });
     
     //untuk perhitungan di halaman ke - 2
@@ -98,29 +98,33 @@ $(function(){
         $('#modal').attr('required', true);
         $('#sukubunga').attr('required', true);
         $('#marketsize').attr('required', true);
-        $('#qty').attr('required', true);
+        $('#marketshare').attr('required', true);
+        $('#pagu_maksimal').attr('required', true);
         $('#discount_factor').attr('required', true);
 
         //validasi cek isi
         const _modal = $('#modal');
         const _sukubunga = $('#sukubunga');
         const _marketsize = $('#marketsize');
-        const _qty = $('#qty');
+        const _marketshare = $('#marketshare');
+        const _pagu_maksimal = $('#pagu_maksimal');
         const _discount_factor = $('#discount_factor');
         //
         let v_modal = checkEmpty(_modal);
         let v_sukubunga = checkEmpty(_sukubunga);
         let v_marketsize = checkEmpty(_marketsize);
-        let v_qty = checkEmpty(_qty);
+        let v_marketshare = checkEmpty(_marketshare);
+        let v_pagu_maksimal = checkEmpty(_pagu_maksimal);
         let v_discount_factor = checkEmpty(_discount_factor);
-        if(!v_modal && !v_sukubunga && !v_marketsize && !v_qty && !v_discount_factor){
+
+        if(!v_modal && !v_sukubunga && !v_marketsize && !v_marketshare && !v_pagu_maksimal && !v_discount_factor){
             var inventor = $('#inventor').val();
             var periode = $("#periode option:selected").attr("value");
             var modal = $('#modal').val();
             var sukubunga = $('#sukubunga').val();
             var marketsize = $('#marketsize').val();
             var marketshare = $("#marketshare option:selected").attr("value");
-            var qty = $('#qty').val();
+            var pagu_maksimal = $('#pagu_maksimal').val();
             var discount_factor = $('#discount_factor').val();
             
             //masukkan variabel ke dalam session storage
@@ -130,7 +134,7 @@ $(function(){
             sessionStorage.setItem("sukubunga", sukubunga);
             sessionStorage.setItem("marketsize", marketsize);
             sessionStorage.setItem("marketshare", marketshare);
-            sessionStorage.setItem("qty", qty);
+            sessionStorage.setItem("pagu_maksimal", pagu_maksimal);
             sessionStorage.setItem("discount_factor", discount_factor);
             //siapkan data untuk dikirim ke AJAX
             let session_data = {
@@ -140,7 +144,7 @@ $(function(){
                 'sukubunga' : sukubunga,
                 'marketsize' : marketsize,
                 'marketshare' : marketshare,
-                'qty' : qty,
+                'pagu_maksimal' : pagu_maksimal,
                 'discount_factor' : discount_factor
             }
             loader.show();

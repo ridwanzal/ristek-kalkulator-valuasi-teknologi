@@ -5,14 +5,25 @@
 ($this->session->userdata('periode')!==null) ? $periode = $this->session->userdata('periode'): $periode=0.00;
 ($this->session->userdata('modal')!==null) ? $modal = $this->session->userdata('modal'): $modal=0.00;
 ($this->session->userdata('sukubunga')!==null) ? $sukubunga = $this->session->userdata('sukubunga'): $sukubunga=0.00;
+($this->session->userdata('marketsize')!=null) ? $marketsize = $this->session->userdata('marketsize'): $marketsize=0.00;
+($this->session->userdata('marketshare')!=null) ? $marketshare = $this->session->userdata('marketshare'): $marketshare=null;
+($this->session->userdata('pagu_maksimal')!=null) ? $pagu_maksimal = $this->session->userdata('pagu_maksimal'): $pagu_maksimal=0.00;
 ($this->session->userdata('discount_factor')!==null) ? $discount_factor = $this->session->userdata('discount_factor'): $discount_factor=0.00;
 
 //variabel dari halaman 2
-($this->session->userdata('target')!==null) ? $target = $this->session->userdata('target'): $target=0.00;
-($this->session->userdata('qty_tahun1')!==null) ? $qty_tahun1 = $this->session->userdata('qty_tahun1'): $qty_tahun1=0.00;
-($this->session->userdata('marketshare_tahun2')!==null) ? $marketshare_tahun2 = $this->session->userdata('marketshare_tahun2'): $marketshare_tahun2=0.00;
-($this->session->userdata('harga_tahun1')!==null) ? $harga_tahun1 = $this->session->userdata('harga_tahun1'): $harga_tahun1=0.00;
-($this->session->userdata('harga_tahun2')!==null) ? $harga_tahun2 = $this->session->userdata('harga_tahun2'): $harga_tahun2=0.00;
+($this->session->userdata('target')!=null) ? $target = $this->session->userdata('target'): $target=null;
+($this->session->userdata('marketshare_persen')!=null) ? $marketshare_persen = $this->session->userdata('marketshare_persen'): $marketshare_persen=null;
+($this->session->userdata('qty_tahun1')!=null) ? $qty_tahun1 = $this->session->userdata('qty_tahun1'): $qty_tahun1=null;
+($this->session->userdata('marketshare_tahun2')!=null) ? $marketshare_tahun2 = $this->session->userdata('marketshare_tahun2'): $marketshare_tahun2=null;
+($this->session->userdata('biaya_cogs')!=null) ? $biaya_cogs = $this->session->userdata('biaya_cogs'): $biaya_cogs=null;
+($this->session->userdata('harga_tahun1')!=null) ? $harga_tahun1 = $this->session->userdata('harga_tahun1'): $harga_tahun1=null;
+($this->session->userdata('harga_tahun2')!=null) ? $harga_tahun2 = $this->session->userdata('harga_tahun2'): $harga_tahun2=null;
+
+// ($this->session->userdata('target')!==null) ? $target = $this->session->userdata('target'): $target=0.00;
+// ($this->session->userdata('qty_tahun1')!==null) ? $qty_tahun1 = $this->session->userdata('qty_tahun1'): $qty_tahun1=0.00;
+// ($this->session->userdata('marketshare_tahun2')!==null) ? $marketshare_tahun2 = $this->session->userdata('marketshare_tahun2'): $marketshare_tahun2=0.00;
+// ($this->session->userdata('harga_tahun1')!==null) ? $harga_tahun1 = $this->session->userdata('harga_tahun1'): $harga_tahun1=0.00;
+// ($this->session->userdata('harga_tahun2')!==null) ? $harga_tahun2 = $this->session->userdata('harga_tahun2'): $harga_tahun2=0.00;
 
 //variabel dari halaman 3
 ($this->session->userdata('biaya_investasi')!==null) ? $biaya_investasi = $this->session->userdata('biaya_investasi'): $biaya_investasi=0.00;
@@ -30,10 +41,16 @@
 $periode = get_numeric($periode);
 $modal = get_numeric($modal);
 $sukubunga = get_numeric($sukubunga);
+$marketsize = get_numeric($marketsize);
+$marketshare = get_numeric($marketshare);
+$pagu_maksimal = get_numeric($pagu_maksimal);
+$discount_factor = get_numeric($discount_factor);
 //
 $target = get_numeric($target);
+$marketshare_persen = get_numeric($marketshare_persen);
 $qty_tahun1 = get_numeric($qty_tahun1);
 $marketshare_tahun2 = get_numeric($marketshare_tahun2);
+$biaya_cogs = get_numeric($biaya_cogs);
 $harga_tahun1 = get_numeric($harga_tahun1);
 $harga_tahun2 = get_numeric($harga_tahun2);
 //
@@ -41,7 +58,6 @@ $biaya_investasi = get_numeric($biaya_investasi);
 $biaya_riset = get_numeric($biaya_riset);
 $biaya_lisensi = get_numeric($biaya_lisensi);
 $persen_lisensi = get_numeric($persen_lisensi);
-$biaya_cogs = get_numeric($biaya_cogs);
 $biaya_tetap = get_numeric($biaya_tetap);
 $biaya_marketing = get_numeric($biaya_marketing);
 $biaya_perawatan = get_numeric($biaya_perawatan);
@@ -324,6 +340,8 @@ for($i=1;$i<=$indeks;$i++){
 
 //jumlahkan isi array discount_fcf untuk memperoleh profit_loss.npv
 $npv = array_sum($discount_fcf);
+//tempatkan nilai NPV dalam session untuk proses penyimpanan
+$this->session->set_userdata('sesi_npv', $npv);
 
 //variabel dummy npv.npv2
 $npv2 = array();
@@ -347,7 +365,7 @@ for($i=1;$i<=$indeks;$i++){
                     <div class="form-group row">                        
                         <label for="inventor" class="col-sm-4 col-form-label text-right">Nama Inventor</label>
                         <div class="col-sm-8">
-                            <input type="text" value="<?=$this->session->userdata('sesi_inventor'); ?>" class="form-control  form-control-sm col-sm-12" id="inventor" aria-describedby="inventorDesc" readonly>
+                            <textarea  class="form-control  form-control-sm col-sm-12" id="inventor" aria-describedby="marketsiezeDesc" readonly><?=$this->session->userdata('sesi_inventor'); ?></textarea>
                             <small id="inventorDesc" class="form-text text-muted text-left">Nama Inventor</small>
                         </div>
                     </div>                    
@@ -360,8 +378,48 @@ for($i=1;$i<=$indeks;$i++){
                     </div>
                     <!-- untuk tombol previous next -->
                     <div class="form-group row">                    
-                        <div class="col-md-3 text-right">
-                        <a href="<?=base_url() ?>manage/add/incomebased_calculator3" id="tombol32" name="tombol32" class="btn btn-xs btn-outline-danger btn-block">Kembali Input Parameter Kalkulasi</a>
+                        <div class="col-md-2 text-right">
+                        <a href="<?=base_url() ?>manage/add/incomebased_calculator3" id="tombol32" name="tombol32" class="btn btn-xs btn-outline-danger btn-block">Input Parameter</a>
+                        </div>
+                    <!-- </div> -->
+                    <!-- untuk tombol simpan ke DB -->
+                    <!-- <div class="form-group row">                     -->
+                        <div class="col-md-2 text-right">
+                        <!-- variabel untuk dikirim melalui AJAX ke Controller Incomebased.php -->
+                        <!-- <input type="hidden" id="f_sinta_id" name="f_sinta_id" value="<?=$npv; ?>"> -->
+                        <!-- <input type="hidden" id="f_hki_id" name="f_hki_id" value="<?=$npv; ?>"> -->
+                        <!-- <input type="hidden" id="f_hki_inventor" name="f_hki_inventor" value="<?=$npv; ?>"> -->
+                        <!-- <input type="hidden" id="f_hki_judul" name="f_hki_judul" value="<?=$npv; ?>"> -->
+                        <input type="hidden" id="f_periode" name="f_periode" value="<?=$periode; ?>">
+                        <input type="hidden" id="f_modal" name="f_modal" value="<?=$modal; ?>">
+                        <input type="hidden" id="f_sukubunga" name="f_sukubunga" value="<?=$sukubunga; ?>">
+                        <input type="hidden" id="f_marketsize" name="f_marketsize" value="<?=$marketsize; ?>">
+                        <input type="hidden" id="f_marketshare" name="f_marketshare" value="<?=$marketshare; ?>">
+                        <input type="hidden" id="f_pagu_maksimal" name="f_pagu_maksimal" value="<?=$pagu_maksimal; ?>">
+                        <input type="hidden" id="f_discount_factor" name="f_discount_factor" value="<?=$discount_factor; ?>">
+                        <input type="hidden" id="f_target" name="f_target" value="<?=$target; ?>">
+                        <input type="hidden" id="f_marketshare_persen" name="f_marketshare_persen" value="<?=$marketshare_persen; ?>">
+                        <input type="hidden" id="f_qty_tahun1" name="f_qty_tahun1" value="<?=$qty_tahun1; ?>">
+                        <input type="hidden" id="f_marketshare_tahun2" name="f_marketshare_tahun2" value="<?=$marketshare_tahun2; ?>">
+                        <input type="hidden" id="f_biaya_cogs" name="f_biaya_cogs" value="<?=$biaya_cogs; ?>">
+                        <input type="hidden" id="f_harga_tahun1" name="f_harga_tahun1" value="<?=$harga_tahun1; ?>">
+                        <input type="hidden" id="f_harga_tahun2" name="f_harga_tahun2" value="<?=$harga_tahun2; ?>">
+                        <input type="hidden" id="f_biaya_investasi" name="f_biaya_investasi" value="<?=$biaya_investasi; ?>">
+                        <input type="hidden" id="f_biaya_riset" name="f_biaya_riset" value="<?=$biaya_riset; ?>">
+                        <input type="hidden" id="f_biaya_lisensi" name="f_biaya_lisensi" value="<?=$biaya_lisensi; ?>">
+                        <input type="hidden" id="f_persen_lisensi" name="f_persen_lisensi" value="<?=$persen_lisensi; ?>">
+                        <input type="hidden" id="f_biaya_tetap" name="f_biaya_tetap" value="<?=$biaya_tetap; ?>">
+                        <input type="hidden" id="f_biaya_marketing" name="f_biaya_marketing" value="<?=$biaya_marketing; ?>">
+                        <input type="hidden" id="f_biaya_perawatan" name="f_biaya_perawatan" value="<?=$biaya_perawatan; ?>">
+                        <input type="hidden" id="f_biaya_warehouse" name="f_biaya_warehouse" value="<?=$biaya_warehouse; ?>">
+                        <input type="hidden" id="f_biaya_depresiasi" name="f_biaya_depresiasi" value="<?=$biaya_depresiasi; ?>">
+                        <input type="hidden" id="f_nilai_npv" name="f_nilai_npv" value="<?=$npv; ?>">
+                        <!-- END variabel untuk dikirim melalui AJAX ke Controller Incomebased.php -->
+                        <button id="tombol_simpan" name="tombol_simpan" class="btn btn-xs btn-outline-success btn-block">Simpan Kalkulasi</button>
+                        <!-- <a href="<?=base_url() ?>incomebased/simpan_kalkulasi" id="tombol_simpan" name="tombol_simpan" class="btn btn-xs btn-outline-success btn-block">Simpan Kalkulasi</a> -->
+                        </div>
+                        <div class="col-md-4 text-left">
+                            <div class="loader"></div>
                         </div>
                     </div>
                 </div>
@@ -984,6 +1042,9 @@ for($i=1;$i<=$indeks;$i++){
                                 </tr>    
                             </tbody>
                             </table>
+                            <div class="col-12 text-white text-left bg-info">
+                                NPV bermanfaat untuk mengukur kemampuan dan peluang dalam menjalankan investasi hingga beberapa tahun yang akan datang, dikala nilai mata uang berubah dan berdampak pada cash flow. Secara sederhana, NPV adalah perkiraan keuntungan yang didapatkan sebuah usaha dimasa depan jika kita menanamkan modal dengan nilai uang yang sekarang. Sehingga kita bisa memutuskan apakah investasi tersebut layak untuk kita jalankan ataukah tidak.
+                            </div>
                         </div>
                     </div>
                 </div>
