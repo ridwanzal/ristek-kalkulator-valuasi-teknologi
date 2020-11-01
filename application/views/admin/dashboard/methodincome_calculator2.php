@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <div class="form-group row">                        
-                        <label for="harga_tahun2" class="col-sm-6 col-form-label text-right">Harga Jual Produk mulai Tahun ke - 2 (%) &nbsp;<span class="badge badge-pill  badge-warning">2.7</span> &nbsp;<a data-toggle="popover" title="Proyeksi Harga Jual" data-content="Harga Jual Produk mulai Tahun ke - 2 (%), Harga jual produk pada tahun ke - 2 dan seterusnya." class="badge badge-info text-white">Info</a></label>
+                        <label for="harga_tahun2" class="col-sm-6 col-form-label text-right">Harga Jual Produk mulai Tahun ke - 2 (%) &nbsp;<span class="badge badge-pill  badge-warning">2.7</span> &nbsp;<a data-toggle="popover" title="Proyeksi Harga Jual" data-content="Harga Jual Produk mulai Tahun ke - 2 (%), Harga jual produk pada tahun ke - 2 dan seterusnya. Lihat pada rujukan data inflasi dari Bank Indonesia (BI), sebagai contoh jika terdapat nilai inflasi sebesar 3%, maka cukup dengan menuliskan nilai harga penjualan sebesar 103,00%." class="badge badge-info text-white">Info</a></label>
                         <div class="col-sm-4">
                             <input type="text" value="<?= $harga_tahun2; ?>" class="form-control  form-control-sm col-sm-8" id="harga_tahun2" name="harga_tahun2" placeholder="##0,00%" aria-describedby="harga_tahun2Desc" required>
                             <small id="harga_tahun2Desc" class="form-text text-muted text-left">Harga jual produk pada tahun ke - 2 dan seterusnya</small>
