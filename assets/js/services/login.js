@@ -87,6 +87,7 @@
                                         }, 10);
                                     }else{
                                         loader.hide();
+                                        el_click_login.prop('disabled', false)
                                         alert('Login failed (Please provide valid email & password)');
                                     }
                                 },
@@ -96,19 +97,33 @@
                                 },
                                 failed : function(res){
                                     console.log(res)
-                                    alert('Login failed')
+                                    Swal.fire(
+                                        'Login gagal',
+                                        'Email & Password salah',
+                                        'error'
+                                    )
                                     el_click_login.prop('disabled', false)
                                 },
                                 error: function(res){
                                     console.log(res)
-                                    alert('Login failed')
+                                    Swal.fire(
+                                        'Login gagal',
+                                        'Email & Password salah',
+                                        'error'
+                                    )
                                     el_click_login.prop('disabled', false)
                                 }
                             });
                     }
                 });
         }else{
-            alert('Please check input field')
+            // alert('Please check input field')
+            Swal.fire(
+                'Login gagal',
+                'Email & Password kosong',
+                'warning'
+              )
+            el_click_login.prop('disabled', false)
         }
     })
 });

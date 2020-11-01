@@ -11,6 +11,7 @@
     <title>SIKAV - <?php echo $title_bar; ?> | Kalkulator Inovasi</title>
     <link rel="icon" href="<?php echo base_url();?>/assets/frontview/img/favicon.svg" sizes="16x16" type="image/svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/flaticon.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/frontview/css/linearicons.css" type="text/css">

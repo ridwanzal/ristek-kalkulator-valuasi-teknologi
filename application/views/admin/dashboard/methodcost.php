@@ -72,7 +72,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label class="captions" for="formGroupExampleInput2">Upload dokumen pendukung <i style="color: red">*</i>
                                         &nbsp;
                                         <a data-toggle="popover" title="Upload dokumen pendukung" data-content="Upload dokumen pendukung (format file) " class="badge badge-info text-white">Info</a>
@@ -81,7 +81,7 @@
                                                 <input id="par_cb_file" type="file" class="form-control" name="berkas[]" multiple style="height:45px;">
                                                 <small>Unggah file dlm format PDF, MS Word, PPT, Images*</small>
                                             </div>
-                                    </div>
+                                    </div> -->
                                     <!-- <button id="testupload">Test upload</button> -->
                                 </div>
                         </div>
@@ -246,16 +246,14 @@
                                                                 <option value="Lainnya">Lainnya</option>
                                                         </select>
                                                     </div>
-                                                    <div class="col-lg-6">
+                                                    <!-- <div class="col-lg-6">
                                                         <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung</label>
                                                         <div class="custom-file">
                                                             <input type="file" class="form-control" multiple style="height:45px;" id="par_cb_file2">
                                                             <small>berupa Formulir (Bukti) pendaftaran dan/atau
                                                         Sertifikat Paten/Paten Sederhana (Unggah file dlm format PDF, MS Word, PPT)</small>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-row form-group">
+                                                    </div> -->
                                                     <div class="col-lg-6">
                                                         <label class="captions">Biaya Proses Lainnya</label>
                                                         <input type="text" class="form-control form-control-sm" id="par_biaya_proses_1" onkeyup="biaya_proses_lainnya(1)" placeholder="" value="0" >
@@ -264,9 +262,63 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button style="margin-top:10px;" class="btn btn-sm btn-success btn-block" id="proc_data">Proses data</button>
                                 </div>
                             </div>
+
+                            <!-- perhitungan inflasi -->
+                            <br/>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">8</span>&nbsp;Inflasi <i style="color: red">*</i>   </label>
+                                    </div>
+                                    <d  iv class="container_luaran_paten">
+                                        <div class="card luaran_paten_wrapper">
+                                            <div class="card-body">
+                                                <div class="form-row form-group">
+                                                    <div class="col-lg-3">
+                                                        <label class="captions">Tahun Permohona</label>
+                                                        <select class="form-control form-control-sm">
+                                                            <?php
+                                                                $current_year2 = date("Y");
+                                                                $years_back = $current_year2;
+                                                                for($j = 11; $j > 0; $j--){
+                                                                    ?>
+                                                                        <option value="<?= $years_back; ?>"><?= $years_back; ?></option>
+                                                                        <?php
+                                                                        $years_back = $years_back - 1;
+                                                                }
+                                                            ?>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <label class="captions">Tahun Berjalan </label>
+                                                        <select class="form-control form-control-sm">
+                                                            <?php
+                                                                $current_year = date("Y");
+                                                                $years_come = $current_year;
+                                                                for($i = 0 ; $i < 1; $i++){
+
+                                                                    ?>
+                                                                        <option value="<?= $years_come; ?>"><?= $years_come; ?></option>
+                                                                        <?php
+                                                                        $years_come = $years_come + 1;
+                                                                }
+                                                            ?>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label class="captions">Nilai Inflasi (%)</label>
+                                                        <input type="text" class="form-control form-control-sm" id="par_cb_sertifikat_paten_1" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </d>
+                                </div>
+                            </div>
+
+                            <button style="margin-top:10px;" class="btn btn-sm btn-success btn-block" id="proc_data">Proses data</button>
                             <br/>
                     </div>
                 </div>

@@ -2,23 +2,21 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-xs-6"> 
-                <h6 class="" style="">Selamat Datang di</h6>
-                <span style="font-size:100px;
+                <h1 class="headlanding" style="margin-bottom : 40px; line-height:55px;">Sebagai sistem kebijakan standarisasi valuasi Kekayaan Intelektual   </h1>
+                <!-- <span style="font-size:100px;
                           font-weight:700;
                           letter-spacing:-5px;
                           font-family: 'Montserrat', sans-serif !important;">SIKAV
-                </span>
+                </span> -->
                 <p style="line-height:30px;">
-                    SIKAV merupakan Sistem Informasi Kalkulator Valuasi Teknologi.
-                    Valuasi Teknologi terkait Kekayaan Intelektual dan Aset tak berwujud. 
-                    Kalkulasikan valuasi teknologi dengan pendekatan & metode berbasis
-                    Cost, Income dan Market.
+                    SIKAV merupakan Sistem Informasi Kalkulator Valuasi Teknologi, yang didasarkan pada peraturan Menteri Riset, Teknologi dan Pendidikan Tinggi    
+                    Republik Indonesia Nomor 35 Tahun 2019. Dasar-dasar penghitungan menggunakan metode berbasis Cost, Income dan jg Market.        .section_second_wrapper
                 </p>
                 <br/>
-                <a href="<?php echo base_url();?>auth/login" class="btn btn-outline-light">
+                <a  href="<?php echo base_url();?>auth/login" class=" btn_landing btn btn-success">
                     Uji Coba kalkulasi
                 </a>&nbsp;
-                <a href="<?php echo base_url();?>auth/login" class="btn btn-outline-warning">
+                <a href="" class=" btn_landing btn btn-danger">
                     Pelajari Lebih Lanjut
                 </a>
             </div>

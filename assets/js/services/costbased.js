@@ -251,49 +251,56 @@ function init(){
                 res = JSON.parse(res);
                 console.log(res);
                 if(res.status == 'success'){
-                    console.log('upload dokumen pendukung');
-                    // upload dokumen pendukung
-                    var form_data = new FormData();
-                    var totalfiles = document.getElementById('par_cb_file').files.length;
-                    for (var index = 0; index < totalfiles; index++) {
-                        form_data.append("berkas[]", document.getElementById('par_cb_file').files[index]);
-                    }
-                    console.log(form_data);
-                    console.log(res.insert_id);
-                    console.log(web_url + '/uploads/multiple/costbased/'+res.insert_id+'');
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Data berhasil di submit',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    // console.log('upload dokumen pendukung');
+                    // // upload dokumen pendukung
+                    // var form_data = new FormData();
+                    // var totalfiles = document.getElementById('par_cb_file').files.length;
+                    // for (var index = 0; index < totalfiles; index++) {
+                    //     form_data.append("berkas[]", document.getElementById('par_cb_file').files[index]);
+                    // }
+                    // console.log(form_data);
+                    // console.log(res.insert_id);
+                    // console.log(web_url + '/uploads/multiple/costbased/'+res.insert_id+'');
 
-                    $.ajax({
-                        url: web_url + '/uploads/multiple/costbased/'+res.insert_id+'',
-                        type: 'post',
-                        data: form_data,
-                        dataType: 'json',
-                        contentType: false,
-                        processData: false,
-                        success: function (response) {
-                            if(response.status == 'success'){
-                                _tosave.attr('disabled', 'disabled');
-                                _tosave.text('Tersimpan');
-                                // bootbox.hideAll();
-                                Swal.fire({
-                                    position: 'top-end',
-                                    icon: 'success',
-                                    title: 'Data berhasil di submit',
-                                    showConfirmButton: false,
-                                    timer: 1500
-                                })
-                            }
-                        },
-                        done : function(){
-                            // bootbox.hideAll();
-                            _tosave.attr('disabled', 'disabled');
-                            _tosave.text('Tersimpan');
-                        },failed : function(e){
-                            console.log(e)
-                        }, error : function(e){
-                            console.log('error');
-                            console.log(e);
-                        }
-                    });
+                    // $.ajax({
+                    //     url: web_url + '/uploads/multiple/costbased/'+res.insert_id+'',
+                    //     type: 'post',
+                    //     data: form_data,
+                    //     dataType: 'json',
+                    //     contentType: false,
+                    //     processData: false,
+                    //     success: function (response) {
+                    //         if(response.status == 'success'){
+                    //             _tosave.attr('disabled', 'disabled');
+                    //             _tosave.text('Tersimpan');
+                    //             // bootbox.hideAll();
+                    //             Swal.fire({
+                    //                 position: 'top-end',
+                    //                 icon: 'success',
+                    //                 title: 'Data berhasil di submit',
+                    //                 showConfirmButton: false,
+                    //                 timer: 1500
+                    //             })
+                    //         }
+                    //     },
+                    //     done : function(){
+                    //         // bootbox.hideAll();
+                    //         _tosave.attr('disabled', 'disabled');
+                    //         _tosave.text('Tersimpan');
+                    //     },failed : function(e){
+                    //         console.log(e)
+                    //     }, error : function(e){
+                    //         console.log('error');
+                    //         console.log(e);
+                    //     }
+                    // });
                 }
             }
         });
@@ -389,7 +396,7 @@ function luaran_paten(){
                         biaya_pendaftaran = biaya_permohonan_paten;
                         biaya_substantif = biaya_substantif_paten;
                         biaya_percepatan = biaya_percepatan_pengumuman_publikasi;
-                    }else if(_par_cb_jenis_paten === "paten_granted" && _par_cb_status_paten === "tedaftar"){
+                    }else if(_par_cb_jenis_paten === "paten_granted" && _par_cb_status_paten === "terdaftar"){
                         bobot = granted_terdaftar;
                         biaya_pendaftaran = biaya_permohonan_paten;
                         biaya_substantif = biaya_substantif_paten;
@@ -399,7 +406,7 @@ function luaran_paten(){
                         biaya_pendaftaran = biaya_permohonan_paten_sederhana;
                         biaya_substantif = biaya_substantif_paten_sederhana;
                         biaya_percepatan = 0;
-                    }else if(_par_cb_jenis_paten === "paten_sederhana" && _par_cb_status_paten === "tedaftar"){
+                    }else if(_par_cb_jenis_paten === "paten_sederhana" && _par_cb_status_paten === "terdaftar"){
                         bobot = sederhana_terdaftar;
                         biaya_pendaftaran = biaya_permohonan_paten_sederhana;
                         biaya_substantif = biaya_substantif_paten_sederhana;
@@ -430,11 +437,11 @@ function luaran_paten(){
                     let list_adapter_nilai = `<tr>
                     <td>`+i+`.</td>
                             <td>`+_par_cb_nodaftar+`</td>
-                            <td>`+biaya_pendaftaran+`</td>
-                            <td>`+biaya_substantif+`</td>
-                            <td>`+biaya_percepatan+`</td>
-                            <td>`+_par_biaya_proses+`</td>
-                            <td>`+total_biaya_permohonan+`</td>
+                            <td>`+money.init(biaya_pendaftaran)+`</td>
+                            <td>`+money.init(biaya_substantif)+`</td>
+                            <td>`+money.init(biaya_percepatan)+`</td>
+                            <td>`+money.init(_par_biaya_proses)+`</td>
+                            <td>`+money.init(total_biaya_permohonan)+`</td>
                             </tr>
                             `;
                     _nilai_luaran_paten_list.append(list_adapter_nilai);
@@ -454,7 +461,7 @@ function luaran_paten(){
                     let ki = x * parseInt(money.reverse(_par_pagu_riset.val()));
                     total_luaran_penelitian_paten = ki;
 
-                    _out_ki.text(ki);
+                    _out_ki.text(money.formatdec(ki));
 
                     console.log(total_bobot_per_row + '/' + total_bobot_seluruh + '+' + _np_total_bobot)
                     let y = total_bobot_per_row / (parseInt(total_bobot_seluruh) + parseInt(_np_total_bobot.text()) );
@@ -506,10 +513,10 @@ function luaran_paten(){
                     total_biaya_proses_lainnya = 0;
                 }
 
-                _total_biaya_pendaftaran_seluruh.text(total_biaya_pendaftaran_seluruh);
-                _total_biaya_substantif_seluruh.text(total_biaya_substantif_seluruh);
-                _total_biaya_percepatan_seluruh.text(total_biaya_percepatan_seluruh);
-                _total_biaya_proses_lainnya.text(total_biaya_proses_lainnya);
+                _total_biaya_pendaftaran_seluruh.text(money.format(total_biaya_pendaftaran_seluruh));
+                _total_biaya_substantif_seluruh.text(money.format(total_biaya_substantif_seluruh));
+                _total_biaya_percepatan_seluruh.text(money.format(total_biaya_percepatan_seluruh));
+                _total_biaya_proses_lainnya.text(money.format(total_biaya_proses_lainnya));
                 
                 
                 /**
@@ -517,8 +524,8 @@ function luaran_paten(){
                  * pi = total_biaya_pendaftaran_seluruh
                  */
                 
-                _total_biaya_permohonan_seluruh.text(total_biaya_permohonan_seluruh);
-                _out_pi.text(total_biaya_permohonan_seluruh);
+                _total_biaya_permohonan_seluruh.text(money.format(total_biaya_permohonan_seluruh));
+                _out_pi.text(money.init(total_biaya_permohonan_seluruh));
 
 
                  /**
@@ -546,8 +553,8 @@ function validate_input_identitas(){
     let d = validate_input(_par_cb_judul_riset)  == true ? check = true : false;
     let e = validate_input(_par_pagu_riset)  == true ? check = true : false;
     let f = validate_input(_par_cb_asal_biaya)  == true ? check = true : false;
-    let g = validate_input(_par_cb_file) == true ? check = true : false;
-    if(a && b && c && d && e && f && g) {
+    // let g = validate_input(_par_cb_file) == true ? check = true : false;
+    if(a && b && c && d && e && f) {
         return true;
     }else{
         $("html, body").animate({ scrollTop: 0 }, "slow");
@@ -743,7 +750,7 @@ function add_luaran_paten(){
                                             <label class="captions">Status Peromohonan <i style="color: red">*</i></label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input par_cb_status_paten_`+index+`" type="radio" name="stp_`+index+`"  value="tedaftar">
+                                            <input class="form-check-input par_cb_status_paten_`+index+`" type="radio" name="stp_`+index+`"  value="terdaftar">
                                             <label class="form-check-label" for="inlineRadio1">Terdaftar</label>
                                         </div>
                                         <div class="form-check form-check-inline">
@@ -787,20 +794,12 @@ function add_luaran_paten(){
                                         </select>
                                     </div>
                                     <div class="col-lg-6">
-                                        <label class="captions" for="formGroupExampleInput2">Unggah dokumen pendukung</label>
-                                        <div class="custom-file">
-                                            <input disabled="disabled" type="file" class="form-control" multiple style="height:45px;" id="par_cb_file_lp_`+index+`">
-                                            <small>berupa Formulir (Bukti) pendaftaran dan/atau
-                                        Sertifikat Paten/Paten Sederhana (Unggah file dlm format PDF, MS Word, PPT)</small>
-                                        </div>
+                                        <label class="captions">Biaya Proses Lainnya</label>
+                                        <input type="text" class="form-control form-control-sm" id="par_biaya_proses_`+index+`" onkeyup="biaya_proses_lainnya(`+index+`)" placeholder="" value="0">
                                     </div>
-                                    </div>
-                                    <div class="form-row form-group">
-                                        <div class="col-lg-6">
-                                            <label class="captions">Biaya Proses Lainnya</label>
-                                            <input type="text" class="form-control form-control-sm" id="par_biaya_proses_`+index+`" onkeyup="biaya_proses_lainnya(`+index+`)" placeholder="" value="0">
-                                        </div>
-                                    </div>
+                                </div>
+                                <div class="form-row form-group">
+                                </div>
                             </div>
                         </div>`;
         $('.container_luaran_paten').append(adapter);

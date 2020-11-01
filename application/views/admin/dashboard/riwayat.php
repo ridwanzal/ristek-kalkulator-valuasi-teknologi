@@ -68,7 +68,7 @@
                                                         <td><?= $item->ki;?></td>
                                                         <td><?= $item->pi;?></td>
                                                         <td><?= $item->atbp;?></td>
-                                                        <td><a href="<?php echo base_url();?>manage/riwayat/detail/cost-<?php echo $item->id;?>/<?php echo $item->judul_penelitian;?>"><span class="badge badge-primary">Detail</span></a>&nbsp;<a href="#"><span class="badge badge-danger">Hapus</span></a></td>
+                                                        <td><a href="<?php echo base_url();?>manage/riwayat/detail/cost-<?php echo $item->id;?>"><span class="badge badge-primary">Detail</span></a>&nbsp;<a href="#"><span class="badge badge-danger">Hapus</span></a></td>
                                                     </tr>
                                                 <?php
                                                   $i = $i + 1;

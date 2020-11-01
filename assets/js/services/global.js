@@ -46,41 +46,57 @@ const loader = {
 
 function checkEmpty(el){
     if(el.val() == '' || el.val() == null){
-        el.css({
-            'border-bottom' : '1px solid #fc3503'
-        });
+        el.addClass('input_warning')
         return true;
     }else{
-        el.css({
-            'border-bottom' : '1px solid #ccc'
-        })
+        el.addClass('input_normal');
         return false;
     }
 }
 
 const money = {
-    format : function(str){
-        let number_string = str.replace(/[^,\d]/g, '').toString(),
-        split	= number_string.split(','),
-        sisa 	= split[0].length % 3,
-        rupiah 	= split[0].substr(0, sisa),
-        ribuan 	= split[0].substr(sisa).match(/\d{1,3}/gi);
-            
-        if (ribuan) {
-            separator = sisa ? '.' : '';
-            rupiah += separator + ribuan.join('.');
+    init : function(str){
+        str = str.toString();
+        if(str.includes('.')){
+            return this.formatdec(str);
+        }else{
+            return  this.format(str);
         }
-        
-        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-        return rupiah;
     },
-    formatdec : function(){
-
+    format : function(str){
+        if(str == undefined || str == null  || str == ''){
+            return 0;
+        }else{
+            str = str.toString();
+            let number_string = str.replace(/[^,\d]/g, '').toString(),
+            split	= number_string.split(','),
+            sisa 	= split[0].length % 3,
+            rupiah 	= split[0].substr(0, sisa),
+            ribuan 	= split[0].substr(sisa).match(/\d{1,3}/gi);
+                
+            if (ribuan) {
+                separator = sisa ? '.' : '';
+                rupiah += separator + ribuan.join('.');
+            }
+            
+            rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+            return rupiah;
+        }   
+    },
+    formatdec : function(str){
+        if(str !== undefined){
+            str.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+            return str;
+        }
     },
     reverse : function(str){
-        let rupiah = str;
-        let clean = rupiah.replace(/\D/g, '');
-        return clean
+        if(str == undefined || str == null  || str == ''){
+            return 0;
+        }else{
+            let rupiah = str;
+            let clean = rupiah.replace(/\D/g, '');
+            return clean
+        }
     }
 }
 
