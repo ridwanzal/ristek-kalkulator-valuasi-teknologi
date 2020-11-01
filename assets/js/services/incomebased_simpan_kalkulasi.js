@@ -1,4 +1,4 @@
-//konstanta tombol halaman
+//konstanta tombol simpan ke database kalkulasi
 const tombol_simpan_kalkulasi = $('#tombol_simpan');
 
 $(function(){
