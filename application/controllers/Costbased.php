@@ -136,7 +136,7 @@ class Costbased extends CI_Controller {
             'pi' => ''.$decode->pi,
             'ki' => ''.$decode->ki,
             'atbp' => '' .$decode->total_atbp,
-            'tanggal' => '2020-07-12'
+            'tanggal' => ''.date('Y-m-d H:i:s')
         );
         // var_dump($data);
         // die;

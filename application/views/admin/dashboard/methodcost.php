@@ -270,14 +270,14 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">8</span>&nbsp;Inflasi <i style="color: red">*</i>   </label>
+                                        <label class="captions" for="formGroupExampleInput2"><span class="badge badge-pill  badge-warning">8</span>&nbsp;Inflasi</label>
                                     </div>
-                                    <d  iv class="container_luaran_paten">
-                                        <div class="card luaran_paten_wrapper">
+                                    <div>
+                                        <div class="card">
                                             <div class="card-body">
                                                 <div class="form-row form-group">
                                                     <div class="col-lg-3">
-                                                        <label class="captions">Tahun Permohona</label>
+                                                        <label class="captions">Tahun Permohonan</label>
                                                         <select class="form-control form-control-sm">
                                                             <?php
                                                                 $current_year2 = date("Y");
@@ -308,13 +308,13 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-lg-6">
-                                                        <label class="captions">Nilai Inflasi (%)</label>
-                                                        <input type="text" class="form-control form-control-sm" id="par_cb_sertifikat_paten_1" placeholder="">
+                                                        <label class="captions">Nilai Inflasi (%) &nbsp;&nbsp;<a target="_blank" href="https://www.bi.go.id/id/moneter/inflasi/data/Default.aspx"><span class="badge badge-info">link referensi</span></a></label>
+                                                        <input type="text" class="form-control form-control-sm"  placeholder="">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </d>
+                                    </div>
                                 </div>
                             </div>
 

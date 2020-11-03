@@ -230,12 +230,6 @@ function init(){
 
     // save data to databases;
     _tosave.on('click', function(){
-        // bootbox.dialog({
-        //     message: '<p class="text-center mb-0"><i class="fa fa-spin fa-cog"></i> Mohon tunggu, data sedang disimpan ... </p>',
-        //     closeButton: false
-        // });
-
-        // upload dokumen identitas pendukung
         $.ajax({
             url : web_url + '/costbased/add',
             type : 'POST',
@@ -251,6 +245,8 @@ function init(){
                 res = JSON.parse(res);
                 console.log(res);
                 if(res.status == 'success'){
+                    _tosave.attr('disabled', 'disabled');
+                    _tosave.text('Tersimpan');
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',

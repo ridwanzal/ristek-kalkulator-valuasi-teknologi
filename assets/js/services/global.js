@@ -56,11 +56,15 @@ function checkEmpty(el){
 
 const money = {
     init : function(str){
-        str = str.toString();
-        if(str.includes('.')){
-            return this.formatdec(str);
+        if(str == undefined || str == '' || str == null){
+            return 0;
         }else{
-            return  this.format(str);
+            str = str.toString();
+            if(str.includes('.')){
+                return this.formatdec(str);
+            }else{
+                return  this.format(str);
+            }
         }
     },
     format : function(str){

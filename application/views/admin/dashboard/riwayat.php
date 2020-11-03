@@ -45,7 +45,8 @@
                                         <th scope="col">Ki</th>
                                         <th scope="col">Pi</th>
                                         <th scope="col">ATBP</th>
-                                        <th scope="col">Action</th>
+                                        <th scope="col">Tanggal</th>
+                                        <th scope="col">Tindakan</th>
                                         <T
                                     </tr>
                                 </thead>
@@ -63,11 +64,12 @@
                                                 ?>
                                                     <tr>
                                                         <td><?= $i;?></td>
-                                                        <td><?= $item->judul_penelitian; ?></td>
+                                                        <td class="font-weight-medium"><?= $item->judul_penelitian; ?></td>
                                                         <td><?= $item->nama_inventor;?></td>
                                                         <td><?= $item->ki;?></td>
                                                         <td><?= $item->pi;?></td>
                                                         <td><?= $item->atbp;?></td>
+                                                        <td><?= explode(' ',$item->tanggal)[0];?></td>
                                                         <td><a href="<?php echo base_url();?>manage/riwayat/detail/cost-<?php echo $item->id;?>"><span class="badge badge-primary">Detail</span></a>&nbsp;<a href="#"><span class="badge badge-danger">Hapus</span></a></td>
                                                     </tr>
                                                 <?php
