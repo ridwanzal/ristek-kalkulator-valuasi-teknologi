@@ -89,7 +89,7 @@
                                         <th scope="col">Judul Invensi</th>
                                         <th scope="col">Nama Inventor</th>
                                         <th scope="col">Nilai NPV</th>
-                                        <th scope="col">Action</th>
+                                        <th scope="col">Tindakan</th>
                                         <T
                                     </tr>
                                 </thead>
