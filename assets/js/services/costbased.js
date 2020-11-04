@@ -462,14 +462,14 @@ function luaran_paten(){
                     console.log(total_bobot_per_row + '/' + total_bobot_seluruh + '+' + _np_total_bobot)
                     let y = total_bobot_per_row / (parseInt(total_bobot_seluruh) + parseInt(_np_total_bobot.text()) );
                     let ki_list = y * parseInt(money.reverse(_par_pagu_riset.val()));
-                    let adapter_out_ki_list = `<li id="list_`+i+`">`+_par_cb_jenis_paten+` `+_par_cb_status_paten+` = Rp.`+ki_list+`</li>`;
+                    let adapter_out_ki_list = `<li id="list_`+i+`">`+_par_cb_jenis_paten+` `+_par_cb_status_paten+` = Rp.`+money.init(ki_list)+`</li>`;
                     _out_ki_list.append(adapter_out_ki_list);
 
 
 
                     // atbp masing-masing luaran
                     let atbp_list = ki_list + total_biaya_permohonan;
-                    let adapter_out_atbp_list = `<li id="list_`+i+`">`+_par_cb_jenis_paten+` `+_par_cb_status_paten+` = Rp.`+atbp_list+`</li>`;
+                    let adapter_out_atbp_list = `<li id="list_`+i+`">`+_par_cb_jenis_paten+` `+_par_cb_status_paten+` = Rp.`+money.init(atbp_list)+`</li>`;
                     _out_atbp_list.append(adapter_out_atbp_list);
 
                     obj_paten = {
@@ -509,10 +509,10 @@ function luaran_paten(){
                     total_biaya_proses_lainnya = 0;
                 }
 
-                _total_biaya_pendaftaran_seluruh.text(money.format(total_biaya_pendaftaran_seluruh));
-                _total_biaya_substantif_seluruh.text(money.format(total_biaya_substantif_seluruh));
-                _total_biaya_percepatan_seluruh.text(money.format(total_biaya_percepatan_seluruh));
-                _total_biaya_proses_lainnya.text(money.format(total_biaya_proses_lainnya));
+                _total_biaya_pendaftaran_seluruh.text(money.init(total_biaya_pendaftaran_seluruh));
+                _total_biaya_substantif_seluruh.text(money.init(total_biaya_substantif_seluruh));
+                _total_biaya_percepatan_seluruh.text(money.init(total_biaya_percepatan_seluruh));
+                _total_biaya_proses_lainnya.text(money.init(total_biaya_proses_lainnya));
                 
                 
                 /**
@@ -520,7 +520,7 @@ function luaran_paten(){
                  * pi = total_biaya_pendaftaran_seluruh
                  */
                 
-                _total_biaya_permohonan_seluruh.text(money.format(total_biaya_permohonan_seluruh));
+                _total_biaya_permohonan_seluruh.text(money.init(total_biaya_permohonan_seluruh));
                 _out_pi.text(money.init(total_biaya_permohonan_seluruh));
 
 
@@ -529,7 +529,7 @@ function luaran_paten(){
                  */
 
                 total_atbp = total_luaran_penelitian_paten + total_biaya_permohonan_seluruh;
-                _out_atbp_total.text(total_atbp);
+                _out_atbp_total.text(money.init(total_atbp));
 
                 obj_model_cb.ti = total_bobot_seluruh;
                 obj_model_cb.ki = total_luaran_penelitian_paten
@@ -722,7 +722,7 @@ function add_luaran_paten(){
                             <div class="card luaran_paten_wrapper">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label class="captions">Judul Invensi <i style="color: red">*</i></label>
+                                    <label class="captions">Judul Invensi <i style="color: red">*</i>&nbsp;<a class="badge badge-secondary text-white">autocomplete</a></label>
                                     <input type="text" onchange="data_luaran_paten(`+index+`)" class="form-control form-control-sm par_cb_daftar_invensi" id="par_cb_jd_invensi_`+index+`" placeholder="">
                                 </div>
                                 
@@ -734,7 +734,7 @@ function add_luaran_paten(){
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input par_cb_jenis_paten_`+index+`" type="radio" name="jpt_`+index+`"  value="paten_granted">
-                                                <label class="form-check-label" for="inlineRadio1">Paten Granted </label>
+                                                <label class="form-check-label" for="inlineRadio1">Paten </label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input par_cb_jenis_paten_`+index+`" type="radio" name="jpt_`+index+`"  value="paten_sederhana">

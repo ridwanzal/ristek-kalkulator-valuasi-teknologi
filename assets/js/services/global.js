@@ -42,7 +42,24 @@ const loader = {
     }
 }
 
-// module helper
+
+/**
+@param el input element to validate
+*/
+function validate_input(el){
+    if(el.val() == ''){
+        el.css({
+            'border' : '1px solid red'
+        });
+        return false;
+    }else{
+        el.css({
+            'border' : '1px solid #ced4da'
+        });
+        return true;
+    }
+}
+
 
 function checkEmpty(el){
     if(el.val() == '' || el.val() == null){
@@ -56,13 +73,19 @@ function checkEmpty(el){
 
 const money = {
     init : function(str){
+        console.log('init');
         if(str == undefined || str == '' || str == null){
             return 0;
         }else{
+            console.log('masuk sini')
             str = str.toString();
             if(str.includes('.')){
+                console.log('masuk sini dec')
+                console.log(this.formatdec(str))
                 return this.formatdec(str);
             }else{
+                console.log('masuk sini bule')
+                console.log(this.format(str))
                 return  this.format(str);
             }
         }
@@ -89,17 +112,22 @@ const money = {
     },
     formatdec : function(str){
         if(str !== undefined){
-            str.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
-            return str;
+           str = str.toString();
+            let split_result = str.split(".");
+            let result = this.format(split_result[0]);
+            return result + ',' + split_result[1].slice(0,2);
+        }else{
+            return '0';
         }
     },
     reverse : function(str){
+        str = str.toString();
         if(str == undefined || str == null  || str == ''){
             return 0;
         }else{
-            let rupiah = str;
-            let clean = rupiah.replace(/\D/g, '');
-            return clean
+              let rupiah = str;
+              let clean = rupiah.replace(/\D/g, '');
+              return Number(clean)
         }
     }
 }

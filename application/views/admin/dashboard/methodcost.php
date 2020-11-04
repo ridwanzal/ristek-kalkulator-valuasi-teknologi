@@ -438,7 +438,7 @@
                                     </tr> -->
                                     <tr style="background : #f1f1f1 !important;">
                                         <td></td>
-                                        <td><b>Total bobot keluaran penelitian non paten (&Sigma;Ti)</b></td>
+                                        <td><b>Total bobot keluaran penelitian paten (&Sigma;Ti)</b></td>
                                         <td></td>
                                         <td></td>
                                         <td style="font-weight:bold;" id="p_total_bobot">0</td>
@@ -523,7 +523,7 @@
                         <div class="col-lg-9 col-md-9">
                             <p class="font-weight-bold">D. Nilai Aset Tak Berwujud berupa Paten/ATB-P (Vi)</p>   
                             <p class="font-weight-bold">1. Nilai ATB-P masing-masing paten tanpa memperhitungkan inflasi (jika
-                                  penghitungan/valuasi dilakukan  1 tahun sejak tanggal pendaftaran paten):</p>   
+                                  penghitungan/valuasi dilakukan < 1 tahun sejak tanggal pendaftaran paten):</p>   
                             <ul id="out_atbp_list">
                             </ul>
                             <p class="font-weight-bold">2.Nilai ATB-P masing-masing paten dengan memperhitungkan inflasi (jika
