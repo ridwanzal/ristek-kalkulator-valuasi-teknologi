@@ -561,25 +561,6 @@ function validate_input_identitas(){
 
 
 /**
-@param el input element to validate
-*/
-function validate_input(el){
-    if(el.val() == ''){
-        el.css({
-            'border' : '1px solid red'
-        });
-        return false;
-    }else{
-        el.css({
-            'border' : '1px solid #ced4da'
-        });
-        return true;
-    }
-}
-
-
-
-/**
  * @function get_daftar_penelitian
  * fetch daftar penelitian
  */
@@ -709,6 +690,11 @@ function biaya_proses_lainnya(index){
 }
 
 
+function closeme(obj){
+    let attr = $(obj).attr('class');
+    $(obj).parent('div').remove();
+}
+
 
 /**
  * @function add_luaran_paten
@@ -718,8 +704,10 @@ function add_luaran_paten(){
         // jika index sudah tersimpan maka tinggal get
         let container_luaran_paten = $('.luaran_paten_wrapper'); // get current index of dom
         let index = container_luaran_paten.length + 1;
-        let adapter = ` <br/>
-                            <div class="card luaran_paten_wrapper">
+        let adapter = `<div class="card luaran_paten_wrapper">
+                            <div onclick="closeme(this)" class="close closedivs" >
+                                <span aria-hidden="true">&times;</span>
+                            </div>
                             <div class="card-body">
                                 <div class="form-group">
                                     <label class="captions">Judul Invensi <i style="color: red">*</i>&nbsp;<a class="badge badge-secondary text-white">autocomplete</a></label>
@@ -791,7 +779,7 @@ function add_luaran_paten(){
                                     </div>
                                     <div class="col-lg-6">
                                         <label class="captions">Biaya Proses Lainnya</label>
-                                        <input type="text" class="form-control form-control-sm" id="par_biaya_proses_`+index+`" onkeyup="biaya_proses_lainnya(`+index+`)" placeholder="" value="0">
+                                        <input type="text" class="form-control form-control-sm" id="par_biaya_proses_`+index+`" onkeyup="biaya_proses_lainnya(`+index+`)" placeholder="" value="">
                                     </div>
                                 </div>
                                 <div class="form-row form-group">

@@ -98,69 +98,37 @@
                                     </div>
                                     <div class="form-row form-group">
                                         <div class="col">
-                                            <label class="captions">Publikasi pada jurnal internasional </label>
+                                            <label class="captions">Publikasi pada jurnal internasional (Bobot 40)</label>
                                             <input id="par_cb_pub_internasional" type="number" class="form-control" placeholder="" value="0" min="0">
                                         </div>
-                                        <div class="col-lg-6">
-                                            <label class="captions">Bobot</label>
-                                            <input disabled type="number" class="form-control" placeholder="0" value="40">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-row form-group">
                                         <div class="col">
-                                            <label class="captions">Publikasi pada jurnal nasional </label>
+                                            <label class="captions">Publikasi pada jurnal nasional (Bobot 25)</label>
                                             <input id="par_cb_pub_nasional" type="number" class="form-control" placeholder="" value="0" min="0">
                                         </div>
-                                        <div class="col-lg-6">
-                                            <label class="captions">Bobot</label>
-                                            <input disabled type="number" class="form-control" placeholder="0" value="25">
-                                        </div>
                                     </div>
 
                                     <div class="form-row form-group">
                                         <div class="col">
-                                            <label class="captions">Buku Internasional </label>
+                                            <label class="captions">Buku Internasional (Bobot 40)</label>
                                             <input id="par_cb_buku_internasional" type="number" class="form-control" placeholder="" value="0" min="0">
                                         </div>
-                                        <div class="col-lg-6">
-                                            <label class="captions">Bobot</label>
-                                            <input disabled type="number" class="form-control" placeholder="0" value="40">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-row form-group">
                                         <div class="col">
-                                            <label class="captions">Buku Nasional </label>
+                                            <label class="captions">Buku Nasional (Bobot 30)</label>
                                             <input id="par_cb_buku_nasional" type="number" class="form-control" placeholder="" value="0" min="0">
                                         </div>
-                                        <div class="col-lg-6">
-                                            <label class="captions">Bobot</label>
-                                            <input disabled type="number" class="form-control" placeholder="0" value="30">
-                                        </div>
                                     </div>
 
                                     <div class="form-row form-group">
                                         <div class="col">
-                                            <label class="captions">Publikasi pada prosiding internasional </label>
+                                            <label class="captions">Publikasi pada prosiding internasional (Bobot 25)</label>
                                             <input id="par_cb_pros_internasional" type="number" class="form-control" placeholder="" value="0" min="0">
                                         </div>
-                                        <div class="col-lg-6">
-                                            <label class="captions">Bobot</label>
-                                            <input  disabled type="number" class="form-control" placeholder="0" value="25">
+                                        <div class="col">
+                                            <label class="captions">Publikasi pada prosiding nasional (Bobot 10)</label>
+                                            <input id="par_cb_pros_nasional"  type="number" class="form-control" placeholder="" value="0" min="0">
                                         </div>
                                     </div>
 
-                                    <div class="form-row form-group">
-                                        <div class="col">
-                                            <label class="captions">Publikasi pada prosiding nasional </label>
-                                            <input id="par_cb_pros_nasional"  type="number" class="form-control" placeholder="" value="0" min="0">
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <label class="captions">Bobot</label>
-                                            <input disabled type="number" class="form-control" placeholder="1" value="10" min="0">
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 
@@ -228,7 +196,7 @@
                                                 <br/>
                                                 <div class="form-row form-group">
                                                     <div class="col">
-                                                        <label class="captions">Nomor pendaftaran (Pemohon) <i style="color: red">*</i></label>
+                                                        <label class="captions">Nomor pendaftaran (Permohonan) <i style="color: red">*</i></label>
                                                         <input type="text" class="form-control form-control-sm" id="par_cb_nodaftar_1" placeholder="">
                                                     </div>
                                                     <div class="col-lg-6">
@@ -451,7 +419,7 @@
                             <div>Nilai keluaran untuk masing-masin Paten : </div>
                             <ul id="out_ki_list">
                             </ul>
-                            <div>Total Nilai Keluaran Penelitian Berupa Paten (Ki = Ti / (&Sigma;Ti+&Sigma;Qi)× R) = Rp. <span id="out_ki">0</span></div>
+                            <div>Total Nilai Keluaran Penelitian Berupa Paten (Ki = &Sigma;Ti / (&Sigma;Ti+&Sigma;Qi)× R) = Rp. <span id="out_ki">0</span></div>
                         </div>
                     </div>
                     <br/>

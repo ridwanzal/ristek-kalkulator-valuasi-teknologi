@@ -416,7 +416,7 @@
                                     }
                                 ?>
                             </ul>
-                            <div>Total Nilai Keluaran Penelitian Berupa Paten (Ki = Ti / (&Sigma;Ti+&Sigma;Qi)× R) = Rp. <span id="out_ki"><?php echo '' .$costbased_identity->ki;?></span></div>
+                            <div>Total Nilai Keluaran Penelitian Berupa Paten (Ki = &Sigma;Ti / (&Sigma;Ti+&Sigma;Qi)× R) = Rp. <span id="out_ki"><?php echo '' .$costbased_identity->ki;?></span></div>
                         </div>
                     </div>
                     <br/>
