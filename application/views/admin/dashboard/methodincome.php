@@ -72,8 +72,24 @@ $userdetails = $this->session->userdata('userdetails');
                                 <th scope="row"><?= $nomor; ?></th>
                                 <td  class="text-left"><?= $rshki->title; ?>
                                     <br /><?= $rshki->inventor; ?> | <?= $rshki->kategori; ?> | <?= $rshki->nomor_permohonan; ?> | <?= $rshki->tahun_permohonan; ?> | <?= $rshki->pemegang_paten; ?> | <?= $rshki->status; ?> | <?= $rshki->no_publikasi; ?> | <?= $rshki->tgl_publikasi; ?> | <?= $rshki->no_registrasi; ?> | <?= $rshki->tgl_registrasi; ?>
+                                    <!-- Masa Ekonomis Paten -->
+                                    <?php if($rshki->kategori=="Paten"){ ?>
+                                        <br /><span class="badge badge-pill badge-info">Masa Ekonomis Selama 20 Tahun, dari tanggl registrasi HKI.</span>
+                                    <?php }elseif($rshki->kategori=="Paten Sederhana"){ ?>
+                                        <br /><span class="badge badge-pill badge-success">Masa Ekonomis Selama 10 Tahun, dari tanggl registrasi HKI.</span>
+                                    <?php }elseif($rshki->kategori=="Rahasia Dagang (Teknologi)"){ ?>
+                                        <br /><span class="badge badge-pill badge-secondary">Masa Ekonomis Seumur Hidup, dari tanggl registrasi HKI.</span>
+                                    <?php }elseif($rshki->kategori=="Desain Produk Industri"){ ?>
+                                        <br /><span class="badge badge-pill badge-danger">Masa Ekonomis 10 Tahun, dari tanggl registrasi HKI.</span>
+                                    <?php }elseif($rshki->kategori=="Perlindungan Varietas Tanaman (Tahunan)"){ ?>
+                                        <br /><span class="badge badge-pill badge-warning">Masa Ekonomis 25 Tahun, dari tanggl registrasi HKI.</span>
+                                    <?php }elseif($rshki->kategori=="Perlindungan Varietas Tanaman (Semusim)"){ ?>
+                                        <br /><span class="badge badge-pill badge-warning">Masa Ekonomis 20 Tahun, dari tanggl registrasi HKI.</span>
+                                    <?php }elseif($rshki->kategori=="Perlindungan Topografi Sirkuit Terpadu"){ ?>
+                                        <br /><span class="badge badge-pill badge-dark">Masa Ekonomis 10 Tahun, dari tanggl registrasi HKI.</span>
+                                    <?php } ?>
+                                    <!-- Masa Ekonomis Paten END -->
                                     <br /><a href="<?=base_url('manage/edit/incomebased_invensi/'.$rshki->hki_id) ?>" class="btn btn-warning btn-sm">Ubah</a>
-                                    <!-- <a href="<?=base_url() ?>manage/add/incomebased_invensi" class="btn btn-danger btn-sm">Hapus</a> -->
                                     <a onclick="deleteConfirm('<?php echo site_url('manage/delete/incomebased_invensi/'.$rshki->hki_id) ?>')"
                                     href="#!" class="btn btn-danger btn-sm"> Hapus</a>
                                 </td>
@@ -85,12 +101,6 @@ $userdetails = $this->session->userdata('userdetails');
                                         </button>
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1/<?php echo $hki_id; ?>" >Hitung Valuasi</a>
-                                            <!--
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1"">Edit</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="<?=base_url() ?>manage/add/incomebased_calculator1"">Hapus</a>
-                                            -->
                                         </div>
                                     </div>
                                 </td>

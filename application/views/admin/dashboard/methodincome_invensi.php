@@ -78,11 +78,10 @@ $userdetails = $this->session->userdata('userdetails');
                                     <select id="kategori" name="kategori" class="form-control form-control-sm">
                                         <option value="Paten" <?php if($this->input->post('jenis')=='Paten'){echo "selected=\"selected\"";} ?>>Paten</option>
                                         <option value="Paten Sederhana" <?php if($this->input->post('jenis')=='Paten Sederhana'){echo "selected=\"selected\"";} ?>>Paten Sederhana</option>                                        
-                                        <option value="Merk Dagang" <?php if($this->input->post('jenis')=='Merk Dagang'){echo "selected=\"selected\"";} ?>>Merk Dagang</option>
-                                        <option value="Rahasia Dagang" <?php if($this->input->post('jenis')=='Rahasia Dagang'){echo "selected=\"selected\"";} ?>>Rahasia Dagang</option>
+                                        <option value="Rahasia Dagang (Teknologi)" <?php if($this->input->post('jenis')=='Rahasia Dagang (Teknologi)'){echo "selected=\"selected\"";} ?>>Rahasia Dagang (Teknologi)</option>
                                         <option value="Desain Produk Industri" <?php if($this->input->post('jenis')=='Desain Produk Industri'){echo "selected=\"selected\"";} ?>>Desain Produk Industri</option>
-                                        <option value="Indikasi Geografis" <?php if($this->input->post('jenis')=='Indikasi Geografis'){echo "selected=\"selected\"";} ?>>Indikasi Geografis</option>
-                                        <option value="Perlindungan Varietas Tanaman" <?php if($this->input->post('jenis')=='Perlindungan Varietas Tanaman'){echo "selected=\"selected\"";} ?>>Perlindungan Varietas Tanaman</option>
+                                        <option value="Perlindungan Varietas Tanaman (Tahunan)" <?php if($this->input->post('jenis')=='Perlindungan Varietas Tanaman (Tahunan)'){echo "selected=\"selected\"";} ?>>Perlindungan Varietas Tanaman (Tahunan)</option>
+                                        <option value="Perlindungan Varietas Tanaman (Semusim)" <?php if($this->input->post('jenis')=='Perlindungan Varietas Tanaman (Semusim)'){echo "selected=\"selected\"";} ?>>Perlindungan Varietas Tanaman (Semusim)</option>
                                         <option value="Perlindungan Topografi Sirkuit Terpadu" <?php if($this->input->post('jenis')=='Perlindungan Topografi Sirkuit Terpadu'){echo "selected=\"selected\"";} ?>>Perlindungan Topografi Sirkuit Terpadu</option>
                                     </select>
                                 </div>
