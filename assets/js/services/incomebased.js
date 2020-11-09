@@ -4,6 +4,19 @@ const tombol2_kehalaman3 = $('#tombol23');
 const tombol2_kehalaman1 = $('#tombol21');
 const tombol3_kehalaman3 = $('#tombol33');
 
+//untuk centang editable pada variabel 2.3
+//halaman manage/add/incomebased_calculator2
+const centang_isian = $('#chk_editable');
+$('#chk_editable').on('change', function(){ // on change of state
+    if(this.checked) // if changed state is "CHECKED"
+    {
+        $('#qty_tahun1').prop( "disabled", false );
+    }
+    else{
+        $('#qty_tahun1').prop( "disabled", true );
+    }
+ })
+
 //masking input data halaman 1
 $('#modal').mask("#.##0,00", {reverse: true});
 $('#sukubunga').mask('##0,00%', {reverse: true});

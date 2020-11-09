@@ -33,10 +33,11 @@
                         </div>
                     </div>
                     <div class="form-group row">                        
-                        <label for="qty_tahun1" class="col-sm-6 col-form-label text-right">Jumlah Produk di Tahun Pertama &nbsp;<span class="badge badge-pill  badge-warning">2.3</span> &nbsp;<a data-toggle="popover" title="Jumlah Produk" data-content="Jumlah produk di tahun pertama, perkalian item 2.1 dan 2.2" class="badge badge-info text-white">Info</a></label>
+                        <label for="qty_tahun1" class="col-sm-6 col-form-label text-right">Jumlah Produk di Tahun Pertama &nbsp;<span class="badge badge-pill  badge-warning">2.3</span> &nbsp;<a data-toggle="popover" title="Jumlah Produk" data-content="Jumlah produk di tahun pertama, perkalian item 2.1 dan 2.2, Jika tidak dapat memperkirakan market share dan target produksi cukup mencentang Editbale dengan mengisi secara langsung." class="badge badge-info text-white">Info</a></label>
                         <div class="col-md-6 text-left">
-                        <input type="text" value="<?= $qty_tahun1; ?>" class="form-control  form-control-sm col-sm-8" id="qty_tahun1" name="qty_tahun1" aria-describedby="qty_tahun1Desc" required disabled>
-                            <small id="qty_tahun1Desc" class="form-text text-muted">Jumlah produk di tahun pertama, perkalian item 2.1 dan 2.2</small>
+                        <input type="text" value="<?= $qty_tahun1; ?>" class="form-control  form-control-sm col-sm-8" id="qty_tahun1" name="qty_tahun1" aria-describedby="qty_tahun1Desc" required disabled> 
+                        <input type="checkbox" name="chk_editable" id="chk_editable" value="Editable">&nbsp;Editable
+                            <small id="qty_tahun1Desc" class="form-text text-muted">Jumlah produk di tahun pertama, perkalian item 2.1 dan 2.2, Jika tidak dapat memperkirakan market share dan target produksi cukup mencentang Editbale dengan mengisi secara langsung.</small>
                         </div>
                     </div>                    
                     <div class="form-group row">                        
