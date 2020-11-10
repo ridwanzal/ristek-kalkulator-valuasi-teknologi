@@ -231,17 +231,12 @@
                                                 <div class="form-row form-group">
                                                     <div class="col-lg-3">
                                                         <label class="captions">Tanggal Pendaftaran Paten</label>
-                                                        <input class="form-control form-control-sm" type="date"/>
+                                                        <input id="par_tgl_daftar_paten_1" class="form-control form-control-sm" type="text" placeholder="YYYY-mm-ddd"/>
                                                     </div>
                                                     <div class="col-lg-3">
                                                         <label class="captions">Tanggal Penghitungan Valuasi  </label>
-                                                        <input class="form-control form-control-sm" type="date"/>
+                                                        <input id="par_tgl_hitung_paten_1" class="form-control form-control-sm" type="text" placeholder="YYYY-mm-ddd"/>
                                                     </div>
-                                                    <!-- <div class="col-lg-6">
-                                                        <label class="captions">Nilai Inflasi (%) &nbsp;&nbsp;<a target="_blank" href="https://www.bi.go.id/id/moneter/inflasi/data/Default.aspx"><span class="badge badge-info">link referensi</span></a></label>
-                                                        <input type="text" class="form-control form-control-sm"  placeholder="">
-                                                    </div> -->
-
                                                 </div> 
                                             </div>
                                         </div>
@@ -496,13 +491,48 @@
                             </ul>
                             <p class="font-weight-bold">2.Nilai ATB-P masing-masing paten dengan memperhitungkan inflasi (jika
                                 penghitungan/valuasi dilakukan > 1 tahun sejak tanggal pendaftaran paten):</p>   
-                            <ul id="out_atbp_list">
-                            </ul>
-                            <p style="font-weight:bold;font-size:18px;">2. Total Nilai ATB-P : Rp. <span id="out_atbp_total">0</span></p>   
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-xs-12">
+                        <table class="table table-sm table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>
+                                    No. Pendaftaran / Sertifikat
+                                    </th>
+                                    <th>
+                                    Tahun ke - n
+                                    </th>       
+                                    <th>
+                                    Tingkat Inflasi (%)
+                                    </th>
+                                    <th>
+                                    Nilai Paten (Rp.)
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id="out_atbp_table_inflasi">
+                                    <tr>
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                        </table>
                         </div>
                     </div>
                     <br/>
-                    <br/>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-xs-12">
+                            <p style="font-weight:bold;font-size:18px;">2. Total Nilai ATB-P : Rp. <span id="out_atbp_total">0</span></p>   
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-lg-12" id="container_simpan_export" style="display:none;">
                             <button id="tosave" class="btn btn-success btn-sm">Simpan</button> 

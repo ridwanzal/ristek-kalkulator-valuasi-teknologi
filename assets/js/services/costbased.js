@@ -60,6 +60,7 @@ const _out_pi = $('#out_pi');
 const _out_ki_list = $('#out_ki_list'); // daftar nilai luaran penelitian berupa paten
 const _out_atbp_total = $('#out_atbp_total');
 const _out_atbp_list = $('#out_atbp_list');
+const _out_atbp_table_inflasi = $('#out_atbp_table_inflasi');
 
 const _container_simpan_export = $("#container_simpan_export");
 
@@ -369,6 +370,7 @@ function luaran_paten(){
                 _luaran_paten_list.empty();
                 _out_ki_list.empty();
                 _out_atbp_list.empty();
+                _out_atbp_table_inflasi.empty();
                 _nilai_luaran_paten_list.empty();
                 for(i; i <= container_luaran_paten.length; i++){
                     let _par_cb_jd_invensi= $('#par_cb_jd_invensi_' + i).val();
@@ -469,8 +471,17 @@ function luaran_paten(){
 
                     // atbp masing-masing luaran
                     let atbp_list = ki_list + total_biaya_permohonan;
-                    let adapter_out_atbp_list = `<li id="list_`+i+`">`+_par_cb_jenis_paten+` `+_par_cb_status_paten+` = Rp.`+money.init(atbp_list)+`</li>`;
-                    _out_atbp_list.append(adapter_out_atbp_list);
+                    let adapter_out_atbp_list = `<li id="list_`+i+`">`+_par_cb_nodaftar+` = Rp.`+money.init(atbp_list)+`</li>`;
+                    _out_atbp_list.append(adapter_out_atbp_list); 
+
+                    let adapter_out_atbp_table_inflasi = 
+                    `<tr>
+                      <td id="list_inflasi_`+i+`">`+_par_cb_nodaftar+`</td>
+                      <td></td>
+                      <td></td>
+                      <td>`+money.init(ki_list)+`</td>
+                    </tr>`;
+                    _out_atbp_table_inflasi.append(adapter_out_atbp_table_inflasi);
 
                     obj_paten = {
                         par_cb_jd_invensi : '' + _par_cb_jd_invensi,
@@ -540,6 +551,14 @@ function luaran_paten(){
 }
 
 
+/**
+ * Data yang perlu dihitung
+ * - Total Nilai Keluaran berupa Paten
+ * - Total Nilai Perolehan Paten
+ * - Total Nilai ATBP
+ * - 
+ */
+
 
 function validate_input_identitas(){
     let check = false;
@@ -584,7 +603,7 @@ function get_daftar_penelitian(){
 
 /**
  * @function get_daftar_publikasi
- * fetch daftar penelitian
+ * fetch daftar penelitian          
  */
 function get_daftar_publikasi(){
     let arr_temp_research = [];
@@ -656,13 +675,17 @@ function get_daftar_iprs(dom){
 function data_luaran_paten(index){
     val = $('#par_cb_jd_invensi_' + index).val();
     let data = author_ipr;
+    console.log('data ipr');
+    console.log(data);
     let i = 0;
     for(i; i < data.length; i++){
         if(data[i].hasOwnProperty('title')){
             console.log(data[i].hasOwnProperty('title'))
-            if(data[i].title === val){
+            if(data[i].title === val){  
                 $('#par_cb_nodaftar_'+index).val(data[i].nomor_permohonan);
                 $('#par_cb_sertifikat_paten_'+index).val(data[i].no_registrasi);
+                $('#par_tgl_daftar_paten_'+index).val(data[i].tgl_publikasi);
+                $('#par_tgl_hitung_paten_'+index).val(moment().format('YYYY-MM-DD'));
 
                 if(data[i].kategori== 'paten'){
                     $("input[name='jpt_"+index+"'][value='paten_granted']").attr('checked', 'checked');
@@ -705,7 +728,7 @@ function add_luaran_paten(){
         let container_luaran_paten = $('.luaran_paten_wrapper'); // get current index of dom
         let index = container_luaran_paten.length + 1;
         let adapter = `<div class="card luaran_paten_wrapper">
-                            <div onclick="closeme(this)" class="close closedivs" >
+                            <div title="Hapus Form ini" onclick="closeme(this)" class="close closedivs" >
                                 <span aria-hidden="true">&times;</span>
                             </div>
                             <div class="card-body">
@@ -782,8 +805,17 @@ function add_luaran_paten(){
                                         <input type="text" class="form-control form-control-sm" id="par_biaya_proses_`+index+`" onkeyup="biaya_proses_lainnya(`+index+`)" placeholder="" value="">
                                     </div>
                                 </div>
+                               
                                 <div class="form-row form-group">
-                                </div>
+                                    <div class="col-lg-3">
+                                        <label class="captions">Tanggal Pendaftaran Paten</label>
+                                        <input id="par_tgl_daftar_paten_`+index+`" class="form-control form-control-sm" type="text" placeholder="YYYY-mm-ddd"/>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label class="captions">Tanggal Penghitungan Valuasi  </label>
+                                        <input id="par_tgl_hitung_paten_`+index+`" class="form-control form-control-sm" type="text" placeholder="YYYY-mm-ddd"/>
+                                    </div>
+                                </div> 
                             </div>
                         </div>`;
         $('.container_luaran_paten').append(adapter);
