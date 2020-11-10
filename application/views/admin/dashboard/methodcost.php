@@ -8,7 +8,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <p class="font-weight-bold">Field Input Data</p>
                         <p>A. Identitas Penelitian dan Invensi</p>
                         <div class="card">
                                 <div class="card-body">

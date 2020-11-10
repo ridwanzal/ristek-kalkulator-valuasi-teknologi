@@ -112,6 +112,9 @@ let obj_model_cb = {
          data : [],
          total_bobot_seluruh : 0,
         },
+    obj_paten_inflasi : {
+        data : []
+    },
     ti : 0,
     tanggal : '',
     pi : 0,
@@ -380,6 +383,8 @@ function luaran_paten(){
                     let _par_biaya_proses = money.reverse($('#par_biaya_proses_' + i).val());
                     let _par_cb_sertifikat_paten = $('#par_cb_sertifikat_paten_' + i).val();
                     let _par_cb_asalbiayadaftar = $('#par_cb_asalbiayadaftar_' + i).val();
+                    let _par_tgl_daftar_paten = $('#par_tgl_daftar_paten_' + i).val();
+                    let _par_tgl_hitung_paten = $('#par_tgl_hitung_paten_' + i).val();
 
                     var bobot = 0;
                     let jumlah = 1;
@@ -464,24 +469,32 @@ function luaran_paten(){
                     console.log(total_bobot_per_row + '/' + total_bobot_seluruh + '+' + _np_total_bobot)
                     let y = total_bobot_per_row / (parseInt(total_bobot_seluruh) + parseInt(_np_total_bobot.text()) );
                     let ki_list = y * parseInt(money.reverse(_par_pagu_riset.val()));
-                    let adapter_out_ki_list = `<li id="list_`+i+`">`+_par_cb_jenis_paten+` `+_par_cb_status_paten+` = Rp.`+money.init(ki_list)+`</li>`;
+                    let _jen_paten = '';
+                    if(_par_cb_jenis_paten === 'paten_granted') {
+                        _jen_paten = 'paten'
+                    }else{
+                        _jen_paten = _par_cb_jenis_paten
+                    }
+                    let adapter_out_ki_list = `<li id="list_`+i+`">`+_jen_paten+` `+_par_cb_status_paten+` = Rp. `+money.init(ki_list)+`</li>`;
                     _out_ki_list.append(adapter_out_ki_list);
 
 
 
                     // atbp masing-masing luaran
                     let atbp_list = ki_list + total_biaya_permohonan;
-                    let adapter_out_atbp_list = `<li id="list_`+i+`">`+_par_cb_nodaftar+` = Rp.`+money.init(atbp_list)+`</li>`;
+                    let adapter_out_atbp_list = `<li id="list_`+i+`">`+_par_cb_nodaftar+` = Rp. `+money.init(atbp_list)+`</li>`;
                     _out_atbp_list.append(adapter_out_atbp_list); 
 
-                    let adapter_out_atbp_table_inflasi = 
-                    `<tr>
-                      <td id="list_inflasi_`+i+`">`+_par_cb_nodaftar+`</td>
-                      <td></td>
-                      <td></td>
-                      <td>`+money.init(ki_list)+`</td>
-                    </tr>`;
-                    _out_atbp_table_inflasi.append(adapter_out_atbp_table_inflasi);
+                    // let adapter_out_atbp_table_inflasi = 
+                    // `<tr>
+                    //   <td id="list_inflasi_`+i+`">`+_par_cb_nodaftar+`</td>
+                    //   <td></td>
+                    //   <td></td>
+                    //   <td>`+money.init(ki_list)+`</td>
+                    // </tr>`;
+                    // _out_atbp_table_inflasi.append(adapter_out_atbp_table_inflasi);
+
+
 
                     obj_paten = {
                         par_cb_jd_invensi : '' + _par_cb_jd_invensi,
@@ -494,11 +507,26 @@ function luaran_paten(){
                         biaya_pendaftaran : '' + biaya_pendaftaran,
                         biaya_substantif : '' + biaya_substantif,
                         biaya_percepatan : '' + biaya_percepatan,
+                        par_tgl_daftar_paten : '' + _par_tgl_daftar_paten,
+                        par_tgl_hitung_paten : '' + _par_tgl_hitung_paten,
+                        par_selisih_tahun : '' + dateInYearsdiff(_par_tgl_daftar_paten,_par_tgl_hitung_paten), 
                         total_biaya_permohonan : '' + total_biaya_permohonan,
+                        nilai_atbp_paten : atbp_list,
                         jumlah : 1,
                         bobot : bobot,
                         total_bobot_per_row : total_bobot_per_row,
                     };
+
+                    let k = 0;
+                    let years_diff_inflasi = dateInYearsdiff(_par_tgl_daftar_paten,_par_tgl_hitung_paten) + 1;
+                    for(k; k < years_diff_inflasi; k++){
+                        let obj_paten_inflasi = {
+                            par_cb_nodaftar : '' + _par_cb_nodaftar,
+                            tahunke : k + 1,
+                            nilai_atbp_paten : atbp_list,
+                        }
+                        obj_model_cb.obj_paten_inflasi.data.push(obj_paten_inflasi);
+                    }
 
                     obj_model_cb.obj_paten.data.push(obj_paten);
                     obj_model_cb.obj_paten.total_bobot_seluruh = total_bobot_seluruh;
@@ -546,8 +574,34 @@ function luaran_paten(){
                 obj_model_cb.ki = total_luaran_penelitian_paten
                 obj_model_cb.pi = total_biaya_permohonan_seluruh;
                 obj_model_cb.total_atbp = total_atbp;
+
+
+                let h = 0;
+                let obj_inflasi = obj_model_cb.obj_paten_inflasi.data 
+                for(h; h < obj_inflasi.length; h++){
+                    let adapter_out_atbp_table_inflasi = 
+                    `<tr>
+                        <td id="list_inflasi_`+h+`">`+obj_inflasi[h].par_cb_nodaftar+`</td>
+                        <td>Tahun ke - `+obj_inflasi[h].tahunke+`</td>
+                        <td></td>
+                        <td>`+money.init(obj_inflasi[h].nilai_atbp_paten)+`</td>
+                    </tr>`;
+                    _out_atbp_table_inflasi.append(adapter_out_atbp_table_inflasi);
+                }
+
+                
                 console.log(obj_model_cb);
             }
+}
+
+/**
+ * hitung selisih tahun
+ */
+function dateInYearsdiff(start, end){
+    let s = moment(start)
+    let e = moment(end)
+    let diffs =  e.diff(s, 'years');
+    return diffs;
 }
 
 

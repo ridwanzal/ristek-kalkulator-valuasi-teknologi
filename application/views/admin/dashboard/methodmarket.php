@@ -3,7 +3,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                        <h3 class="font-weight-bold">Field Input Data</h3>
                         <p>A. Identitas Penelitian dan Invensi</p>
                         <br/>
                         <form>
