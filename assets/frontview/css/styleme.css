@@ -751,3 +751,27 @@ loader
     margin-top: 10px !important;
     margin-bottom: 10px !important;
   }
+
+  .report_list  {
+      font-size : 14px;
+  }
+
+  .export_pdf {
+      background : #f9f9f9;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      width:80%;
+      margin:0 auto;
+      border: 1px solid #f1f1f1;
+      border-radius: 2px;
+  }
+ 
+.report_container { 
+    width:80%;
+    margin:0 auto;
+}
+
+.cost_report{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}

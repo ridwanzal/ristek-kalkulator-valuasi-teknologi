@@ -90,8 +90,29 @@ class Manage extends CI_Controller {
 		$this->load->view('admin/navbar', $data);
 		$this->load->view('admin/components/breadcrumbs_detail', $data);
 		$this->load->view('admin/dashboard/methodcost_detail', $data);
-        $this->load->view('admin/footer', $data); 
-	  }
+		$this->load->view('admin/footer', $data); 
+		}
+
+		public function report_costbased($id){
+			$costbased_identity = $this->costbased_model->get_id($id);
+			$costbased_nonpaten = $this->costbasednonpaten_model->get_cost_id($id);
+			$costbased_paten = $this->costbasedpaten_model->get_cost_id($id);
+	
+			$data['costbased_identity'] = $costbased_identity;
+			$data['costbased_nonpaten'] = $costbased_nonpaten;
+			$data['costbased_paten'] = $costbased_paten;
+							
+			$data['title_bar'] = "Report Cost Based";
+			$data['header_page'] = "Report - Cost Based";
+			$data['breadcrumbs'] = 'Report';
+			$data['breadcrumbs_detail'] = 'Report';
+			
+			$this->load->view('admin/header', $data);
+			$this->load->view('admin/navbar', $data);
+			$this->load->view('admin/components/breadcrumbs_detail', $data);
+			$this->load->view('admin/dashboard/methodcost_report', $data);
+			$this->load->view('admin/footer', $data); 
+		}
 
 	  public function add_incomebased(){
 		//ambil sinta_id dari session user yang aktif

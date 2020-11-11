@@ -319,8 +319,8 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>A.</td>
-                                        <td>Luaran Penelitian Non Paten</td>
+                                        <td><b>A.</b></td>
+                                        <td><b>Luaran Penelitian Non Paten</b></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>
@@ -375,8 +375,8 @@
                                         <td style="font-weight:bold;" id="np_total_bobot">0</td>
                                     </tr>
                                     <tr class="luaran_penelitan_title">
-                                        <td>B.</td>
-                                        <td>Luaran Penelitian Paten</td>
+                                        <td><b>B.</b></td>
+                                        <td><b>Luaran Penelitian Paten</b></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>
@@ -535,7 +535,7 @@
                     <div class="row">
                         <div class="col-lg-12" id="container_simpan_export" style="display:none;">
                             <button id="tosave" class="btn btn-success btn-sm">Simpan</button> 
-                            <button id="topdf" class="btn btn-primary btn-sm">Export PDF</button> 
+                            <!-- <button id="topdf" class="btn btn-primary btn-sm">Export PDF</button>  -->
                         </div>
                     </div>
                 </div>

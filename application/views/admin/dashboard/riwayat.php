@@ -70,7 +70,9 @@
                                                         <td><?= $item->pi;?></td>
                                                         <td><?= $item->atbp;?></td>
                                                         <td><?= explode(' ',$item->tanggal)[0];?></td>
-                                                        <td><a href="<?php echo base_url();?>manage/riwayat/detail/cost-<?php echo $item->id;?>"><span class="badge badge-primary">Detail</span></a>&nbsp;<a href="#"><span class="badge badge-danger">Hapus</span></a></td>
+                                                        <td><a href="<?php echo base_url();?>manage/riwayat/detail/cost-<?php echo $item->id;?>"><span class="badge badge-primary">Detail</span></a>&nbsp;
+                                                        <a href="<?php echo base_url();?>manage/riwayat/laporan/cost-<?php echo $item->id;?>"><span class="badge badge-success">Report</span></a>&nbsp;
+                                                        <a href="#"><span class="badge badge-danger">Hapus</span></a></td>
                                                     </tr>
                                                 <?php
                                                   $i = $i + 1;

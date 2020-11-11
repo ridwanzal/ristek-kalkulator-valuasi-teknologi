@@ -298,8 +298,8 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>A.</td>
-                                        <td>Luaran Penelitian Non Paten</td>
+                                        <td><b></td>A.</b></td>
+                                        <td><b>Luaran Penelitian Non Paten</b></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>

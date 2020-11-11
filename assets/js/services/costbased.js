@@ -133,22 +133,60 @@ $(function () {
     get_daftar_ipr();
 });
 
+function getPDF(){
+
+    var HTML_Width = $(".cost_report").width();
+    var HTML_Height = $(".cost_report").height();
+    var top_left_margin = 5;
+    var PDF_Width = HTML_Width+(top_left_margin*2);
+    var PDF_Height = (PDF_Width*1.5)+(top_left_margin*2);
+    var canvas_image_width = HTML_Width;
+    var canvas_image_height = HTML_Height;
+    
+    var totalPDFPages = Math.ceil(HTML_Height/PDF_Height)-1;
+    
+    html2canvas(document.querySelector(".cost_report"), {
+        scale: 1,
+        removeContainer : true,
+        onrendered: function(canvas) {
+            var imgData = canvas.toDataURL("image/png");
+            var pdf = new jsPDF('p', 'mm', [PDF_Width, PDF_Height]);
+            pdf.addImage(imgData, 'PNG', top_left_margin, top_left_margin, canvas_image_width,canvas_image_height);
+            
+            for (var i = 1; i <= totalPDFPages; i++) { 
+                pdf.addPage(PDF_Width, PDF_Height);
+                // pdf.addImage(imgData, 'PNG', top_left_margin, -(PDF_Height*i)+(top_left_margin*2), canvas_image_width, canvas_image_height);
+                pdf.addImage(imgData, 'PNG', top_left_margin, -(PDF_Height*i)+(top_left_margin*2), canvas_image_width, canvas_image_height);
+            }
+            
+            pdf.save("HTML-Document.pdf");
+        }
+    });
+};
+
 function init(){
     $('#topdf').on('click', function(){
-        var doc = new jsPDF();
-        doc.setFontSize(16);
-        var elementHTML = $('.section_main_wrapper').html();
-        var specialElementHandlers = {
-            '#elementH': function (element, renderer) {
-                return true;
-            }
-        };
-        doc.fromHTML(elementHTML, 15, 15, {
-            'width': 100,
-            'elementHandlers': specialElementHandlers
-        });
-    
-        doc.save('sample-document.pdf');
+        getPDF();
+        // html2canvas(document.querySelector(".cost_report"), {
+        //     scale: 4,
+        //     allowTaint:true,
+        //     removeContainer : true,
+        //     onrendered: function(canvas) {
+        //         var imgData = canvas.toDataURL('image/png');
+        //         console.log('Report Image URL: '+imgData);
+        //         var doc = new jsPDF('p', 'mm', 'a4'); 
+        //         pageHeight= doc.internal.pageSize.height;
+        //         y = 500 // Height position of new content
+        //         doc.addImage(imgData, 'PNG', 20, 20);
+        //         if (y >= pageHeight)
+        //         {
+        //             doc.addPage();
+        //             doc.addImage(imgData, 'PNG', 20, 20);
+        //             y = 0 // Restart height position
+        //         }
+        //         doc.save('sample.pdf');
+        //     }
+        // });
     });
 
     _par_cb_unit_kerja.val(author_overview.prodi.nama);
@@ -375,6 +413,7 @@ function luaran_paten(){
                 _out_atbp_list.empty();
                 _out_atbp_table_inflasi.empty();
                 _nilai_luaran_paten_list.empty();
+                obj_model_cb.obj_paten_inflasi.data = [];
                 for(i; i <= container_luaran_paten.length; i++){
                     let _par_cb_jd_invensi= $('#par_cb_jd_invensi_' + i).val();
                     let _par_cb_jenis_paten = $('input[name="jpt_'+i+'"]:checked').val();
@@ -517,17 +556,25 @@ function luaran_paten(){
                         total_bobot_per_row : total_bobot_per_row,
                     };
 
+                   
                     let k = 0;
                     let years_diff_inflasi = dateInYearsdiff(_par_tgl_daftar_paten,_par_tgl_hitung_paten) + 1;
                     for(k; k < years_diff_inflasi; k++){
+                        let nilai_inflasi;
+                        if(k == 0){
+                            nilai_inflasi = 0;
+                        }else{
+                            nilai_inflasi = 0.5;
+                        }
                         let obj_paten_inflasi = {
                             par_cb_nodaftar : '' + _par_cb_nodaftar,
                             tahunke : k + 1,
+                            inflasi : nilai_inflasi,
                             nilai_atbp_paten : atbp_list,
                         }
                         obj_model_cb.obj_paten_inflasi.data.push(obj_paten_inflasi);
-                    }
 
+                    }
                     obj_model_cb.obj_paten.data.push(obj_paten);
                     obj_model_cb.obj_paten.total_bobot_seluruh = total_bobot_seluruh;
                 } 
@@ -575,16 +622,15 @@ function luaran_paten(){
                 obj_model_cb.pi = total_biaya_permohonan_seluruh;
                 obj_model_cb.total_atbp = total_atbp;
 
-
                 let h = 0;
                 let obj_inflasi = obj_model_cb.obj_paten_inflasi.data 
                 for(h; h < obj_inflasi.length; h++){
                     let adapter_out_atbp_table_inflasi = 
                     `<tr>
-                        <td id="list_inflasi_`+h+`">`+obj_inflasi[h].par_cb_nodaftar+`</td>
-                        <td>Tahun ke - `+obj_inflasi[h].tahunke+`</td>
-                        <td></td>
-                        <td>`+money.init(obj_inflasi[h].nilai_atbp_paten)+`</td>
+                    <td id="list_inflasi_`+h+`">`+obj_inflasi[h].par_cb_nodaftar+`</td>
+                    <td>Tahun ke - `+obj_inflasi[h].tahunke+`</td>
+                    <td>`+obj_inflasi[h].inflasi+`</td>
+                    <td>`+money.init(obj_inflasi[h].nilai_atbp_paten)+`</td>
                     </tr>`;
                     _out_atbp_table_inflasi.append(adapter_out_atbp_table_inflasi);
                 }
