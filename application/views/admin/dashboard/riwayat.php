@@ -26,17 +26,17 @@
                 <div class="col-lg-12 col-md-12 col-xs-12">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Cost based</a>
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><ion-icon name="cash"></ion-icon>&nbsp;&nbsp;Cost based</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Income based</a>
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><ion-icon name="briefcase"></ion-icon>&nbsp;&nbsp;Income based</a>
                             </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <br/>
                         <!--cost based here-->
-                        <table class="table table-sm table-bordered">
+                        <table class="table table-sm">
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
@@ -70,9 +70,10 @@
                                                         <td><?= $item->pi;?></td>
                                                         <td><?= $item->atbp;?></td>
                                                         <td><?= explode(' ',$item->tanggal)[0];?></td>
-                                                        <td><a href="<?php echo base_url();?>manage/riwayat/detail/cost-<?php echo $item->id;?>"><span class="badge badge-primary">Detail</span></a>&nbsp;
-                                                        <a href="<?php echo base_url();?>manage/riwayat/laporan/cost-<?php echo $item->id;?>"><span class="badge badge-success">Report</span></a>&nbsp;
-                                                        <a href="#"><span class="badge badge-danger">Hapus</span></a></td>
+                                                        <td>
+                                                        <!-- <a href="<?php echo base_url();?>manage/riwayat/detail/cost-<?php echo $item->id;?>"><span class="badge badge-primary">Detail</span></a>&nbsp; -->
+                                                        <a href="<?php echo base_url();?>manage/riwayat/laporan/cost-<?php echo $item->id;?>"><span class="badge badge-success" style="padding:3px 7px 7px 7px;"><ion-icon style="position:relative;top:3px;"name="easel-outline"></ion-icon>&nbsp;Detail & Report</span></a>&nbsp;
+                                                        <a href="#"><span class="badge badge-danger" style="padding:3px 7px 7px 7px;"><ion-icon style="position:relative;top:3px;"name="trash-outline"></ion-icon>&nbsp;Hapus</span></a></td>
                                                     </tr>
                                                 <?php
                                                   $i = $i + 1;

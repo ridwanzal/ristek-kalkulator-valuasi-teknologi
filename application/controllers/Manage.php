@@ -102,10 +102,10 @@ class Manage extends CI_Controller {
 			$data['costbased_nonpaten'] = $costbased_nonpaten;
 			$data['costbased_paten'] = $costbased_paten;
 							
-			$data['title_bar'] = "Report Cost Based";
-			$data['header_page'] = "Report - Cost Based";
-			$data['breadcrumbs'] = 'Report';
-			$data['breadcrumbs_detail'] = 'Report';
+			$data['title_bar'] = "Detail & Report Cost Based";
+			$data['header_page'] = "Detail & Report - Cost Based";
+			$data['breadcrumbs'] = 'Detail & Report';
+			$data['breadcrumbs_detail'] = 'Detail & Report';
 			
 			$this->load->view('admin/header', $data);
 			$this->load->view('admin/navbar', $data);
