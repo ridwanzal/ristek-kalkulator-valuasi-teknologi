@@ -12,13 +12,13 @@
                       <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>manage"><img height="18" src="<?php echo base_url();?>assets/frontview/img/logo.svg"></a>    
                     </li>
                     <li class="nav-item active">
-                      <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>manage" title="Dashboard"><ion-icon name="home-outline"></ion-icon>&nbsp;&nbsp;Dashboard<span class="sr-only">(current)</span></a>    
+                      <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>manage" title="Dashboard"><ion-icon name="home-outline" class="ion-icon-position"></ion-icon>&nbsp;&nbsp;Dashboard<span class="sr-only">(current)</span></a>    
                     </li>
                     <li class="nav-item active">
-                      <a class="nav-link" data-toggle="modal" data-target="#tambahkalkulasi" href="<?php echo base_url();?>manage/riwayat" title="Tambah Kalkulasi"><ion-icon name="add-outline"></ion-icon>&nbsp;&nbsp;Tambah Kalkulasi<span class="sr-only">(current)</span></a>    
+                      <a class="nav-link" data-toggle="modal" data-target="#tambahkalkulasi" href="<?php echo base_url();?>manage/riwayat" title="Tambah Kalkulasi"><ion-icon class="ion-icon-position" name="add-outline"></ion-icon>&nbsp;&nbsp;Tambah Kalkulasi<span class="sr-only">(current)</span></a>    
                     </li>
                     <li class="nav-item active">
-                      <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>manage/riwayat" title="Riwayat"><ion-icon name="file-tray-full-outline"></ion-icon>&nbsp;&nbsp;Riwayat<span class="sr-only">(current)</span></a>    
+                      <a class="nav-link" data-toggle="tooltip" data-placement="bottom" href="<?php echo base_url();?>manage/riwayat" title="Riwayat"><ion-icon class="ion-icon-position" name="file-tray-full-outline"></ion-icon>&nbsp;&nbsp;Riwayat<span class="sr-only">(current)</span></a>    
                     </li>
                 </ul>
                 <form method="GET" action="<?php echo base_url(); ?>/blog/blog_content_list_search">
@@ -47,7 +47,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLongTitle">Tambah Kalkulasi Baru</h5>
+                      <h5 class="modal-title" id="exampleModalLongTitle"><ion-icon style="position:relative;top:2px;" name="calculator-outline"></ion-icon>&nbsp;Tambah Kalkulasi Baru</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>

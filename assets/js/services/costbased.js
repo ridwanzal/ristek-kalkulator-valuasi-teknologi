@@ -133,6 +133,10 @@ $(function () {
     get_daftar_ipr();
 });
 
+function printPDF(){
+    printJS('cost_report_id', 'html');
+}
+
 function getPDF(){
 
     var HTML_Width = $(".cost_report").width();
@@ -166,7 +170,8 @@ function getPDF(){
 
 function init(){
     $('#topdf').on('click', function(){
-        getPDF();
+        printPDF();
+        // getPDF();
         // html2canvas(document.querySelector(".cost_report"), {
         //     scale: 4,
         //     allowTaint:true,
