@@ -17,6 +17,19 @@ $('#chk_editable').on('change', function(){ // on change of state
     }
  })
 
+ //untuk centang editable pada variabel Modal Form Harga Jual
+//halaman manage/add/incomebased_calculator2
+const centang_hargajual = $('#chk_hargajual');
+$('#chk_hargajual').on('change', function(){ // on change of state
+    if(this.checked) // if changed state is "CHECKED"
+    {
+        $('#harga_hargajual').prop( "disabled", false );
+    }
+    else{
+        $('#harga_hargajual').prop( "disabled", true );
+    }
+ })
+
 //masking input data halaman 1
 $('#modal').mask("#.##0,00", {reverse: true});
 $('#sukubunga').mask('##0,00%', {reverse: true});

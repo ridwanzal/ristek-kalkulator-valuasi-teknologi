@@ -62,6 +62,11 @@ _harga_profit_persen.on('keyup', function(){
     let result = money.format(_harga_profit_persen.val());
     _harga_profit_persen.val(result);
 });
+_harga_hargajual.on('keyup', function(){
+    let result = money.format(_harga_hargajual.val());
+    _harga_hargajual.val(result);
+});
+
 // change
 _harga_rf_persen.on('change', function(){
     let risk_factor = (money.reverse(_harga_rf_persen.val())/100) * money.reverse(_harga_cogs.val());

@@ -256,7 +256,10 @@
                             </tr>
                             <tr>
                                 <td colspan="4" class="text-right">Market Value</td>
-                                <td><input type="text" class="form-control" id="harga_hargajual" name="harga_hargajual" placeholder="Nilai Harga Jual" readonly></td>
+                                <td>
+                                    <input type="text" class="form-control" id="harga_hargajual" name="harga_hargajual" placeholder="Nilai Harga Jual" disabled>
+                                    <input type="checkbox" name="chk_hargajual" id="chk_hargajual" value="Editable">&nbsp;Editable
+                                </td>
                             </tr>
                         </tbody>
                     </table>
