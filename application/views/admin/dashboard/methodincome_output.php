@@ -64,6 +64,10 @@ $biaya_perawatan = get_numeric($biaya_perawatan);
 $biaya_warehouse = get_numeric($biaya_warehouse);
 $biaya_depresiasi = get_numeric($biaya_depresiasi);
 
+//menentukan nilai inflasi dari harga jual tahun ke - 2
+//dikurangkan dengan 100
+$inflasi = $harga_tahun2 - 100;
+
 //echo "<script>alert(".$harga_tahun2.")</script>";
 //fungsi untuk menampilkan angka dalam rupiah
 function rupiah($angka){
@@ -136,11 +140,16 @@ $total_lisensi = array_sum($lisensi);
 $cogs = array();
 for($c=1;$c<=$indeks;$c++){
     if($c==1){
+        //=Simulasi!C38*D5
         $cogs[$c] = $biaya_cogs*$qty[$c];
     }elseif($c==2){
-        $cogs[$c] = $biaya_cogs*($harga_tahun2/100)*$qty[$c]; 
+        // =(Simulasi!C38*E5)+((Simulasi!C38*E5)*(Simulasi!F27/100)); formula excel inflasi
+        //$cogs[$c] = $biaya_cogs*($harga_tahun2/100)*$qty[$c]; formula lama sebelum inflasi
+        $cogs[$c] = ($biaya_cogs*$qty[$c])+(($biaya_cogs*$qty[$c])*($inflasi/100)); 
     }else{
-        $cogs[$indeks-($indeks-$c)] = $cogs[$c-1]*($harga_tahun2/100);
+        //=(E17)+(E17*(Simulasi!F27/100)); formula excel inflasi
+        //$cogs[$indeks-($indeks-$c)] = $cogs[$c-1]*($harga_tahun2/100); formula lama sebelum inflasi
+        $cogs[$indeks-($indeks-$c)] = ($cogs[$c-1])+($cogs[$c-1]*($inflasi/100));
     }
 }
 
@@ -148,28 +157,51 @@ for($c=1;$c<=$indeks;$c++){
 $tetap = array();
 for($t=1;$t<=$indeks;$t++){
     if($t==1){
+        //=Simulasi!C39*12; formula excel inflasi
         $tetap[$t] = $biaya_tetap*12;
     }else{
-        $tetap[$t] = $tetap[$t-1]*($harga_tahun2/100); 
+        //=D18+(D18*(Simulasi!F27/100)); formula excel inflasi
+        //$tetap[$t] = $tetap[$t-1]*($harga_tahun2/100); formula lama sebelum inflasi
+        $tetap[$t] = $tetap[$t-1]+($tetap[$t-1]*($inflasi/100));
     }
 }
 
 //variabel dummy cashflow.biaya_marketing
 $marketing = array();
 for($m=1;$m<=$indeks;$m++){
-    $marketing[$m] = $cogs[$m]*($biaya_marketing/100);
+    if($m==1){
+        //=D17*(Simulasi!C40/100); formula excel inflasi
+        $marketing[$m] = $cogs[$m]*($biaya_marketing/100);
+    }else{
+        //=(E17*(Simulasi!C40/100))+((E17*(Simulasi!C40/100))*(Simulasi!F27/100)); formula excel inflasi
+        $marketing[$m] = ($cogs[$m]*($biaya_marketing/100))+(($cogs[$m]*($biaya_marketing/100))*($inflasi/100));
+    }
 }
 
 //variabel dummy cashflow.biaya_perawatan
 $perawatan = array();
 for($p=1;$p<=$indeks;$p++){
-    $perawatan[$p] = $biaya_perawatan;
+    if($p==1){
+        //=Simulasi!C41; formula excel inflasi
+        $perawatan[$p] = $biaya_perawatan;
+    }else{
+        //=D20+(D20*(Simulasi!F27/100)); formula excel inflasi
+        //$perawatan[$p] = $biaya_perawatan; formula lama sebelum inflasi
+        $perawatan[$p] = $perawatan[$p-1]+($perawatan[$p-1]*($inflasi/100));
+    }
 }
 
 //variabel dummy cashflow.biaya_warehouse
 $warehouse = array();
 for($w=1;$w<=$indeks;$w++){
-    $warehouse[$w] = $biaya_warehouse;
+    if($w==1){
+        //=Simulasi!C42; formula excel inflasi
+        $warehouse[$w] = $biaya_warehouse;
+    }else{
+        //=D21+(D21*(Simulasi!F27/100)); formula excel inflasi
+        //$warehouse[$w] = $biaya_warehouse; formula lama sebelum inflasi
+        $warehouse[$w] = $warehouse[$w-1]+($warehouse[$w-1]*($inflasi/100));
+    }
 }
 
 //variabel dummy cashflow.biaya_depresiasi
