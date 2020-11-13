@@ -212,6 +212,24 @@ class Manage extends CI_Controller {
 		$this->load->view('admin/dashboard/methodincome_output', $data);
         $this->load->view('admin/footer', $data); 
 	  }
+
+	  public function report_incomebased($id){
+		// ($this->session->userdata('discount_factor')!==null) ? $discount_factor = $this->session->userdata('discount_factor'): $discount_factor=0.00;
+		$record_incomebased = $this->incomebased_model->get_kalkulasi($id);
+		$data['record_incomebased'] = $record_incomebased;
+		// $data["sikav_discount_factor"] = $this->incomebased_model->get_discount_factor_item($discount_factor);
+						
+		$data['title_bar'] = "Detail & Report Income Based";
+		$data['header_page'] = "Detail & Report - Income Based";
+		$data['breadcrumbs'] = 'Detail & Report';
+		$data['breadcrumbs_detail'] = 'Detail & Report';
+		
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/navbar', $data);
+		$this->load->view('admin/components/breadcrumbs_detail', $data);
+		$this->load->view('admin/dashboard/methodincome_report', $data);
+		$this->load->view('admin/footer', $data); 
+	}
 	  
 	  public function add_marketbased(){
 		$data['title_bar'] = "Market Based";

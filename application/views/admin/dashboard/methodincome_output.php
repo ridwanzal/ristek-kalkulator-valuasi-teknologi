@@ -359,6 +359,7 @@ for($i=1;$i<=$indeks;$i++){
 }
 
 //variabel dummy profit_loss.discount (Tabel Discount Factor)
+// var_dump($sikav_discount_factor);die;
 $discount = array();
 foreach ($sikav_discount_factor as $object) {
     $discount[] = $object->df;
@@ -1045,7 +1046,7 @@ for($i=1;$i<=$indeks;$i++){
                 <div class="col-md-12 center">
                     <div class="card text-center">
                         <div class="card-header bg-info text-white">
-                            Net Present Value (NPV)
+                            Proyeksi Net Present Value (NPV)
                         </div>
                         <div class="card-body">
                             <table class="table table-bordered table-hover table-striped">

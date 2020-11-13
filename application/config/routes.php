@@ -58,6 +58,7 @@ $route['manage/add/incomebased'] = 'manage/add_incomebased';
 $route['manage/add/incomebased_invensi'] = 'manage/add_incomebased_invensi';
 $route['manage/edit/incomebased_invensi/(:num)'] = 'manage/edit_incomebased_invensi/$1';
 $route['manage/delete/incomebased_invensi/(:num)'] = 'incomebased/delete/$1';
+$route['manage/delete/incomebased_kalkulasi/(:num)'] = 'incomebased/delete_kalkulasi/$1';
 $route['incomebased/add'] = 'incomebased/add';
 $route['incomebased/sinkronisasi_ipr'] = 'incomebased/sinkronisasi_ipr';
 $route['incomebased/data_halaman1'] = 'incomebased/data_halaman1';
@@ -72,6 +73,7 @@ $route['manage/add/incomebased_output'] = 'manage/add_incomebased_output';
 $route['manage/riwayat'] = 'manage/riwayat';
 $route['manage/riwayat/detail/cost-(:any)'] = 'manage/detail_costbased/$1';
 $route['manage/riwayat/laporan/cost-(:any)'] = 'manage/report_costbased/$1';
+$route['manage/riwayat/laporan/income-(:any)'] = 'manage/report_incomebased/$1';
 
 // front section
 $route['login'] = 'login';

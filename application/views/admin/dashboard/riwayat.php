@@ -85,7 +85,7 @@
                     </div>
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <!--income based here-->
-                        <table class="table table-sm table-bordered">
+                        <table class="table table-sm">
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
@@ -93,7 +93,6 @@
                                         <th scope="col">Nama Inventor</th>
                                         <th scope="col">Nilai NPV</th>
                                         <th scope="col">Tindakan</th>
-                                        <T
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -113,7 +112,10 @@
                                                         <td><?= $item->hki_judul; ?></td>
                                                         <td><?= $item->hki_inventor;?></td>
                                                         <td><?= rupiah($item->nilai_npv);?></td>
-                                                        <td><a href="#"><span class="badge badge-primary">Detail</span></a>&nbsp;<a href="#"><span class="badge badge-danger">Hapus</span></a></td>
+                                                        <td>
+                                                            <a href="<?php echo base_url();?>manage/riwayat/laporan/income-<?php echo $item->id;?>"><span class="badge badge-success" style="padding:3px 7px 7px 7px;"><ion-icon style="position:relative;top:3px;"name="easel-outline"></ion-icon>&nbsp;Report</span></a>&nbsp;
+                                                            <a onclick="deleteConfirm('<?php echo site_url('manage/delete/incomebased_kalkulasi/'.$item->id) ?>')" href="#!"><span class="badge badge-danger" style="padding:3px 7px 7px 7px;"><ion-icon style="position:relative;top:3px;"name="trash-outline"></ion-icon>&nbsp;Hapus</span></a>
+                                                        </td>
                                                     </tr>
                                                 <?php
                                                   $i = $i + 1;
@@ -132,3 +134,29 @@
         </div>
     </div>
 </section>
+<!-- Modal Delete Confirmation-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-light">
+        <h3 class="modal-title" id="exampleModalLabel">Apakah Data Dihapus?</h3>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Batal</button>
+        <a id="btn-delete" class="btn btn-danger btn-sm" href="#">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Trigger Modal Delete Confirmation-->
+<script type="text/javascript" src="<?php echo base_url('assets/frontview/js/jquery-3.3.1.min.js') ?>"></script>
+<script type="text/javascript">    
+    function deleteConfirm(url){
+        $('#btn-delete').attr('href', url);
+        $('#deleteModal').modal();
+    }
+</script>

@@ -38,6 +38,11 @@ class Incomebased_model extends CI_Model {
         return $this->db->get_where($this->table3, ["hki_id" => $hki_id])->row();
     }
 
+    // mencari item kalkulasi berdasarkan ID
+    function get_kalkulasi($id){
+        return $this->db->get_where($this->table3, ["id" => $id])->result();
+    }
+
     // insert data
     function insert($data)
     {
@@ -58,10 +63,16 @@ class Incomebased_model extends CI_Model {
 		$this->db->update($this->table3, $data);
     }
 
-    // delete data
+    // delete data hki
     public function delete($hki_id)
     {
         $this->db->delete($this->table, array("hki_id" => $hki_id));
+    }
+
+    // delete data item kalkulasi incomebased method
+    public function delete_kalkulasi($id)
+    {
+        $this->db->delete($this->table3, array("id" => $id));
     }
 
     // tampilkan seluruh data Discount Factor

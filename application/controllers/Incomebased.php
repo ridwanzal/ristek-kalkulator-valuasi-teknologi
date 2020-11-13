@@ -131,6 +131,16 @@ class Incomebased extends CI_Controller {
 		redirect('manage/add/incomebased');
     }
 
+    public function delete_kalkulasi($id){
+		$hapus = $this->incomebased_model->delete_kalkulasi($id);
+		if (!$hapus) {
+			$this->session->set_flashdata('pesan', 'Data Berhasil Dihapus.');
+		} else{
+			$this->session->set_flashdata('pesan', 'Data Gagal Dihapus');
+		}
+		redirect('manage/riwayat');
+    }
+
     public function sinkronisasi_ipr(){
         //ambil sinta_id dari session user yang aktif
 		$userdetails = $this->session->userdata('userdetails');
