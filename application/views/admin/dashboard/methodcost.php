@@ -230,13 +230,16 @@
                                                 <div class="form-row form-group">
                                                     <div class="col-lg-3">
                                                         <label class="captions">Tanggal Pendaftaran Paten</label>
-                                                        <input id="par_tgl_daftar_paten_1" class="form-control form-control-sm" type="text" placeholder="YYYY-mm-ddd"/>
+                                                        <input onchange="alert('haha')" id="par_tgl_daftar_paten_1" class="form-control form-control-sm date_inflasi_counter" type="text" placeholder="YYYY-mm-ddd"/>
                                                     </div>
                                                     <div class="col-lg-3">
                                                         <label class="captions">Tanggal Penghitungan Valuasi  </label>
-                                                        <input id="par_tgl_hitung_paten_1" class="form-control form-control-sm" type="text" placeholder="YYYY-mm-ddd"/>
+                                                        <input id="par_tgl_hitung_paten_1" class="form-control form-control-sm date_inflasi_counter" type="text" placeholder="YYYY-mm-ddd"/>
                                                     </div>
                                                 </div> 
+                                                <div class="form-row form-group" id="inflasi_annual_1">
+
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
