@@ -301,57 +301,56 @@ function init(){
                         showConfirmButton: false,
                         timer: 1500
                     })
-                    // console.log('upload dokumen pendukung');
-                    // // upload dokumen pendukung
-                    // var form_data = new FormData();
-                    // var totalfiles = document.getElementById('par_cb_file').files.length;
-                    // for (var index = 0; index < totalfiles; index++) {
-                    //     form_data.append("berkas[]", document.getElementById('par_cb_file').files[index]);
-                    // }
-                    // console.log(form_data);
-                    // console.log(res.insert_id);
-                    // console.log(web_url + '/uploads/multiple/costbased/'+res.insert_id+'');
 
-                    // $.ajax({
-                    //     url: web_url + '/uploads/multiple/costbased/'+res.insert_id+'',
-                    //     type: 'post',
-                    //     data: form_data,
-                    //     dataType: 'json',
-                    //     contentType: false,
-                    //     processData: false,
-                    //     success: function (response) {
-                    //         if(response.status == 'success'){
-                    //             _tosave.attr('disabled', 'disabled');
-                    //             _tosave.text('Tersimpan');
-                    //             // bootbox.hideAll();
-                    //             Swal.fire({
-                    //                 position: 'top-end',
-                    //                 icon: 'success',
-                    //                 title: 'Data berhasil di submit',
-                    //                 showConfirmButton: false,
-                    //                 timer: 1500
-                    //             })
-                    //         }
-                    //     },
-                    //     done : function(){
-                    //         // bootbox.hideAll();
-                    //         _tosave.attr('disabled', 'disabled');
-                    //         _tosave.text('Tersimpan');
-                    //     },failed : function(e){
-                    //         console.log(e)
-                    //     }, error : function(e){
-                    //         console.log('error');
-                    //         console.log(e);
-                    //     }
-                    // });
+                    /*
+                    console.log('upload dokumen pendukung');
+                    // upload dokumen pendukung
+                    var form_data = new FormData();
+                    var totalfiles = document.getElementById('par_cb_file').files.length;
+                    for (var index = 0; index < totalfiles; index++) {
+                        form_data.append("berkas[]", document.getElementById('par_cb_file').files[index]);
+                    }
+                    console.log(form_data);
+                    console.log(res.insert_id);
+                    console.log(web_url + '/uploads/multiple/costbased/'+res.insert_id+'');
+
+                    $.ajax({
+                        url: web_url + '/uploads/multiple/costbased/'+res.insert_id+'',
+                        type: 'post',
+                        data: form_data,
+                        dataType: 'json',
+                        contentType: false,
+                        processData: false,
+                        success: function (response) {
+                            if(response.status == 'success'){
+                                _tosave.attr('disabled', 'disabled');
+                                _tosave.text('Tersimpan');
+                                // bootbox.hideAll();
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'Data berhasil di submit',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            }
+                        },
+                        done : function(){
+                            // bootbox.hideAll();
+                            _tosave.attr('disabled', 'disabled');
+                            _tosave.text('Tersimpan');
+                        },failed : function(e){
+                            console.log(e)
+                        }, error : function(e){
+                            console.log('error');
+                            console.log(e);
+                        }
+                    });
+                    */
                 }
             }
         });
-
-
-
     });
-
 }
 
 function luaran_nonpaten(){

@@ -2,12 +2,12 @@ $(function () {
     inisialisasi();
 });
 
-function printPDF(){
+function printPDF_income(){
     printJS('income_report_id', 'html');
 }
 
 function inisialisasi(){
     $('#income_topdf').on('click', function(){
-        printPDF();
+        printPDF_income();
     });
 }
