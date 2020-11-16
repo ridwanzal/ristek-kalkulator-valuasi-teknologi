@@ -18,6 +18,11 @@
     echo '<pre>';   
     // var_dump($costbased_identity);die;
     echo '</pre>';
+
+    function format_money($money){
+        return number_format($money, 2, ",", ".");
+    }
+
 ?>
 
 <section class="section_main_wrapper">
@@ -47,7 +52,7 @@
                                 Judul Penelitian :  <b><?= $costbased_identity->judul_penelitian; ?></b>
                             </li>
                             <li>
-                                Total Biaya Masukan/Realisasi Pagu Penelitian (R): Rp :  <b><?= $costbased_identity->total_biaya; ?></b>
+                                Total Biaya Masukan/Realisasi Pagu Penelitian (R): Rp :  <b><?= format_money($costbased_identity->total_biaya); ?></b>
                             </li>
                             <li>
                                 Asal Biaya Masukan Masukan/Realisasi Pagu Penelitian, misal Hibah Ristek, Dikti
@@ -231,7 +236,7 @@
                             <br/>
                             <div class="report_list">Nilai total bobot keluaran penelitian berupa paten (&Sigma;Ti) = <span id="out_paten"><?php echo '' .intval($costbased_identity->ti);?></span></div>
                             <div class="report_list">Nilai total bobot keluaran penelitian non paten (&Sigma;Qi) = <span id="out_nonpaten"><?php echo '' .intval($costbased_identity->qi);?></span></div>
-                            <div class="report_list">Nilai realisasi pagu (R) = Rp. <span id="out_pagu"><?php echo '' .intval($costbased_identity->total_biaya);?></span></div>
+                            <div class="report_list">Nilai realisasi pagu (R) = Rp. <span id="out_pagu"><?php echo '' .format_money(intval($costbased_identity->total_biaya));?></span></div>
                             <div class="report_list">Nilai keluaran untuk masing-masin Paten : </div>
                             <ul id="out_ki_list">
                                 <?php
@@ -239,12 +244,12 @@
                                         $y = intval($itemx->total_bobot) / (intval($costbased_identity->qi + intval($costbased_identity->ti)));
                                         $ki_list = $y * $costbased_identity->total_biaya;
                                         ?>
-                                            <li><?php echo $itemx->jenis_paten .' '. $item->status_permohonan; ?> : Rp.<?php echo $ki_list;?></li>
+                                            <li><?php echo $itemx->jenis_paten .' '. $item->status_permohonan; ?> : Rp.<?php echo format_money($ki_list);?></li>
                                         <?php
                                     }
                                 ?>
                             </ul>
-                            <div class="report_list">Total Nilai Keluaran Penelitian Berupa Paten (Ki = &Sigma;Ti / (&Sigma;Ti+&Sigma;Qi)× R) = Rp. <span id="out_ki"><?php echo '' .$costbased_identity->ki;?></span></div>
+                            <div class="report_list">Total Nilai Keluaran Penelitian Berupa Paten (Ki = &Sigma;Ti / (&Sigma;Ti+&Sigma;Qi)× R) = Rp. <span id="out_ki"><?php echo '' .format_money($costbased_identity->ki);?></span></div>
                             <br/>
                         </div>
                     </div>
@@ -294,14 +299,14 @@
                                                         <tr>
                                                             <td><?php echo $y;?></td>
                                                             <td><?php echo $item->no_pendaftaran;?></td>
-                                                            <td><?php echo $item->biaya_pendaftaran;?></td>
-                                                            <td><?php echo $item->biaya_substantif;?></td>
-                                                            <td><?php echo $item->biaya_percepatan;?></td>
-                                                            <td><?php echo $item->biaya_proses_lain;?></td>
+                                                            <td><?php echo format_money($item->biaya_pendaftaran);?></td>
+                                                            <td><?php echo format_money($item->biaya_substantif);?></td>
+                                                            <td><?php echo format_money($item->biaya_percepatan);?></td>
+                                                            <td><?php echo format_money($item->biaya_proses_lain);?></td>
                                                             <td>
                                                                 <?php 
                                                                     $hasilku = intval($item->biaya_pendaftaran) + intval($item->biaya_substantif) + intval($item->biaya_percepatan)  +intval($item->biaya_proses_lain) ;
-                                                                    echo ''.$hasilku; 
+                                                                    echo ''.format_money($hasilku); 
                                                                 ?>
                                                             </td>
                                                         </tr>
@@ -315,25 +320,25 @@
                                         <td></td>
                                         <td><b>Jumlah (Rp.)</b></td>
                                     
-                                        <td id=""><?php echo $total_biaya_daftar; ?></td>
-                                        <td id=""><?php echo $total_biaya_substantif; ?></td>
-                                        <td id=""><?php echo $total_biaya_percepatan; ?></td>
-                                        <td id=""><?php echo $total_biaya_proses_lain; ?></td>
-                                        <td id=""><?php echo $hasil; ?></td>
+                                        <td id=""><?php echo format_money($total_biaya_daftar); ?></td>
+                                        <td id=""><?php echo format_money($total_biaya_substantif); ?></td>
+                                        <td id=""><?php echo format_money($total_biaya_percepatan); ?></td>
+                                        <td id=""><?php echo format_money($total_biaya_proses_lain); ?></td>
+                                        <td id=""><?php echo format_money($hasil); ?></td>
                                     </tr>
                                 </tbody>
                             </table>
                             <small id="emailHelp" class="form-text text-muted">Biaya pendaftaran, pemeriksaan substantif, dan percepatan publikasi, sesuai dengan tarif
                                                                             PNBP yang berlaku di DJKI.</small>
                             <br/>                                                                            
-                            <div class="report_list">Total Nilai perolehan Paten (Pi = &Sigma;A+&Sigma;B+&Sigma;C+&Sigma;D) = Rp. <span id="out_pi"><?php echo '' .$costbased_identity->pi;?></span></div>
+                            <div class="report_list">Total Nilai perolehan Paten (Pi = &Sigma;A+&Sigma;B+&Sigma;C+&Sigma;D) = Rp. <span id="out_pi"><?php echo '' .format_money($costbased_identity->pi);?></span></div>
                         </div>
                     </div>
                     <br/>
                     <div class="row justify-content-md-center report_container">
                         <div class="col-lg-12 col-md-12 col-xs-12">
                             <p class="font-weight-bold">D. Nilai Aset Tak Berwujud berupa Paten/ATB-P (Vi)</p>   
-                            <b><p>1. Nilai ATB-P masing-masing paten tanpa memperhitungkan inflasi (jika penghitungan/valuasi dilakukan < 1 tahun sejak tanggal pendaftaran paten):</p></b>
+                            <b><p>a. Nilai ATB-P masing-masing paten tanpa memperhitungkan inflasi (jika penghitungan/valuasi dilakukan < 1 tahun sejak tanggal pendaftaran paten):</p></b>
                             <ul id="out_atbp_list">
                                 <?php
                                     foreach($costbased_paten as $itemx){
@@ -342,12 +347,12 @@
                                         $total_biaya_permohonan = intval($itemx->biaya_pendaftaran) + intval($itemx->biaya_substantif) + intval($itemx->biaya_percepatan)  +intval($itemx->biaya_proses_lain) ;
                                         $atbp_lists = doubleval($ki_list2) + doubleval($total_biaya_permohonan);
                                         ?>
-                                            <li><?php echo $itemx->jenis_paten .' '. $itemx->status_permohonan; ?> : Rp.<?php echo $atbp_lists;?></li>
+                                            <li><?php echo $itemx->jenis_paten .' '. $itemx->status_permohonan; ?> : Rp.<?php echo format_money($atbp_lists);?></li>
                                         <?php
                                     }
                                 ?>
                             </ul>
-                            <b><p>2. Nilai ATB-P masing-masing paten dengan memperhitungkan inflasi (jika penghitungan/valuasi dilakukan > 1 tahun sejak tanggal pendaftaran paten):</p></b>
+                            <b><p>b. Nilai ATB-P masing-masing paten dengan memperhitungkan inflasi (jika penghitungan/valuasi dilakukan > 1 tahun sejak tanggal pendaftaran paten):</p></b>
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -377,10 +382,10 @@
                                                             <?= 'Tahun ke -' .$itemy->tahunke; ?>
                                                         </td>
                                                         <td>
-                                                            <?= $itemy->nilai_inflasi; ?>
+                                                            <?= format_money($itemy->nilai_inflasi); ?>
                                                         </td>
                                                         <td>
-                                                            <?= $itemy->nilai_atbp_paten_inflasi; ?>
+                                                            <?= format_money($itemy->nilai_atbp_paten_inflasi); ?>
                                                         </td>
                                                     </tr>
                                                 <?php
@@ -388,7 +393,7 @@
                                         ?>
                                     </tbody>
                                 </table>
-                            <p style="font-weight:bold;font-size:18px;">2. Total Nilai ATB-P : Rp. <span id="out_atbp_total"><?php echo '' .$costbased_identity->atbp;?></span></p>   
+                            <p style="font-weight:bold;font-size:18px;">c. Total Nilai ATB-P : Rp. <span id="out_atbp_total"><?php echo '' .format_money($costbased_identity->atbp);?></span></p>   
                         </div>
                     </div>
 
