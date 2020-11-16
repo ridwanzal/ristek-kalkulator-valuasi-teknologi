@@ -2,105 +2,92 @@
 
 /*
 json format
-
-object(stdClass)#21 (9) {
-  ["obj_id_sinta"]=>
-  string(6) "112910"
-  ["obj_id_google"]=>
-  string(12) "Lps3MkMAAAAJ"
-  ["obj_email"]=>
-  string(30) "haris.wahyudi@mercubuana.ac.id"
-  ["obj_id_afiliasi"]=>
-  string(4) "1066"
-  ["obj_identitas_pi"]=>
-  object(stdClass)#22 (6) {
-    ["par_cb_nama_inventor"]=>
-    string(13) "HARIS WAHYUDI"
-    ["par_cb_nama_institusi"]=>
-    string(23) "Universitas Mercu Buana"
-    ["par_cb_unit_kerja"]=>
-    string(12) "Teknik Mesin"
-    ["par_cb_judul_riset"]=>
-    string(71) "PENGEMBANGAN PADUAN LOGAM NANO Fe-Mn UNTUK APLIKASI BIODEGRADABLE STENT"
-    ["par_pagu_riset"]=>
-    string(8) "50000000"
-    ["par_cb_asal_biaya"]=>
-    string(17) "Dikti Kemendikbud"
-  }
-  ["obj_non_paten"]=>
-  object(stdClass)#23 (14) {
-    ["pub_np_int"]=>
-    string(1) "8"
-    ["pub_np_ns"]=>
-    string(1) "0"
-    ["buk_np_int"]=>
-    string(1) "0"
-    ["buk_np_ns"]=>
-    string(1) "0"
-    ["pub_prod_np_int"]=>
-    string(1) "0"
-    ["pub_prod_np_ns"]=>
-    string(1) "0"
-    ["pub_np_int_total"]=>
-    string(3) "320"
-    ["pub_np_ns_total"]=>
-    string(1) "0"
-    ["buk_np_int_total"]=>
-    string(1) "0"
-    ["buk_np_ns_total"]=>
-    string(1) "0"
-    ["pub_prod_np_int_total"]=>
-    string(1) "0"
-    ["pub_prod_np_ns_total"]=>
-    string(1) "0"
-    ["np_total_bobot"]=>
-    string(3) "320"
-    ["total_bobot_seluruh"]=>
-    string(3) "320"
-  }
-  ["obj_paten"]=>
-  object(stdClass)#25 (2) {
-    ["data"]=>
-    array(1) {
-      [0]=>
-      object(stdClass)#24 (13) {
-        ["par_cb_jd_invensi"]=>
-        string(45) "ALAT KERJA MULTI FUNGSI BERBASIS BUSUR PLASMA"
-        ["par_cb_jenis_paten"]=>
-        string(13) "paten_granted"
-        ["par_cb_status_paten"]=>
-        string(8) "tedaftar"
-        ["par_cb_nodaftar"]=>
-        string(12) "IDP000067783"
-        ["par_cb_sertifikat_paten"]=>
-        string(0) ""
-        ["par_biaya_proses"]=>
-        string(1) "0"
-        ["biaya_pendaftaran"]=>
-        string(6) "350000"
-        ["biaya_substantif"]=>
-        string(7) "3000000"
-        ["biaya_percepatan"]=>
-        string(6) "400000"
-        ["total_biaya_permohonan"]=>
-        string(7) "3750000"
-        ["jumlah"]=>
-        int(1)
-        ["bobot"]=>
-        int(14)
-        ["total_bobot_per_row"]=>
-        int(14)
-      }
-    }
-    ["total_bobot_seluruh"]=>
-    int(14)
-  }
-  ["tanggal"]=>
-  string(0) ""
-  ["total_atbp"]=>
-  float(5845808.3832335)
+{
+   "obj_id_sinta":"112910",
+   "obj_id_google":"Lps3MkMAAAAJ",
+   "obj_email":"haris.wahyudi@mercubuana.ac.id",
+   "obj_id_afiliasi":"1066",
+   "obj_identitas_pi":{
+      "par_cb_nama_inventor":"HARIS WAHYUDI",
+      "par_cb_nama_institusi":"Universitas Mercu Buana",
+      "par_cb_unit_kerja":"Teknik Mesin",
+      "par_cb_judul_riset":"PENGEMBANGAN PADUAN LOGAM NANO Fe-Mn UNTUK APLIKASI BIODEGRADABLE STENT",
+      "par_pagu_riset":"50000000",
+      "par_cb_asal_biaya":"Dikti Kemendikbud"
+   },
+   "obj_non_paten":{
+      "pub_np_int":"8",
+      "pub_np_ns":"1",
+      "buk_np_int":"1",
+      "buk_np_ns":"1",
+      "pub_prod_np_int":"1",
+      "pub_prod_np_ns":"1",
+      "pub_np_int_total":"320",
+      "pub_np_ns_total":"25",
+      "buk_np_int_total":"40",
+      "buk_np_ns_total":"30",
+      "pub_prod_np_int_total":"25",
+      "pub_prod_np_ns_total":"10",
+      "np_total_bobot":"450",
+      "total_bobot_seluruh":"450",
+      "qi":"450"
+   },
+   "obj_paten":{
+      "data":[
+         {
+            "par_cb_jd_invensi":"MESIN KOMPUTER KONTROL NUMERIK ROUTER TIGA SUMBU PORTABEL",
+            "par_cb_jenis_paten":"paten_granted",
+            "par_cb_status_paten":"tersertifikasi",
+            "par_cb_nodaftar":"P00201707747",
+            "par_cb_sertifikat_paten":"IDP000057134",
+            "par_cb_asal_biaya_permohonan":"",
+            "par_biaya_proses":"150000",
+            "biaya_pendaftaran":"350000",
+            "biaya_substantif":"3000000",
+            "biaya_percepatan":"400000",
+            "par_tgl_daftar_paten":"2018-05-25",
+            "par_tgl_hitung_paten":"2020-11-16",
+            "par_selisih_tahun":"2",
+            "total_biaya_permohonan":"3900000",
+            "nilai_atbp_paten":8719277.108433735,
+            "jumlah":1,
+            "bobot":48,
+            "total_bobot_per_row":48
+         }
+      ],
+      "total_bobot_seluruh":48
+   },
+   "obj_paten_inflasi":{
+      "data":[
+         {
+            "no_pendaftaran":"P00201707747",
+            "tahunke":1,
+            "nilai_inflasi":0,
+            "nilai_atbp_paten":8719277.108433735,
+            "nilai_atbp_paten_inflasi":8719277.108433735
+         },
+         {
+            "no_pendaftaran":"P00201707747",
+            "tahunke":2,
+            "nilai_inflasi":"2.5",
+            "nilai_atbp_paten":8719277.108433735,
+            "nilai_atbp_paten_inflasi":8937259.036144579
+         },
+         {
+            "no_pendaftaran":"P00201707747",
+            "tahunke":3,
+            "nilai_inflasi":"2.69",
+            "nilai_atbp_paten":8719277.108433735,
+            "nilai_atbp_paten_inflasi":8953825.662650602
+         }
+      ]
+   },
+   "ti":48,
+   "tanggal":"",
+   "pi":3900000,
+   "ki":4819277.108433736,
+   "total_atbp":8719277.108433735
 }
-
 */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -111,6 +98,7 @@ class Costbased extends CI_Controller {
         $this->load->model('costbased_model'); 
         $this->load->model('costbasednonpaten_model'); 
         $this->load->model('costbasedpaten_model'); 
+        $this->load->model('costbasedpateninflasi_model'); 
         $this->load->library('form_validation'); 
         $this->load->library('upload'); 
         $this->load->helper(array('form', 'url'));     
@@ -181,7 +169,23 @@ class Costbased extends CI_Controller {
                         'total_bobot' => ''.$item->total_bobot_per_row
                     );
                     $this->costbasedpaten_model->insert($data3);
-                }
+                  }
+
+                  $data_paten_inflasi = $decode->obj_paten_inflasi->data;
+                  foreach ($data_paten_inflasi as $item2){
+                      $data4 = array(
+                        'id_cost' => ''.$insert_id,
+                        'id_sinta' => ''.$decode->obj_id_sinta,
+                        'no_pendaftaran' => ''.$item2->no_pendaftaran,
+                        'tahunke' => ''.$item2->tahunke,
+                        'tanggal_daftar' => ''.$item2->tanggal_daftar,
+                        'tanggal_hitung' => ''.$item2->tanggal_hitung,
+                        'nilai_inflasi' => ''.$item2->nilai_inflasi,
+                        'nilai_atbp_paten' => ''.$item2->nilai_atbp_paten,
+                        'nilai_atbp_paten_inflasi' => ''.$item2->nilai_atbp_paten_inflasi,
+                      );
+                      $this->costbasedpateninflasi_model->insert($data4);
+                  }
 
                 // jika sukses send json info ke frontend utk proses lanjutan ->uploading
                 $obj = new \stdClass();

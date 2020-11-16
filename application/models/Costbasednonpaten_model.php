@@ -6,6 +6,7 @@ class Costbasednonpaten_model extends CI_Model {
 
     private $table = "sikav_cost_nonpaten";
     public $sinta_id;
+    public $cost_id;
     public $id;
     
     public function get_sinta($sinta_id)

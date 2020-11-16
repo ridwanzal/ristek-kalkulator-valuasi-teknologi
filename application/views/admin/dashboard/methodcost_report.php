@@ -6,6 +6,7 @@
     // var_dump($costbased_identity_lampiran);die;
     $costbased_nonpaten = $costbased_nonpaten[0];
     $costbased_paten = $costbased_paten;
+    $costbased_pateninflasis = $costbased_pateninflasi;
     
     // var_dump($costbased_paten);
 
@@ -83,7 +84,7 @@
                                             $i = $i + 1;
                                     ?>
                                     <li>
-                                        Judul Invensi
+                                        Judul Invensi: <b><?= $item->judul_invensi; ?></b>
                                         <div class="report_list">Jenis Paten: &nbsp;
                                         <?php
                                             if($item->sertifikat != ''){
@@ -332,7 +333,7 @@
                     <div class="row justify-content-md-center report_container">
                         <div class="col-lg-12 col-md-12 col-xs-12">
                             <p class="font-weight-bold">D. Nilai Aset Tak Berwujud berupa Paten/ATB-P (Vi)</p>   
-                            <p>1. Nilai ATB-P masing-masing paten:</p>   
+                            <b><p>1. Nilai ATB-P masing-masing paten tanpa memperhitungkan inflasi (jika penghitungan/valuasi dilakukan < 1 tahun sejak tanggal pendaftaran paten):</p></b>
                             <ul id="out_atbp_list">
                                 <?php
                                     foreach($costbased_paten as $itemx){
@@ -346,6 +347,47 @@
                                     }
                                 ?>
                             </ul>
+                            <b><p>2. Nilai ATB-P masing-masing paten dengan memperhitungkan inflasi (jika penghitungan/valuasi dilakukan > 1 tahun sejak tanggal pendaftaran paten):</p></b>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                No. Pendaftaran / Sertifikat
+                                            </th>
+                                            <th>
+                                                Tahun ke - n
+                                            </th>
+                                            <th>
+                                                Tingkat Inflasi (%)
+                                            </th>
+                                            <th>
+                                                Nilai Paten (Rp.)
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                            foreach($costbased_pateninflasi as $itemy){
+                                                ?>
+                                                    <tr>
+                                                        <td>
+                                                            <?= $itemy->no_pendaftaran; ?>
+                                                        </td>
+                                                        <td>
+                                                            <?= 'Tahun ke -' .$itemy->tahunke; ?>
+                                                        </td>
+                                                        <td>
+                                                            <?= $itemy->nilai_inflasi; ?>
+                                                        </td>
+                                                        <td>
+                                                            <?= $itemy->nilai_atbp_paten_inflasi; ?>
+                                                        </td>
+                                                    </tr>
+                                                <?php
+                                            }   
+                                        ?>
+                                    </tbody>
+                                </table>
                             <p style="font-weight:bold;font-size:18px;">2. Total Nilai ATB-P : Rp. <span id="out_atbp_total"><?php echo '' .$costbased_identity->atbp;?></span></p>   
                         </div>
                     </div>
