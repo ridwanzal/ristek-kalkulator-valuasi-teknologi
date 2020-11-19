@@ -72,7 +72,7 @@
                                                         <td><?= explode(' ',$item->tanggal)[0];?></td>
                                                         <td>
                                                         <!-- <a href="<?php echo base_url();?>manage/riwayat/detail/cost-<?php echo $item->id;?>"><span class="badge badge-primary">Detail</span></a>&nbsp; -->
-                                                        <a href="<?php echo base_url();?>manage/riwayat/laporan/cost-<?php echo $item->id;?>"><span class="badge badge-success" style="padding:3px 7px 7px 7px;"><ion-icon style="position:relative;top:3px;"name="easel-outline"></ion-icon>&nbsp;Detail & Report</span></a>&nbsp;
+                                                        <a href="<?php echo base_url();?>manage/riwayat/laporan/cost-<?php echo $item->id;?>"><span class="badge badge-success" style="padding:3px 7px 7px 7px;"><ion-icon style="position:relative;top:3px;"name="easel-outline"></ion-icon>&nbsp;&nbsp;Detail & Report</span></a>&nbsp;
                                                         <a href="#"><span class="badge badge-danger" style="padding:3px 7px 7px 7px;"><ion-icon style="position:relative;top:3px;"name="trash-outline"></ion-icon>&nbsp;Hapus</span></a></td>
                                                     </tr>
                                                 <?php
