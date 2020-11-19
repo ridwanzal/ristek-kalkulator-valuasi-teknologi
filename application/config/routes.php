@@ -72,6 +72,7 @@ $route['manage/add/incomebased_output'] = 'manage/add_incomebased_output';
 $route['manage/riwayat'] = 'manage/riwayat';
 $route['manage/riwayat/detail/cost-(:any)'] = 'manage/detail_costbased/$1 ';
 $route['manage/riwayat/laporan/cost-(:any)'] = 'manage/report_costbased/$1';
+$route['manage/riwayat/laporan/income-(:any)'] = 'manage/report_incomebased/$1';
 
 // front section
 $route['login'] = 'login';
