@@ -85,6 +85,7 @@ $route['process_login'] = 'login/process_login';
 $route['profile'] = 'profile';
 $route['prosedur'] = 'frontview/prosedur';
 $route['faq'] = 'frontview/faq';
+$route['panduan'] = 'frontview/panduan';
 $route['kontak'] = 'frontview/kontak';
 $route['kegiatan'] = 'frontview/kegiatan';
 $route['tentang'] = 'frontview/tentang';
