@@ -75,7 +75,7 @@
                             </div>
                             <div id="collapseF" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
                                 <div class="card-body">
-                                    Setiap metode memiliki karakteristik, dan aturan yang melatarbelakangi, hal ini jg harus dipelajari di bagian pengeenalan masing-masing method_exists
+                                    Setiap metode memiliki karakteristik, dan aturan yang melatarbelakangi, hal ini jg harus dipelajari di bagian pengeenalan masing-masing metode
                                     agar dapat mengetahui metode apa yang cocok dan tidak untuk memvaluasi KI
                                 </div>
                             </div>
