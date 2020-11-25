@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  -->
     <meta name="description" content="SIKAV - Kementerian Riset dan Teknologi / Badan Riset dan Inovasi">
-    <meta name="keywords" content="SIKAV - Kementerian Riset dan Teknologi / Badan Riset dan Inovasis">
+    <meta name="keywords" content="SIKAV - Kementerian Riset dan Teknologi / Badan Riset dan Inovasi">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="M. Ridwan Zalbina">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">

@@ -14,7 +14,12 @@
         
                             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#faqExample">
                                 <div class="card-body">
-                                    <b>Answer:</b> It works using the Bootstrap 4 collapse component with cards to make a vertical accordion that expands and collapses as questions are toggled.
+                                    Aset Takberwujud adalah aset non-monetari
+                                                    yang mewujudkan diri melalui properti
+                                                    ekonominya. Aset Takberwujud tidak memiliki
+                                                    substansi fisik tetapi memberikan hak dan /
+                                                    atau manfaat ekonomi kepada pemiliknya (SPI
+                                                    320, MAPPI).
                                 </div>
                             </div>
                         </div>
@@ -28,7 +33,7 @@
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqExample">
                                 <div class="card-body">
-                                    Bootstrap is the most popular CSS framework in the world. The latest version released in 2018 is Bootstrap 4. Bootstrap can be used to quickly build responsive websites.
+                                Penilaian suatu perusahaan untuk keperluan merger, akuisisi, usaha patungan atau kebangkrutan, dan juga negosiasi untuk menjual dan melisensikan HAKI
                                 </div>
                             </div>
                         </div>
@@ -42,7 +47,7 @@
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqExample">
                                 <div class="card-body">
-                                    Bootstrap is the most popular CSS framework in the world. The latest version released in 2018 is Bootstrap 4. Bootstrap can be used to quickly build responsive websites.
+                                    Dapat mengetahui nilai valuasi dari suautu HKI baik secara historical dengan Cost ataupun memproyeksikan valuasi kedepan dengan pendekatan berbasiS Income.
                                 </div>
                             </div>
                         </div>
@@ -56,7 +61,7 @@
                             </div>
                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
                                 <div class="card-body">
-                                    The answer to the question can go here.
+                                    Metode yang digunakan dalam penghitungan / kalkulasi HKI adalah dengan pendekatan Cost dan Income
                                 </div>
                             </div>
                         </div>
@@ -64,55 +69,14 @@
                             <div class="card-header p-2" id="headingThree">
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseF" aria-expanded="false" aria-controls="collapseF">
-                                    Q: Keuntungan dan Kerugian dari 3 Metode yang digunakan ?
+                                    Q: Keuntungan dan Kerugian dari Metode yang digunakan ?
                                     </button>
                                 </h5>
                             </div>
                             <div id="collapseF" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
                                 <div class="card-body">
-                                    The answer to this question can go here. This FAQ example can contain all the Q/A that is needed.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header p-2" id="headingThree">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseG" aria-expanded="false" aria-controls="collapseG">
-                                    Q. Apa itu Cost-based Method ?
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseG" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
-                                <div class="card-body">
-                                    The answer to this question can go here. This FAQ example can contain all the Q/A that is needed.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header p-2" id="headingThree">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseG" aria-expanded="false" aria-controls="collapseG">
-                                    Q. Apa itu Income-based Method ?
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseG" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
-                                <div class="card-body">
-                                    The answer to this question can go here. This FAQ example can contain all the Q/A that is needed.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header p-2" id="headingThree">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseG" aria-expanded="false" aria-controls="collapseG">
-                                    Q. Apa itu Market-based Method ?
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseG" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
-                                <div class="card-body">
-                                    The answer to this question can go here. This FAQ example can contain all the Q/A that is needed.
+                                    Setiap metode memiliki karakteristik, dan aturan yang melatarbelakangi, hal ini jg harus dipelajari di bagian pengeenalan masing-masing method_exists
+                                    agar dapat mengetahui metode apa yang cocok dan tidak untuk memvaluasi KI
                                 </div>
                             </div>
                         </div>
