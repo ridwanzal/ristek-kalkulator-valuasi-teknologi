@@ -842,11 +842,11 @@ function data_luaran_paten(index){
                     let tahunke = 2;
                     for(ix; ix < selisih_tahun; ix++){
                     let adaptersa = `
-                                    <div class="col-lg-3">
-                                        <label class="captions">Nilai Inflasi ditahun ke - `+tahunke+`</label>
-                                        <input id="inflasi_nilai_`+index+`_`+ix+`" class="inflasi_nilai_`+index+` form-control form-control-sm date_inflasi_counter" type="text" placeholder=""/>
-                                    </div>
-                                    `;  
+                            <div class="col-lg-3">
+                                <label class="captions">Nilai Inflasi ditahun ke - `+tahunke+`</label>
+                                <input onkeyup="checkDec(this)"  id="inflasi_nilai_`+index+`_`+ix+`" class="inflasi_nilai_`+index+` form-control form-control-sm date_inflasi_counter" type="text" placeholder=""  />
+                            </div>
+                            `;  
                         console.log('looping')
                         $('#inflasi_annual_'+index).append(adaptersa);
                         tahunke = tahunke + 1;
