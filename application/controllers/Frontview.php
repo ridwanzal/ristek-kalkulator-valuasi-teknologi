@@ -52,8 +52,8 @@ class Frontview extends CI_Controller {
 
     function panduan(){
         $data['title_bar'] = "Panduan";
-        $data['header_page'] = "Kegiatan";
-        $data['breadcrumbs'] = 'Kegiatan';
+        $data['header_page'] = "Panduan";
+        $data['breadcrumbs'] = 'Panduan';
         $this->load->view('frontview/header', $data);
         $this->load->view('frontview/navbar', $data);
         $this->load->view('frontview/components/breadcrumbs', $data);

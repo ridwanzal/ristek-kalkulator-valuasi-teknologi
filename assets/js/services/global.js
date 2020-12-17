@@ -71,6 +71,18 @@ function checkEmpty(el){
     }
 }
 
+/**
+ * 
+ * @param {*} param // number / numeric value to return to dec 
+ */
+function checkDec(el){
+    var ex = /^[0-9]+\.?[0-9]*$/;
+    if(ex.test(el.value)==false){
+      el.value = el.value.substring(0,el.value.length - 1);
+    }
+}
+
+
 const money = {
     init : function(str){
         console.log('init');

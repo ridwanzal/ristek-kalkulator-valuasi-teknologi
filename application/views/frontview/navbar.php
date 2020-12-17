@@ -19,6 +19,9 @@
                     <a class="nav-link" href="<?php echo base_url();?>prosedur" title="Prosedur">Prosedur<span class="sr-only"></span></a>
                   </li>
                   <li class="nav-item">
+                    <a class="nav-link" href="<?php echo base_url();?>panduan" title="Panduan">Panduan <span class="sr-only"></span></a>
+                  </li>
+                  <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url();?>faq" title="FAQ">FAQ <span class="sr-only"></span></a>
                   </li>
                   <li class="nav-item">
