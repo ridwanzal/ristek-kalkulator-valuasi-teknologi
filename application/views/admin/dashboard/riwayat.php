@@ -66,9 +66,9 @@
                                                         <td><?= $i;?></td>
                                                         <td class="font-weight-medium"><?= $item->judul_penelitian; ?></td>
                                                         <td><?= $item->nama_inventor;?></td>
-                                                        <td><?= $item->ki;?></td>
-                                                        <td><?= $item->pi;?></td>
-                                                        <td><?= $item->atbp;?></td>
+                                                        <td><?= rupiah($item->ki);?></td>
+                                                        <td><?= rupiah($item->pi);?></td>
+                                                        <td><?= rupiah($item->atbp);?></td>
                                                         <td><?= explode(' ',$item->tanggal)[0];?></td>
                                                         <td>
                                                         <!-- <a href="<?php echo base_url();?>manage/riwayat/detail/cost-<?php echo $item->id;?>"><span class="badge badge-primary">Detail</span></a>&nbsp; -->
