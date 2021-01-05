@@ -238,7 +238,7 @@ function get_ipr(){
         /**
          * @param userdetails.sinta_id //userdetails diambil dari localstorage
         */
-        let api_endpoint = base_url_api + '/v2/author/detail/ipr/' + userdetails.sinta_id;
+        let api_endpoint = base_url_api + '/author/detail/ipr/' + userdetails.sinta_id;
         $.ajax({
             url : api_endpoint,
             type : 'GET',
