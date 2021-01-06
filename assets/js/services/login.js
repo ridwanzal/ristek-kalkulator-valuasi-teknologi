@@ -28,7 +28,11 @@
                 $.ajax({
                     url : base_url_access,
                     type : 'POST',
-                    crossDomain: true,
+                    crossDomain: true,   
+		    beforeSend: function(request) {
+                             request.setRequestHeader("Content-Type", 'application/x-www-form-urlencoded');
+                             request.setRequestHeader("Authorization", 'Bearer ' + access_token);
+                    },
                     dataType: "json",
                     data : access_api,
                     success : function(res){
