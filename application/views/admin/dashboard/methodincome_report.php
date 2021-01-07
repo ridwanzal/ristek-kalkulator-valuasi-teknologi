@@ -422,10 +422,10 @@
                                 Market Size  :  <b><?= rupiah($marketsize) . " Unit"; ?></b>
                             </li>
                             <li>
-                                Market Share  :  <b>
-                                <?
+                                Market Share  :  <b> 
+                                <?php
                                     // var_dump($marketshare);die;
-                                    if($marketshare=="persen1"){
+                                    if($marketshare=="persen2"){
                                         echo "Superior/Breakthrough Technology (<=25%)";
                                     }elseif($marketshare=="persen2"){
                                         echo "Improvement Technology (<=15%)";
