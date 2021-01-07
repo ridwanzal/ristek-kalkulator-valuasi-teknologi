@@ -45,8 +45,8 @@
                                         <th scope="col">Ki (Rp.)</th>
                                         <th scope="col">Pi (Rp.)</th>
                                         <th scope="col">ATBP (Rp.)</th>
-                                        <th scope="col">Tanggal (Rp.)</th>
-                                        <th scope="col">Tindakan (Rp.)  </th>
+                                        <th scope="col">Tanggal</th>
+                                        <th scope="col">Tindakan</th>
                                         <T
                                     </tr>
                                 </thead>
