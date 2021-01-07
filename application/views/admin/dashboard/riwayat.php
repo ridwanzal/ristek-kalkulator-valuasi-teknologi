@@ -42,11 +42,11 @@
                                         <th scope="col">No</th>
                                         <th scope="col">Penelitian</th>
                                         <th scope="col">Inventor</th>
-                                        <th scope="col">Ki</th>
-                                        <th scope="col">Pi</th>
-                                        <th scope="col">ATBP</th>
-                                        <th scope="col">Tanggal</th>
-                                        <th scope="col">Tindakan</th>
+                                        <th scope="col">Ki (Rp.)</th>
+                                        <th scope="col">Pi (Rp.)</th>
+                                        <th scope="col">ATBP (Rp.)</th>
+                                        <th scope="col">Tanggal (Rp.)</th>
+                                        <th scope="col">Tindakan (Rp.)  </th>
                                         <T
                                     </tr>
                                 </thead>
