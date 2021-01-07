@@ -261,7 +261,7 @@
                                                                             <input disabled type="text" class="form-control form-control-sm" id="par_cb_asalbiayadaftar_edit_<?php echo $i;?>" placeholder="" value='<?php echo $item->asal_biaya_pendaftaran;?>'>
                                                                         </div>
                                                                         <div class="col-lg-6">
-                                                                            <label class="captions">Biaya Proses Lainnya</label>
+                                                                            <label class="captions">Biaya Proses Lainnya (Rp.)</label>
                                                                             <input disabled type="text" class="form-control form-control-sm" id="par_biaya_proses_edit_<?php echo $i;?>" onkeyup="biaya_proses_lainnya(1)" placeholder="" value="<?php echo $item->biaya_proses_lain;?>" >
                                                                         </div>
                                                                     </div>

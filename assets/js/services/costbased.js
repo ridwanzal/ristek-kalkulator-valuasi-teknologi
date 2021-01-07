@@ -967,7 +967,7 @@ function add_luaran_paten(){
                                         </select>
                                     </div>
                                     <div class="col-lg-6">
-                                        <label class="captions">Biaya Proses Lainnya</label>
+                                        <label class="captions">Biaya Proses Lainnya (Rp.)</label>
                                         <input type="text" class="form-control form-control-sm" id="par_biaya_proses_`+index+`" onkeyup="biaya_proses_lainnya(`+index+`)" placeholder="" value="">
                                     </div>
                                 </div>

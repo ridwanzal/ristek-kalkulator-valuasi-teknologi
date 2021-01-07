@@ -223,7 +223,7 @@
                                                         </div>
                                                     </div> -->
                                                     <div class="col-lg-6">
-                                                        <label class="captions">Biaya Proses Lainnya</label>
+                                                        <label class="captions">Biaya Proses Lainnya (Rp.)</label>
                                                         <input type="text" class="form-control form-control-sm" id="par_biaya_proses_1" onkeyup="biaya_proses_lainnya(1)" placeholder="" value="" >
                                                     </div>
                                                 </div>
