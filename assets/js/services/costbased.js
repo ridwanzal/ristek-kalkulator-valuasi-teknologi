@@ -851,6 +851,9 @@ function data_luaran_paten(index){
                         $('#inflasi_annual_'+index).append(adaptersa);
                         tahunke = tahunke + 1;
                     }
+
+                    let reference="<div class='col-lg-3'><label class='captions'>Referensi Data Inflasi</label><a target='_blank' href='https://www.bi.go.id/id/statistik/indikator/data-inflasi.aspx' class='form-control form-control-sm btn btn-info btn-sm'>Lihat</a></div>";
+                    $('#inflasi_annual_'+index).append(reference);
                 }
 
                 if(data[i].kategori== 'paten'){
