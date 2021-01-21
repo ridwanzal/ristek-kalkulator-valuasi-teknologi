@@ -7,7 +7,7 @@
                 <h6 style="line-height:29px;">Kementerian Riset dan Teknologi /
                     Badan Riset dan Inovasi Nasional
                     Republik Indonesia</h6>
-                <p style="font-weight:100">
+                <p style="font-weight:300">
                     Alamat: Gedung B.J. Habibie Lantai 15-24, Jl. M.H. Thamrin No. 8,
                     Jakarta Pusat 10340
                 </p>
