@@ -15,8 +15,8 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <h5>Panduan</h5>
                 <ul class="list-unstyled text-small listfooters">
-                    <li><a class="text-muted" href="#">Cost based</a></li>
-                    <li><a class="text-muted" href="#">Income based</a></li>
+                    <li><a class="text-muted" href="<?php echo base_url();?>metode/costbased">Cost based</a></li>
+                    <li><a class="text-muted" href="<?php echo base_url();?>metode/incomebased">Income based</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
