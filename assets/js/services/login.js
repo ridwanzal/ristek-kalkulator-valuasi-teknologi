@@ -92,7 +92,11 @@
                                     }else{
                                         loader.hide();
                                         el_click_login.prop('disabled', false)
-                                        alert('Login failed (Please provide valid email & password)');
+                                        Swal.fire(
+                                            'Login gagal',
+                                            'Email & Password salah',
+                                            'error'
+                                        )
                                     }
                                 },
                                 done : function(res){

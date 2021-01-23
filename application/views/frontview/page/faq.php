@@ -1,3 +1,6 @@
+<section>
+ <img style="width:100%;" src="<?php echo base_url();?>assets/frontview/img/banner-faq.svg">
+</section>
 <section class="section_main_wrapper">
         <div class="container">
             <div class="row">

@@ -2,9 +2,10 @@
     <div class="container" style="">
         <div class="row">
             <div class="col-sm-12">
-                <h6 style="font-weight:bold;">Apa itu Valuasi KI</h6>
+                <span style="font-weight:bold;" class="title-point">Apa itu Valuasi KI</span>
                 <br/>
-                <p style="font-size:14px;line-height:35px;">Aset Takberwujud adalah aset non-monetari yang mewujudkan diri melalui properti ekonominya. 
+                <br/>
+                <p style="font-size:28px;line-height:45px;font-weight:bold;">Aset Takberwujud adalah aset non-monetari yang mewujudkan diri melalui properti ekonominya. 
                 Aset Takberwujud tidak memiliki substansi fisik 
                 tetapi memberikan hak dan / atau manfaat ekonomi kepada pemiliknya (SPI320, MAPPI). Valuasi KI adalah proses untuk menentukan nilai moneter HKI</p>
             </div>
@@ -12,7 +13,9 @@
         <br/><br/>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
-                <h6 style="font-weight:bold;">Tujuan Valuasi KI</h6>
+            <span style="font-weight:bold;" class="title-point">Tujuan Valuasi KI</span>
+            <br/>
+            <br/>
             </div>
         </div>
         <br/>
@@ -59,10 +62,11 @@
     <div class="container" style="">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-xs-12">
-                <h6 style="font-weight:bold;">Metode Valuasi KI</h6>
-                <br/>
+            <span style="font-weight:bold;" class="title-point">Metode Valuasi KI</span>
             </div>
         </div>
+        <br/>
+        <br/>
         <div class="row">
             <div class="col-sm-4">
                 <div class="card card_metode" style="padding:30px;">
