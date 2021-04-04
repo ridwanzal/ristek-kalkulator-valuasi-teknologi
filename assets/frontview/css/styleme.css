@@ -258,11 +258,9 @@ td,th {
     position:relative;left:-10px;
 }
 
+
+
   @media (min-width: 320px) and (max-width: 480px) {
-    .headlanding{
-        font-size: 24px;
-        line-height: 10px;
-    }
 
     .btn_landing{
         width: 100%;
@@ -643,6 +641,7 @@ loader
       height: 75px;
       width: 75px;
       background-size: cover;
+      object-fit: cover;
   }
 
   .pub_item{
@@ -805,3 +804,54 @@ div.cost_report {
     padding:10px 20px 10px 20px;
     border-radius: 50px;
 }
+
+.head_description{
+    font-size:28px;
+    line-height:45px;
+    font-weight:bold;
+}
+
+.headlanding{
+    margin-bottom : 40px; 
+    line-height:55px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .head_description{
+        font-size:16px;
+        line-height:45px;
+        font-weight:bold;
+    }
+
+    .nav-logo-desktop {
+        display: none;
+    }
+
+    .main_section {
+        height: 680px !important;
+    }
+    
+    .section_main_wrapper{
+        min-height: 200px;
+    }
+
+    .section_userguide_wrapper{
+        min-height: 200px;
+    }
+
+    .main_header_text{
+        line-height: 40px;
+    }
+
+    .headlanding{
+        margin-bottom : 25px !important; 
+        line-height: 45px;
+    }
+}
+
+
+.nav-logo-desktop {
+    display: block;
+}
+
+

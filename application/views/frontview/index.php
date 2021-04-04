@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-xs-6"> 
-                <h1 class="headlanding animate__animated animate__fadeInDown" style="margin-bottom : 40px; line-height:55px;">Sebagai sistem kebijakan standarisasi valuasi Kekayaan Intelektual   </h1>
+                <h1 class="headlanding animate__animated animate__fadeInDown">Sebagai sistem kebijakan standarisasi valuasi Kekayaan Intelektual   </h1>
                 <!-- <span style="font-size:100px;
                           font-weight:700;
                           letter-spacing:-5px;
@@ -26,3 +26,4 @@
         </div>
     </div>
 </section>
+

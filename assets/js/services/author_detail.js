@@ -17,14 +17,15 @@ function get_research(){
     if(check_sess_storage){
         // jika sudah terisi do nothing
     }else{
-        let api_endpoint = base_url_api + '/author/detail/research/' + userdetails.sinta_id;
+
+        var api_endpoint = base_url_api + '/affiliation/detail/research/440';
         $.ajax({
             url : api_endpoint,
             type : 'GET',
             cache : true,
             crossDomain : true,
             beforeSend: function(request) {
-                request.setRequestHeader("Authorization", 'Bearer ' + access_token_saved);
+                request.setRequestHeader("Authorization", 'Bearer ' + localStorage.getItem('token'));
             },
             success : function(res){
                 console.log(res);

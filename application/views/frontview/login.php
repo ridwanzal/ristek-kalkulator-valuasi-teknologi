@@ -8,10 +8,10 @@
             <div class="card" style="padding:20px 20px 20px 20px;">
                     <div class="card-body">
                         <label for="inputEmail" class="sr-only">Email address</label>
-                        <input type="email" id="p_username" class="form-control" placeholder="Email address" required value="haris.wahyudi@mercubuana.ac.id" autofocus>
+                        <input type="email" id="p_username" class="form-control" placeholder="Email address" required value="" autofocus>
                         <br/>   
                         <label for="inputPassword" class="sr-only">Password</label>
-                        <input type="password" id="p_password" class="form-control password-field" placeholder="Password" value="123456" required>
+                        <input type="password" id="p_password" class="form-control password-field" placeholder="Password" value="" required>
                         <span title="Show Password" toggle=".password-field" class="toggle-password" style="cursor:pointer;top:-31px;position:relative;float:right;margin-right:10px;z-index:100;"><img class="image_replacer" width="22" src="https://www.flaticon.com/svg/static/icons/svg/709/709612.svg"/></span>
                         <br/>
                         <!-- <a href="<?php echo base_url(); ?>manage" class="btn btn-xs btn-outline-primary btn-block"><img height="20" src="http://sinta.ristekbrin.go.id/assets/img/sinta_logo.png">&nbsp;&nbsp;&nbsp;Sign in dengan Sinta</a> -->

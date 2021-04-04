@@ -5,7 +5,7 @@
                 <span style="font-weight:bold;" class="title-point">Apa itu Valuasi KI</span>
                 <br/>
                 <br/>
-                <p style="font-size:28px;line-height:45px;font-weight:bold;">Aset Takberwujud adalah aset non-monetari yang mewujudkan diri melalui properti ekonominya. 
+                <p class="head_description">Aset Takberwujud adalah aset non-monetari yang mewujudkan diri melalui properti ekonominya. 
                 Aset Takberwujud tidak memiliki substansi fisik 
                 tetapi memberikan hak dan / atau manfaat ekonomi kepada pemiliknya (SPI320, MAPPI). Valuasi KI adalah proses untuk menentukan nilai moneter HKI</p>
             </div>
