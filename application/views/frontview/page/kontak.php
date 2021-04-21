@@ -12,8 +12,8 @@
                     </p>
                      <br/>
                     <p class="font-weight-bold">Email : </p>
-                    <p>katsinov@ristekbrin.go.id</p>
-                    <p>katsinov.ristekbrin@gmail.com</p>
+                    <p>sikav@ristekbrin.go.id</p>
+                    <p>sikav.ristekbrin@gmail.com</p>
                 </div>
             </div>
             <br/>
