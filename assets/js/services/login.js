@@ -4,15 +4,6 @@
     $('#p_username').attr('required', true);
     $('#p_username').attr('required', true);
     
-    /**         
-     user test
-     @username anism@unissula.ac.id
-     @passowrd 123456
-
-     @username haris.wahyudi@mercubuana.ac.id
-     @password 123456
-     */
-    
     loader.hide();
     el_click_login.on('click', function(){
         localStorage.clear();

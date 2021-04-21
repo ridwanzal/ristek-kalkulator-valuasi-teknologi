@@ -43,12 +43,12 @@
                         <div class="card">
                             <div class="card-header p-2" id="headingTwo">
                                 <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
                                 Q: Apa Manfaat dari Valuasi Kekayaan Intelektual
                                 </button>
                             </h5>
                             </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqExample">
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#faqExample">
                                 <div class="card-body">
                                     Dapat mengetahui nilai valuasi dari suautu HKI baik secara historical dengan Cost ataupun memproyeksikan valuasi kedepan dengan pendekatan berbasiS Income.
                                 </div>
@@ -57,12 +57,12 @@
                         <div class="card">
                             <div class="card-header p-2" id="headingThree">
                                 <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
                                     Q: Metode apa saja yang dapat diterapkan ?
                                     </button>
                                 </h5>
                             </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
                                 <div class="card-body">
                                     Metode yang digunakan dalam penghitungan / kalkulasi HKI adalah dengan pendekatan Cost dan Income
                                 </div>
@@ -71,12 +71,12 @@
                         <div class="card">
                             <div class="card-header p-2" id="headingThree">
                                 <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseF" aria-expanded="false" aria-controls="collapseF">
-                                    Q: Keuntungan dan Kerugian dari Metode yang digunakan ?
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseF">
+                                    Q: Keuntungan dari Metode yang digunakan ?
                                     </button>
                                 </h5>
                             </div>
-                            <div id="collapseF" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
                                 <div class="card-body">
                                     Setiap metode memiliki karakteristik, dan aturan yang melatarbelakangi, hal ini jg harus dipelajari di bagian pengeenalan masing-masing metode
                                     agar dapat mengetahui metode apa yang cocok dan tidak untuk memvaluasi KI

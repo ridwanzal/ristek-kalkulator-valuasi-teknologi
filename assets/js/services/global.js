@@ -12,7 +12,7 @@ const access_token_saved = sessionStorage.getItem('token');
 /**
  * environment checking
  */
- 
+    
 let web_url = '';
 let env = '';
 env = location.href.includes('localhost') ? 'dev' : 'production';
@@ -42,7 +42,6 @@ const loader = {
     }
 }
 
-
 /**
 @param el input element to validate
 */
@@ -59,7 +58,6 @@ function validate_input(el){
         return true;
     }
 }
-
 
 function checkEmpty(el){
     if(el.val() == '' || el.val() == null){
