@@ -20,7 +20,7 @@ console.log(env);
 if(env == 'dev'){
     web_url = 'http://localhost/ristek-kalkulator-valuasi-teknologi';
 }else{
-    web_url = 'http://sikav.ridwanzal.com';
+    web_url = 'http://sikav.ristekbrin.go.id';
 }
 
 const el_click_login = $('#submit_login');
