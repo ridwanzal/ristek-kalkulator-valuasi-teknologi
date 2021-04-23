@@ -16,7 +16,7 @@
                 <a  href="<?php echo base_url();?>auth/login" class=" btn_landing btn btn-success">
                     Uji Coba kalkulasi
                 </a>&nbsp;
-                <a href="" class=" btn_landing btn btn-danger">
+                <a href="<?php echo base_url()?>panduan" class=" btn_landing btn btn-danger">
                     Pelajari Lebih Lanjut
                 </a>
             </div>

@@ -855,3 +855,10 @@ div.cost_report {
 }
 
 
+.panduan-download {
+    text-decoration : none;
+}
+
+.card-download:hover {
+    background : #ccc;
+}
