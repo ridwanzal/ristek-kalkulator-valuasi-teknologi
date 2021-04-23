@@ -23,7 +23,7 @@
                     </div>
             </div>
             <br/>
-            <center><span class="text_white">Belum punya akun ? <a style="color:#fdbe07 !important;" href="<?php echo base_url();?>auth/register">Daftar</a></span></center>
+            <!-- <center><span class="text_white">Belum punya akun ? <a style="color:#fdbe07 !important;" href="<?php echo base_url();?>auth/register">Daftar</a></span></center> -->
             </div>
         </div>
     </div>
