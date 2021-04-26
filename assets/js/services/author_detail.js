@@ -17,22 +17,24 @@ function get_research(){
     if(check_sess_storage){
         // jika sudah terisi do nothing
     }else{
-
-        var api_endpoint = base_url_api + '/affiliation/detail/research/440';
-        $.ajax({
-            url : api_endpoint,
-            type : 'GET',
-            cache : true,
-            crossDomain : true,
-            beforeSend: function(request) {
-                request.setRequestHeader("Authorization", 'Bearer ' + localStorage.getItem('token'));
-            },
-            success : function(res){
-                console.log(res);
-                let results = res.author;
-                sessionStorage.setItem('get_research', JSON.stringify(results));
-            }
-        })
+        setTimeout(function(){
+            let api_endpoint = base_url_api + '/author/detail/research/' + userdetails.sinta_id;
+            $.ajax({
+                url : api_endpoint,
+                type : 'GET',
+                cache : true,
+                crossDomain : true,
+                beforeSend: function(request) {
+                    request.setRequestHeader("Content-Type", 'application/json');
+                    request.setRequestHeader("Authorization", 'Bearer ' + localStorage.getItem('token'));
+                },
+                success : function(res){
+                    console.log(res);
+                    let results = res.author;
+                    sessionStorage.setItem('get_research', JSON.stringify(results));
+                }
+            })
+        }, 100)
     }
 }
 
