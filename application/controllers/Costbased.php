@@ -102,6 +102,11 @@ class Costbased extends CI_Controller {
         $this->load->library('form_validation'); 
         $this->load->library('upload'); 
         $this->load->helper(array('form', 'url'));     
+        header('Content-type: application/json');
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET");
+        header("Access-Control-Allow-Methods: GET, OPTIONS");
+        header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
     }
 
     public function add(){

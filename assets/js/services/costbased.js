@@ -284,6 +284,8 @@ function init(){
         $.ajax({
             url : web_url + '/costbased/add',
             type : 'POST',
+            dataType: 'json',
+            contentType: 'json',
             data : {
                 'datas' : JSON.stringify(obj_model_cb)
             },
@@ -351,6 +353,16 @@ function init(){
                         }
                     });
                     */
+                }else if(res !== ''){
+                    _tosave.attr('disabled', 'disabled');
+                    _tosave.text('Tersimpan');
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Data berhasil tersimpan',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                 }
             }
         });

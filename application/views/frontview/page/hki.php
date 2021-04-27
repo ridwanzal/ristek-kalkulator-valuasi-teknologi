@@ -8,6 +8,7 @@
                 <p class="head_description">Aset Takberwujud adalah aset non-monetari yang mewujudkan diri melalui properti ekonominya. 
                 Aset Takberwujud tidak memiliki substansi fisik 
                 tetapi memberikan hak dan / atau manfaat ekonomi kepada pemiliknya (SPI320, MAPPI). Valuasi KI adalah proses untuk menentukan nilai moneter HKI</p>
+                <hr/>
             </div>
         </div>
         <br/><br/>
@@ -68,7 +69,7 @@
         <br/>
         <br/>
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-6">
                 <div class="card card_metode" style="padding:30px;">
                 <div class="card-body">
                     <center>
@@ -82,7 +83,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-6">
                 <div class="card card_metode" style="padding:30px;">
                 <div class="card-body">
                     <center>
@@ -93,20 +94,6 @@
                     <h5 class="card-title bolds">Income Based</h5>
                     <p class="card-text">Penilaian untuk transaksi KI Valuasi untuk penggalangan dana (fund raising)</p>
                     <a href="<?php echo base_url();?>metode/incomebased" class="method_details">Pelajari lebih lanjut</a>
-                </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card card_metode" style="padding:30px;">
-                <div class="card-body">
-                    <center>
-                        <img style="width:30%;" src="<?php echo base_url();?>assets/frontview/img/focus.svg"/>
-                    </center>
-                    <br/>
-                    <br/>
-                    <h5 class="card-title bolds">Market Based</h5>
-                    <p class="card-text">Penilaian dengan tujuan jaminan atas pinjaman perbankan, karena tujuan bank atas jaminan yaitu jika kredit macet jaminan bisa dijual secepatnya sesuai/sedikit dibawah harga market</p>
-                    <a href="<?php echo base_url();?>metode/marketbased" class="method_details">Pelajari lebih lanjut</a>
                 </div>
                 </div>
             </div>

@@ -25,8 +25,8 @@ class Profile extends CI_Controller {
 		$data['title_bar'] = "Profile";
         $data['header_page'] = "Profile";
         $data['breadcrumbs'] = 'Profile';
-		$this->load->view('admin/header');
-		$this->load->view('admin/navbar');
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/navbar', $data);
 		$this->load->view('admin/components/breadcrumbs_parent', $data);
 		$this->load->view('admin/dashboard/profile', $data);
         $this->load->view('admin/footer', $data); 
