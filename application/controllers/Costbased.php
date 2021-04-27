@@ -211,6 +211,18 @@ class Costbased extends CI_Controller {
     public function edit(){
 
     }
+
+
+    public function delete_kalkulasi($id){
+		$hapus = $this->costbased_model->delete($id);
+		if (!$hapus) {
+			$this->session->set_flashdata('pesan', 'Data Berhasil Dihapus.');
+		} else{
+			$this->session->set_flashdata('pesan', 'Data Gagal Dihapus');
+		}
+		redirect('manage/riwayat');
+    }
+
     
     
 }

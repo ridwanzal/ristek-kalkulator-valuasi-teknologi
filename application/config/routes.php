@@ -59,6 +59,7 @@ $route['manage/add/incomebased_invensi'] = 'manage/add_incomebased_invensi';
 $route['manage/edit/incomebased_invensi/(:num)'] = 'manage/edit_incomebased_invensi/$1';
 $route['manage/delete/incomebased_invensi/(:num)'] = 'incomebased/delete/$1';
 $route['manage/delete/incomebased_kalkulasi/(:num)'] = 'incomebased/delete_kalkulasi/$1';
+$route['manage/delete/costbased_kalkulasi/(:num)'] = 'costbased/delete_kalkulasi/$1';
 $route['incomebased/add'] = 'incomebased/add';
 $route['incomebased/sinkronisasi_ipr'] = 'incomebased/sinkronisasi_ipr';
 $route['incomebased/data_halaman1'] = 'incomebased/data_halaman1';
