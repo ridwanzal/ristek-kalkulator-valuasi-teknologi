@@ -398,6 +398,13 @@
                             <h5>LAPORAN</h5>
                             <h5>KALKULATOR VALUASI TEKNOLOGI</h5>
                             <h5>PENDEKATAN METODE INCOME BASED</h5>
+                            <?php 
+                                $datetime = $costbased_identity->tanggal; 
+                                $date = explode(" ", $datetime);
+                                $dateform = explode("-", $date[0]);
+                                $str = date($dateform[0].$dateform[1].$dateform[2]);
+                                echo 'Tanggal Kalkulasi : ' .date('d F Y', strtotime($str));
+                            ?>
                             <hr/>
                         </center>
                         <br/>
