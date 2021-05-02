@@ -101,6 +101,7 @@
                                         <th scope="col">Judul Invensi</th>
                                         <th scope="col">Nama Inventor</th>
                                         <th scope="col">Nilai NPV</th>
+                                        <th scope="col">Tanggal</th>
                                         <th scope="col">Tindakan</th>
                                     </tr>
                                 </thead>
@@ -121,6 +122,14 @@
                                                         <td><?= $item->hki_judul; ?></td>
                                                         <td><?= $item->hki_inventor;?></td>
                                                         <td><?= rupiah($item->nilai_npv);?></td>
+                                                        <?php
+                                                            $datetime = $item->tanggal; 
+                                                            $date = explode(" ", $datetime);
+                                                            $dateform = explode("-", $date[0]);
+                                                            $str = date($dateform[0].$dateform[1].$dateform[2]);
+                                                            echo date('d F Y', strtotime($str));
+                                                        ?>
+                                                        <td><?= date('d F Y', strtotime($str));?></td>
                                                         <td>
                                                             <a href="<?php echo base_url();?>manage/riwayat/laporan/income-<?php echo $item->id;?>"><span class="badge badge-success" style="padding:3px 7px 7px 7px;"><ion-icon style="position:relative;top:3px;"name="easel-outline"></ion-icon>&nbsp;Report</span></a>&nbsp;
                                                             <a onclick="deleteConfirm('<?php echo site_url('manage/delete/incomebased_kalkulasi/'.$item->id) ?>')" href="#!"><span class="badge badge-danger" style="padding:3px 7px 7px 7px;"><ion-icon style="position:relative;top:3px;"name="trash-outline"></ion-icon>&nbsp;Hapus</span></a>

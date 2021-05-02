@@ -50,6 +50,8 @@
         $biaya_marketing = $rs_incomebased->biaya_marketing;
         $biaya_perawatan = $rs_incomebased->biaya_perawatan;
         $biaya_warehouse = $rs_incomebased->biaya_warehouse;
+        //tanggal
+        $tanggal = $rs_incomebased->tanggal;
     }
 
     //inisialisasi variabel untuk perhitungan proyeksi
@@ -399,7 +401,7 @@
                             <h5>KALKULATOR VALUASI TEKNOLOGI</h5>
                             <h5>PENDEKATAN METODE INCOME BASED</h5>
                             <?php 
-                                $datetime = $costbased_identity->tanggal; 
+                                $datetime = $tanggal; 
                                 $date = explode(" ", $datetime);
                                 $dateform = explode("-", $date[0]);
                                 $str = date($dateform[0].$dateform[1].$dateform[2]);

@@ -308,7 +308,8 @@ class Incomebased extends CI_Controller {
             'biaya_perawatan' => $biaya_perawatan,
             'biaya_warehouse' => $biaya_warehouse,
             'biaya_depresiasi' => $biaya_depresiasi,
-            'nilai_npv' => $npv
+            'nilai_npv' => $npv,
+            'tanggal' => ''.date('Y-m-d H:i:s')
         );
         //tambahkan pengecekan proses kalkulasi hanya cukup sekali dilakukan 
         $cek_hki = $this->incomebased_model->cek_hki_kalkulasi($hki_id); 
