@@ -1,4 +1,4 @@
-# ristek-kalkulator-valuasi-teknologi
+# kalkulator-valuasi-teknologi
 Pengembangan Program Kalkulator Valuasi Teknologi
 
 Contributor
