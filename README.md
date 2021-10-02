@@ -27,3 +27,4 @@ Contributor
 - Change permission tu uploads directory in /assets/uploads/* to allow writing data to directory
   - type $ chmod 777 -Rfv *
 
+Thank you
