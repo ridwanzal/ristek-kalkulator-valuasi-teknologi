@@ -1,4 +1,4 @@
-# kalkulator-valuasi-teknologi
+# Sistem Kalkulasi HKI
 Pengembangan Program Kalkulator Valuasi Teknologi
 
 Contributor
