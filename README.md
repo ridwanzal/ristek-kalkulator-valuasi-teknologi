@@ -27,4 +27,3 @@ Pengembangan Program Kalkulator Valuasi Teknologi
 - Change permission tu uploads directory in /assets/uploads/* to allow writing data to directory
   - type $ chmod 755 -Rfv *
 
-Thank you
