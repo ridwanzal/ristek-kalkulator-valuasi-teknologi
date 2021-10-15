@@ -1,7 +1,7 @@
 # Sistem Kalkulasi HKI
 Pengembangan Program Kalkulator Valuasi Teknologi
 
-Contributor
+## Contributor
 - M. Ridwan Zalbina
 - Miftakul Amin
 
