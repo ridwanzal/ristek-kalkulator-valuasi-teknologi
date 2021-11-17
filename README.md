@@ -1,3 +1,5 @@
+# Repository is not maintain anymore !!
+
 # Sistem Kalkulasi HKI
 Pengembangan Program Kalkulator Valuasi Teknologi
 
